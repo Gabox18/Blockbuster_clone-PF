@@ -6,6 +6,11 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import LandingPage from './components/Landing/Landing';
 import Home from './components/Home/Home';
 
+//boostrap
+// You can specify which plugins you need
+import { Tooltip, Toast, Popover } from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
