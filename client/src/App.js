@@ -1,28 +1,21 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
 import './App.css';
-import {allMovies} from './redux/actions.js'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+//components
+import LandingPage from './components/Landing/Landing';
+import Home from './components/Home/Home';
+
 
 function App() {
-  let dispatch = useDispatch()
-  let Movies = useSelector(store => store.allMovies)
-  useEffect(()=>{
-    dispatch(allMovies())
-  }
-  ,[dispatch])
-
   return (
     <div className="App">
-      <h1>Henry Blockbuster</h1>
-      {console.log(Movies)}
-      {Movies?.map((e,i)=>{
-        return (
-          <div key={i}>
-            <h1>{e.Title}</h1>
-            <img src={e.Poster} alt='img' height={'300px'}/>
-          </div>
-        )
-      })}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={LandingPage}/>
+          <Route exact path="/Home" component={Home}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
