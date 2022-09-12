@@ -9,7 +9,7 @@
 - Se desarrollara una réplica de la página Blockbuster, el usuario tendrá acceso
 a series y películas.
 
-## Horarios y Fechas
+## Horarios y Fechas.
 
 El proyecto tendrá una duración máxima de tres semanas de creacion
 
