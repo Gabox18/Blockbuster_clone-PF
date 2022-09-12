@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {allMovies} from '../../redux/actions';
 import "bootstrap/dist/css/bootstrap.min.css";
 import	'./Home.css';
+import Footer from "../Footer/Footer";
 
 
 function Home(){
@@ -31,6 +32,9 @@ function Home(){
                         </>
                     )
                 })}
+            </div>
+            <div className="footerContainer">
+                <Footer/>
             </div>
         </>
     )
