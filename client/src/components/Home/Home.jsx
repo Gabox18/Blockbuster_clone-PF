@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {allMovies} from '../../redux/actions';
 import "bootstrap/dist/css/bootstrap.min.css";
 import	'./Home.css';
+import Footer from "../Footer/Footer";
+import Navbar from "../Nav Bar/Navbar";
 
 
 function Home(){
@@ -15,6 +17,9 @@ function Home(){
     ,[dispatch])
     return(
         <>
+            <div className="navbarContainer">
+                <Navbar />
+            </div>
             {console.log(Movies)}
             <div className="cardContainer">
                 {Movies?.map((e, i)=> {
@@ -31,6 +36,9 @@ function Home(){
                         </>
                     )
                 })}
+            </div>
+            <div className="footerContainer">
+                <Footer/>
             </div>
         </>
     )
