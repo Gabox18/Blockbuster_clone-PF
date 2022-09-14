@@ -5,7 +5,6 @@ import './Landing.css';
 import { useDispatch } from 'react-redux';
 import './Landing.css';
 
-
 export default function Landing() {
 
     const dispatch = useDispatch()
