@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import	'./Home.css';
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
+import { Link } from "react-router-dom";
 
 
 function Home(){
@@ -25,6 +26,7 @@ function Home(){
                 {Movies?.map((e, i)=> {
                     return (
                         <>
+                        <Link to={"/details/" + e.imdbID}>
                             <div key={i} className="card" style={{width: '18rem'}}>
                                 <img src={e.Poster} className="card-img-top" alt="cardImg" />
                                 <div className="card-body">
@@ -32,7 +34,8 @@ function Home(){
                                     <p className="card-text">{e.Plot}</p>
                                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                                 </div>
-                            </div>                    
+                            </div>  
+                        </Link>                  
                         </>
                     )
                 })}
