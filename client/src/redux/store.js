@@ -1,15 +1,11 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from './reducer';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit'
+import dataSlice from './slice.js'
 
-const composeEnhancers =
-   (typeof window !== 'undefined' &&
-      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-   compose;
 
-const store = createStore(
-   rootReducer,
-   composeEnhancers(applyMiddleware(thunk)),
-);
+const store = configureStore ({
+    reducer : {
+        alldata : dataSlice
+    }
+})
 
-export default store;
+export default store

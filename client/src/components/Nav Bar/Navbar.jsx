@@ -1,4 +1,6 @@
 import React  from "react";
+import Logoutbutton from "../User/Logout";
+import Profile from "../User/Profile";
 import './Navbar.css';
 
 
@@ -40,6 +42,8 @@ function Navbar(){
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
+                        <Logoutbutton/>
+                        <Profile/>
                     </div>
                 </div>
             </nav>

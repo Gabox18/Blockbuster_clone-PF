@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Detail from "./components/Detail/Detail";
 
 
+
 function App() {
   return (
     <div className="App">
