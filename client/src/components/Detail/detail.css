@@ -1,9 +1,23 @@
-.image {
-    min-height: 100vh;
-  }
+.cardStyle {
+  width: 50rem;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+  opacity: 0.8; 
+}
 
-body{
-    background-image: url('https://www.pexels.com/es-es/foto/luces-oscuro-sillas-asientos-7991486');
-    background-size: cover;
-    background-position: center;
-  }
+.card-img-top {
+  height: 20rem;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% ;/* Player ratio: 100 / (1280 / 720) */
+
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50rem;
+}
