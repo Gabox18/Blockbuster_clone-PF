@@ -1,0 +1,9 @@
+.image {
+    min-height: 100vh;
+  }
+
+body{
+    background-image: url('https://www.pexels.com/es-es/foto/luces-oscuro-sillas-asientos-7991486');
+    background-size: cover;
+    background-position: center;
+  }

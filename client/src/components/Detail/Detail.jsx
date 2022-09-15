@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './detail.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { allMovies, getDetails } from '../../redux/actions';
 
 export default function Detail() {
@@ -27,7 +28,8 @@ export default function Detail() {
     //   },[dispatch])
 
   return (
-      <div>
+    <div className="maincontainer">
+      <div className="bg-image">
       <h1>Title: {moockMovie.Title} ({moockMovie.id})</h1>
           <h2>Actors: {moockMovie.Actors && moockMovie.Actors}</h2>
           <h2>Year: {moockMovie.Year}</h2>
@@ -38,6 +40,14 @@ export default function Detail() {
             return <p key={i}>{e.Value}</p>
           })}</h2> 
           <h2>Pais: {moockMovie.Country}</h2>
+
+          <div className="d-grid gap-2 mt-2 position-absolute">
+          <Link to ='/home'> 
+                  <button className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+                  type='shadow-lg p-3 mb-5 bg-body rounded'> Back </button>
+            </Link>
+        </div>
+        </div>
     </div>
   )
 }
