@@ -5,7 +5,8 @@ import { useEffect } from 'react';
 import './detail.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {asyncgetDetails,clearDetail} from '../../redux/slice.js';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+
 
 
 export default function Detail() {
