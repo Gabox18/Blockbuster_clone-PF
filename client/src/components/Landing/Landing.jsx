@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import './Landing.css';
 import { useDispatch } from 'react-redux';
 import './Landing.css';
+import LoginButton from "../User/Login";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
 
@@ -24,7 +26,6 @@ export default function Landing() {
 
   return (
       <div>
-        {/* <Login/> */}
         <div className=" wrapper">
             <div className="container-fluid2 col-auto mx-auto">
                 <div className="login d-flex align-items-center py-5">
@@ -32,6 +33,7 @@ export default function Landing() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 col-xl-7 mx-auto">
+                                <LoginButton/>
                                 <h3 className="display-4">Blockbuster Henry</h3>
                                 <p className="text-muted mb-4">Enter valid user:</p>
                                 <form>
@@ -63,13 +65,15 @@ export default function Landing() {
                                         <label for="customCheck1" className="form-check-label">Remember password</label>
                                     </div>
                                     <div className="d-grid gap-2 mt-2">
+                                        <Link to='/home'>
                                         <button 
                                             type="submit" 
                                             className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm"
-                                            onSubmit={handleOnSubmit}
+                                            // onSubmit={handleOnSubmit}
                                         >
                                             Sign in
                                         </button>
+                                        </Link>
                                     </div>
                                 </form>
                             </div>
