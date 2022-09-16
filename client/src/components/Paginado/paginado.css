@@ -1,0 +1,29 @@
+.button-prev, .button-next {
+    font-weight: bold;
+}
+
+.button-prev, .button-next{
+    background-color:#0166da;
+    box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
+    color: white;
+    border-top: 0;
+    border-left: 0;
+    padding: 6px;
+    border-radius: 2px;
+    position: relative;
+    border-radius: 5px;
+    
+}
+
+.page-button{
+    background-color:#0166da;
+    box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
+    color: white;
+    border-top: 0;
+    border-left: 0;
+    padding: 5px;
+    border-radius: 3px;
+    position: relative;
+    margin: 2px;
+    border-radius: 4px;
+}
