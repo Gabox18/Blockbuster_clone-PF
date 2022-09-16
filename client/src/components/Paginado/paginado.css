@@ -9,21 +9,19 @@
     border-top: 0;
     border-left: 0;
     padding: 6px;
-    border-radius: 2px;
-    position: relative;
     border-radius: 5px;
+    position: relative;
     
 }
 
 .page-button{
-    background-color:#0166da;
+    background-color:#036ae0;
     box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
     color: white;
     border-top: 0;
     border-left: 0;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 5px;
     position: relative;
-    margin: 2px;
-    border-radius: 4px;
+    margin: 5px;
 }
