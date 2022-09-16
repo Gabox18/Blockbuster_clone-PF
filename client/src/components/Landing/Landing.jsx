@@ -37,6 +37,7 @@ export default function Landing() {
                                 <h3 className="display-4 text-white">Blockbuster Henry</h3>
                                 <p className="text-muted mb-4 text-white">Enter valid user:</p>
                                 <form>
+
                                     {/* <div className="mb-3">
                                         <input
                                             id="inputEmail"
@@ -64,6 +65,7 @@ export default function Landing() {
                                         <input id="customCheck1" type="checkbox" checked className="form-check-input" />
                                         <label for="customCheck1" className="form-check-label">Remember password</label>
                                     </div> */}
+                                    
                                     <div className="d-grid gap-2 mt-2">
                                         <Link to='/home'>
                                             <button 
