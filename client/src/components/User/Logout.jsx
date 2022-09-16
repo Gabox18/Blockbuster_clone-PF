@@ -7,6 +7,7 @@ export default function Logoutbutton ()  {
   return (
     <div>
         <button className='btn btn-outline-primary' onClick={()=>logout({returnto:window.location.origin})}>logout</button>
+        
     </div>
   )
 }
