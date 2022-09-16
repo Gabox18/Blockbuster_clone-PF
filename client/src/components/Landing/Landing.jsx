@@ -33,11 +33,11 @@ export default function Landing() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 col-xl-7 mx-auto">
-                                <LoginButton/>
-                                <h3 className="display-4">Blockbuster Henry</h3>
-                                <p className="text-muted mb-4">Enter valid user:</p>
+                                
+                                <h3 className="display-4 text-white">Blockbuster Henry</h3>
+                                <p className="text-muted mb-4 text-white">Enter valid user:</p>
                                 <form>
-                                    <div className="mb-3">
+                                    {/* <div className="mb-3">
                                         <input
                                             id="inputEmail"
                                             type="text"
@@ -63,16 +63,19 @@ export default function Landing() {
                                     <div className="form-check">
                                         <input id="customCheck1" type="checkbox" checked className="form-check-input" />
                                         <label for="customCheck1" className="form-check-label">Remember password</label>
-                                    </div>
+                                    </div> */}
                                     <div className="d-grid gap-2 mt-2">
                                         <Link to='/home'>
-                                        <button 
-                                            type="submit" 
-                                            className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm"
-                                            // onSubmit={handleOnSubmit}
-                                        >
-                                            Sign in
-                                        </button>
+                                            <button 
+                                                type="submit" 
+                                                className="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm"
+                                                // onSubmit={handleOnSubmit}
+                                            >
+                                                Sign in
+                                            </button>
+                                            <div>
+                                                <LoginButton/>
+                                            </div>
                                         </Link>
                                     </div>
                                 </form>
