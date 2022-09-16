@@ -1,0 +1,23 @@
+.cardStyle {
+  width: 50rem;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+  opacity: 0.8; 
+}
+
+.card-img-top {
+  height: 20rem;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% ;/* Player ratio: 100 / (1280 / 720) */
+
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50rem;
+}
