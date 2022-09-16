@@ -13,7 +13,7 @@ const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-      <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin}>
+      <Auth0Provider domain={domain} clientId={clientId} redirectUri={`${window.location.origin}/home`}>
       <App />
       </Auth0Provider>
     </React.StrictMode>

@@ -20,7 +20,7 @@ export default function Detail() {
   
   return (
       <div>
-      <h1>Title: {details[0]?.Title} ({details[0]?.id})</h1>
+      <h1>Title: {details[0]?.Title}</h1>
           <h2>Actors: {details[0]?.Actors && details[0]?.Actors}</h2>
           <h2>Year: {details[0]?.Year}</h2>
           <h2>Genre: {details[0]?.Genre}</h2>
