@@ -6,7 +6,8 @@ export default function Logoutbutton ()  {
     const {logout} = useAuth0()
   return (
     <div>
-        <button onClick={()=>logout({returnto:window.location.origin})}>logout</button>
+        <button className='btn btn-outline-primary' onClick={()=>logout({returnto:window.location.origin})}>logout</button>
+        
     </div>
   )
 }
