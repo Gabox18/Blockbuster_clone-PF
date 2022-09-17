@@ -7,6 +7,7 @@ import	'./Home.css';
 import Paginado from "../Paginado/Paginado.jsx";
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
+import FilteringSorting from "./filtering&sorting/filtering&sorting.jsx";
 import { Link } from "react-router-dom";
 
 
@@ -25,8 +26,8 @@ function Home(){
     ,[dispatch])
 
     const [currentPage, setCurrentPage] = useState(1); //currentPage => pagina actual setCuPage => la fn que actualiza ese primer estado, que generara, un nuevo state.
-    const [moviesPerPage, setMoviesPerPage] = useState(4);
-    const [orden, setOrden] = useState("");
+    const moviesPerPage = 4;
+    //const [orden, setOrden] = useState("");
     
     const indexOfLastMovies = currentPage * moviesPerPage; //para saber el ultimo indice de la pag. 1 = 9 , 2 pag = 18 
     const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; //indice de tu primer movie en la 2da pagina, seria 9.
@@ -36,14 +37,13 @@ function Home(){
         <>
             <div className="navbarContainer">
                 <Navbar />
+                <FilteringSorting setCurrentPage={setCurrentPage}/>
             </div>
-            {console.log(allMovies)}
             <div className="cardContainer">
                 {currentMovies?.map((e, i)=> {
                     return (
-                        <>
-                        <Link to={"/details/" + e.imdbID}>
-                            <div key={i} className="card" style={{width: '18rem'}}>
+                        <Link to={"/details/" + e.imdbID}  key={i}>
+                            <div className="card" style={{width: '18rem'}}>
                                 <img src={e.Poster} className="card-img-top" alt="cardImg" />
                                 <div className="card-body">
                                     <h5 className="card-title">{e.Title}</h5>
@@ -52,7 +52,6 @@ function Home(){
                                 </div>
                             </div>  
                         </Link>                  
-                        </>
                     )
                 })}
             </div>
