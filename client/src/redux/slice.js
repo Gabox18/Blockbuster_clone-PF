@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 //import axios from "axios";
-import data from './dataMock.js'
+import {data,allgenre} from './dataMock.js'
+import ordering from '../Funciones_js/Ordenamiento.js'
 
 const initialState = {
     allMovies: [],
+    copyAllMovies:[],
+    genres : [],
     details:{}
   };
 
@@ -13,10 +16,29 @@ export const dataSlice = createSlice({
     reducers:{
         allMovies : (state, action)=>{
             state.allMovies = action.payload
+            state.copyAllMovies = action.payload
         },
-        DetailsMovies : (state,action)=>{
+
+        allgenres :(state, action)=>{
+          state.genres = action.payload
+        },
+
+        filterGenre :(state, action)=>{
+          let auxMovies = state.copyAllMovies
+          state.allMovies = action.payload === 'all'
+          ? state.copyAllMovies
+          : auxMovies.filter((e) => e.Genre?.includes(action.payload))
+        },
+
+        orderMovies : (state, action)=>{
+          let auxMovies = state.allMovies
+          state.allMovies = ordering(auxMovies,action.payload)
+        },
+
+        DetailsMovies : (state, action)=>{
             state.details = action.payload
         },
+
         clearDetail : (state)=>{
             state.details = []
         }
@@ -38,6 +60,13 @@ export const asyncallMovies = () => {
     }
   }
 
-export const {allMovies,DetailsMovies,clearDetail} = dataSlice.actions
+  export const asyncAllgenres = (id) => {
+    return async function(dispatch){
+      //let response = await axios.get(`http://localhost:3001/home/:${id}`)
+      return dispatch(allgenres(allgenre))
+    }
+  }
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies} = dataSlice.actions
 
 export default dataSlice.reducer
