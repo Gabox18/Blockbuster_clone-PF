@@ -1,11 +1,12 @@
 import React  from "react";
 import Logoutbutton from "../User/Logout";
 import Profile from "../User/Profile";
+import Searchbar from "./Search Bar/Searchbar";
 import './Navbar.css';
 
 
 
-function Navbar(){
+function Navbar({setCurrentPage}){
 
     return (
         <>
@@ -38,10 +39,7 @@ function Navbar(){
                                 <a className="nav-link disabled text-light">Shopping</a>
                             </li>
                         </ul>
-                        <form className ="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success text-light" type="submit">Search</button>
-                        </form>
+                        <Searchbar setCurrentPage={setCurrentPage}/>
                         <Logoutbutton/>
                         <Profile/>
                     </div>

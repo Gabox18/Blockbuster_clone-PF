@@ -36,7 +36,7 @@ function Home(){
     return(
         <>
             <div className="navbarContainer">
-                <Navbar />
+                <Navbar setCurrentPage={setCurrentPage} />
                 <FilteringSorting setCurrentPage={setCurrentPage}/>
             </div>
             <div className="cardContainer">
