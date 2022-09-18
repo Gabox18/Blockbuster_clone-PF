@@ -2,11 +2,12 @@ import React  from "react";
 import Logoutbutton from "../User/Logout";
 import Profile from "../User/Profile";
 import './Navbar.css';
-import FilteringSorting  from '../Home/filtering&sorting/filtering&sorting';
+import FilteringSorting  from './filtering&sorting/filtering&sorting.jsx';
+import Searchbar from "./search bar/search.jsx";
 
 
 
-function Navbar(setCurrentPage){
+function Navbar(prop){
 
     return (
         <>
@@ -38,12 +39,9 @@ function Navbar(setCurrentPage){
                             <li className="nav-item">
                                 <a className="nav-link disabled text-light">Shopping</a>
                             </li> */}
-                            <FilteringSorting setCurrentPage={setCurrentPage}/>
+                            <FilteringSorting setCurrentPage={prop.setCurrentPage}/>
                         </ul>
-                        <form className ="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success text-light" type="submit">Search</button>
-                        </form>
+                        <Searchbar/>
                         <Logoutbutton/>
                         <Profile/>
                     </div>
