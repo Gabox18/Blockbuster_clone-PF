@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { asyncAllgenres, filterGenre,orderMovies } from "../../../redux/slice.js";
+import './filtering&sorting.css';
 
 function FilteringSorting(props) {
 
@@ -22,13 +23,17 @@ function FilteringSorting(props) {
       }
 
     return (
-        <div>
+        <div className="containerFiltering text-center mx-auto gap-3">
             <div>
-                <select onChange={(e)=>handleSelectOrderBy(e)}>
-                    <option>sort by</option>
+                <select 
+                    className="form-select form-select-md" 
+                    aria-label="Default select example" 
+                    onChange={(e)=>handleSelectOrderBy(e)}
+                >
+                    <option selected>sort by</option>
                     <optgroup label="Name">
-                        <option value="asc_Alf">A - Z</option>
-                        <option value="des_Alf">Z - A</option>
+                        <option value="asc_Alf">A-Z</option>
+                        <option value="des_Alf">Z-A</option>
                     </optgroup>
                     <optgroup label="Rating">
                         <option value="asc_Ata">Upward</option>
@@ -38,8 +43,8 @@ function FilteringSorting(props) {
             </div>
 
             <div>
-                <select onChange={(e) => handleSelectFilter(e)}>
-                    <option value={'all'}>Filter By</option>
+                <select className="form-select form-select-md" onChange={(e) => handleSelectFilter(e)}>
+                    <option value={'all'} selected>Filter By</option>
                     <optgroup label="Genres">
                         {genres?.map((genre, index) => {
                             return (

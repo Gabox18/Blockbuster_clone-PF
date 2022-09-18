@@ -34,7 +34,7 @@ export default function Landing() {
                         <div className="row">
                             <div className="col-lg-10 col-xl-7 mx-auto">
                                 
-                                <h3 className="display-4 text-white">Blockbuster Henry</h3>
+                                <h3 className="display-4 f">Blockbuster Henry</h3>
                                 <p className="text-muted mb-4 text-white">Enter valid user:</p>
                                 <form>
 
