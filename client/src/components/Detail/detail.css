@@ -1,3 +1,12 @@
+.detailRender{
+  background: url('https://cnnespanol.cnn.com/wp-content/uploads/2020/08/200811110507-03-blockbuster-airbnb-bend-oregon-full-169.jpg?quality=100&strip=info') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+}
+
 .cardStyle {
   width: 50rem;
   box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
