@@ -36,8 +36,8 @@ function Home(){
     return(
         <>
             <div className="navbarContainer">
-                <Navbar />
-                <FilteringSorting setCurrentPage={setCurrentPage}/>
+                <Navbar setCurrentPage={setCurrentPage} />
+                {/* <FilteringSorting setCurrentPage={setCurrentPage}/> */}
             </div>
             <div className="cardContainer">
                 {currentMovies?.map((e, i)=> {
