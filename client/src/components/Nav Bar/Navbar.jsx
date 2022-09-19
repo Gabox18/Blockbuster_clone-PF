@@ -4,6 +4,7 @@ import Profile from "../User/Profile";
 import './Navbar.css';
 import FilteringSorting  from './filtering&sorting/filtering&sorting.jsx';
 import Searchbar from "./search bar/search.jsx";
+import img from '../../assets/Logo.png';
 
 
 
@@ -13,7 +14,9 @@ function Navbar(prop){
         <>
             <nav className="navbar bg-dark navbar-expand-lg bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand text-light" href="#">Navbar</a>
+                    <a className="navbar-brand text-light" href="#">
+                        <img src={img} width='80px' />
+                    </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
