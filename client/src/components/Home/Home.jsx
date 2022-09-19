@@ -34,6 +34,7 @@ function Home(){
 
     return(
         <>
+        <div className="homeContainer">
             <div className="navbarContainer">
                 <Navbar setCurrentPage={setCurrentPage} />
                 {/* <FilteringSorting setCurrentPage={setCurrentPage}/> */}
@@ -65,6 +66,7 @@ function Home(){
             </div>
             <div className="footerContainer">
                 <Footer/>
+            </div>
             </div>
         </>
     )

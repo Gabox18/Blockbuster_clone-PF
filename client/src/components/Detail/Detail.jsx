@@ -24,6 +24,7 @@ export default function Detail() {
 
   return (
     <>
+    <div className="detailRender">
       <div className="card cardStyle col-auto mx-auto" >
         <img src={details[0]?.Poster} className="card-img-top" alt="..." />
         <div className='player-wrapper'>
@@ -64,6 +65,7 @@ export default function Detail() {
           </Link>
           <a href="#" className="card-link">Another link</a>
         </div>
+      </div>
       </div>
     </>
   );
