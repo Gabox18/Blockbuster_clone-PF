@@ -7,7 +7,6 @@ import	'./Home.css';
 import Paginado from "../Paginado/Paginado.jsx";
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
-import FilteringSorting from "./filtering&sorting/filtering&sorting.jsx";
 import { Link } from "react-router-dom";
 
 

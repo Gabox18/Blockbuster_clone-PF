@@ -41,6 +41,11 @@ export const dataSlice = createSlice({
 
         clearDetail : (state)=>{
             state.details = []
+        },
+
+        searchBar:(state,action) =>{
+          console.log(action.payload,"reducerrr")
+           state.allMovies = data.filter(e => e.Title.toLowerCase().includes(action.payload) )
         }
     }
 })
@@ -67,6 +72,12 @@ export const asyncallMovies = () => {
     }
   }
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies} = dataSlice.actions
+  export const asyncGetName = (name) =>{
+    return  async function(dispatch){
+      return dispatch(searchBar(name))
+    }
+ }
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar} = dataSlice.actions
 
 export default dataSlice.reducer
