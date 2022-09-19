@@ -1,12 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import './Card.css';
+import '../Card.css';
 
 function Card(){
     
     return (
         <>
-            <div className="card" style="width: 18rem;">
+        
+            <div className="card" style="width: 17rem;">
             <img src="..." className="card-img-top" alt="cardImg" />
             <div className="card-body">
                 <h5 className="card-title">Card title</h5>

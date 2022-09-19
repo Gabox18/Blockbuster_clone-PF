@@ -1,9 +1,30 @@
-.login,
-.image {
-  min-height: 100vh;
-}
-.bg-image {
-  background-image: url('https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg');
+
+.wrapper{
+  background: url('https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center center;
+  min-height: 100vh;
+  color: white;
+}
+
+.container-fluid2 {
+  width: 30rem;
+  /* background-color: rgb(192,192,192, 2.5); */
+  box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px);
+  opacity: 0.8;  
+
+}
+
+.container {
+  margin-top: 8rem;
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper{
+    min-width: 100vh;
+    min-height: 100vh;
+  }
 }

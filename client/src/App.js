@@ -10,6 +10,8 @@ import Home from './components/Home/Home';
 // You can specify which plugins you need
 import { Tooltip, Toast, Popover } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Detail from "./components/Detail/Detail";
+
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/Home" component={Home}/>
+          <Route exact path="/details/:id" component={Detail}/>
         </Switch>
       </BrowserRouter>
     </div>
