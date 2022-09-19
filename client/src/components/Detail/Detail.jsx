@@ -25,24 +25,28 @@ export default function Detail() {
   return (
     <>
     <div className="detailRender">
-      <div className="card cardStyle col-auto mx-auto" >
-        <img src={details[0]?.Poster} className="card-img-top" alt="..." />
+      <div className="card cardStyle  mx-auto" >
+        <img src={details[0]?.Poster }  className="card-img-top" alt="..." />
         <div className='player-wrapper'>
           <ReactPlayer
             className='react-player'
             url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
             controls
           />
-        </div>
-        <div className="card-body">
-          <h2 className="card-title">Title: {details[0]?.Title}</h2>
-          <p className="card-text">Actors: {details[0]?.Actors && details[0]?.Actors}</p>
-        </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">Year: {details[0]?.Year}</li>
-          <li className="list-group-item">Genre: {details[0]?.Genre}</li>
-          <li className="list-group-item">Director: {details[0]?.Director}</li>
-          <li className="list-group-item">Language: {details[0]?.Language} km2</li>
+        </div> 
+        <br></br><h2 className="card-title"> {details[0]?.Title}</h2> 
+         <p className="card-text">Actors: {details[0]?.Actors && details[0]?.Actors}</p>
+        <div className="column-detail">
+        <ul >
+          <div className='column-left'>
+          <li className="list-group-item"><p>Year: <b> {details[0]?.Year}</b></p></li>
+          <li className="list-group-item"><p>Genre: <b>{details[0]?.Genre}</b></p></li>
+          <div>
+          <li className="list-group-item"><p>Director: <b>{details[0]?.Director}</b></p></li>
+          <li className="list-group-item"><p>Language: <b>{details[0]?.Language} km2</b></p></li>
+          </div>
+          </div>
+          <div className='column-right'>
           <li className="list-group-item">
             <h2>
               Ratings:{" "}
@@ -52,7 +56,9 @@ export default function Detail() {
                 })}
             </h2>
           </li>
+          </div>
         </ul>
+        </div>
         <div className="card-body">
           <Link to="/home">
             <button
@@ -63,7 +69,7 @@ export default function Detail() {
               Back{" "}
             </button>
           </Link>
-          <a href="#" className="card-link">Another link</a>
+          {/* <a href="#" className="card-link">Another link</a> */}
         </div>
       </div>
       </div>

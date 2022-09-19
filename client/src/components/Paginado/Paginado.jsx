@@ -23,7 +23,7 @@ export default function Paginado ({moviesPerPage, allMovies, paginado, setCurren
               }
               }
             >
-              Anterior
+              Prev
             </button>
             {page && page.map((n) => (
                 <button
@@ -45,7 +45,7 @@ export default function Paginado ({moviesPerPage, allMovies, paginado, setCurren
                   )
               }
             >
-              Siguiente
+              Next
             </button>
           </ul>
         </div>

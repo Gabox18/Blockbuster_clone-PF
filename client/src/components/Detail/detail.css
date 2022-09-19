@@ -1,17 +1,21 @@
-.detailRender{
-  background: url('https://cnnespanol.cnn.com/wp-content/uploads/2020/08/200811110507-03-blockbuster-airbnb-bend-oregon-full-169.jpg?quality=100&strip=info') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
+.detailRender {
+  background: url("https://cnnespanol.cnn.com/wp-content/uploads/2020/08/200811110507-03-blockbuster-airbnb-bend-oregon-full-169.jpg?quality=100&strip=info")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 .cardStyle {
   width: 50rem;
-  box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(50px);
-  opacity: 0.8; 
+  /* box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(50px); */
+  /* opacity: 0.8;  */
+  background-color: #1d0fbd73;
+  color: #f7a600;
+  border: solid black;
 }
 
 .card-img-top {
@@ -20,8 +24,12 @@
 
 .player-wrapper {
   position: relative;
-  padding-top: 56.25% ;/* Player ratio: 100 / (1280 / 720) */
-
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  display: flex;
+  margin-left: 80px;
+  margin-top: 30px;
+  margin-block-end: -90px;
+  align-self: flex-start;
 }
 
 .react-player {
@@ -30,4 +38,21 @@
   left: 0;
   width: 50rem;
 }
-
+.list-group-item {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-size: large;
+  margin-left: 170px;
+}
+.column-detail {
+  display: flex;
+  /* grid-template-columns: 400px 400px 400px; */
+  /* grid-template-rows: 600px; */
+  /* grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); */
+  /* grid-auto-rows: 40rem; */
+  /* justify-content: center; */
+  align-items: center;
+  margin: 4rem;
+  gap: 2rem;
+}

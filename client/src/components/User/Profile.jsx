@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Link } from "react-router-dom";
+import './Profile.css'
 
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -12,10 +13,12 @@ const Profile = () => {
   return (
     
     isAuthenticated && (
-      <div>
+      <div >
         {/* <img src={user.picture} alt={user.name} /> */}
         <Link to='/profile'>
-       <button img={user.picture} alt={user.name}></button>
+          <div >
+            <div className='btn btn-outline-primary text-light'>Profile</div>
+       </div>
        </Link>
       </div>
     )

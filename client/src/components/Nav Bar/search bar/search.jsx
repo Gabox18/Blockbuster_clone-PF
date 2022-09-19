@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { asyncallMovies, asyncGetName} from "../../../redux/slice.js";
-// import "./Search.css";
+import "./Search.css";
 
 export default function Searchbar({setCurrentPage}) {
   const dispatch = useDispatch();
@@ -21,10 +21,16 @@ export default function Searchbar({setCurrentPage}) {
     setCurrentPage(1);
   }
   return (
+    <div>
       <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => 
+        <div className="botoncito">
+          <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) => 
             handleInputChange(e)} value={name}/>
-          <button className="btn btn-outline-success text-light" type="submit">Search</button>
+            <div className='btn btn-outline-primary text-light'>Search</div>
+            {/* <button className="btn btn-outline-success text-light " type="submit">Search</button> */}
+            </div>
+          
       </form>
+      </div>
   );
 }
