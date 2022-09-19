@@ -43,11 +43,11 @@ function Home(){
                 {currentMovies?.map((e, i)=> {
                     return (
                         <Link to={"/details/" + e.imdbID}  key={i}>
-                            <div className="card" style={{width: '18rem'}}>
+                            <div className="card bg-dark" style={{width: '18rem'}}>
                                 <img src={e.Poster} className="card-img-top" alt="cardImg" />
                                 <div className="card-body">
-                                    <h5 className="card-title">{e.Title}</h5>
-                                    <p className="card-text">{e.Plot}</p>
+                                    <h5 className="card-title text-white textCard">{e.Title}</h5>
+                                    <p className="card-text text-white textCard">{e.Plot}</p>
                                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                                 </div>
                             </div>  

@@ -13,7 +13,7 @@ function Footer() {
         <div className="container text-center text-md-left">
           <div className="row text-center text-md-left">
             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Blockbuster</h5>
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Block Buster</h5>
               <p>Our secret to resisting the big platforms is that they can't compete with our collection of classics. We are a bridge between the present and the past, almost a journey through time. We bring to every home an infinite horizon.
 Being the last Blockbuster in the world favors us because it makes us a very special place.</p>
             </div>
@@ -72,9 +72,9 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
           <div className="row aling-items-center">
             <div className="col-md-7 col-lg-8">
               <p>
-                Copyright @2020 All rights reserved by: 
+                Copyright @2022 All rights reserved by: 
                 <a href="#" style={{"text-decoration": "none"}}>
-                  <strong className="text-warning">Blockbuster</strong>
+                  <strong className="text-warning">Block Buster</strong>
                 </a>
               </p>
               
