@@ -30,7 +30,7 @@ export default function Detail() {
         <div className='player-wrapper'>
           <ReactPlayer
             className='react-player'
-            url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+            url='https://youtu.be/Oy_SER6dfK4'
             controls
           />
         </div> 
@@ -43,7 +43,7 @@ export default function Detail() {
           <li className="list-group-item"><p>Genre: <b>{details[0]?.Genre}</b></p></li>
           <div>
           <li className="list-group-item"><p>Director: <b>{details[0]?.Director}</b></p></li>
-          <li className="list-group-item"><p>Language: <b>{details[0]?.Language} km2</b></p></li>
+          <li className="list-group-item"><p>Language: <b>{details[0]?.Language}</b></p></li>
           </div>
           </div>
           <div className='column-right'>
