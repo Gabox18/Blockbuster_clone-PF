@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-// import Login from "../Log in/Login";
+//import Login from "../Log in/Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
 import { useDispatch } from "react-redux";
 import "./Landing.css";
 import LoginButton from "../User/Login";
 import { Link } from "react-router-dom";
+import logo from '../../assets/Logo.png'
 
 export default function Landing() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export default function Landing() {
             <div className="container">
               <div className="row">
                 <div className="col-lg-10 col-xl-7 mx-auto">
-                  <h3 className="display-4 f">Blockbuster Henry</h3>
+                  <img src={logo} width='200px' alt="logo"/>
 
                   <div>
                     <LoginButton />

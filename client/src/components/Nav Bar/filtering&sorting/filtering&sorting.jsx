@@ -30,7 +30,7 @@ function FilteringSorting(props) {
                     aria-label="Default select example" 
                     onChange={(e)=>handleSelectOrderBy(e)}
                 >
-                    <option selected>sort by</option>
+                    <option hidden disabled selected value>Order by</option>
                     <optgroup label="Name">
                         <option value="asc_Alf">A-Z</option>
                         <option value="des_Alf">Z-A</option>
@@ -44,7 +44,7 @@ function FilteringSorting(props) {
 
             <div>
                 <select className="form-select form-select-md bg-primary" onChange={(e) => handleSelectFilter(e)}>
-                    <option value={'all'} selected>Filter By</option>
+                    <option hidden disabled selected value={'all'}>Filter by</option>
                     <optgroup label="Genres">
                         {genres?.map((genre, index) => {
                             return (
