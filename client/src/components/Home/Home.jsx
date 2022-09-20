@@ -74,6 +74,7 @@ function Home(){
                 <div className="footerContainer">
                     <Footer/>
                 </div>
+
             </div>
         </>
     )
