@@ -18,24 +18,26 @@
     margin: 4rem;
     gap: 2rem;
     text-decoration: none;
+} 
+
+.textCard {
+  font-family: cursive;
+  padding: 13px;
+  font-size: 17px;
+  margin-top: 10px;
+  text-decoration: none;
 }
 
-  .textCard {
-    font-family: cursive;
-    padding: 13px;
-    font-size: 17px;
-    margin-top: 10px;
-    text-decoration: none;
-  }
+.card-title{
+  font-size: 22px;
+  box-shadow: 0 1px 5px rgba(4, 146, 240, 0.459);
+  font-family: cursive;
+  text-decoration: none;
+}
 
-  .card-title{
-    font-size: 22px;
-    box-shadow: 0 1px 5px rgba(4, 146, 240, 0.459);
-    font-family: cursive;
-    text-decoration: none;
-  }
+card-text{
+  font-size: 15px;
+  text-decoration: none;
+}
 
-  card-text{
-    font-size: 15px;
-    text-decoration: none;
-  }
+
