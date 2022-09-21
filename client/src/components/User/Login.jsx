@@ -7,7 +7,7 @@ export default function LoginButton  ()  {
   return (
  
     <div>
-         <button onClick={()=>loginWithRedirect()} class="btn-shine">
+         <button onClick={()=>loginWithRedirect()} className="btn-shine">
           <span>Login</span>
          </button>
     </div>

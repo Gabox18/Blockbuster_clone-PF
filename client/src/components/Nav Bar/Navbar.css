@@ -2,3 +2,8 @@
     height: 2rem;
     margin-top: 1rem;
 }
+
+.imgPerfil{
+    border-radius:50%;
+    outline: 3px solid #ff930f ;
+}
