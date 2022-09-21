@@ -50,8 +50,8 @@ function Home(){
                     {currentMovies?.map((e, i)=> {
                         return (
                             <Link to={"/details/" + e.imdbID}  key={i}>
-                                <div className="card bg-dark" style={{width: '18rem'}}>
-                                    <img src={e.Poster} className="card-img-top" alt="cardImg" />
+                                <div className="cardBg-dark" style={{width: '12rem'}}>
+                                    <img src={e.Poster} className="card-img" alt="cardImg" />
                                     <div className="card-body">
                                         <h5 className="card-title text-white textCard">{e.Title}</h5>
                                         <p className="card-text text-white textCard">{e.Plot}</p>
