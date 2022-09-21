@@ -1,30 +1,133 @@
-
-.wrapper{
-  background: url('https://therichpost.com/wp-content/uploads/2021/02/login-split.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100vh;
-  color: white;
+.Container{
+  background-image: url("https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") ;
+  
 }
-
-.container-fluid2 {
-  width: 30rem;
-  /* background-color: rgb(192,192,192, 2.5); */
-  box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.5);
-  backdrop-filter: blur(50px);
-  opacity: 0.8;  
-
-}
-
-.container {
-  margin-top: 8rem;
-}
-
 @media screen and (max-width: 450px) {
   .wrapper{
     min-width: 100vh;
     min-height: 100vh;
   }
 }
+
+.navBar{
+  background-color: #09043f;
+}
+.img-nav{
+ 
+  display: flex;
+  align-items: flex-start;
+  
+}
+.btn-log{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -30px;
+  margin-right: 50px;
+}
+.container-plan{
+background-color:  #09043f;
+  margin-top: 600px;
+  display: flexbox;
+  justify-content: center;
+  align-items: flex-end;
+} 
+.p{
+ color:#F7A600;
+ margin-top: 15px;
+ font-size: 30px;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.container-logo{
+  margin-left: 280px;
+  display: flex;
+ justify-content:space-around;
+ align-items: center;
+ align-self: center;
+ margin-right: 280px;
+}
+
+/* From uiverse.io by @alexruix */
+.card {
+  width: 190px;
+  height: 254px;
+  padding: .8em;
+  color: #F7A600;
+  background: #242424;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+ 
+ .card-img {
+  background-color: #09043f;
+  height: 40%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-info {
+  padding-top: 10%;
+ }
+ 
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+ 
+ .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgb(168, 167, 167);
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #F7A600;
+ }
+ 
+ .text-body {
+  color: #F7A600;
+  font-size: .9em;
+  padding-bottom: 10px;
+
+ }
+
+ 
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+ 
+ /*Hover*/
+ .card-img:hover {
+  transform: translateY(-25%);
+  box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+ }
+ 
+ .card-button:hover {
+  border: 1px solid #F7A600;
+  background-color: #F7A600;
+ }
+ 
+ .conteiner-shop-plan{
+  background-color: #09043f;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+ }
+
+ .carrusel{
+   
+ }
