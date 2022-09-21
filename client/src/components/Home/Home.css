@@ -68,5 +68,51 @@
   box-shadow: 0px 0px 30px 1px #3700ff
   }
 
+.cabecera {
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cabecera img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-
+.cabecera .contenido {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.8;
+  font-family: 'fjalla one', 'sans-serif';
+}
+.cabecera .contenido h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 10rem;
+  color: #F9BD08;
+  position: relative;
+  bottom: 8rem;
+}
+.cabecera .contenido h3 {
+  width: 20rem;
+  position: relative;
+  left: 15rem;
+  bottom: 6rem;
+  text-align: right;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #F9BD08;
+}
+.textCarruzel {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #F9BD08;
+}

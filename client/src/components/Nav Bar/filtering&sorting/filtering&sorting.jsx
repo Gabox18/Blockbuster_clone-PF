@@ -1,32 +1,40 @@
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { asyncAllgenres, filterGenre,orderMovies } from "../../../redux/slice.js";
+import { useHistory } from "react-router-dom";
+import { asyncAllgenres, asyncallMovies, filterGenre,orderMovies } from "../../../redux/slice.js";
 import './filtering&sorting.css';
 
 function FilteringSorting(props) {
 
     let { genres } = useSelector(state => state.alldata)
+    let { copyAllMovies } = useSelector(state => state.alldata);
+    
     const dispatch = useDispatch();
+    let history = useHistory();
 
     useEffect(() => {
+        if(copyAllMovies.length === 0) dispatch(asyncallMovies());
         dispatch(asyncAllgenres())
     }, [dispatch, props])
 
     function handleSelectFilter(e) {
-        dispatch(filterGenre(e.target.value)) && props.setCurrentPage(1);
+        dispatch(filterGenre(e.target.value))
+        history.push('/Home/result');
+        props.setCurrentPage(1);
     }
 
-      function handleSelectOrderBy(e) {
+    function handleSelectOrderBy(e) {
         dispatch(orderMovies(e.target.value));
+        history.push('/Home/result');
         props.setCurrentPage(1);
-      }
+    }
 
     return (
         <div className="containerFiltering text-center mx-auto gap-3">
             <div>
                 <select 
-                    className="form-select form-select-md bg-primary" 
+                    className="form-select form-select-md" 
                     aria-label="Default select example" 
                     onChange={(e)=>handleSelectOrderBy(e)}
                 >
@@ -43,7 +51,7 @@ function FilteringSorting(props) {
             </div>
 
             <div>
-                <select className="form-select form-select-md bg-primary" onChange={(e) => handleSelectFilter(e)}>
+                <select className="form-select form-select-md" onChange={(e) => handleSelectFilter(e)}>
                     <option hidden disabled selected value={'all'}>Filter by</option>
                     <optgroup label="Genres">
                         {genres?.map((genre, index) => {
