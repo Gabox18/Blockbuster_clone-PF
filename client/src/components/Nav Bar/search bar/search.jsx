@@ -21,16 +21,10 @@ export default function Searchbar({setCurrentPage}) {
     setCurrentPage(1);
   }
   return (
-    <div>
-      <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
-        <div className="botoncito">
-          <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) => 
-            handleInputChange(e)} value={name}/>
-            <div className='btn btn-outline-primary text-light'>Search</div>
-            {/* <button className="btn btn-outline-success text-light " type="submit">Search</button> */}
-            </div>
-          
-      </form>
-      </div>
+    <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
+        <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) =>
+          handleInputChange(e)} value={name} />
+        <button className="btn btn-outline-success text-light " type="submit">Search</button>
+    </form>
   );
 }

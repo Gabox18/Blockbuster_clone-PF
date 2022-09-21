@@ -16,11 +16,10 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(asyncgetDetails(id))
-    console.log(details)
     return () => {
       dispatch(clearDetail())
     }
-  }, [dispatch])
+  }, [dispatch, id])
 
   return (
     <>
