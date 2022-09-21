@@ -67,7 +67,7 @@ export default function Detail() {
           </span>
         </p>
       </div>
-      <div className="card-body col-auto p-5 justify-content-center">
+      <div className="card-bodyDi col-auto p-5 justify-content-center">
         <Link to="/home">
           <button
             className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
