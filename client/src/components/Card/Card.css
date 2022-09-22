@@ -1,0 +1,167 @@
+/* From uiverse.io by @alexruix */
+.card {
+    width: 190px;
+    height: 254px;
+    border-radius: 1em;
+    padding: 1.9rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+   }
+   
+   .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: 0.5s;
+   }
+   
+   .card-info {
+    position: relative;
+    z-index: 3;
+    color: #f5f5f5;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 0.5s;
+   }
+   
+   /*Text*/
+   .text-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+   }
+   
+   .text-body {
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin: 5px 0 15px 0;
+   }
+   
+   /*Button*/
+   .card-button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    transition: 0.4s ease;
+   }
+   
+   /*Image*/
+   .card-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+   }
+   
+   /*Hover*/
+   .card:hover {
+    transform: translateY(5%);
+   }
+   
+   .card:hover:before {
+    opacity: 1;
+   }
+   
+   .card:hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
+   }
+   
+   .card-button:hover {
+    color: #f5f5f5;
+   }
+   /* Card */
+.App div .card{
+    padding-left:0px;
+    padding-right:48px;
+    margin-left:240px;
+    margin-right:-12px;
+    margin-top:-50px;
+    margin-bottom:-50px;
+   }
+   
+   /* Image */
+   .App .card img{
+    margin-left:-50px;
+    margin-right:-34px;
+    padding-left:0px;
+    padding-right:0px;
+    min-height:443px;
+    width:298px;
+   }
+   
+   /* Container carruzel */
+   .App div .containerCarruzel{
+    padding-left:0px;
+    margin-left:0px;
+    min-height:489px;
+    margin-top:50px;
+    padding-bottom:12px;
+    padding-top:0px;
+    margin-bottom:0px;
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Division */
+   .App .homeContainer > div{
+    padding-left:0px;
+    margin-left:0px;
+   }
+   
+   /* Text title */
+   .App div .text-title{
+    margin-left:2px;
+    position:absolute;
+    top:0px;
+    z-index:-10;
+    transform:translatex(-185px) translatey(-365px);
+    width:298px;
+    min-height:106px;
+    padding-right:62px;
+    padding-left:1px;
+    background-color:rgba(18,17,17,0.59);
+   }
+   
+   /* Text body */
+   .App div .text-body{
+    color:#ffffff !important;
+    font-size:16px;
+    margin-left:0px;
+    background-color:rgba(18,17,17,0.59);
+    transform:translatex(-180px) translatey(-294px) !important;
+    height:267px;
+   }
+   
+   /* Text body */
+   .App .containerCarruzel:nth-child(1) .card:nth-child(5) .text-body{
+    transform:translatex(-178px) translatey(-288px);
+   }
+   
+   /* Text body */
+   #root .App .homeContainer div .containerCarruzel .card .card-info .text-body{
+    width:330% !important;
+   }
+   
+   @media (max-width:767px){
+   
+    /* Card */
+    .App div .card{
+     padding-right:60px;
+     width:30px;
+     padding-left:126px;
+     padding-top:0px;
+     padding-bottom:0px;
+     margin-left:-5px;
+    }
+    
+   }

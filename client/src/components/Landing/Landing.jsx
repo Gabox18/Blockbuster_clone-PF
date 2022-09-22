@@ -6,6 +6,7 @@ import logo from "../../assets/Logo.png";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch } from "react-redux";
 import { asyncallMovies } from "../../redux/slice";
+import Form from "../Form/Form";
 
 
 export default function Landing() {
@@ -72,7 +73,7 @@ export default function Landing() {
           <div>
           <div className="conteiner-shop-plan">
             <div class="card">
-              <div class="card-img"></div>
+              {/* <div class="card-img"></div> */}
               <div class="card-info">
                 <p class="text-title">Silver Plan </p>
                 <p class="text-body">
@@ -92,12 +93,12 @@ export default function Landing() {
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-img"></div>
+            <div class="cardii">
+              {/* <div class="card-img"></div> */}
               <div class="card-info">
                 <p class="text-title">Gold Plan </p>
                 <p class="text-body">
-                  Maximum quality 4K.4 device at a time.<br></br>
+                  Maximum quality 4K.<br></br>4 device at a time.<br></br>
                   You can watch 50 movies per month.
                 </p>
               </div>
@@ -115,6 +116,7 @@ export default function Landing() {
           </div>
           <div className="carrusel">
              <Carrusel/>
+             
           </div>
         </div>
       </div>
