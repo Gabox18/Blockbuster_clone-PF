@@ -7,68 +7,61 @@ import "./Home.css";
 import Paginado from "../Paginado/Paginado.jsx";
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Carrusel from "../Carrusel/Carrusel.jsx";
+import img from  '../../assets/imgHome.jpg'
+
+
+
+
+
 
 function Home() {
   // const dispatch = useDispatch(); //es para utilizar esa constante e ir despachando mis acciones (actions)
   // const allMovies = useSelector((state) => state.movies);
-  const paginado = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
   let dispatch = useDispatch();
+  let history = useHistory();
   let { allMovies } = useSelector((state) => state.alldata);
+  let {copyAllMovies} = useSelector(state => state.alldata);
+
   useEffect(() => {
     dispatch(asyncallMovies());
   }, [dispatch]);
 
-  const [currentPage, setCurrentPage] = useState(1); //currentPage => pagina actual setCuPage => la fn que actualiza ese primer estado, que generara, un nuevo state.
-  const moviesPerPage = 4;
-  //const [orden, setOrden] = useState("");
-  const indexOfLastMovies = currentPage * moviesPerPage; //para saber el ultimo indice de la pag. 1 = 9 , 2 pag = 18
-  const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; //indice de tu primer movie en la 2da pagina, seria 9.
-  const currentMovies = allMovies.slice(indexOfFirstMovies, indexOfLastMovies);
+  let arrFeaturedMovies =  copyAllMovies.filter(e => e.imdbRating > 8);
+  let arrRecentMovies = copyAllMovies.filter(e => e.Year >= 2021);
+  let arrPopularMovies = copyAllMovies.filter(e => e.imdbVotes >= 7);
+  
 
   return (
     <>
       <div className="homeContainer">
         <div className="navbarContainer">
-          <Navbar setCurrentPage={setCurrentPage} />
+          <Navbar />
         </div>
 
-        <div>
-          <Carrusel />
-          <Carrusel />
-          <Carrusel />
-        </div>
+        <section className="cabecera">
+          <img className="" src={img} />
+          <div className="contenido" >
+            <h1>Blockbuster</h1>
+            <h3>Life is unpredictable and control is just an illusion that makes us feel small and helpless.</h3>
+          </div>
+        </section>
 
-        <div className="cardContainer">
-          {currentMovies?.map((e, i) => {
-            return (
-              <Link to={"/details/" + e.imdbID} key={i}>
-                <div className="cardBg-dark" style={{ width: "12rem" }}>
-                  <img src={e.Poster} className="card-img" alt="cardImg" />
-                  <div className="card-body">
-                    <h5 className="card-title text-white textCard">
-                      {e.Title}
-                    </h5>
-                    <p className="card-text text-white textCard">{e.Plot}</p>
-                    {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+        <div>
+            <h2 className="textCarruzel">Featured movies:</h2>
+            <Carrusel array={arrFeaturedMovies}/>
         </div>
         <div>
-          <Paginado
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            moviesPerPage={moviesPerPage}
-            allMovies={allMovies.length}
-            paginado={paginado}
-          />
+            <h2 className="textCarruzel">Recent movies:</h2>
+            <Carrusel array={arrRecentMovies}/>
         </div>
+        <div>
+            <h2 className="textCarruzel">Popular movies:</h2>
+            <Carrusel array={arrPopularMovies}/>
+        </div>
+        
+        
         <div className="footerContainer">
           <Footer />
         </div>
