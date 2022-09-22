@@ -1,15 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import './Carrusel.css';
 
-function Carrusel(){
-    let {allMovies} = useSelector(state => state.alldata)
+function Carrusel({array}){
 
     return(
         <div className="containerCarruzel">
 
             {
-                allMovies.map((e, i) => {
+                array?.map((e, i) => {
                     return (
                         <>
                             <div className="mainCarruzel">
