@@ -12,6 +12,7 @@ import Profile from "./components/User/Profile";
 import { Tooltip, Toast, Popover } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/Home" component={Home}/>
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/details/:id" component={Detail}/>
+          <Route exact path= "/infoprofile" component={Form} />
         </Switch>
     </div>
   );

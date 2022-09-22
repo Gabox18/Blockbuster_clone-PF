@@ -128,6 +128,8 @@ background-color:  #09043f;
   gap: 30px;
  }
 
- .carrusel{
-   
- }
+.conteiner-shop-plan .card .text-body{
+ transform:translatex(0px) translatey(0px);
+ color:#f7a600 !important;
+}
+ 
