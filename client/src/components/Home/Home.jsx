@@ -61,6 +61,7 @@ function Home() {
             <Carrusel array={arrPopularMovies}/>
         </div>
         
+        
         <div className="footerContainer">
           <Footer />
         </div>
