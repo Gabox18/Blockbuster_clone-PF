@@ -73,7 +73,8 @@ function Home() {
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
-              </> */}
+              </> 
+              */}
             </div>
           </div>
         </section>
