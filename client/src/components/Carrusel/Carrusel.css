@@ -6,7 +6,7 @@
     scroll-snap-align: start;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    background: #000;
+    background: rgba(0, 0, 0, 0.445);
   }
   .containerCarruzel .mainCarruzel .sliderCarruzel {
     width: 200px;

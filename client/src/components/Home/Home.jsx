@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncallMovies } from "../../redux/slice.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
-import Paginado from "../Paginado/Paginado.jsx";
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import ReactPlayer from 'react-player';
 import Carrusel from "../Carrusel/Carrusel.jsx";
 import img from  '../../assets/imgHome.jpg'
 
@@ -45,6 +45,36 @@ function Home() {
           <div className="contenido" >
             <h1>Blockbuster</h1>
             <h3>Life is unpredictable and control is just an illusion that makes us feel small and helpless.</h3>
+            <div className="videoCabecera">
+              <ReactPlayer
+                className="react-player"
+                url="https://youtu.be/Oy_SER6dfK4"
+                controls
+              />
+              {/* <>
+              <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img src={img} className="d-block w-100" alt="img" />
+                  </div>
+                  <div className="carousel-item active">
+                    <img src={img} className="d-block w-100" alt="img" />
+                  </div>
+                  <div className="carousel-item active">
+                    <img src={img} className="d-block w-100" alt="img" />
+                  </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+              </> */}
+            </div>
           </div>
         </section>
 

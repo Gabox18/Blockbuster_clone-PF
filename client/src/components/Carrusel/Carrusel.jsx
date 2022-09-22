@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './Carrusel.css';
 
 function Carrusel({array}){
@@ -12,7 +13,9 @@ function Carrusel({array}){
                         <>
                             <div className="mainCarruzel">
                                 <div className="sliderCarruzel">
-                                    <img className="imgCarr" key={i} src={e.Poster} alt="img-carruzel" />
+                                    <Link to={"/details/:id"}>
+                                        <img className="imgCarr" key={i} src={e.Poster} alt="img-carruzel" />
+                                    </Link>
                                 </div>
                             </div>
                         </>

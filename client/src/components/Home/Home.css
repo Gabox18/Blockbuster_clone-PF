@@ -116,3 +116,9 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #F9BD08;
 }
+
+.videoCabecera{
+  position: relative;
+  bottom: 18rem;
+  right: 34rem;
+}
