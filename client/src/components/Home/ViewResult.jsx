@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import Paginado from "../Paginado/Paginado";
 import { asyncallMovies } from "../../redux/slice.js";
 import Navbar from "../Nav Bar/Navbar";
-
+import Card from "../Card/Card";
+import './ViewResult.css'
 function ViewResult(){
     let dispatch = useDispatch();
     let { allMovies } = useSelector((state) => state.alldata);
@@ -30,24 +31,21 @@ function ViewResult(){
     
     return(
         <>
+        
         <div className="navbarContainer">
           <Navbar setCurrentPage={setCurrentPage} />
         </div>
+        <div className="containerC">
         <div className="cardContainer">
           {currentMovies?.map((e, i) => {
             return (
+              
               <Link to={"/details/" + e.imdbID} key={i}>
-                <div className="cardBg-dark" style={{ width: "12rem" }}>
-                  <img src={e.Poster} className="card-img" alt="cardImg" />
-                  <div className="card-body">
-                    <h5 className="card-title text-white textCard">
-                      {e.Title}
-                    </h5>
-                    <p className="card-text text-white textCard">{e.Plot}</p>
-                    {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-                  </div>
+                <div>
+                <Card img={e.Poster} Title={e.Title}  Plot={e.Plot}/>
                 </div>
               </Link>
+              
             );
           })}
         </div>
@@ -59,6 +57,7 @@ function ViewResult(){
             allMovies={allMovies.length}
             paginado={paginado}
           />
+        </div>
         </div>
         </>
     )
