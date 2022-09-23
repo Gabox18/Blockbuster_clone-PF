@@ -12,8 +12,10 @@ import Profile from "./components/User/Profile";
 import { Tooltip, Toast, Popover } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Detail from "./components/Detail/Detail";
+import Form from "./components/Form/Form";
 import ViewResult from "./components/Home/ViewResult";
 import adminPanel from "./components/Admin Panel/AdminPanel";
+
 
 
 
@@ -28,6 +30,8 @@ function App() {
           <Route exact path="/Home/result" component={ViewResult}/>
           <Route exact path="/details/:id" component={Detail}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
+          <Route exact path= "/infoprofile" component={Form} />
+
         </Switch>
     </div>
   );

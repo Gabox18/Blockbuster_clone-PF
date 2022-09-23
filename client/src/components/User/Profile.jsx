@@ -52,7 +52,8 @@ const Profile = () => {
                     </div>
                     <Logoutbutton/>
                     <Link to={'/home'}><div className="btn btn-primary btn-rounded btn-lg">home</div></Link>
-        
+
+                <Link to={'/infoprofile'}><div className="btn btn-primary btn-rounded btn-lg">Add info</div></Link>
                   </div>
                 </div>
               </div>
