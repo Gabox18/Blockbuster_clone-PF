@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Card.css";
 
-function Card({Title, Plot , img}) {
+export default function Card({ Title, Plot, img }) {
   return (
     <>
       {/* <div class="card" style={`background-image: url(${movie.Poster});`} alt='img' >
@@ -17,7 +17,7 @@ function Card({Title, Plot , img}) {
           <p class="text-body">{movie.Plot}</p>
         </div>
       </div> */}
-      <div class="card">
+      {/* <div class="card">
         <img src={img}/>
 <div class="card-img"></div>
   <div class="card-info">
@@ -25,8 +25,27 @@ function Card({Title, Plot , img}) {
     <p class="text-title">{Title}</p>
     <p class="text-body">{Plot}</p>
   </div>
-</div>
+</div> */}
+<div>
+
+      <div class="card">
+      
+      
+        <div class="card-img"><img src={img}/></div>
+        <div class="card-info">
+        
+          {/* <svg
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          > */}
+          {/* </svg> */}
+          <p class="text-title">{Title}</p>
+          <p class="text-body">{Plot}</p>
+        </div>
+      </div>
+      </div>
     </>
   );
 }
-export default Card;

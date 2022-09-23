@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import { asyncallMovies, asyncFormInfo } from "../../redux/slice";
 import LoginButton from "../User/Login";
+import './Form.css'
 
 export default function Form() {
   const { user, isAuthenticated } = useAuth0();
@@ -80,70 +81,89 @@ export default function Form() {
         <div className="col-md-6 offset-md-3">
           <div className="cards">
             {isAuthenticated ? (
+              <div className="img"> 
               <img
                 src={user.picture}
                 className="rounded-circle img-fluid"
               />
+              </div>
             ) : (
               <p></p>
             )}
             {isAuthenticated ? (
               user.given_name ? (
+                <div className="name">
                 <h3>Welcome {user.given_name}!</h3>
+                </div>
               ) : (
+                <div className="name">
                 <h3> Welcome{user.nickname}!</h3>
+                </div>
               )
             ) : (
               <p></p>
             )}
-
+            <div>
             <p>Complete your profile to have a better experience!</p>
+            </div>
             <div className="card-bodys">
               <form action="" onSubmit={handleOnsubmit}>
                 <div className="form-group">
-                  <input
+                <div class="textInputWrapper">
+                <input
                     type="text"
                     name="name"
-                    className="form-control"
+                    className="textInput"
                     placeholder="name"
                     onChange={handleOnChange}
                     autoFocus
                   />
+</div>
+                  
                 </div>
+                
                 <div className="form-group">
+                <div class="textInputWrapper">
                   <input
                     type="text"
                     name="lastname"
-                    className="form-control"
+                    className="textInput"
                     placeholder="lastname"
                     onChange={handleOnChange}
                   />
+                   </div>
                 </div>
                 <div className="form-group">
+                <div class="textInputWrapper">
                   <input
                     type="date"
                     name="date"
-                    className="form-control"
+                    className="textInput"
                     placeholder="Date of Birth"
                     onChange={handleOnChange}
                     autoFocus
                   />
                 </div>
-                <div className="form-group">
-                  <select name="genre" onChange={handleSelectChange}>
-                    <option>Select a genre</option>
-                    <option name="genre">Male</option>
-                    <option name="genre">Female</option>
-                  </select>
                 </div>
                 <div className="form-group">
+                <div >
+                  <select name="genre" onChange={handleSelectChange} className='textInputWrapper'>
+                    <option className="textInput">Select a genre</option>
+                    <option className="textInput"name="genre">Male</option>
+                    <option className="textInput"name="genre">Female</option>
+                  </select>
+                </div>
+                </div>
+                <div className="form-group">
+                <div class="textInputWrapper">
                   <input
                     type="message"
-                    className="form-control"
+                    className="textInput"
                     name="text"
                     placeholder="Profile information"
                     onChange={handleOnChange}
                   />
+                </div>
                 </div>
                 <div>
                   <button type="submit" disabled={invalidAdd(input)}>

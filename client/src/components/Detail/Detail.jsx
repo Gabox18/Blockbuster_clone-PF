@@ -31,14 +31,57 @@ export default function Detail() {
       <div className="cardStyle">
         <img src={details[0]?.Poster} className="card-img-top" alt="..." />
         <div className="player-wrapper">
-          <ReactPlayer
+          {/* <ReactPlayer
             className="react-player"
             url="https://youtu.be/Oy_SER6dfK4"
             controls
-          />
+          /> */}
         </div>
+     
+      <div className='title'>
+        <p>{details[0]?.Title}</p>
       </div>
-      <div className="cardDetail">
+      <div className='actors'>
+      <p>Actors: {details[0]?.Actors && details[0]?.Actors}</p>
+      </div>
+      <div className='year'>
+      <p> Year: {details[0]?.Year}</p>
+      </div>
+      <div className='genre'>
+      <p>Genre: {details[0]?.Genre}</p>
+      </div>
+      <div className='director'> 
+        <p>Director: {details[0]?.Director} </p>
+      </div>
+      <div className='language'>
+        <p>Language: {details[0]?.Language}</p>
+      </div>
+      <div className='rating'>
+      <p>
+          
+            Ratings:{" "}
+            {details[0]?.Ratings.length &&
+              details[0]?.Ratings.map((e, i) => {
+                return <p key={i}>{e.Value}</p>;
+              })}
+          
+        </p>
+      </div>
+      </div>
+      <div>
+      <button>
+    P L A Y
+    <div id="clip">
+        <div id="leftTop" class="corner"></div>
+        <div id="rightBottom" class="corner"></div>
+        <div id="rightTop" class="corner"></div>
+        <div id="leftBottom" class="corner"></div>
+    </div>
+    <span id="rightArrow" class="arrow"></span>
+    <span id="leftArrow" class="arrow"></span>
+</button>
+      </div>
+      {/* <div className="cardDetail">
         <p>
           <span>{details[0]?.Title}</span>
         </p>
@@ -66,7 +109,7 @@ export default function Detail() {
               })}
           </span>
         </p>
-      </div>
+      </div> */}
       <div className="card-bodyDi col-auto p-5 justify-content-center">
         <Link to="/home">
           <button

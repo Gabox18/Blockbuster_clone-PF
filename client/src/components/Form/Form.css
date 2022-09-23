@@ -1,0 +1,201 @@
+/* Container */
+#root .App .container{
+    transform:translatex(-3px) translatey(19px);
+   }
+   
+   /* Row */
+   .App .row{
+    margin-right:60px;
+    width:747px;
+    transform:translatex(25px) translatey(79px);
+    min-height:537px;
+    position:relative;
+    left:-1px;
+    background-color:rgba(0,0,0,0.61);
+    border-style:solid;
+    border-color:#f7a600;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+   }
+   
+   /* Image */
+   .cards .img img{
+    display:inline-block;
+    transform:translatex(-3px) translatey(11px);
+   }
+   
+   /* Heading */
+   .cards .name h3{
+    transform:translatex(-16px) translatey(5px);
+   }
+   
+   /* Name */
+   .offset-md-3 .cards .name{
+    transform:translatex(14px) translatey(11px);
+   }
+   
+   /* Division */
+   .offset-md-3 .cards > div{
+    color:#f7a600;
+   }
+   
+   /* Form group */
+   #root .App .container .row .offset-md-3 .cards .card-bodys form .form-group:nth-child(4){
+    width:100% !important;
+   }
+   
+   /* Form group */
+   .card-bodys form .form-group:nth-child(4){
+    padding-top:8px;
+    transform:translatex(0px) translatey(6px);
+   }
+   
+   @media (min-width:768px){
+   
+    /* Column 6/12 */
+    .App .offset-md-3{
+     width:53%;
+     margin-left:164px;
+    }
+    
+   }
+
+   /* From uiverse.io by @WhiteNervosa */
+.textInputWrapper {
+    position: relative;
+    width: 180px;
+    margin: 12px 5px;
+    --accent-color: #a3e583;
+  }
+  
+  .textInputWrapper:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+  
+  .textInputWrapper:before,
+  .textInputWrapper:after {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    bottom: -1px;
+    z-index: 4;
+    width: 100%;
+  }
+  
+  .textInputWrapper:focus-within:before {
+    border-bottom: 1px solid #F7A600;
+  }
+  
+  .textInputWrapper:before {
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  }
+  
+  .textInputWrapper:focus-within:before {
+    border-bottom: 1px solid #F7A600;
+    transform: scaleX(1);
+  }
+  
+  .textInputWrapper:focus-within:after {
+    border-bottom: 2px solid#F7A600;
+    transform: scaleX(1);
+  }
+  
+  .textInputWrapper:after {
+    content: "";
+    transform: scaleX(0);
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    will-change: transform;
+    border-bottom: 2px solid#F7A600;
+    border-bottom-color: #F7A600;
+  }
+  
+  .textInput::placeholder {
+    transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    opacity: 1;
+    user-select: none;
+    color: rgba(255, 255, 255, 0.582);
+  }
+  
+  .textInputWrapper .textInput {
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+    max-height: 36px;
+    background-color: #252525;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 200ms;
+    transition-property: background-color;
+    color: #e8e8e8;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    width: 100%;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+  }
+  
+  .textInputWrapper .textInput:focus,
+  .textInputWrapper .textInput:active {
+    outline: none;
+  }
+  
+  .textInputWrapper:focus-within .textInput,
+  .textInputWrapper .textInput:focus,
+  .textInputWrapper .textInput:active {
+    background-color: #353535;
+  }
+  
+  .textInputWrapper:focus-within .textInput::placeholder {
+    opacity: 0;
+  }
+  
+   /* Input */
+.card-bodys form input[type=text]{
+    width:102%;
+   }
+   
+   /* Input */
+   .card-bodys form input[type=date]{
+    width:102%;
+    background-color:#252525;
+   }
+   
+   /* Input */
+   .card-bodys form input[type=message]{
+    width:102%;
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Text input wrapper */
+   .card-bodys form .textInputWrapper{
+    width:346px;
+    min-height:36px;
+    height:36px;
+    margin-bottom:0px;
+   }
+   
+   /* Column 6/12 */
+   .App .offset-md-3{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Form group */
+   .card-bodys form .form-group{
+    min-height:63px;
+   }
+   
+   /* Select */
+   .card-bodys div select{
+    transform:translatex(-5px) translatey(-19px);
+    width:346px;
+    background-color:#252525;
+    color:#adadad;
+    box-shadow:none;
+   }
+   
