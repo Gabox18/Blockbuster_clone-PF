@@ -40,7 +40,7 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Usefull links</h5>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Ypr Account</a>
+                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Account</a>
               </p>
               <p>
                 <a href="#" className="text-white" style={{"text-decoration":"none"}}>Become an Affiliates</a>
@@ -74,7 +74,7 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
               <p>
                 Copyright @2022 All rights reserved by: 
                 <a href="#" style={{"text-decoration": "none"}}>
-                  <strong className="text-warning">Block Buster</strong>
+                  <strong className="text-warning"> Block Buster</strong>
                 </a>
               </p>
               

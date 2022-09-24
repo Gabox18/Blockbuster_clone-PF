@@ -1,7 +1,3 @@
-import React from "react";
-import axios from "axios";
-import { Link, useHistory, useParams } from "react-router-dom";
-import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -91,10 +87,7 @@ export default function AdminPanel() {
   return (
     <div className="admin-containPanel">
       <div>
-        <h1 className="admin-titulo"> Admin Panel </h1>
-      </div>
-      <div>
-        <h2> ¡Share your movie and let's expand the cinema at home! </h2>
+        <h1 className="admin-titulo"> ¡Share your movie and let's expand the cinema at home! </h1>
       </div>
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
       <form className='formularioAdmin'> 
