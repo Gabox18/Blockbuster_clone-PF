@@ -91,15 +91,13 @@ export default function AdminPanel() {
   return (
     <div className="admin-contain">
       <div>
-        <h1 className="admin-titulo"> Admin Panel </h1>
-      </div>
-      <div>
-        <h2> ¡Share your movie and let's expand the cinema at home! </h2>
+        <h1 className="admin-titulo"> ¡Share your movie and let's expand the cinema at home! </h1>
       </div>
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
       <form className='formulario'> 
         <div>
           <label htmlForcl=""> Name of the movie: </label>
+
         <input
         placeholder= "example, Titanic"
         type="text"
@@ -110,7 +108,7 @@ export default function AdminPanel() {
         <div>
           <label className=""> Description: </label>
         <input
-        placeholder="example based on, tells the story..."
+        placeholder="example, based on, tells the story..."
         type="text"
         value={input.name}
         name="description"
@@ -120,7 +118,7 @@ export default function AdminPanel() {
         <div>
           <label className=""> Genre: </label>
         <input
-        placeholder= "ej. Action, Comedy"
+        placeholder= "example, Action, Comedy"
         type="text"
         value={input.name}
         name="genre"
@@ -159,11 +157,7 @@ export default function AdminPanel() {
         </div>
       </form>
       <Link to='/home'>
-        <button 
-        className="btn btn-outline-warning btn-block mb-10 rounded-pill shadow-lg"
-        type="shadow-lg p-3 mb-5 bg-body rounded">
-
-        Back </button>
+        <button className="btn btn-outline-warning btn-block mb-10 rounded-pill shadow-lg" type="shadow-lg p-3 mb-5 bg-body rounded"> Back </button>
         </Link>
     </div>
   );
