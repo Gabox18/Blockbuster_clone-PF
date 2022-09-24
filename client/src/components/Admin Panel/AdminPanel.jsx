@@ -1,7 +1,3 @@
-import React from "react";
-import axios from "axios";
-import { Link, useHistory, useParams } from "react-router-dom";
-import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -89,76 +85,81 @@ export default function AdminPanel() {
   }
 
   return (
-    <div className="admin-contain">
+    <div className="admin-containPanel">
       <div>
         <h1 className="admin-titulo"> ¡Share your movie and let's expand the cinema at home! </h1>
       </div>
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
-      <form className='formulario'> 
+      <form className='formularioAdmin'> 
         <div>
-          <label htmlForcl=""> Name of the movie: </label>
-
-        <input
-        placeholder= "example, Titanic"
-        type="text"
-        value={input.name}
-        name="name"
-        autocomplete="off"
+          <div className="mb-3">
+            <label htmlForcl=""> Name of the movie: </label>
+            <input
+            placeholder= "example, Titanic"
+            type="text"
+            value={input.name}
+            name="name"
+            autocomplete="off"
+            />
+          </div>
+          <div className="mb-3">
+            <label className=""> Description: </label>
+            <input
+            placeholder="example based on, tells the story..."
+            type="text"
+            value={input.name}
+            name="description"
+            autocomplete="off"
+              />
+          </div>
+          <div>
+            <label className=""> Genre: </label>
+          <input
+          placeholder= "ej. Action, Comedy"
+          type="text"
+          value={input.name}
+          name="genre"
+          autocomplete="off"
+            />
+          </div>
+          <div>  
+            <label className='display-block'> Recommendation </label>
+          <select
+              name="recommendation"
+              value={input.recommendation}
+              className=""
+              onChange={(e) => handleChange(e)}>
+              <option value=""> Choose your score </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              {errors.recommendation && <p className="error">{errors.recommendation}</p>} 
+            </select>
+          </div>
+    
+          <input
+            name="image" //ESTE INPUT NO PUEDE TENER VALUE
+            placeholder="Carga aquí tu img"
+            type="file"
+            onChange={uploadImage}
           />
-        <div>
-          <label className=""> Description: </label>
-        <input
-        placeholder="example, based on, tells the story..."
-        type="text"
-        value={input.name}
-        name="description"
-        autocomplete="off"
-          />
-        </div>
-        <div>
-          <label className=""> Genre: </label>
-        <input
-        placeholder= "example, Action, Comedy"
-        type="text"
-        value={input.name}
-        name="genre"
-        autocomplete="off"
-          />
-        </div>
-        <div>  
-          <label className='display-block'> Recommendation </label>
-        <select
-            name="recommendation"
-            value={input.recommendation}
-            className=""
-            onChange={(e) => handleChange(e)}>
-            <option value=""> Choose your score </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-             {errors.recommendation && <p className="error">{errors.recommendation}</p>} 
-          </select>
-        </div>
-  
-        <input
-          name="image" //ESTE INPUT NO PUEDE TENER VALUE
-          placeholder="Carga aquí tu img"
-          type="file"
-          onChange={uploadImage}
-        />
 
-        <div>
-          <img src={imagen} alt="" />
-        </div>
+          <div>
+            <img src={imagen} alt="" />
+          </div>
 
-        <button className="submit-button" type="submit"> Load movie </button>
+          <button className="submit-buttonAdmin" type="submit"> Load movie </button>
         </div>
       </form>
       <Link to='/home'>
-        <button className="btn btn-outline-warning btn-block mb-10 rounded-pill shadow-lg" type="shadow-lg p-3 mb-5 bg-body rounded"> Back </button>
-        </Link>
+        <button 
+        className="btn btn-outline-warning btn-block mb-10 rounded-pill shadow-lg"
+        type="shadow-lg p-3 mb-5 bg-body rounded">
+
+        Back </button>
+      </Link>
     </div>
   );
 }
