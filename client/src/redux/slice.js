@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import axios from "axios";
+import axios from "axios";
 import {data,allgenre} from './dataMock.js'
 import ordering from '../Funciones_js/Ordenamiento.js'
 
@@ -7,7 +7,8 @@ const initialState = {
     allMovies: [],
     copyAllMovies:[],
     genres : [],
-    details:{}
+    details:{},
+    infoInput:{}
   };
 
 export const dataSlice = createSlice({
@@ -17,6 +18,9 @@ export const dataSlice = createSlice({
         allMovies : (state, action)=>{
             state.allMovies = action.payload
             state.copyAllMovies = action.payload
+        },
+        formInput:(state,action) =>{
+          state.infoInput = action.payload
         },
 
         allgenres :(state, action)=>{
@@ -39,6 +43,7 @@ export const dataSlice = createSlice({
             state.details = action.payload
         },
 
+       
         clearDetail : (state)=>{
             state.details = []
         },
@@ -52,14 +57,20 @@ export const dataSlice = createSlice({
 
 export const asyncallMovies = () => {
     return async function(dispatch){
-        //let response = await axios.get(`http://localhost:3001/types`)
+      try {
+        let response = await axios("https://blockbusterserverhenry.onrender.com/")
+        console.log(response.data,'desde el slice')
         return dispatch(allMovies(data))
+      } catch (error) {
+        console.log(error,'desde el slice')
+      }
+        
     }
   }
 
   export const asyncgetDetails = (id) => {
     return async function(dispatch){
-      //let response = await axios.get(`http://localhost:3001/home/:${id}`)
+      //let response = await axios.get(`http://localhost:3000/home/:${id}`)
       let movieD = data.filter(e=>e.imdbID===id)
       return dispatch(DetailsMovies(movieD))
     }
@@ -67,7 +78,7 @@ export const asyncallMovies = () => {
 
   export const asyncAllgenres = (id) => {
     return async function(dispatch){
-      //let response = await axios.get(`http://localhost:3001/home/:${id}`)
+      //let response = await axios.get(`http://localhost:3000/home/:${id}`)
       return dispatch(allgenres(allgenre))
     }
   }
@@ -78,6 +89,11 @@ export const asyncallMovies = () => {
     }
  }
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar} = dataSlice.actions
+ export const asyncFormInfo = (input) =>{
+  return  async function(dispatch){
+    return dispatch(formInput(input))
+  }
+}
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput} = dataSlice.actions
 
 export default dataSlice.reducer

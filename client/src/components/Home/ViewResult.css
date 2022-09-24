@@ -1,0 +1,36 @@
+/* .cardContainer{
+    background-color: aqua;
+} */
+.conteinerViewResult{
+    background-image: url("https://img.freepik.com/foto-gratis/filas-asientos-rojos-teatro_53876-64710.jpg?w=1380&t=st=1663956562~exp=1663957162~hmac=cfc1cd7d0305e8570dcf22c2d8427ce2a84a86cddc7193c7f4abafee7d234dc7") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+/* conteinerViewResult */
+ .conteinerViewResult{
+    min-height:950px;
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Text */
+.conteiner-shop-plan .fancy .text{
+    transform:translatex(0px) translatey(0px);
+    color:#f7a600;
+   }
+   
+   /* conteinerViewResult */
+/* conteinerViewResult */
+ .conteinerViewResult{
+    min-height:972px;
+   }
+   
+   /* Card info */
+.conteinerViewResult a .card-info{
+    transform:translatex(4px) translatey(69px) !important;
+   }
+   
+   
+   
+   
+   

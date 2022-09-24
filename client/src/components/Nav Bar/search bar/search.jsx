@@ -1,14 +1,17 @@
 import { React, useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { asyncallMovies, asyncGetName} from "../../../redux/slice.js";
 import "./Search.css";
 
 export default function Searchbar({setCurrentPage}) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
-
+  let history = useHistory();
+  let { copyAllMovies } = useSelector(state => state.alldata);
+  
   useEffect(() => {
-    dispatch(asyncallMovies());
+    if(copyAllMovies.length === 0) dispatch(asyncallMovies())
   }, [dispatch]);
 
   function handleInputChange(e) {
@@ -18,19 +21,14 @@ export default function Searchbar({setCurrentPage}) {
   function handleSubmit(e){
     e.preventDefault();
     dispatch(asyncGetName(name.toLowerCase()));
+    history.push('/Home/result');
     setCurrentPage(1);
   }
   return (
-    <div>
-      <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
-        <div className="botoncito">
-          <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) => 
-            handleInputChange(e)} value={name}/>
-            <div className='btn btn-outline-primary text-light'>Search</div>
-            {/* <button className="btn btn-outline-success text-light " type="submit">Search</button> */}
-            </div>
-          
-      </form>
-      </div>
+    <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
+        <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) =>
+          handleInputChange(e)} value={name} />
+        <button className="btn btn-outline-success text-light " type="submit">Search</button>
+    </form>
   );
 }
