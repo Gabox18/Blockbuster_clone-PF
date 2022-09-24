@@ -76,10 +76,10 @@ export default function Form() {
     });
   };
   return (
-    <div className="container p-4">
-      <div className="row">
+    <div className="container-form p-4">
+      <div className="row-form">
         <div className="col-md-6 offset-md-3">
-          <div className="cards">
+          <div className="cards-form">
             {isAuthenticated ? (
               <div className="img"> 
               <img
@@ -106,7 +106,7 @@ export default function Form() {
             <div>
             <p>Complete your profile to have a better experience!</p>
             </div>
-            <div className="card-bodys">
+            <div className="card-bodysform">
               <form action="" onSubmit={handleOnsubmit}>
                 <div className="form-group">
                 <div class="textInputWrapper">
