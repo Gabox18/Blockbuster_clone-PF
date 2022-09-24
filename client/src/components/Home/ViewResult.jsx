@@ -31,34 +31,35 @@ function ViewResult(){
     
     return(
         <>
-        
-        <div className="navbarContainer">
-          <Navbar setCurrentPage={setCurrentPage} />
-        </div>
-        <div className="containerC">
-        <div className="cardContainer">
-          {currentMovies?.map((e, i) => {
-            return (
-              
-              <Link to={"/details/" + e.imdbID} key={i}>
-                <div>
-                <Card img={e.Poster} Title={e.Title}  Plot={e.Plot}/>
-                </div>
-              </Link>
-              
-            );
-          })}
-        </div>
-        <div>
-          <Paginado
-            setCurrentPage={setCurrentPage}
-            currentPage={currentPage}
-            moviesPerPage={moviesPerPage}
-            allMovies={allMovies.length}
-            paginado={paginado}
-          />
-        </div>
-        </div>
+        <div className="conteinerViewResult">
+          <div className="navbarContainer">
+            <Navbar setCurrentPage={setCurrentPage} />
+          </div>
+          <div className="containerC">
+          <div className="cardContainer">
+            {currentMovies?.map((e, i) => {
+              return (
+                
+                <Link to={"/details/" + e.imdbID} key={i}>
+                  <div>
+                    <Card img={e.Poster} Title={e.Title}  Plot={e.Plot}/>
+                  </div>
+                </Link>
+                
+              );
+            })}
+          </div>
+            <div>
+              <Paginado
+                setCurrentPage={setCurrentPage}
+                currentPage={currentPage}
+                moviesPerPage={moviesPerPage}
+                allMovies={allMovies.length}
+                paginado={paginado}
+              />
+            </div>
+          </div>
+        </div>        
         </>
     )
 }

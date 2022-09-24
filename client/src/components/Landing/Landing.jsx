@@ -15,9 +15,9 @@ export default function Landing() {
   }, [dispatch]);
   return (
     <>
-      <div className="Container">
+      <div className="ContainerLanding">
         <div>
-          <nav className="navBar">
+          <nav className="navBarLanding">
             <div>
               <div className="img-nav">
                 <a>
