@@ -1,10 +1,10 @@
 /* Container */
-#root .App .container{
+#root .App .container-form{
     transform:translatex(-3px) translatey(19px);
    }
    
    /* Row */
-   .App .row{
+   .App .row-form{
     margin-right:60px;
     width:747px;
     transform:translatex(25px) translatey(79px);
@@ -21,33 +21,33 @@
    }
    
    /* Image */
-   .cards .img img{
+   .cards-form .img img{
     display:inline-block;
     transform:translatex(-3px) translatey(11px);
    }
    
    /* Heading */
-   .cards .name h3{
+   .cards-form .name h3{
     transform:translatex(-16px) translatey(5px);
    }
    
    /* Name */
-   .offset-md-3 .cards .name{
+   .offset-md-3 .cards-form .name{
     transform:translatex(14px) translatey(11px);
    }
    
    /* Division */
-   .offset-md-3 .cards > div{
+   .offset-md-3 .cards-form > div{
     color:#f7a600;
    }
    
    /* Form group */
-   #root .App .container .row .offset-md-3 .cards .card-bodys form .form-group:nth-child(4){
+   #root .App .container-form .row-form .offset-md-3 .cards-form .card-bodysform form .form-group:nth-child(4){
     width:100% !important;
    }
    
    /* Form group */
-   .card-bodys form .form-group:nth-child(4){
+   .card-bodysform form .form-group:nth-child(4){
     padding-top:8px;
     transform:translatex(0px) translatey(6px);
    }
@@ -156,24 +156,24 @@
   }
   
    /* Input */
-.card-bodys form input[type=text]{
+.card-bodysform form input[type=text]{
     width:102%;
    }
    
    /* Input */
-   .card-bodys form input[type=date]{
+   .card-bodysform form input[type=date]{
     width:102%;
     background-color:#252525;
    }
    
    /* Input */
-   .card-bodys form input[type=message]{
+   .card-bodysform form input[type=message]{
     width:102%;
     transform:translatex(0px) translatey(0px);
    }
    
    /* Text input wrapper */
-   .card-bodys form .textInputWrapper{
+   .card-bodysform form .textInputWrapper{
     width:346px;
     min-height:36px;
     height:36px;
@@ -186,12 +186,12 @@
    }
    
    /* Form group */
-   .card-bodys form .form-group{
+   .card-bodysform form .form-group{
     min-height:63px;
    }
    
    /* Select */
-   .card-bodys div select{
+   .card-bodysform div select{
     transform:translatex(-5px) translatey(-19px);
     width:346px;
     background-color:#252525;
