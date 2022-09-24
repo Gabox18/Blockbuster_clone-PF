@@ -1,4 +1,4 @@
-.admin-contain {
+.admin-containPanel {
     background-image: url('../../assets/admin-home.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -7,36 +7,20 @@
     min-height: 100vh;
 }
 
-.formulario{
+.formularioAdmin{
     display: flex;
     flex-direction: column;
-    margin: 2rem;
-    margin-right: 31rem;
-    margin-left: 31rem;
-    padding: 1rem;
-    padding-bottom: 2rem;
     border: 1rem solid rgba(202, 173, 43, 0.877);
     border-radius: 15px;
     box-shadow: 6px 7px 8px -6px rgba(69, 69, 69, 0.7);
     background-color: rgba(255, 255, 255, 0.663);
+    margin-left: 30rem;
+    margin-right: 30rem;
 }
 
-.body{
-    font-size: none;
-}
-
-.admin-description{
-font-size: none;
-}
-
-.submit-button {
-    display:grid ;
+.submit-buttonAdmin {
     background-color: rgba(226, 30, 30, 0.959);
     color: white;
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.663);
-    padding: 1rem;
-    position: relative;
     border-radius: 20rem;
-    top: 2rem;
-    left: 6rem;
 }
