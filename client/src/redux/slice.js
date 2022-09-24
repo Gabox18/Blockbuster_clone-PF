@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import axios from "axios";
+import axios from "axios";
 import {data,allgenre} from './dataMock.js'
 import ordering from '../Funciones_js/Ordenamiento.js'
 
@@ -57,8 +57,14 @@ export const dataSlice = createSlice({
 
 export const asyncallMovies = () => {
     return async function(dispatch){
-        //let response = await axios.get(`http://localhost:3000/types`)
+      try {
+        let response = await axios("https://blockbusterserverhenry.onrender.com/")
+        console.log(response.data,'desde el slice')
         return dispatch(allMovies(data))
+      } catch (error) {
+        console.log(error,'desde el slice')
+      }
+        
     }
   }
 
