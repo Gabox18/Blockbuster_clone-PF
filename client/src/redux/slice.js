@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {data,allgenre} from './dataMock.js'
 import ordering from '../Funciones_js/Ordenamiento.js'
 
+
 const initialState = {
     allMovies: [],
     copyAllMovies:[],
@@ -25,6 +26,11 @@ export const dataSlice = createSlice({
 
         allgenres :(state, action)=>{
           state.genres = action.payload
+        },
+
+        infoAdmin :(state,action)=>{
+          console.log(action.payload,"infoinput")
+          state.infoInput = action.payload 
         },
 
         filterGenre :(state, action)=>{
@@ -88,6 +94,12 @@ export const asyncallMovies = () => {
     return dispatch(formInput(input))
   }
 }
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput} = dataSlice.actions
+
+export const asyncInfoAdmin = (input) =>{
+  return async function(dispatch){
+    return dispatch(infoAdmin(input))
+  }
+}
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin} = dataSlice.actions
 
 export default dataSlice.reducer

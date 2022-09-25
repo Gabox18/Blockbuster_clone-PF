@@ -34,8 +34,8 @@ export default function Form() {
     return error;
   };
 
-  function invalidAdd(inputs) {
-    let error = validate(inputs);
+  function invalidAdd(input) {
+    let error = validate(input);
     if (error.name || error.lastname || error.date || error.genre || error.text)
       return true;
   }

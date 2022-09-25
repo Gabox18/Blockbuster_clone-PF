@@ -37,7 +37,7 @@ function ViewResult(){
           </div>
           <div className="containerC">
           <div className="cardContainer">
-            {currentMovies?.map((e, i) => {
+            {currentMovies.length? currentMovies.map((e, i) => {
               return (
                 
                 <Link to={"/details/" + e.imdbID} key={i}>
@@ -47,7 +47,10 @@ function ViewResult(){
                 </Link>
                 
               );
-            })}
+            }): <div className="div-not-found">
+            <h4>Ups! Movie not found</h4>
+            <h5>Try again!</h5>
+          </div>}
           </div>
             <div>
               <Paginado
