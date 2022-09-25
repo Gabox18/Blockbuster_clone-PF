@@ -1,27 +1,34 @@
 import React from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { asyncInfoAdmin } from "../../redux/slice";
+import { useEffect } from "react";
+import { asyncallMovies } from "../../redux/slice";
+import { data } from "../../redux/dataMock";
+
 function validate(input) {
-  let errors = {};
-  if (!input.name || input.name.length < 3) {
-    errors.name = "Se requiere que ingrese un nombre para la película";
-  } else if (!input.description) {
-    errors.description = "Se requiere que ingrese una descripción";
-  } else if (!input.genre) {
-    errors.genre = "Se requiere que ingrese un genero para la pelicula";
-  } else if (!input.recommendation) {
-    errors.recommendation = "Se requiere que de una puntuación a la pelicula";
-  } else if (!input.movies) {
-    errors.movies = "Se requiere que ingrese una película";
-  }
-  return errors;
-}
+    let error = {};
+    if (!input.name || input.name.length < 3 && input.name.length > 12) {
+      error.name = "Complete the field name";
+    } else if (!input.description || input.description.length < 10 && input.description.length > 100) {
+      error.description = "Complete the field description";
+    } else if (!input.genre || input.genre.length < 3) { 
+      error.genre = "Complete the field genre";
+    } else if (!input.recommendation) {
+      error.recommendation = "Complete the field recomendation";
+    } else if (!input.image || !input.file) {
+      error.image = "Complete the field image";
+    } 
+    return error;
+  };
+
 export default function AdminPanel() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [errors, setErrors] = useState({})
   const [imagen, setImagen] = useState("");
   const [input, setInput] = useState({
@@ -31,6 +38,11 @@ export default function AdminPanel() {
     recommendation: "",
     image: "",
   });
+
+  useEffect(() => {
+    dispatch(asyncallMovies());
+  },[]);
+
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -47,6 +59,16 @@ export default function AdminPanel() {
       image: respuesta.data.secure_url,
     });
   };
+
+  function invalidAdd(input) {
+    let error = validate(input);
+    if (error.name || error.description || error.genre || error.recommendation || error.imagen)
+      return true;
+    else {
+      return false;
+    }
+  }
+
     function handleChange(e) {                      //cada vez que se ejecuta handlechange, al estado input,
       setInput({                                  //ademas de lo que tiene, se le agrega el target.value
           ...input,
@@ -58,15 +80,16 @@ export default function AdminPanel() {
       }));
       console.log(input);
   }
-  function handleSubmit(e) {      
+
+  function handleSubmit(e) {     
     console.log(errors)          
     e.preventDefault();
     setErrors(validate(input))
     const errorCompletarFormu = validate(input)
-    if(Object.values(errorCompletarFormu).length !== 0 || !input.movies){
+    if(Object.values(errorCompletarFormu).length !== 0 || !input.image || !input.file){
       alert ("Todos los campos deben ser requeridos")
     } else {
-    dispatch((imagen));
+    dispatch(asyncInfoAdmin(input));
     alert('Película creada con éxito');
     setInput({
       name: "",
@@ -75,15 +98,17 @@ export default function AdminPanel() {
       recommendation: "",
       image: "",
     })
+    history.push('/home')
   }
   }
+
   return (
     <div className="admin-contain">
       <div>
         <h1 className="admin-titulo"> ¡Share your movie and let's expand the cinema at home! </h1>
       </div>
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
-      <form className='formulario' onSubmit={(e)=>handleSubmit(e)}>
+      <form onSubmit={(e)=> handleSubmit(e)} className='formulario'>
         <div>
           <label htmlForcl=""> Name of the movie: </label>
 
