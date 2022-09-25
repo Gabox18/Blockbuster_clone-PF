@@ -232,5 +232,12 @@
     border-color:rgba(247,166,0,0.83);
     border-style:solid;
    }
+   .borbo{
+ color: #f7a600;
+   }
+   
+   .detailRender .borbo{
+    min-height:103px;
+   }
    
    

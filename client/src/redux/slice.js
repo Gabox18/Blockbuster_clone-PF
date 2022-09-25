@@ -8,7 +8,8 @@ const initialState = {
     copyAllMovies:[],
     genres : [],
     details:{},
-    infoInput:{}
+    infoInput:{},
+    commentUsers:{}
   };
 
 export const dataSlice = createSlice({
@@ -60,8 +61,8 @@ export const dataSlice = createSlice({
 
         commentInput:(state,action) =>{
           console.log(action.payload,"inputtt")
-          state.infoInput = action.payload
-          console.log(state.infoInput,'estado')
+          state.commentUsers = action.payload
+          console.log(state.commentUsers,'estado')
         },
     }
 })
