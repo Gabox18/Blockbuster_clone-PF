@@ -50,7 +50,7 @@ export const dataSlice = createSlice({
 
         searchBar:(state,action) =>{
             //console.log(action.payload,"reducerrr" )
-           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload)   
+           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload))   
         },
 
         infoAdmin:(state,action) =>{
