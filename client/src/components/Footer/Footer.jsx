@@ -53,7 +53,7 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
               </p>
             </div>
 
-            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ">
               <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
               <p>
                 <AiOutlineHome /> New York, NY 2333, US

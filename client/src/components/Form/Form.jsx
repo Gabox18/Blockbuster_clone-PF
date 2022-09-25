@@ -23,8 +23,8 @@ export default function Form() {
 
   const validate = (data) => {
     let error = {};
-    if (data.name.length < 3 || data.name.length > 12)
-      error.lastname = "Complete the field name";
+    // if (data.name.length < 3 || data.name.length > 12)
+    //   error.name = "Complete the field name";
     if (data.lastname.length < 3 || data.lastname.length > 12)
       error.lastname = "Complete the field lastname";
     if (!data.date) error.date = "Complete the field date";

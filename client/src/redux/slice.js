@@ -20,6 +20,7 @@ export const dataSlice = createSlice({
             state.copyAllMovies = action.payload
         },
         formInput:(state,action) =>{
+          console.log(action.payload,'reducer')
           state.infoInput = action.payload
         },
 
@@ -51,7 +52,12 @@ export const dataSlice = createSlice({
         searchBar:(state,action) =>{
           console.log(action.payload,"reducerrr")
            state.allMovies = data.filter(e => e.Title.toLowerCase().includes(action.payload) )
+        },
+        commentInput:(state,action) =>{
+          console.log(action.payload,"inputtt")
+          state.infoInput = action.payload
         }
+
     }
 })
 
@@ -88,6 +94,11 @@ export const asyncallMovies = () => {
     return dispatch(formInput(input))
   }
 }
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput} = dataSlice.actions
+export const asyncFormComment = (input) =>{
+  return async function(dispatch){
+    return dispatch(commentInput(input))
+  }
+}
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput, commentInput} = dataSlice.actions
 
 export default dataSlice.reducer
