@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import './detail.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { asyncgetDetails, clearDetail } from '../../redux/slice.js';
-import ReactPlayer from 'react-player';
+//import ReactPlayer from 'react-player';
 import video from '../../assets/video.mp4';
 
 
@@ -13,23 +13,22 @@ import video from '../../assets/video.mp4';
 export default function Detail() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  let { details } = useSelector(store => store.alldata);
+  let { details} = useSelector(store => store.alldata);
 
   useEffect(() => {
-    dispatch(asyncgetDetails(id))
+    dispatch(asyncgetDetails(parseInt(id)))
     return () => {
       dispatch(clearDetail())
     }
   }, [dispatch, id])
-
-
+ 
   return (
     <div className="detailRender">
       <div className="videoBg">
         <video src={video} muted loop autoPlay></video>
       </div>
       <div className="cardStyle">
-        <img src={details[0]?.Poster} className="card-img-top" alt="..." />
+        <img src={details.poster} className="card-img-top" alt="..." />
         <div className="player-wrapper">
           {/* <ReactPlayer
             className="react-player"
@@ -39,33 +38,25 @@ export default function Detail() {
         </div>
      
       <div className='title'>
-        <p>{details[0]?.Title}</p>
-      </div>
-      <div className='actors'>
-      <p>Actors: {details[0]?.Actors && details[0]?.Actors}</p>
-      </div>
-      <div className='year'>
-      <p> Year: {details[0]?.Year}</p>
-      </div>
-      <div className='genre'>
-      <p>Genre: {details[0]?.Genre}</p>
+        <p>{details.name}</p>
       </div>
       <div className='director'> 
-        <p>Director: {details[0]?.Director} </p>
+        <p>Director : {details.director} </p>
+      </div>
+      <div className='year'>
+      <p> Year : {details.year}</p>
+      </div>
+      <div className='genre'>
+      <p>Genre : {details.genre}</p>
       </div>
       <div className='language'>
-        <p>Language: {details[0]?.Language}</p>
+        <p>Language : {details.language}</p>
       </div>
       <div className='rating'>
-      <p>
-          
-            Ratings:{" "}
-            {details[0]?.Ratings.length &&
-              details[0]?.Ratings.map((e, i) => {
-                return <p key={i}>{e.Value}</p>;
-              })}
-          
-        </p>
+      <p>Rating:{details.imdbRating}</p>
+      </div>
+      <div className='actors'>
+      <p>Actors : {details.actors}</p>
       </div>
       </div>
       <div>

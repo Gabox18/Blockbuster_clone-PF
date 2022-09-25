@@ -13,8 +13,8 @@ function Carrusel({array}){
                         <>
                             <div className="mainCarruzel">
                                 <div className="sliderCarruzel">
-                                    <Link to={`/details/${e.imdbID}`}>
-                                        <img className="imgCarr" key={i} src={e.Poster} alt="img-carruzel" />
+                                    <Link to={`/details/${e.id}`}>
+                                        <img className="imgCarr" key={i} src={e.poster} alt="img-carruzel" />
                                     </Link>
                                 </div>
                             </div>

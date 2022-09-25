@@ -40,9 +40,9 @@ function ViewResult(){
             {currentMovies?.map((e, i) => {
               return (
                 
-                <Link to={"/details/" + e.imdbID} key={i}>
+                <Link to={"/details/" + e.id} key={i}>
                   <div>
-                    <Card img={e.Poster} Title={e.Title}  Plot={e.Plot}/>
+                    <Card img={e.poster} Title={e.name}  Plot={e.plot}/>
                   </div>
                 </Link>
                 
