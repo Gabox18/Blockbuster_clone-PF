@@ -50,8 +50,13 @@ export const dataSlice = createSlice({
 
         searchBar:(state,action) =>{
             //console.log(action.payload,"reducerrr" )
-           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload) )
-        }
+           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload)   
+        },
+
+        infoAdmin:(state,action) =>{
+          console.log(action.payload,"infoinput")
+          state.infoInput = action.payload 
+        },
     }
 })
 
@@ -110,6 +115,13 @@ export const asyncallMovies = () => {
     return dispatch(formInput(input))
     }
   }
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput} = dataSlice.actions
+  
+export const asyncInfoAdmin = (input) =>{
+  return async function(dispatch){
+    return dispatch(infoAdmin(input))
+  }
+}
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin} = dataSlice.actions
 
 export default dataSlice.reducer
