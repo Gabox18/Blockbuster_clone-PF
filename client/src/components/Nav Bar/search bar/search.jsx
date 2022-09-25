@@ -12,7 +12,7 @@ export default function Searchbar({setCurrentPage}) {
   
   useEffect(() => {
     if(copyAllMovies.length === 0) dispatch(asyncallMovies())
-  }, [dispatch]);
+  }, [copyAllMovies.length, dispatch]);
 
   function handleInputChange(e) {
     setName(e.target.value);
@@ -24,6 +24,7 @@ export default function Searchbar({setCurrentPage}) {
     history.push('/Home/result');
     setCurrentPage(1);
   }
+  
   return (
     <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
         <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) =>

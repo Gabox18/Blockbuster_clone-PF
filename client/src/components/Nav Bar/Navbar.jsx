@@ -6,12 +6,9 @@ import Searchbar from "./search bar/search.jsx";
 import img from '../../assets/Logo.png';
 import { useAuth0 } from "@auth0/auth0-react";
 import {Link} from 'react-router-dom'
-import LoginButton from "../User/Login";
-
 
 function Navbar(prop){
     const { user, isAuthenticated, loginWithRedirect } = useAuth0();
-    console.log(user)
     return (
         <>
             <nav className="navbar bg-dark navbar-expand-lg bg-light">

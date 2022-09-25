@@ -85,7 +85,7 @@ export default function Form() {
               <img
                 src={user.picture}
                 className="rounded-circle img-fluid"
-              />
+               alt="poster"/>
               </div>
             ) : (
               <p></p>

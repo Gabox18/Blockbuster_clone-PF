@@ -9,8 +9,8 @@ import store from "./redux/store.js";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
-const domain = "agus-mollo.us.auth0.com" //process.env.REACT_APP_AUTH0_DOMAIN;
-const clientId ="gE7IfTfHrYq0Wy3GeDGrrEPEI9DUiIax" //process.env.REACT_APP_AUTH0_CLIENT_ID;
+const domain = "agus-mollo.us.auth0.com"//process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = "gE7IfTfHrYq0Wy3GeDGrrEPEI9DUiIax"//process.env.REACT_APP_AUTH0_CLIENT_ID;
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
