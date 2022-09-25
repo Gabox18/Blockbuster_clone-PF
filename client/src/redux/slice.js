@@ -57,6 +57,12 @@ export const dataSlice = createSlice({
           console.log(action.payload,"infoinput")
           state.infoInput = action.payload 
         },
+
+        commentInput:(state,action) =>{
+          console.log(action.payload,"inputtt")
+          state.infoInput = action.payload
+          console.log(state.infoInput,'estado')
+        },
     }
 })
 
@@ -121,7 +127,12 @@ export const asyncInfoAdmin = (input) =>{
     return dispatch(infoAdmin(input))
   }
 }
+export const asyncFormComment = (input) =>{
+  return async function(dispatch){
+    return dispatch(commentInput(input))
+  }
+}
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput} = dataSlice.actions
 
 export default dataSlice.reducer

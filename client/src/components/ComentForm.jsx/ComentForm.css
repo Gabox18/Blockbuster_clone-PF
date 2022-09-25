@@ -1,0 +1,236 @@
+/* Image */
+.card-bodyDi div img{
+    transform:translatex(0px) translatey(3px);
+   }
+   
+   /* Img */
+   .card-bodyDi div .img{
+    transform:translatex(181px) translatey(15px);
+   }
+   
+   /* Name */
+   .card-bodyDi div .name{
+    transform:translatex(267px) translatey(-45px);
+   }
+   
+   /* Button */
+   .card-bodyDi div button{
+    width:107px;
+   }
+   
+   /* Card body */
+   .App .detailRender .card-bodyDi{
+    padding-right:600px !important;
+    width:42%;
+    transform:translatex(557px) translatey(-10px);
+   }
+   
+   /* Img */
+   #root .App .detailRender .card-bodyDi div div div div div .img{
+    width:60% !important;
+   }
+   
+   /* Heading */
+   .card-bodyDi div h3{
+    width:98%;
+    transform:translatex(0px) translatey(5px);
+   }
+   
+   /* Form Division */
+   .card-bodyDi div form{
+    transform:translatex(92px) translatey(-7px);
+   }
+   
+   /* Division */
+   .card-bodyDi form div div{
+    transform:translatex(184px) translatey(-22px);
+    width:100%;
+   }
+   
+   /* Input */
+   .card-bodyDi div input[type=message]{
+    width:291px;
+    min-height:131px;
+   }
+   
+   /* Input */
+   .card-bodyDi div input[type=text]{
+    width:291px;
+   }
+   
+   /* Name */
+   #root .App .detailRender .card-bodyDi div div div div div .name{
+    width:192% !important;
+   }
+   
+   /* Division */
+   .App .detailRender > div{
+    background-color:rgba(0,0,0,0) !important;
+   }
+   
+   /* Division */
+
+   
+   /* Division */
+   .detailRender .containerinfo > div{
+    width:42%;
+    transform:translatex(561px) translatey(-12px);
+    border-color:#f7a600;
+    border-style:solid;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+   }
+   
+   /* Img */
+   .detailRender div .img{
+    width:11%;
+    transform:translatex(158px) translatey(52px);
+   }
+   
+   /* Image */
+   .detailRender .img img{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Name */
+   .detailRender div .name{
+    width:39%;
+    color:#f7a600;
+    transform:translatex(299px) translatey(0px);
+   }
+   
+   /* Division */
+   .detailRender form div div{
+    min-height:41px;
+    /* background-color:rgba(0,0,0,0); */
+   }
+   
+   /* Input */
+   .detailRender div input[type=text]{
+    min-height:42px;
+    width:288px;
+    transform:translatex(46px) translatey(-5px);
+   }
+   
+   /* Input */
+   .detailRender div input[type=message]{
+    width:369px;
+    min-height:86px;
+    transform:translatex(4px) translatey(5px);
+   }
+   
+   /* Division */
+   .detailRender form div:nth-child(2){
+    transform:translatex(43px) translatey(-5px);
+   }
+   
+   .detailRender form button{
+    width:134px;
+   }
+   
+   /* Form Division */
+   .detailRender div form{
+    transform:translatex(-26px) translatey(10px);
+   }
+   
+   /* Heading */
+   .detailRender div h3{
+    transform:translatex(-35px) translatey(3px);
+   }
+   /* Division */
+
+   
+   /* Name */
+   .detailRender div .name{
+    background-color:rgba(0,0,0,0);
+   }
+   
+   /* Img */
+
+   /* Containerinfo */
+   .detailRender .containerinfo{
+    transform:translatex(0px) translatey(0px);
+    /* background-color:rgba(0,0,0,0); */
+   }
+   div form div div div{
+    transform:translatex(-261px) translatey(48px);
+   }
+
+   .detailRender div input[type=text]{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+   }
+   
+   /* Input */
+   .detailRender div input[type=message]{
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+   }
+   /* Form Division */
+.detailRender div form{
+    transform:translatex(0px) translatey(0px);
+   }
+   
+   /* Name */
+   .detailRender div .name{
+    margin-right:24px;
+    transform:translatex(270px) translatey(3px);
+   }
+   
+   /* Img */
+   .detailRender div .img{
+    transform:translatex(357px) translatey(11px);
+   }
+   
+   /* Division */
+.detailRender div .containerComments div{
+    min-height:117px;
+   }
+   
+   /* Inputcomment */
+   .detailRender div .inputcomment{
+    width:61%;
+    transform:translatex(166px) translatey(15px);
+    min-height:78px;
+    background-color:#000000;
+    border-color:transparent;
+    border-style:solid;
+    text-align:center;
+    text-decoration:none;
+    font-size:18px;
+    line-height:2.2em;
+    letter-spacing:1.3px;
+   }
+
+   /* Text input wrapper */
+.detailRender div .textInputWrapper{
+    width:387px;
+    min-height:95px;
+    transform:translatex(201px) translatey(3px);
+   }
+   
+   /* Division */
+   .detailRender form div:nth-child(2){
+    transform:translatex(139px) translatey(-5px);
+    padding-right:113px;
+    width:65%;
+   }
+   
+   /* Button */
+   .detailRender form button{
+    background-color:#000000;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    border-color:rgba(247,166,0,0.83);
+    border-style:solid;
+   }
+   
+   
