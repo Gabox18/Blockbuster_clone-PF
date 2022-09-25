@@ -16,7 +16,7 @@ function FilteringSorting(props) {
     useEffect(() => {
         if(copyAllMovies.length === 0) dispatch(asyncallMovies());
         dispatch(asyncAllgenres())
-    }, [dispatch, props])
+    }, [copyAllMovies.length, dispatch, props])
 
     function handleSelectFilter(e) {
         dispatch(filterGenre(e.target.value))

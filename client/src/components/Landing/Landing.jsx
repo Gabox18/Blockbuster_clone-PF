@@ -4,16 +4,20 @@ import "./Landing.css";
 import LoginButton from "../User/Login";
 import logo from "../../assets/Logo.png";
 import Carrusel from "../Carrusel/Carrusel";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { asyncallMovies } from "../../redux/slice";
 import { Link } from "react-router-dom";
 
 
 export default function Landing() {
+
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
   }, [dispatch]);
+
+  let {copyAllMovies} = useSelector(state => state.alldata);
+
   return (
     <>
       <div className="ContainerLanding">
@@ -108,7 +112,7 @@ export default function Landing() {
               <h3>$500 per Month</h3>
               </div>
               <div className="carrusel">
-                <Carrusel />
+                <Carrusel array={copyAllMovies}/>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ import Profile from "./components/User/Profile";
 
 //boostrap
 // You can specify which plugins you need
-import { Tooltip, Toast, Popover } from 'bootstrap';
+//import { Tooltip, Toast, Popover } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
@@ -31,7 +31,6 @@ function App() {
           <Route exact path="/details/:id" component={Detail}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
           <Route exact path= "/infoprofile" component={Form} />
-
         </Switch>
     </div>
   );
