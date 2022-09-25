@@ -19,6 +19,7 @@ export const dataSlice = createSlice({
             state.allMovies = action.payload
             state.copyAllMovies = action.payload
         },
+
         formInput:(state,action) =>{
           state.infoInput = action.payload
         },
@@ -43,14 +44,13 @@ export const dataSlice = createSlice({
             state.details = action.payload
         },
 
-       
         clearDetail : (state)=>{
             state.details = []
         },
 
         searchBar:(state,action) =>{
-          //console.log(action.payload,"reducerrr")
-           state.allMovies = data.filter(e => e.Title.toLowerCase().includes(action.payload) )
+            //console.log(action.payload,"reducerrr")
+           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload) )
         }
     }
 })
@@ -67,14 +67,12 @@ export const asyncallMovies = () => {
     }
   }
 
-
 // const options = {
 // 	method: 'GET',
 // 	headers: {
 // 		'Access-Control-Allow-Origin': 'https://back-end-movies-henry2.onrender.com'
-
-// 	}
-// };
+// 	    }
+//   };
 
 //   export function asyncallMovies(){
 //     return function(dispatch){
@@ -105,13 +103,13 @@ export const asyncallMovies = () => {
     return  async function(dispatch){
       return dispatch(searchBar(name))
     }
- }
+  }
 
  export const asyncFormInfo = (input) =>{
   return  async function(dispatch){
     return dispatch(formInput(input))
+    }
   }
-}
 export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput} = dataSlice.actions
 
 export default dataSlice.reducer

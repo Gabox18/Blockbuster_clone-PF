@@ -30,6 +30,11 @@
     transform:translatex(4px) translatey(69px) !important;
    }
    
+.not-result{
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
    
    
    
