@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import axios from "axios";
+import axios from "axios";
 import {data,allgenre} from './dataMock.js'
 import ordering from '../Funciones_js/Ordenamiento.js'
 
@@ -70,37 +70,22 @@ export const dataSlice = createSlice({
 export const asyncallMovies = () => {
     return async function(dispatch){
       try {
-        //let response = await axios("https://back-end-movies-henry2.onrender.com/")
-        //console.log(response.data,'desde el slice')
-        return dispatch(allMovies(data))
+        let response = await axios("https://back-end-movies-henry2.onrender.com/")
+        return dispatch(allMovies(response.data))
       } catch (error) {
-        console.log(error,'desde el slice')
+        console.log(error,'from allMovies')
       } 
     }
   }
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'Access-Control-Allow-Origin': 'https://back-end-movies-henry2.onrender.com'
-// 	    }
-//   };
-
-//   export function asyncallMovies(){
-//     return function(dispatch){
-//         return fetch('https://back-end-movies-henry2.onrender.com/', options)
-//         .then(resp=>resp.json())
-//         .then(respJson=>{
-//             dispatch(allMovies(respJson))
-//         }).catch(error =>console.log(error,'----->soy el error'))
-//     }
-// }
-
+  
   export const asyncgetDetails = (id) => {
     return async function(dispatch){
-      //let response = await axios.get(`http://localhost:3000/home/:${id}`)
-      let movieD = data.filter(e=>e.id===id)
-      return dispatch(DetailsMovies(movieD[0]))
+      try {
+        let response = await axios.get(`https://back-end-movies-henry2.onrender.com/detail/${id}`)
+        return dispatch(DetailsMovies(response.data[0]))
+      } catch (error) {
+        console.log(error,'from Details')
+      }      
     }
   }
 

@@ -22,6 +22,7 @@ export default function Searchbar({setCurrentPage}) {
     e.preventDefault();
     dispatch(asyncGetName(name.toLowerCase()));
     history.push('/Home/result');
+    setName('')
     setCurrentPage(1);
   }
   
