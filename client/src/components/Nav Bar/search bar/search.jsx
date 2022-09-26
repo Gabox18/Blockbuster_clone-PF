@@ -28,9 +28,9 @@ export default function Searchbar({setCurrentPage}) {
   
   return (
     <form className="d-flex" role="search" onSubmit={(e) => handleSubmit(e)}>
-        <input className="input" type="search" placeholder="Search" aria-label="Search" onChange={(e) =>
+        <input className="inputSearch" type="search" placeholder="Search" aria-label="Search" onChange={(e) =>
           handleInputChange(e)} value={name} />
-        <button className="btn btn-outline-success text-light " type="submit">Search</button>
+        <button className="btn btn-outline-success text-light btnSearch " type="submit">Search</button>
     </form>
   );
 }

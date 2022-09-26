@@ -73,7 +73,7 @@ export default function Landing() {
           </div>
           <div>
             <div className="conteiner-shop-plan">
-              <div className="container">
+              <div className="containerLanding">
                 <div className="card_box">
                   <span>Silver</span>
                   <p>

@@ -1,5 +1,5 @@
 /* From uiverse.io by @ercnersoy */
-.input {
+.inputSearch {
        border: rgb(55, 116, 248) solid;
        border-width: 0.4px;
        margin: 20px;
@@ -9,7 +9,7 @@
        height: 40px;
 }
    
-.input:focus {
+.inputSearch:focus {
        border: rgb(55, 116, 248) solid;
        border-width: 0.4px;
        outline-color: #0d6efd;
@@ -17,4 +17,9 @@
               inset -20px -20px 60px #ffffff;
        transition: 0.3s;
        color: black;
+}
+.btnSearch{
+       width: 6rem;
+       height: 2.3rem;
+       margin-top: 1.3rem;
 }
