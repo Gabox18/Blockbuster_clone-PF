@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import { asyncallMovies, asyncFormInfo } from "../../redux/slice";
 import LoginButton from "../User/Login";
+import axios from "axios";
 import './Form.css'
 
 
@@ -25,7 +26,7 @@ export default function Form() {
 
   const validate = (data) => {
     let error = {};
-    if (data.name.length < 3 || data.name.length > 12)
+    if (data.name?.length < 3 || data.name?.length > 12)
       error.lastname = "Complete the field name";
     if (data.lastname.length < 3 || data.lastname.length > 12)
       error.lastname = "Complete the field lastname";

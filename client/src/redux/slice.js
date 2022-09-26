@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {data,allgenre} from './dataMock.js'
+import {allgenre} from './dataMock.js'
 import ordering from '../Funciones_js/Ordenamiento.js'
 
 const initialState = {
@@ -51,7 +51,7 @@ export const dataSlice = createSlice({
 
         searchBar:(state,action) =>{
             //console.log(action.payload,"reducerrr" )
-           state.allMovies = data.filter(e => e.name.toLowerCase().includes(action.payload))   
+           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload))   
         },
 
         infoAdmin:(state,action) =>{
@@ -104,7 +104,22 @@ export const asyncallMovies = () => {
 
  export const asyncFormInfo = (input) =>{
   return  async function(dispatch){
-    return dispatch(formInput(input))
+    console.log(input, 'el asyn del slices' )
+    let inputf = {
+      name : input.name,
+      lastname : input.lastname,
+      nickname : 'prueba',
+      picture : "hahahahaha",
+      email : '@hotmail',
+      status : true,
+      category : 'user'
+    }
+    try {
+      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/newU`,inputf)
+    return dispatch(formInput(response.data))
+    } catch (error) {
+      console.log(error)
+    }
     }
   }
   
