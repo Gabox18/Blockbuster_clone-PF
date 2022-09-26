@@ -9,7 +9,7 @@ export default function Paginado ({moviesPerPage, allMovies, paginado, setCurren
         page.push(i)
     }
     return (
-        <div>
+        <div className="ContainerPaginado">
           <ul>
             <button
               disabled={currentPage === 1}
