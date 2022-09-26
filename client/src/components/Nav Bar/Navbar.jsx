@@ -31,8 +31,8 @@ function Navbar(prop){
                                 </Link>
                                 <Logoutbutton/>
                             </>
-                            :<button className='btn btn-outline-primary text-light' onClick={()=>loginWithRedirect()}>Login</button>
-                            } 
+                            :<button type="button" className='btn btn-outline-primary text-light btn-xs' onClick={()=>loginWithRedirect()}>Login</button>
+                        }     {/*type="button" class="btn btn-primary btn-xs */}
                     </div>
                 </div>
             </nav>
