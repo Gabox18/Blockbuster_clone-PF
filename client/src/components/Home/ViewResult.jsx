@@ -9,7 +9,7 @@ function ViewResult(){
     let { allMovies } = useSelector((state) => state.alldata);
 
     const [currentPage, setCurrentPage] = useState(1); 
-    const moviesPerPage = 4;
+    const moviesPerPage = 8;
     //const [orden, setOrden] = useState("");
     const indexOfLastMovies = currentPage * moviesPerPage; 
     const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; 
@@ -27,7 +27,6 @@ function ViewResult(){
     //   }, [dispatch]);
     
     return(
-        <>
         <div className="conteinerViewResult">
           <div className="navbarContainer">
             <Navbar setCurrentPage={setCurrentPage} />
@@ -59,7 +58,6 @@ function ViewResult(){
             </div>
           </div>
         </div>        
-        </>
     )
 }
 
