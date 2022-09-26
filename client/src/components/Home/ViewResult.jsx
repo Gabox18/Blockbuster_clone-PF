@@ -9,7 +9,7 @@ function ViewResult(){
     let { allMovies } = useSelector((state) => state.alldata);
 
     const [currentPage, setCurrentPage] = useState(1); 
-    const moviesPerPage = 8;
+    const moviesPerPage = 6;
     //const [orden, setOrden] = useState("");
     const indexOfLastMovies = currentPage * moviesPerPage; 
     const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; 
@@ -32,7 +32,7 @@ function ViewResult(){
             <Navbar setCurrentPage={setCurrentPage} />
           </div>
           <div className="containerC">
-          <div className="cardContainer">
+          <div className="cardContainerViewResult">
             {allMovies.length === 0  //renderizado condicional 
             ? <h2 className="not-result">We couldn’t find any movie matchin</h2>
             :currentMovies?.map((e, i) => {
@@ -47,7 +47,7 @@ function ViewResult(){
               );
             })}
           </div>
-            <div>
+            <div className="containerPaginado">
               <Paginado
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}

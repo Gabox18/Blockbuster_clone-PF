@@ -3,7 +3,9 @@
 }
 
 .button-prev, .button-next{
-    background-color:#0166da;
+    width: 4rem;
+    height: 1.7rem;
+    background-color:#0166da8d;
     box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
     color: white;
     border-top: 0;
@@ -11,17 +13,25 @@
     padding: 6px;
     border-radius: 5px;
     position: relative;
+    margin: 1rem;
     
 }
 
 .page-button{
+    display: none;
+    width: 3rem;
+    height: 1.5rem;
     background-color:#036ae0;
     box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
     color: white;
     border-top: 0;
     border-left: 0;
-    padding: 5px;
     border-radius: 5px;
     position: relative;
-    margin: 5px;
+    margin: 0.2rem;
+}
+.ContainerPaginado {
+    width: 100rem;
+    height: 5rem;
+
 }
