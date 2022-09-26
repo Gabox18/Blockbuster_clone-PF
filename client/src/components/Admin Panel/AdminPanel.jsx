@@ -1,14 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { Link, useHistory} from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncInfoAdmin } from "../../redux/slice";
 import { useEffect } from "react";
-import { asyncallMovies } from "../../redux/slice";
-import { data } from "../../redux/dataMock";
+import { asyncAllgenres } from "../../redux/slice";
 
 function validate(input) {
     let error = {};
@@ -16,7 +15,7 @@ function validate(input) {
       error.name = "Complete the field name";
     } else if (!input.description || input.description.length < 10 || input.description.length > 100) {
       error.description = "Complete the field description";
-    } else if (!input.genre || input.genre.length < 3) { 
+    } else if (!input.genre || input.genre.length === 0) { 
       error.genre = "Complete the field genre";
     } else if (!input.recommendation) {
       error.recommendation = "Complete the field recomendation";
@@ -27,21 +26,21 @@ function validate(input) {
   };
 
 export default function AdminPanel() {
+  let { genres } = useSelector(state => state.alldata)
   const dispatch = useDispatch();
-  const history = useHistory();
   const [errors, setErrors] = useState({})
   const [imagen, setImagen] = useState("");
   const [input, setInput] = useState({
     name: "",
     description: "",
-    genre: "",
+    genre: [],
     recommendation: "",
     image: "",
   });
 
   useEffect(() => {
-    dispatch(asyncallMovies());
-  },[]);
+    dispatch(asyncAllgenres());
+  },[dispatch]);
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -61,11 +60,18 @@ export default function AdminPanel() {
   };
 
     function handleChange(e) { 
-      console.log(errors)                     //cada vez que se ejecuta handlechange, al estado input,
-      setInput({                                  //ademas de lo que tiene, se le agrega el target.value
+      //console.log(errors) 
+      if(e.target.name==='genre'){
+        setInput({                                 
+          ...input,
+          [e.target.name]: [...input[e.target.name],e.target.value]
+      })
+      }else{
+        setInput({                                 
           ...input,
           [e.target.name]: e.target.value
-      })
+      })}  
+
       setErrors(validate({
           ...input,
           [e.target.name]: e.target.value
@@ -86,11 +92,10 @@ export default function AdminPanel() {
     setInput({
       name: "",
       description: "",
-      genre: "",
+      genre: [],
       recommendation: "",
-      image: "",
     })
-    history.push('/home')
+    setImagen("")
   }
   }
 
@@ -102,13 +107,13 @@ export default function AdminPanel() {
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
       <form onSubmit={(e)=> handleSubmit(e)} className='formulario'>
         <div>
-          <label htmlForcl=""> Name of the movie: </label>
+          <label> Name of the movie: </label>
 
           <input
             placeholder="Ex: Titanic"
             type="text" value={input.name}
             name="name"
-            autocomplete="off"
+            autoComplete="off"
             onChange={(e)=>handleChange(e)}
           />
           {errors.name && (
@@ -120,26 +125,30 @@ export default function AdminPanel() {
               type="text"
               value={input.description}
               name="description"
-              autocomplete="off"
+              autoComplete="off"
               onChange={(e)=>handleChange(e)}
             />
             {errors.description && (
           <p className='error'>{errors.description}</p>
             )}
           </div>
+
           <div>
             <label className=""> Genre: </label>
-            <input placeholder="Ex: Action, Comedy" //hacer select, con options, mapear todas las pelis, y traer los generos. para que pueda asignarle alguno de los generos que tenemos nosotros.
-              type="text"
-              value={input.genre}
-              name="genre"
-              autocomplete="off"
-              onChange={(e)=>handleChange(e)}
-            />
+            <select name={'genre'}  onChange={(e)=>handleChange(e)}>
+              {genres?.map((genre, index) => {
+                return (
+                  <option key={index} value={genre}>
+                    {genre}
+                  </option>
+                );
+              })}
+            </select>
             {errors.genre && (
             <p className='error'>{errors.genre}</p>
           )}
           </div>
+
           <div>
             <label className='display-block'> Recommendation </label>
             <select
@@ -169,7 +178,7 @@ export default function AdminPanel() {
           {errors.image && (
           <p className='error'>{errors.image}</p>
           )}
-            <img src={imagen} alt="" />
+            <img src={imagen} alt="" width={'200px'}/>
           </div>
           <button className="submit-button" type="submit"> Load movie </button>
         </div>
