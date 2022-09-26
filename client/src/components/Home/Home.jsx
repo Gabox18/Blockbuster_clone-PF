@@ -12,9 +12,6 @@ import img from  '../../assets/imgHome.jpg'
 
 
 
-
-
-
 function Home() {
   
   let dispatch = useDispatch();

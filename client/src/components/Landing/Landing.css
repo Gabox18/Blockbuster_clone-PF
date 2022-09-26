@@ -47,7 +47,7 @@ background-color:  #09043f;
 }
 
 /* From uiverse.io by @mrhyddenn */
-.container {
+.containerLanding {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,12 +329,12 @@ background-color:  #09043f;
  }
  
  /* Fancy */
- .container-plan div .conteiner-shop-plan .container div:nth-child(2) .fancy{
+ .container-plan div .conteiner-shop-plan .containerLanding div:nth-child(2) .fancy{
   width:232% !important;
  }
  
  /* Link */
-.container-plan div .conteiner-shop-plan .container div a{
+.container-plan div .conteiner-shop-plan .containerLanding div a{
   width:254% !important;
  }
  
@@ -354,12 +354,12 @@ background-color:  #09043f;
  }
  
  /* Fancy */
- .App div .fancy:nth-child(4){
+  div .fancy:nth-child(4){
   transform:translatex(-239px) translatey(156px);
  }
  
  /* Fancy */
- .App div .fancy:nth-child(2){
+  div .fancy:nth-child(2){
   transform:translatex(-156px) translatey(154px);
  }
  /* Heading */
@@ -370,7 +370,7 @@ background-color:  #09043f;
  }
  
  /* Heading */
- .container div h3{
+ .containerLanding div h3{
   transform:translatex(-401px) translatey(164px);
   color:#f7a600;
   min-height:51px;
@@ -383,12 +383,12 @@ background-color:  #09043f;
  }
  
  /* Fancy */
- .App div .fancy:nth-child(5){
+  div .fancy:nth-child(5){
   transform:translatex(-128px) translatey(149px) !important;
  }
  
  /* Heading */
- #root .App .Container .container-plan div .conteiner-shop-plan .container div h3{
+ #root  .containerLanding .container-plan div .conteiner-shop-plan .container div h3{
   width:161% !important;
  }
  
@@ -431,19 +431,19 @@ background-color:  #09043f;
  }
  
  /* Fancy */
- .App div .fancy:nth-child(5){
+  div .fancy:nth-child(5){
   transform:translatex(-229px) translatey(144px) !important;
  }
  
  /* Fancy */
- .App div .fancy:nth-child(2){
+  div .fancy:nth-child(2){
   transform:translatex(-146px) translatey(145px) !important;
  }
  
  /* Heading */
- .container div h3{
+ /* .container div h3{
   transform:translatex(-328px) translatey(-139px);
- }
+ } */
  
  /* Paragraph */
 .conteiner-shop-plan .card_box p{
@@ -451,18 +451,18 @@ background-color:  #09043f;
  }
  
  /* Division */
-.App div .conteiner-shop-plan .container div:nth-child(3){
+ .conteiner-shop-plan .containerLanding div:nth-child(3){
   transform:translatex(-257px) translatey(-139px);
  }
  
  /* Division */
- .App .conteiner-shop-plan div:nth-child(2){
+  .conteiner-shop-plan div:nth-child(2){
   width:241px;
   transform:translatex(1244px) translatey(-394px);
  }
  
  /* Heading */
- .App .conteiner-shop-plan div:nth-child(2) h3{
+  .conteiner-shop-plan div:nth-child(2) h3{
   transform:translatex(51px) translatey(0px);
  }
  
@@ -472,17 +472,17 @@ background-color:  #09043f;
  }
  
  /* Division */
- #root .App .Container .container-plan div .conteiner-shop-plan .container div:nth-child(3){
+.container-plan div .conteiner-shop-plan .containerLanding div:nth-child(3){
   width:177px !important;
  }
  
  /* Heading */
- .App .Container .container-plan div .conteiner-shop-plan .container div h3{
+ .container-plan div .conteiner-shop-plan .containerLanding div h3{
   transform:translatex(-37px) translatey(0px) !important;
  }
  
  /* Heading */
-.container div h3{
+.containerLanding div h3{
   transform:translatex(-37px) translatey(0px);
  }
  
