@@ -5,6 +5,8 @@ import { asyncallMovies, asyncFormInfo } from "../../redux/slice";
 import LoginButton from "../User/Login";
 import './Form.css'
 
+
+
 export default function Form() {
   const { user, isAuthenticated } = useAuth0();
   const dispatch = useDispatch();
@@ -76,15 +78,16 @@ export default function Form() {
     });
   };
   return (
-    <div className="container-form p-4">
-      <div className="row-form">
-        <div className="col-md-6 offset-md-3">
+    <div>
+    <div className="container-general">
+      <div className=" ">
+        <div className="">
           <div className="cards-form">
             {isAuthenticated ? (
               <div className="img"> 
               <img
                 src={user.picture}
-                className="rounded-circle img-fluid"
+                className=""
                alt="poster"/>
               </div>
             ) : (
@@ -110,6 +113,7 @@ export default function Form() {
               <form action="" onSubmit={handleOnsubmit}>
                 <div className="form-group">
                 <div class="textInputWrapper">
+                  <p className="category">Name</p>
                 <input
                     type="text"
                     name="name"
@@ -121,7 +125,7 @@ export default function Form() {
 </div>
                   
                 </div>
-                
+                <p className="category">LastName</p>
                 <div className="form-group">
                 <div class="textInputWrapper">
                   <input
@@ -135,6 +139,7 @@ export default function Form() {
                 </div>
                 <div className="form-group">
                 <div class="textInputWrapper">
+                <p className="category">Date</p>
                   <input
                     type="date"
                     name="date"
@@ -147,7 +152,8 @@ export default function Form() {
                 </div>
                 <div className="form-group">
                 <div >
-                  <select name="genre" onChange={handleSelectChange} className='textInputWrapper'>
+                <p className="category">Genre</p>
+                  <select name="genre" onChange={handleSelectChange}  className="textInput">
                     <option className="textInput">Select a genre</option>
                     <option className="textInput"name="genre">Male</option>
                     <option className="textInput"name="genre">Female</option>
@@ -156,9 +162,10 @@ export default function Form() {
                 </div>
                 <div className="form-group">
                 <div class="textInputWrapper">
+                <p className="category">About you</p>
                   <input
                     type="message"
-                    className="textInput"
+                    className="textInputMessage"
                     name="text"
                     placeholder="Profile information"
                     onChange={handleOnChange}
@@ -175,6 +182,7 @@ export default function Form() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

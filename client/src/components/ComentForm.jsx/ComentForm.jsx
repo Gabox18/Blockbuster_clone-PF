@@ -8,7 +8,7 @@ import "./ComentForm.css";
 export default function ComentForm() {
   const { user, isAuthenticated } = useAuth0();
   const dispatch = useDispatch();
-  let infoComments = useSelector((state) => state.infoInputs);
+  let infoComments = useSelector((state) => state.commentUsers);
   let comment = "";
     console.log(infoComments,"averga")
 
@@ -81,7 +81,7 @@ export default function ComentForm() {
             {commentary.length < 1 ? (
               <form onSubmit={(e) => handleOnsubmit(e)}>
                 <div>
-                  <div class="textInputWrapper">
+                  <div className="textInputWrapper">
                     <input
                       type="message"
                       name="comment"
@@ -112,7 +112,6 @@ export default function ComentForm() {
           <div className="borbo">
             <h5>comments from other users about this movie.</h5>
             <div>
-                {infoComments?.map((e)=>(<h3></h3>))}
             </div>
           </div>
         </div>
