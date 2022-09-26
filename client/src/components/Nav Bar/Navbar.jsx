@@ -14,7 +14,7 @@ function Navbar(prop){
             <nav className="navbar bg-dark navbar-expand-lg bg-light">
                 <div className="container-fluid">
                     <div className="navbar-brand text-light">
-                        <img src={img} width='80px' alt="logo" />
+                    <Link to={'/home'}><img src={img} width='80px' alt="logo" /></Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -31,8 +31,8 @@ function Navbar(prop){
                                 </Link>
                                 <Logoutbutton/>
                             </>
-                            :<button className='btn btn-outline-primary text-light' onClick={()=>loginWithRedirect()}>Login</button>
-                            } 
+                            :<button type="button" className='btn btn-outline-primary text-light btn-xs' onClick={()=>loginWithRedirect()}>Login</button>
+                        }     {/*type="button" class="btn btn-primary btn-xs */}
                     </div>
                 </div>
             </nav>

@@ -4,33 +4,44 @@ import { Link} from "react-router-dom";
 import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { asyncInfoAdmin } from "../../redux/slice";
+import { useEffect } from "react";
+import { asyncAllgenres } from "../../redux/slice";
+
 function validate(input) {
-  let errors = {};
-  if (!input.name || input.name.length < 3) {
-    errors.name = "Se requiere que ingrese un nombre para la película";
-  } else if (!input.description) {
-    errors.description = "Se requiere que ingrese una descripción";
-  } else if (!input.genre) {
-    errors.genre = "Se requiere que ingrese un genero para la pelicula";
-  } else if (!input.recommendation) {
-    errors.recommendation = "Se requiere que de una puntuación a la pelicula";
-  } else if (!input.movies) {
-    errors.movies = "Se requiere que ingrese una película";
-  }
-  return errors;
-}
+    let error = {};
+    if (!input.name || input.name.length < 3 || input.name.length > 12) {
+      error.name = "Complete the field name";
+    } else if (!input.description || input.description.length < 10 || input.description.length > 100) {
+      error.description = "Complete the field description";
+    } else if (!input.genre || input.genre.length === 0) { 
+      error.genre = "Complete the field genre";
+    } else if (!input.recommendation) {
+      error.recommendation = "Complete the field recomendation";
+    } else if (!input.image) {
+      error.image = "Complete the field image";
+    } 
+    return error;
+  };
+
 export default function AdminPanel() {
+  let { genres } = useSelector(state => state.alldata)
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({})
   const [imagen, setImagen] = useState("");
   const [input, setInput] = useState({
     name: "",
     description: "",
-    genre: "",
+    genre: [],
     recommendation: "",
     image: "",
   });
+
+  useEffect(() => {
+    dispatch(asyncAllgenres());
+  },[dispatch]);
+
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -47,73 +58,97 @@ export default function AdminPanel() {
       image: respuesta.data.secure_url,
     });
   };
-    function handleChange(e) {                      //cada vez que se ejecuta handlechange, al estado input,
-      setInput({                                  //ademas de lo que tiene, se le agrega el target.value
+
+    function handleChange(e) { 
+      //console.log(errors) 
+      if(e.target.name==='genre'){
+        setInput({                                 
+          ...input,
+          [e.target.name]: [...input[e.target.name],e.target.value]
+      })
+      }else{
+        setInput({                                 
           ...input,
           [e.target.name]: e.target.value
-      })
+      })}  
+
       setErrors(validate({
           ...input,
           [e.target.name]: e.target.value
       }));
       console.log(input);
   }
-  function handleSubmit(e) {      
-    console.log(errors)          
+
+  function handleSubmit(e) {     
+    console.log(input.name.length)          
     e.preventDefault();
     setErrors(validate(input))
     const errorCompletarFormu = validate(input)
-    if(Object.values(errorCompletarFormu).length !== 0 || !input.movies){
+    if(Object.values(errorCompletarFormu).length !== 0 || !input.image){
       alert ("Todos los campos deben ser requeridos")
     } else {
-    dispatch((imagen));
+    dispatch(asyncInfoAdmin(input));
     alert('Película creada con éxito');
     setInput({
       name: "",
       description: "",
-      genre: "",
+      genre: [],
       recommendation: "",
-      image: "",
     })
+    setImagen("")
   }
   }
+
   return (
     <div className="admin-contain">
       <div>
         <h1 className="admin-titulo"> ¡Share your movie and let's expand the cinema at home! </h1>
       </div>
       {/* //onSubmit={(e)=> handleSubmit(e)} */}
-      <form className='formulario' onSubmit={(e)=>handleSubmit(e)}>
+      <form onSubmit={(e)=> handleSubmit(e)} className='formulario'>
         <div>
-          <label htmlForcl=""> Name of the movie: </label>
+          <label> Name of the movie: </label>
 
           <input
-            placeholder="example, Titanic"
+            placeholder="Ex: Titanic"
             type="text" value={input.name}
             name="name"
-            autocomplete="off"
+            autoComplete="off"
             onChange={(e)=>handleChange(e)}
           />
+          {errors.name && (
+          <p className='error'>{errors.name}</p> 
+       )}
           <div>
             <label className=""> Description: </label>
-            <input placeholder="example, based on, tells the story..."
+            <input placeholder="Ex: description movie, tells the story..."
               type="text"
               value={input.description}
               name="description"
-              autocomplete="off"
+              autoComplete="off"
               onChange={(e)=>handleChange(e)}
             />
+            {errors.description && (
+          <p className='error'>{errors.description}</p>
+            )}
           </div>
+
           <div>
             <label className=""> Genre: </label>
-            <input placeholder="example, Action, Comedy"
-              type="text"
-              value={input.genre}
-              name="genre"
-              autocomplete="off"
-              onChange={(e)=>handleChange(e)}
-            />
+            <select name={'genre'}  onChange={(e)=>handleChange(e)}>
+              {genres?.map((genre, index) => {
+                return (
+                  <option key={index} value={genre}>
+                    {genre}
+                  </option>
+                );
+              })}
+            </select>
+            {errors.genre && (
+            <p className='error'>{errors.genre}</p>
+          )}
           </div>
+
           <div>
             <label className='display-block'> Recommendation </label>
             <select
@@ -127,7 +162,9 @@ export default function AdminPanel() {
               <option value="3">⭐⭐⭐</option>
               <option value="4">⭐⭐⭐⭐</option>
               <option value="5">⭐⭐⭐⭐⭐</option>
-              {errors.recommendation && <p className="error">{errors.recommendation}</p>}
+              {errors.recommendation && (
+              <p className='error'>{errors.recommendation}</p>
+              )}
             </select>
           </div>
 
@@ -138,7 +175,10 @@ export default function AdminPanel() {
             onChange={uploadImage}
           />
           <div>
-            <img src={imagen} alt="" />
+          {errors.image && (
+          <p className='error'>{errors.image}</p>
+          )}
+            <img src={imagen} alt="" width={'200px'}/>
           </div>
           <button className="submit-button" type="submit"> Load movie </button>
         </div>
@@ -149,3 +189,4 @@ export default function AdminPanel() {
     </div>
   );
 }
+

@@ -1,5 +1,4 @@
 .admin-contain {
-    background-image: url('../../assets/admin-home.jpg');
     background-image: url('../../assets/adminPanel.jpeg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -52,3 +51,5 @@ font-size: none;
     top: 1rem;
     left: 4rem;
 }
+
+

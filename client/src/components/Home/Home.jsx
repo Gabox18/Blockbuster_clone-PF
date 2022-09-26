@@ -75,15 +75,15 @@ function Home() {
           </div>
         </section>
 
-        <div>
+        <div className="conteiner-carruzel-home">
             <h2 className="textCarruzel">Featured movies:</h2>
             <Carrusel array={arrFeaturedMovies}/>
         </div>
-        <div>
+        <div className="conteiner-carruzel-home">
             <h2 className="textCarruzel">Recent movies:</h2>
             <Carrusel array={arrRecentMovies}/>
         </div>
-        <div>
+        <div className="conteiner-carruzel-home">
             <h2 className="textCarruzel">Popular movies:</h2>
             <Carrusel array={arrPopularMovies}/>
         </div>

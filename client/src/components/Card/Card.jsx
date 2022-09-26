@@ -26,25 +26,22 @@ export default function Card({ Title, Plot, img }) {
     <p class="text-body">{Plot}</p>
   </div>
 </div> */}
-<div>
+      <div>
+        <div class="card">
+          <div class="card-img"><img src={img} alt={'poster'} /></div>
+          <div class="card-info">
 
-      <div class="card">
-      
-      
-        <div class="card-img"><img src={img}/></div>
-        <div class="card-info">
-        
-          {/* <svg
+            {/* <svg
             height="24"
             width="24"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           > */}
-          {/* </svg> */}
-          <p class="text-title">{Title}</p>
-          <p class="text-body">{Plot}</p>
+            {/* </svg> */}
+            <p class="text-title">{Title}</p>
+            <p class="text-body">{Plot}</p>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

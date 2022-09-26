@@ -1,5 +1,5 @@
 .homeContainer{
-  background: url('https://wallpapercave.com/wp/wp3172270.jpg') no-repeat center center fixed;
+  background: url('../../assets/font-home.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -113,6 +113,7 @@
   color: #F9BD08;
 }
 .textCarruzel {
+  font-size: 3rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #F9BD08;
 }
@@ -121,4 +122,8 @@
   position: relative;
   bottom: 18rem;
   right: 34rem;
+}
+
+.conteiner-carruzel-home{
+  margin-bottom: 40px;
 }

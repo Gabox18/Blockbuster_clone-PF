@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { asyncgetDetails, clearDetail } from '../../redux/slice.js';
 //import ReactPlayer from 'react-player';
 import video from '../../assets/video.mp4';
+import ComentForm from '../ComentForm.jsx/ComentForm';
 
 
 
@@ -59,6 +60,7 @@ export default function Detail() {
       <p>Actors : {details.actors}</p>
       </div>
       </div>
+      <Link to='/play'>
       <div>
       <button>
     P L A Y
@@ -68,10 +70,12 @@ export default function Detail() {
         <div id="rightTop" class="corner"></div>
         <div id="leftBottom" class="corner"></div>
     </div>
+    
     <span id="rightArrow" class="arrow"></span>
     <span id="leftArrow" class="arrow"></span>
 </button>
       </div>
+      </Link>
       {/* <div className="cardDetail">
         <p>
           <span>{details[0]?.Title}</span>
@@ -100,7 +104,10 @@ export default function Detail() {
               })}
           </span>
         </p>
-      </div> */}
+      </div> */}\
+      <div>
+      <ComentForm/>
+      </div>
       <div className="card-bodyDi col-auto p-5 justify-content-center">
         <Link to="/home">
           <button
