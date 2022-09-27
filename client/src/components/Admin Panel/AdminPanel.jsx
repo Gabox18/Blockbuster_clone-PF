@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import FunctionDeleteUser from './Function Admin/Function Delete User/FunctionDeleteUser';
 import FunctionCreateAdmin from './Function Admin/Function CreateAdmin/FunctionCreateAdmin';
 import FunctionBannUser from "./Function Admin/FunctionBannUser/FunctionBannUser";
-
+import FunctionAddMovie from './Function Admin/Function AddMovie/FunctionAddMovie.jsx'
 import './adminPanel.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -71,7 +71,9 @@ function AdminPanel(){
             Moovie
           </a>
           <div className="menu-item__sub">
-            <a href="#">New Movie</a>
+            <button className="linkAdmin" onClick={() => setFunct('createmovie')}>
+              <i className="fas fa-clipboard"></i>New Movie
+            </button>
             <a href="#">Delete Movie</a>            
           </div>
         </li>
@@ -100,8 +102,8 @@ function AdminPanel(){
         {
           funct === 'deleteUser' ? <FunctionDeleteUser /> : 
           funct === 'createAdmin' ? <FunctionCreateAdmin  /> : 
-          funct === 'bannUser' ? <FunctionBannUser /> : <></> 
-
+          funct === 'bannUser' ? <FunctionBannUser />  :
+          funct === 'createmovie'? <FunctionAddMovie/> : <></>
   
         }
       </div>
