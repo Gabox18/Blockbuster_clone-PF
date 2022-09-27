@@ -9,7 +9,8 @@ const initialState = {
     genres : [],
     details:{},
     infoInput:{},
-    commentUsers:{}
+    commentMovie:{},
+    commentFromMovies:[]
   };
 
 export const dataSlice = createSlice({
@@ -61,8 +62,16 @@ export const dataSlice = createSlice({
 
         commentInput:(state,action) =>{
           console.log(action.payload,"inputtt")
-          state.commentUsers = action.payload
-          console.log(state.commentUsers,'estado')
+          state.commentMovie = action.payload
+          console.log(state.commentMovie,'estado')
+        },
+        commentByid:(state,action) =>{
+        
+          state.commentFromMovies = action.payload
+          console.log(state.commentFromMovies,"infosubida")
+        },
+        editComment:(state,action) =>{
+          state.commentFromMovies = action.payload
         },
     }
 })
@@ -113,12 +122,51 @@ export const asyncInfoAdmin = (input) =>{
     return dispatch(infoAdmin(input))
   }
 }
-export const asyncFormComment = (input) =>{
+
+export const asyncFormComment = (input,idMovie) =>{
   return async function(dispatch){
-    return dispatch(commentInput(input))
+  try {
+    let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
+    console.log(input,"en asyncform")
+      return dispatch(commentInput(response.data))
+    }
+   catch (error) {
+    console.log(error,'from Details')
+  }
+}
+}
+export const asyncCommentById = (id,input) =>{
+  return async function(dispatch){
+    try {
+      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/comments/${id}`,input)
+      console.log(input ,'iddeslice')
+      return dispatch(commentByid(response.data[0]))
+
+    } catch (error) {
+      console.log(error,'from Details')
+    }      
+  }
+}
+export const asyncEditComment = (info) =>{
+  return async function(dispatch){
+    try {
+      let response = await axios.post()
+    } catch (error) {
+      
+    }
+  }
+}
+export const asyncDeleteComment =(id,idParams) =>{
+  return async function (dispatch){
+    try {
+      let response = axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idParams}`,id)
+    } catch (error) {
+      
+    }
   }
 }
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput} = dataSlice.actions
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment} = dataSlice.actions
 
 export default dataSlice.reducer
