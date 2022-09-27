@@ -4,51 +4,61 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncFormComment } from "../../redux/slice";
 import { useState } from "react";
 import "./ComentForm.css";
+import Allcomments  from "./AllComments/Allcomments";
+import { useParams } from "react-router-dom";
 
 export default function ComentForm() {
   const { user, isAuthenticated } = useAuth0();
+  let { id } = useParams();
+  console.log(id,"idmovie")
   const dispatch = useDispatch();
-  let infoComments = useSelector((state) => state.commentUsers);
+  // let infoComments = useSelector((state) => state.commentFromMovies);
   let comment = "";
-    console.log(infoComments,"averga")
+
 
   const [input, setInput] = useState({
-    comment: "",
-    commentfull: "",
+    coment: "",
   });
-  let commentary = input.commentfull;
 
   const handleOnChange = (e) => {
     console.log(input);
     setInput({
       ...input,
-      [e.target.name]: e.target.value,
+      name: user.name,
+      // idUser: user.nickname,
+      // email: user.email,
+      picture: user.picture,
+      coment: e.target.value,
+      status: true,
     });
   };
+  // {
+  //   "name": "jejejeejej",
+  //   "coment": "aca mollo",
+  //   "picture": "string",
+  //   "status": true
+  // }
 
   const handleOnsubmit = (e) => {
     e.preventDefault(e);
     console.log(input);
-    dispatch(asyncFormComment(input));
-    console.log(comment, "commentsadas");
+    dispatch(asyncFormComment(input, id));
     setInput({
-      ...input,
-      commentfull: input.comment,
+      coment: "",
     });
   };
 
   const validate = (data) => {
     let error = {};
-    if (data.comment.length < 3 || data.comment.length > 50)
-      error.comment = "Complete the field comment";
+    if (data.coment.length < 3 || data.coment.length > 50)
+      error.coment = "Complete the field comment";
     return error;
   };
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
-    if (error.comment) return true;
+    if (error.coment) return true;
   }
-  console.log(commentary, "antes del render");
   return (
     <div className="container-1">
       <div className="container-2">
@@ -78,40 +88,34 @@ export default function ComentForm() {
             ) : (
               <p></p>
             )}
-            {commentary.length < 1 ? (
-              <form onSubmit={(e) => handleOnsubmit(e)}>
-                <div>
-                  <div className="textInputWrapper">
-                    <input
-                      type="message"
-                      name="comment"
-                      className="textInput"
-                      placeholder="comment of the movie"
-                      onChange={handleOnChange}
-                      autoFocus
-                    />
-                  </div>
-                  <div>
-                    <div>
-                      <button type="submit" disabled={invalidAdd(input)}>
-                        {" "}
-                        Add comment
-                      </button>
-                    </div>
-                  </div>
+            <form onSubmit={(e) => handleOnsubmit(e)}>
+              <div>
+                <div className="textInputWrapper">
+                  <input
+                    type="message"
+                    name="comment"
+                    value={input.coment}
+                    className="textInput"
+                    placeholder="comment of the movie"
+                    onChange={handleOnChange}
+                    autoFocus
+                  />
                 </div>
-              </form>
-            ) : (
-              <div className="containerComments">
                 <div>
-                  <p className="inputcomment">My comment: {input.comment}</p>
+                  <div>
+                    <button type="submit" disabled={invalidAdd(input)}>
+                      {" "}
+                      Add comment
+                    </button>
+                  </div>
                 </div>
               </div>
-            )}
+            </form>
           </div>
           <div className="borbo">
             <h5>comments from other users about this movie.</h5>
             <div>
+              <Allcomments />
             </div>
           </div>
         </div>
