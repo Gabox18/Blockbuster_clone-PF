@@ -9,8 +9,11 @@ const initialState = {
     genres : [],
     details:{},
     infoInput:{},
+    user:{},
+    commentUsers:{}
     commentMovie:{},
     commentFromMovies:[]
+
   };
 
 export const dataSlice = createSlice({
@@ -22,8 +25,8 @@ export const dataSlice = createSlice({
             state.copyAllMovies = action.payload
         },
 
-        formInput:(state,action) =>{
-          state.infoInput = action.payload
+        setUser:(state,action) =>{
+          state.user = action.payload
         },
 
         allgenres :(state, action)=>{
@@ -111,23 +114,14 @@ export const asyncallMovies = () => {
     }
   }
 
- export const asyncFormInfo = (input) =>{
+ export const asynSetUser = (input) =>{
   return  async function(dispatch){
     console.log(input, 'el asyn del slices' )
-    let inputf = {
-      name : input.name,
-      lastname : input.lastname,
-      nickname : 'prueba',
-      picture : "hahahahaha",
-      email : '@hotmail',
-      status : true,
-      category : 'user'
-    }
     try {
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/newU`,inputf)
-    return dispatch(formInput(response.data))
+      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/newU`,input)
+    return dispatch(setUser(response.data))
     } catch (error) {
-      console.log(error)
+      console.log(error,'from create user')
     }
     }
   }
@@ -182,6 +176,7 @@ export const asyncDeleteComment =(id,idParams) =>{
 }
 
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment} = dataSlice.actions
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,,setUser} = dataSlice.actions
 
 export default dataSlice.reducer
