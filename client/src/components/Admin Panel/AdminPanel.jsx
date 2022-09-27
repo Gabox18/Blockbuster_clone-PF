@@ -4,6 +4,7 @@ import './adminPanel.css';
 
 function AdminPanel(){
 
+  
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light blue fixed-top">
