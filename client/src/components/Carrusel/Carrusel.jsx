@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './Carrusel.css';
 
 function Carrusel({array}){
-
     return(
         <div className="containerCarruzel">
 
