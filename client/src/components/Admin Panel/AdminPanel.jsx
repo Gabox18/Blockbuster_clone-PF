@@ -1,10 +1,25 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
+
+//funciones admin
+import FunctionDeleteUser from './Function Admin/Function Delete User/FunctionDeleteUser';
+import FunctionCreateAdmin from './Function Admin/Function CreateAdmin/FunctionCreateAdmin';
+import FunctionBannUser from "./Function Admin/FunctionBannUser/FunctionBannUser";
+
 import './adminPanel.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+
+
+
 
 function AdminPanel(){
 
-  
+  let [funct, setFunct] = useState('');
+
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light blue fixed-top">
@@ -33,45 +48,63 @@ function AdminPanel(){
       </div> */}
     </nav>
 
-    <div className="wrapper fixed-left">
-      <nav id="sidebar">
-        <div className="sidebar-header">
-          <h3><i className="fas fa-user"></i>Username</h3>
-        </div>
 
-        <ul className="list-unstyled components">
-          <li>
-            <Link href="" className="linkAdmin">
-              <i className="fas fa-home"></i>Home
-            </Link>
-          </li>
-          <li>
-            <Link href="" className="linkAdmin">
-              <i className="fas fa-clipboard"></i>Actions
-            </Link>
-          </li>
-          <li>
-            <Link href="" className="linkAdmin">
-              <i className="fas fa-user-cog"></i>User
-            </Link>
-          </li>
-          <li>
-            <Link href="" className="linkAdmin">
-              <i className="fas fa-hands-helping"></i>Seting
-            </Link>
-          </li>
-          <li>
-            <Link href="" className="linkAdmin">
-              <i className="fas fa-info"></i>About
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      <div id="content">
-
+    <div className="containerAdmin">
+      <div className="menuAdmin">
+        <li className="menu-item" id="profile">
+          <a href="#profile" className="linkAdmin text-dark">
+            <i className="far fa-user"></i>
+            User
+          </a>
+          <div className="menu-item__sub">
+            <button className="linkAdmin" onClick={() => setFunct('bannUser')}>
+              <i className="fas fa-clipboard"></i>Bann User
+            </button>
+            <button className="linkAdmin" onClick={() => setFunct('deleteUser')}>
+              <i className="fas fa-clipboard"></i>Delete User
+            </button>
+          </div>
+        </li>
+        <li className="menu-item" id="messages">
+          <a href="#messages" className="linkAdmin text-dark">
+            <i className="far fa-envelope"></i>
+            Moovie
+          </a>
+          <div className="menu-item__sub">
+            <a href="#">New Movie</a>
+            <a href="#">Delete Movie</a>            
+          </div>
+        </li>
+        <li className="menu-item" id="settings">
+          <a href="#settings" className="linkAdmin text-dark">
+            <i className="fas fa-cog"></i>
+            Settings
+          </a>
+          <div className="menu-item__sub">
+            <a href="#">All User</a>
+            <a href="#">Delete Admin</a>
+            <button className="linkAdmin" onClick={() => setFunct('createAdmin')}>
+              <i className="fas fa-clipboard"></i>Create Admin
+            </button>
+          </div>
+        </li>
+        <li className="menu-item">
+          {/* <a href="#" class="btn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </a> */}
+          <Link className="text-dark" to={'/home'}>Home</Link>
+        </li>
       </div>
+      <div className="functionAdmin col-10">
+        {
+          funct === 'deleteUser' ? <FunctionDeleteUser /> : 
+          funct === 'createAdmin' ? <FunctionCreateAdmin  /> : 
+          funct === 'bannUser' ? <FunctionBannUser /> : <></> 
 
+  
+        }
+      </div>
     </div>
 
 
