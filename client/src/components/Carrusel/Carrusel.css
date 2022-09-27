@@ -6,10 +6,9 @@
     scroll-snap-align: start;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    background: rgba(0, 0, 0, 0.445);
   }
   .containerCarruzel .mainCarruzel .sliderCarruzel {
-    width: 200px;
+    max-width: 200px;
   }
   .containerCarruzel::-webkit-scrollbar{
     display: none;
@@ -21,7 +20,7 @@
     display: inline-block;
     object-fit: cover;
     scroll-snap-align: center;
-    animation: cambio 10s infinite;
+     animation: cambio 10s infinite; 
   }
   @keyframes cambio {
     0%{margin-left: 0;}
@@ -35,7 +34,4 @@
   
     75%{margin-left: -1200%;}
     100%{margin-left: -1200%;}
-  }
-  .mainCarruzel .sliderCarruzel:hover {
-    animation:  infinite;
   }

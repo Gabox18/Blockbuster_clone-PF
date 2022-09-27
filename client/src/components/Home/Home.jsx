@@ -6,26 +6,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../Nav Bar/Navbar";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 import Carrusel from "../Carrusel/Carrusel.jsx";
-import img from  '../../assets/imgHome.jpg'
-
-
+import img from "../../assets/imgHome.jpg";
 
 function Home() {
-  
   let dispatch = useDispatch();
-  let {copyAllMovies} = useSelector(state => state.alldata);
+  let { copyAllMovies } = useSelector((state) => state.alldata);
 
   useEffect(() => {
     if(!copyAllMovies)dispatch(asyncallMovies());
   }, [copyAllMovies, dispatch]);
 
-  let arrFeaturedMovies =  copyAllMovies.filter(e => e.imdbRating > 8);
-  let arrRecentMovies = copyAllMovies.filter(e => e.year >= 2021);
-  let arrPopularMovies = copyAllMovies.filter(e => parseInt(e.imdbVotes.split(",").join('')) >=700000 );
-  
-  console.log(arrPopularMovies)
+  let arrFeaturedMovies = copyAllMovies.filter((e) => e.imdbRating > 8);
+  let arrRecentMovies = copyAllMovies.filter((e) => e.year >= 2021);
+  let arrPopularMovies = copyAllMovies.filter(
+    (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
+  );
+
+  console.log(arrPopularMovies);
   return (
     <>
       <div className="homeContainer">
@@ -34,55 +33,34 @@ function Home() {
         </div>
 
         <section className="cabecera">
-          <img className="" src={img} alt={'poster'}/>
-          <div className="contenido" >
+          <img className="" src={img} alt={"poster"} />
+          <div className="contenido">
             <h1>Blockbuster</h1>
-            <h3>Life is unpredictable and control is just an illusion that makes us feel small and helpless.</h3>
+            <h3>
+              Life is unpredictable and control is just an illusion that makes
+              us feel small and helpless.
+            </h3>
             <div className="videoCabecera">
               <ReactPlayer
                 className="react-player"
                 url="https://youtu.be/Oy_SER6dfK4"
                 controls
               />
-              {/* <>
-              <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img src={img} className="d-block w-100" alt="img" />
-                  </div>
-                  <div className="carousel-item active">
-                    <img src={img} className="d-block w-100" alt="img" />
-                  </div>
-                  <div className="carousel-item active">
-                    <img src={img} className="d-block w-100" alt="img" />
-                  </div>
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Next</span>
-                </button>
-              </div>
-              </> 
-              */}
             </div>
           </div>
         </section>
 
         <div className="conteiner-carruzel-home">
-            <h2 className="textCarruzel">Featured movies:</h2>
-            <Carrusel array={arrFeaturedMovies}/>
+          <h2 className="textCarruzel">Featured movies:</h2>
+          <Carrusel array={arrFeaturedMovies} />
         </div>
         <div className="conteiner-carruzel-home">
-            <h2 className="textCarruzel">Recent movies:</h2>
-            <Carrusel array={arrRecentMovies}/>
+          <h2 className="textCarruzel">Recent movies:</h2>
+          <Carrusel array={arrRecentMovies} />
         </div>
         <div className="conteiner-carruzel-home">
-            <h2 className="textCarruzel">Popular movies:</h2>
-            <Carrusel array={arrPopularMovies}/>
+          <h2 className="textCarruzel">Popular movies:</h2>
+          <Carrusel array={arrPopularMovies} />
         </div>
 
         <div className="footerContainer">
