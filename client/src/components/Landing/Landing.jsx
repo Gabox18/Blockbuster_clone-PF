@@ -7,6 +7,7 @@ import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncallMovies } from "../../redux/slice";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 export default function Landing() {
   let dispatch = useDispatch();
@@ -88,7 +89,7 @@ console.log(moviesCarrusel)
               <button className="btn"> Button</button> 
             </div>
             <div class="cardP1">
-              <p class="titleP">Gold</p>
+              <p class="titleP1">Gold</p>
               <div class="pricecontainerP">
                 <p class="priceP">U$D 24.99</p>
                 <p class="pricedescriptor">/month</p>
@@ -99,7 +100,7 @@ console.log(moviesCarrusel)
                 <li>40 movies</li>
                 <li>Fav list</li>
               </ul>
-              <button className="btn"> Button</button>
+              <button className="btn1"> Button</button>
             </div>
           </div>
           <div>
@@ -111,6 +112,7 @@ console.log(moviesCarrusel)
               <div className="carrusel">
                 <Carrusel array={moviesCarrusel} />
               </div>
+              <Footer/>
             </div>
           </div>
         </div>
