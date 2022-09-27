@@ -11,17 +11,41 @@ import { asyncAllgenres } from "../../../../redux/slice";
 
 function validate(input) {
     let error = {};
-    if (!input.name || input.name.length < 3 || input.name.length > 12) {
+    if (!input.name || input.name.length < 2 || input.name.length > 17) {
       error.name = "Complete the field name";
     } else if (!input.year || input.year === Number ||input.year.length === 4 ) {
+        error.description = "Complete the field description"; 
+    } else if (!input.recommendation || input.recommendation.length === 0) {
+        error.recommendation = "Complete the field recomendation";
+    } else if (!input.genre || input.genre.length === 0 || input.genre.length < 2) { 
+        error.genre = "Complete the field genre";
+    } else if (!input.description | input.description.length < 5 | input.description.length > 100) {
         error.description = "Complete the field description";
-    } else if (!input.genre || input.genre.length === 0) { 
-      error.genre = "Complete the field genre";
-    } else if (!input.recommendation) {
-      error.recommendation = "Complete the field recomendation";
+    } else if (!input.rated | input.rated.length < 2 || input.rated.length > 11) {
+        error.rated = "Complete the field rated";
+    } else if (!input.released | input.released.length < 2 || input.released.length > 11) {
+        error.released = "Complete the field released";
+    } else if (!input.runtime | input.runtime.length < 1 || input.runtime.length > 7) {
+        error.runtime = "Complete the field runtime";
+    } else if (!input.director | input.director.length < 6 || input.director.length > 15) {
+        error.director = "Complete the field director";
+    } else if (!input.actors | input.actors.length < 6 || input.actors.length > 15) {
+        error.actors = "Complete the field actors";
+    } else if (!input.language | input.language.length < 6 || input.language.length > 15) {
+        error.language = "Complete the field language";
+    } else if (!input.plot | input.plot.length < 6 || input.plot.length > 20) {
+        error.plot = "Complete the field plot";
+    } else if (!input.country | input.country.length < 3 || input.country.length > 20) {
+        error.country = "Complete the field country";
+    } else if (!input.imdbVotes | input.imdbVotes.length < 1 || input.imdbVotes.length > 5) {
+        error.imdbVotes = "Complete the field votes";
+    } else if (!input.imdbRating) {
+        error.imdbRating = "Complete the field rating";
+    } else if (!input.status) {
+        error.status = "Complete the field status";
     } else if (!input.poster) {
-      error.poster = "Complete the field poster";
-    } 
+        error.poster = "Complete the field poster";
+    }
     return error;
   };
 
@@ -35,6 +59,7 @@ export default function FunctionAddMovie() {
     year:"",
     recommendation:"",
     genre:[],
+    description:"",
     rated:"",
     released:"",
     runtime:"",
@@ -46,7 +71,6 @@ export default function FunctionAddMovie() {
     imdbVotes:"",
     imdbRating:"",
     status:"",
-    description:"",
     poster:"",
   });
 
@@ -91,7 +115,7 @@ export default function FunctionAddMovie() {
   }
 
   function handleSubmit(e) {               
-    e.preventDefault();
+    // e.preventDefault();
     // setErrors(validate(input))
     // const errorCompletarFormu = validate(input)
     // if(Object.values(errorCompletarFormu).length !== 0 || !input.poster){
@@ -104,7 +128,7 @@ export default function FunctionAddMovie() {
         year:"",
         recommendation:"",
         genre:[],
-        poster:"",
+        description:"",
         rated:"",
         released:"",
         runtime:"",
@@ -116,11 +140,10 @@ export default function FunctionAddMovie() {
         imdbVotes:"",
         imdbRating:"",
         status:"",
-        description:"",
+        poster:"",
     })
     setImagen("")
     console.log("soy input",input)
-
   }
 
   return (
@@ -157,16 +180,41 @@ export default function FunctionAddMovie() {
           <p className='error'>{errors.year}</p> 
       )}
     </div>
-            <div>
-            <label className=""> Genre: </label>
+
+    <div>
+            <label className='display-block'> Recommendation </label>
+            <select
+              name="recommendation"
+              value={input.recommendation}
+              className=""
+              onChange={(e) => handleChange(e)}>
+              <option value=""> Choose your score </option>
+              <option value="1">⭐</option>
+              <option value="2">⭐⭐</option>
+              <option value="3">⭐⭐⭐</option>
+              <option value="4">⭐⭐⭐⭐</option>
+              <option value="5">⭐⭐⭐⭐⭐</option>
+              {errors.recommendation && (
+              <p className='error'>{errors.recommendation}</p>
+              )}
+            </select>
+          </div>
+
+        <div>
+            <label className="display-block"> Genre: </label>
             <select 
-            name={'genre'}  onChange={(e)=>handleChange(e)}>
-              {genres?.map((genre, index) => {
+            name='genre' 
+            value={input.genre}
+            className=""
+            onChange={(e)=>handleChange(e)}>
+            {genres?.map(
+                (genre,index) => {
                 return (
-                  <option key={index}
-                   value={genre}>
-                    {genre}
-                  </option>
+            <option 
+            key={index}
+            value={genre}>
+            {genre}
+            </option>
                 );
               })}
             </select>
@@ -174,18 +222,21 @@ export default function FunctionAddMovie() {
             <p className='error'>{errors.genre}</p>
           )}
           </div>
-          {/* <label> poster: </label>
 
-            <input
-              placeholder="Ex: URL"
-              type="text" value={input.poster}
-              name="poster"
+          <div>
+            <label className=""> description: </label>
+            <input placeholder="Ex: description movie, tells the story..."
+              type="text"
+              value={input.description}
+              name="description"
               autoComplete="off"
               onChange={(e)=>handleChange(e)}
             />
-            {errors.poster && (
-            <p className='error'>{errors.poster}</p> 
-            )} */}
+            {errors.description && (
+          <p className='error'>{errors.description}</p>
+            )}
+          </div>
+
             <label> rated: </label>
 
              <input
@@ -220,9 +271,9 @@ export default function FunctionAddMovie() {
               autoComplete="off"
               onChange={(e)=>handleChange(e)}
             />
-            {/* {errors.runtime && (
+            {errors.runtime && (
             <p className='error'>{errors.runtime}</p> 
-            )} */}
+            )}
 
             <label> director: </label>
 
@@ -328,57 +379,23 @@ export default function FunctionAddMovie() {
             <p className='error'>{errors.status}</p> 
             )}
 
-          <div>
-            <label className=""> Description: </label>
-            <input placeholder="Ex: description movie, tells the story..."
-              type="text"
-              value={input.description}
-              name="description"
-              autoComplete="off"
-              onChange={(e)=>handleChange(e)}
-            />
-            {/* {errors.description && (
-          <p className='error'>{errors.description}</p>
-            )} */}
-          </div>
-
-          <div>
-            <label className='display-block'> Recommendation </label>
-            <select
-              name="recommendation"
-              value={input.recommendation}
-              className=""
-              onChange={(e) => handleChange(e)}>
-              <option value=""> Choose your score </option>
-              <option value="1">⭐</option>
-              <option value="2">⭐⭐</option>
-              <option value="3">⭐⭐⭐</option>
-              <option value="4">⭐⭐⭐⭐</option>
-              <option value="5">⭐⭐⭐⭐⭐</option>
-              {errors.recommendation && (
-              <p className='error'>{errors.recommendation}</p>
-              )}
-            </select>
-          </div>
-
+            <div>
           <input
-            name="image" //ESTE INPUT NO PUEDE TENER VALUE
-            placeholder="Carga aquí tu img"
+            name="poster" //ESTE INPUT NO PUEDE TENER VALUE
+            placeholder=""
             type="file"
             onChange={uploadImage}
           />
+          </div>
           <div>
-          {errors.image && (
-          <p className='error'>{errors.image}</p>
+          {errors.poster && (
+          <p className='error'>{errors.poster}</p>
           )}
             <img src={imagen} alt="" width={'200px'}/>
           </div>
           <button className="submit-button" type="submit"> Load movie </button>
         </div>
       </form>
-      <Link to='/home'>
-        <button className="btn btn-outline-warning btn-block mb-10 rounded-pill shadow-lg" type="shadow-lg p-3 mb-5 bg-body rounded"> Back </button>
-      </Link>
     </div>
   );
 }
