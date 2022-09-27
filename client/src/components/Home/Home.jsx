@@ -18,8 +18,8 @@ function Home() {
   let {copyAllMovies} = useSelector(state => state.alldata);
 
   useEffect(() => {
-    dispatch(asyncallMovies());
-  }, [dispatch]);
+    if(!copyAllMovies)dispatch(asyncallMovies());
+  }, [copyAllMovies, dispatch]);
 
   let arrFeaturedMovies =  copyAllMovies.filter(e => e.imdbRating > 8);
   let arrRecentMovies = copyAllMovies.filter(e => e.year >= 2021);

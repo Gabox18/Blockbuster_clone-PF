@@ -25,9 +25,13 @@ border-top-left-radius: 25px;
 border-bottom-right-radius: 35px; */
 }
 
-.name-profile, .nick-profile, .email-profile{
+.name-profile, .nick-profile, .email-profile, .Birth-profile{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(202, 173, 43, 0.877);
+}
+
+.h4-complete-profile, .Birth-profile{
+  color: red;
 }
 
 .card-profile{
@@ -50,4 +54,12 @@ border-bottom-right-radius: 35px;
 
 .img-profile{
     border-radius: 4rem;
+}
+.input-complete{
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.div-complete-profile{
+  margin-bottom: 10px;
 }
