@@ -8,16 +8,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncallMovies } from "../../redux/slice";
 import { Link } from "react-router-dom";
 
-
 export default function Landing() {
-
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
   }, [dispatch]);
 
-  let {copyAllMovies} = useSelector(state => state.alldata);
-
+  let { copyAllMovies } = useSelector((state) => state.alldata);
+const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
+console.log(copyAllMovies)
+console.log(moviesCarrusel)
   return (
     <>
       <div className="ContainerLanding">
@@ -25,7 +25,7 @@ export default function Landing() {
           <nav className="navBarLanding">
             <div>
               <div className="img-nav">
-                <Link to={'/'}>
+                <Link to={"/"}>
                   <img src={logo} width="100px" alt="logo" />
                 </Link>
               </div>
@@ -71,48 +71,45 @@ export default function Landing() {
             <p className="p">START ENJOYING THE BEST STORIES</p>
             <p className="p">MADE ESPECIALLY FOR YOU</p>
           </div>
+          <div className="contMembership">
+            <div class="cardP">
+              <p class="titleP">Silver</p>
+              <div class="pricecontainerP">
+                <p class="priceP">U$D 19.99</p>
+                <p class="pricedescriptor">/month</p>
+              </div>
+              <p class="includesP">This Plan Includes:</p>
+              <ul class="benefitlistP">
+                <li>Full HD 1080pi</li>
+                <li>20 movies</li>
+                <li>Fav list</li>
+              </ul>
+          
+              <button className="btn"> Button</button> 
+            </div>
+            <div class="cardP1">
+              <p class="titleP">Gold</p>
+              <div class="pricecontainerP">
+                <p class="priceP">U$D 24.99</p>
+                <p class="pricedescriptor">/month</p>
+              </div>
+              <p class="includesP">This Plan Includes:</p>
+              <ul class="benefitlistP">
+                <li>Full HD 4k</li>
+                <li>40 movies</li>
+                <li>Fav list</li>
+              </ul>
+              <button className="btn"> Button</button>
+            </div>
+          </div>
           <div>
             <div className="conteiner-shop-plan">
               <div className="containerLanding">
-                <div className="card_box">
-                  <span>Silver</span>
-                  <p>
-                    .Maximum quality 1080p.<br></br>.1 device at a time.<br></br>
-                    .You can watch 20 movies per month.
-                  </p>
-                </div>
-                    
-                  <Link to={'/'} className="fancy">
-                    <span className="top-key"></span>
-                    <span className="text">Buy Plan</span>
-                    <span className="bottom-key-1"></span>
-                    <span className="bottom-key-2"></span>
-                  </Link>
-                  <div>
-              <h3>$300 per Month</h3>
               </div>
-
-                <div className="card_box2">
-                  <span> </span>
-                  <p>
-                    .Maximum quality 4K.<br></br>.4 device at a time.<br></br>
-                    .You can watch 50 movies per month.
-                  </p>
-                </div>
-                
-              
-                  <Link to={'/'} className="fancy">
-                    <span className="top-key"></span>
-                    <span className="text">Buy Plan</span>
-                    <span className="bottom-key-1"></span>
-                    <span className="bottom-key-2"></span>
-                  </Link>
-
-              </div><div>
-              <h3>$500 per Month</h3>
+              <div>   
               </div>
               <div className="carrusel">
-                <Carrusel array={copyAllMovies}/>
+                <Carrusel array={moviesCarrusel} />
               </div>
             </div>
           </div>

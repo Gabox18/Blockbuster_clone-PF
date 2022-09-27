@@ -14,9 +14,7 @@
   .containerCarruzel::-webkit-scrollbar{
     display: none;
   }
-  .mainCarruzel .sliderCarruzel:hover {
-    transform: scale(1.08);
-  }
+
   .mainCarruzel .sliderCarruzel .imgCarr {
     width: 12rem;
     height: 18rem;
@@ -37,4 +35,7 @@
   
     75%{margin-left: -1200%;}
     100%{margin-left: -1200%;}
+  }
+  .mainCarruzel .sliderCarruzel:hover {
+    animation:  infinite;
   }

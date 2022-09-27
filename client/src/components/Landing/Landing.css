@@ -333,74 +333,6 @@ background-color:  #09043f;
   width:232% !important;
  }
  
- /* Link */
-.container-plan div .conteiner-shop-plan .containerLanding div a{
-  width:254% !important;
- }
- 
- /* Link */
- .conteiner-shop-plan a{
-  margin-left:22px;
-  transform:translatex(-237px) translatey(164px);
-  border-width:2px;
-  border-style:solid;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  background-repeat:no-repeat;
-  color:#F7A600;
-  background-clip:border-box;
- }
- 
- /* Fancy */
-  div .fancy:nth-child(4){
-  transform:translatex(-239px) translatey(156px);
- }
- 
- /* Fancy */
-  div .fancy:nth-child(2){
-  transform:translatex(-156px) translatey(154px);
- }
- /* Heading */
-.conteiner-shop-plan > div > h3{
-  width:5%;
-  transform:translatex(1093px) translatey(-91px);
-  color:#f7a600;
- }
- 
- /* Heading */
- .containerLanding div h3{
-  transform:translatex(-401px) translatey(164px);
-  color:#f7a600;
-  min-height:51px;
- }
- 
- /* Link */
- .conteiner-shop-plan a{
-  padding-left:22px;
-  transform:translatex(-32px) translatey(144px) !important;
- }
- 
- /* Fancy */
-  div .fancy:nth-child(5){
-  transform:translatex(-128px) translatey(149px) !important;
- }
- 
- /* Heading */
- #root  .containerLanding .container-plan div .conteiner-shop-plan .container div h3{
-  width:161% !important;
- }
- 
- /* Paragraph */
- .conteiner-shop-plan .card_box2 p{
-  transform:translatex(4px) translatey(145px);
- }
- 
- /* Paragraph */
- .conteiner-shop-plan .card_box p{
-  transform:translatex(4px) translatey(158px);
- }
  /* Division */
 .navBarLanding .btn-log > div{
   transform:translatex(-52px) translatey(-22px);
@@ -417,78 +349,155 @@ background-color:  #09043f;
   color:#000000;
  }
  
- /* Heading */
-.conteiner-shop-plan > div > h3{
-  transform:translatex(1245px) translatey(-394px);
-  width:245px;
-  margin-bottom:31px;
-  min-height:44px;
+ /* ----------------- francoo ------- */
+ .contMembership{
+  margin-bottom: 1%;
+  display: flex;
+ align-items: center;
+ }
+
+.cardP {
+  width: 300px;
+  max-height: 500px;
+  padding: 1rem;
+  background: rgb(45, 45, 45);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+  border-radius: 7%;
+  border: groove #F7A600 6px;
+  margin-left: 22%;
+  margin-right: 10%;
+ }
+ .cardP:hover {
+ border: double #F7A600 8px;
+ }
+ .cardP1 {
+  width: 300px;
+  max-height: 500px;
+  padding: 1rem;
+  background: rgb(45, 45, 45);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+  border-radius: 7%;
+  border: groove #F7A600 6px;
+  margin-left: 12%;
+  margin-right: 20%;
+ }
+ .cardP1:hover {
+ border: double #F7A600 8px;
+ }
+
+ 
+ .titleP {
+  text-align: center;
+  margin-top: 0.5em;
+  font-weight: bold;
+  font-size: x-large;
+  color: #F7A600;
+
  }
  
- /* Link */
- .conteiner-shop-plan a{
-  transform:translatex(-231px) translatey(133px) !important;
+ .pricecontainerP {
+  width: 100%;
+  margin-top: 0.7em;
+  border-radius: 7%;
+  background-color: rgb(30,30,30);
+  box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
  }
  
- /* Fancy */
-  div .fancy:nth-child(5){
-  transform:translatex(-229px) translatey(144px) !important;
+ .priceP {
+  text-align: center;
+  color: rgb(180,180,180);
+  font-size: x-large;
+  font-weight: bold;
+  padding: 0.75em 0 0 0;
  }
  
- /* Fancy */
-  div .fancy:nth-child(2){
-  transform:translatex(-146px) translatey(145px) !important;
+ .pricedescriptor {
+  text-align: center;
+  color: rgb(118, 118, 118);
+  font-size: medium;
+  padding: 0 0 1em 0;
  }
  
- /* Heading */
- /* .container div h3{
-  transform:translatex(-328px) translatey(-139px);
- } */
- 
- /* Paragraph */
-.conteiner-shop-plan .card_box p{
-  font-size:20px;
+ .includesP {
+  text-align: center;
+  color: rgb(110, 110, 110);
+  margin-top: 0.6em;
+  font-size: small;
+  font-weight: bold;
+ }
+ .benefitlistP{
+  text-decoration: none;
+ }
+ .benefitlistP li {
+  color: rgb(150,150,150);
+  font-size: medium;
+  text-align: center;
+  text-decoration: none;
+ }
+::marker{
+  color: #F7A600;
+}
+   .benefitlistP li:nth-child(1) {
+  margin-top: 0.4em;
+  text-decoration: none;
  }
  
- /* Division */
- .conteiner-shop-plan .containerLanding div:nth-child(3){
-  transform:translatex(-257px) translatey(-139px);
+ .btncontainerP {
+  text-align: center;
  }
  
- /* Division */
-  .conteiner-shop-plan div:nth-child(2){
-  width:241px;
-  transform:translatex(1244px) translatey(-394px);
+ .btncontainerP button {
+  margin-top: 1em;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  border-style: none;
+  border-radius: 1000000px;
+  color: rgb(239, 239, 239);
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #fe4fe1 0%, #3f00fe 100%);
+  transition: box-shadow 0.15s ease-in-out;
  }
  
- /* Heading */
-  .conteiner-shop-plan div:nth-child(2) h3{
-  transform:translatex(51px) translatey(0px);
+ .btncontainerP button:hover {
+  box-shadow: inset 0px 0px 5px rgb(0,0,0);
+  transition: box-shadow 0.15s ease-in-out;
+ }
+ .btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background:#09043F;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
  }
  
- /* Heading */
- .conteiner-shop-plan div h3{
-  transform:translatex(9px) translatey(0px) !important;
+ button:hover {
+  color: black;
  }
  
- /* Division */
-.container-plan div .conteiner-shop-plan .containerLanding div:nth-child(3){
-  width:177px !important;
+ button:after {
+  content: "";
+  background: #F7A600;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
  }
  
- /* Heading */
- .container-plan div .conteiner-shop-plan .containerLanding div h3{
-  transform:translatex(-37px) translatey(0px) !important;
+ button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
  }
- 
- /* Heading */
-.containerLanding div h3{
-  transform:translatex(-37px) translatey(0px);
- }
- 
- /* Heading */
- .conteiner-shop-plan > div > h3{
-  transform:translatex(-12px) translatey(6px) !important;
- }
- 
- 
