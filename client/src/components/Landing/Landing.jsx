@@ -5,15 +5,20 @@ import LoginButton from "../User/Login";
 import logo from "../../assets/Logo.png";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncallMovies } from "../../redux/slice";
+import { asyncallMovies,asyncGetUser } from "../../redux/slice";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 
 export default function Landing() {
+  const { user } = useAuth0();
+  //let userDB = useSelector(state=>state.alldata.user)
+  console.log(user,'user')
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
-  }, [dispatch]);
+    dispatch(asyncGetUser(user))
+  }, [dispatch, user]);
 
   let { copyAllMovies } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')

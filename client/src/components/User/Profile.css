@@ -5,6 +5,7 @@
   -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
+  margin-bottom: 20px;
 }
 
 .small-profile{
@@ -62,4 +63,12 @@ border-bottom-right-radius: 35px;
 
 .div-complete-profile{
   margin-bottom: 10px;
+}
+
+.completeProfile{
+  width: 15rem;
+}
+
+.updateProfile{
+  width: 11rem;
 }

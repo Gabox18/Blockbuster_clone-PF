@@ -20,6 +20,11 @@ export const dataSlice = createSlice({
     name:'allData',
     initialState,
     reducers:{
+
+        getUser : (state, action)=>{
+          state.user = action.payload
+        },
+
         allMovies : (state, action)=>{
             state.allMovies = action.payload
             state.copyAllMovies = action.payload
@@ -178,7 +183,15 @@ export const asyncallMovies = () => {
     }
   }
 
-  
+  export const asyncGetUser = (userMail)=>{
+    return async function (dispatch){
+      try {
+        let response = await axios.get(`https://back-end-movies-henry2.onrender.com/Uemail/${userMail}`)
+        return dispatch(getUser(response.data))
+      } catch (error) {  
+      }
+    }
+  }
 
 
 //--------------------------------------------------------------------------------------------------------------------
@@ -196,6 +209,6 @@ export const asyncInfoAdmin = (input) =>{
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,getUser} = dataSlice.actions
 
 export default dataSlice.reducer

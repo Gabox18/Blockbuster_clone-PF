@@ -12,7 +12,7 @@ import Profile from "./components/User/Profile";
 //import { Tooltip, Toast, Popover } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Detail from "./components/Detail/Detail";
-import Form from "./components/Form/Form";
+import Form from "./components/User/Form/FormUpdateUser";
 import ViewResult from "./components/Home/ViewResult";
 import adminPanel from "./components/Admin Panel/AdminPanel";
 
