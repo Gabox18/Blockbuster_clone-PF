@@ -1,14 +1,59 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React from "react";
+import React, { useState } from "react";
 import LoginButton from "./Login";
-import Logoutbutton from "./Logout";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { asynSetUser } from "../../redux/slice.js";
+import Navbar from "../Nav Bar/Navbar.jsx";
+import Footer from "../Footer/Footer.jsx";
 import "./Profile.css";
 
 const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
+  let userBD = useSelector((state) => state.alldata.user);
+  const dispatch = useDispatch();
+  console.log(userBD,'desde redux')
+
+    const validate = (data) => {
+      let error = {};
+      if (!data.date) error.date = "Complete the field date";
+      return error;
+    };
+
+  const [input, setInput] = useState({
+    name: user?.given_name,
+    lastname: user?.family_name,
+    nickname: user?.nickname,
+    picture : user?.picture,
+    email : user?.email,
+    date: "",
+    status: true,
+    category: "user",
+  });
+
+  const handleOnChange = (e) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleOnsubmit = (e) => {
+    e.preventDefault(e);
+    let error = validate(input)
+       if(Object.keys(error).length !== 0){
+        alert("Complete the required field");
+       }else{
+        dispatch(asynSetUser(input));
+        alert("added profile info");
+       }
+    
+  };
+
+
   return (
     <div>
+      <Navbar/>
       {isAuthenticated ? (
         //https://mdbootstrap.com/docs/standard/extended/profiles/
         <section className="profileBg-dark">
@@ -19,26 +64,33 @@ const Profile = () => {
                 <div className="card-profile">
                   <div className="card-profile text-center">
                     <div className="mt-3 mb-9" >
-                      <img src={user.picture} className="img-profile" alt="perfil-phot"/>
+                      <img src={user?.picture} className="img-profile" alt="perfil-phot"/>
                     </div>
-                    <h4 className="name-profile">{user.name}</h4>
-                    <p className="nick-profile"> Nickname:<span className="mx-2">{user.nickname}</span>{" "}</p>
-                    <p className="email-profile">Email : {user.email}</p>
+                    <h4 className="name-profile">{user?.name}</h4>
+                    <p className="nick-profile"> Nickname:<span className="mx-2">{user?.nickname}</span>{" "}</p>
+                    <p className="email-profile">Email : {user?.email}</p>
       
                     {
-                    !user.status
+                    !userBD.status
                           ? (<div class="div-complete-profile">
                               <h4 className="h4-complete-profile">complete your information</h4>
                               <p className="Birth-profile">Date of Birth</p>
-                              <input
-                                type="date"
-                                name="date"
-                                className="input-complete"
-                                placeholder="Date of Birth"
-                              />
-                              <button className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Complete profile</button>
+                              <form onSubmit={handleOnsubmit}>
+                                <input
+                                  type="date"
+                                  name="date"
+                                  className="input-complete"
+                                  placeholder="Date of Birth"
+                                  onChange={handleOnChange}
+                                />
+                                <button type="submit" className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg completeProfile">Complete profile</button>
+                              </form>
                           </div>)
-                      : <></>
+                      : <Link to={"/infoprofile"}>
+                      <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg updateProfile">
+                        Update profile   
+                      </div>
+                    </Link>
                     }
                     
                   </div>
@@ -49,12 +101,7 @@ const Profile = () => {
                       Home
                     </div>
                   </Link>
-                  <Link to={"/infoprofile"}>
-                    <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">
-                      Update profile   
-                    </div>
-                  </Link>
-                  <Logoutbutton />
+                  
               </div>
             </div>
             </div>
@@ -63,6 +110,7 @@ const Profile = () => {
       ) : (
         <LoginButton />
       )}
+      <Footer/>
     </div>
   );
 };

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
-import { asyncallMovies, asynSetUser } from "../../redux/slice";
-import './Form.css'
+import {  } from "../../../redux/slice";
+import './FormUpdateUser.css'
+import Footer from "../../Footer/Footer";
+import Navbar from "../../Nav Bar/Navbar";
 
 
 
-export default function Form() {
+export default function FormUpdateUser() {
   const { user, isAuthenticated } = useAuth0();
   const dispatch = useDispatch();
   console.log(user)
@@ -38,7 +40,7 @@ export default function Form() {
   }
 
   useEffect(() => {
-    dispatch(asyncallMovies());
+    //dispatch(asyncallMovies());
   }, [dispatch]);
 
   const handleOnChange = (e) => {
@@ -60,7 +62,7 @@ export default function Form() {
       category: "user",
       
     });
-    dispatch(asynSetUser(input));
+    //dispatch(asynSetUser(input));
     alert("added profile info");
     setInput({
       name: "",
@@ -72,9 +74,8 @@ export default function Form() {
 
   return (
     <div>
+      <Navbar/>
       <div className="container-general">
-        <div className=" ">
-          <div className="">
             <div className="cards-form">
               {isAuthenticated ? (
                 <div className="img">
@@ -133,22 +134,6 @@ export default function Form() {
                     </div>
                   </div>
 
-
-                  <p className="category">Nickname</p>
-                  <div className="form-group">
-                    <div class="textInputWrapper">
-                      <input
-                        type="text"
-                        name="nickname"
-                        value={input.nickname}
-                        className="textInput"
-                        placeholder="nickname"
-                        onChange={handleOnChange}
-                      />
-                    </div>
-                  </div>
-
-
                   <div className="form-group">
                     <div class="textInputWrapper">
                       <p className="category">Date</p>
@@ -169,10 +154,9 @@ export default function Form() {
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
+            </div>       
       </div>
+      <Footer/>
     </div>
   );
 }
