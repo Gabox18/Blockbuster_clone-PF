@@ -190,6 +190,14 @@ export const asyncInfoAdmin = (input) =>{
   }
 }
 
+export const asyncDeleteMovie =(id) =>{
+  return async function (){
+    // const idNumber = parseInt(id)
+    const objetito = {id}
+    console.log(objetito)
+    let responde = axios.put(`https://back-end-movies-henry2.onrender.com/removeM/`,objetito)
+  }
+}
 
 
 

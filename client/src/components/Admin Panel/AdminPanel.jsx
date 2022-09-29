@@ -9,6 +9,7 @@ import FunctionBannUser from "./Function Admin/FunctionBannUser/FunctionBannUser
 import FunctionAddMovie from './Function Admin/Function AddMovie/FunctionAddMovie.jsx'
 import './adminPanel.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import FunctionDeleteMovie from "./Function Admin/Function DeleteMovie/FunctionDeleteMovie.jsx";
 
 
 
@@ -74,7 +75,10 @@ function AdminPanel(){
             <button className="linkAdmin" onClick={() => setFunct('createmovie')}>
               <i className="fas fa-clipboard"></i>New Movie
             </button>
-            <a href="#">Delete Movie</a>            
+            <button className="linkAdmin" onClick={() => setFunct('deletemovie')}>
+              <i className="fas fa-clipboard"></i>Delete Movie
+            </button>
+            {/* <a href="#">Delete Movie</a>             */}
           </div>
         </li>
         <li className="menu-item" id="settings">
@@ -103,7 +107,8 @@ function AdminPanel(){
           funct === 'deleteUser' ? <FunctionDeleteUser /> : 
           funct === 'createAdmin' ? <FunctionCreateAdmin  /> : 
           funct === 'bannUser' ? <FunctionBannUser />  :
-          funct === 'createmovie'? <FunctionAddMovie/> : <></>
+          funct === 'createmovie'? <FunctionAddMovie/> : 
+          funct === 'deletemovie'? <FunctionDeleteMovie/> : <></>
   
         }
       </div>
