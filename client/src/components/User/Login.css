@@ -21,6 +21,7 @@
     z-index: 0;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  
   }
   
   .btn-shine span {

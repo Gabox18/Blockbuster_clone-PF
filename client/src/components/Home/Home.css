@@ -1,5 +1,5 @@
 .homeContainer{
-  background: url('../../assets/font-home.jpg') no-repeat center center fixed;
+  background: url('../../assets/fondoBlue.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -9,12 +9,8 @@
   
   .cardContainer {
   display: grid;
-  /* grid-template-columns: 400px 400px 400px; */
-  /* grid-template-rows: 600px; */
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-rows: 40rem;
-  /* justify-content: center;
-  align-items: center; */
   margin: 4rem;
   gap: 2rem;
   text-decoration: none;
@@ -41,8 +37,6 @@
   } 
   
   .cardBg-dark, .card-body{
-  /* width: 190px;
-  height: 254px; */
   background-image: linear-gradient(163deg, #00ff77ce 0%, #3700ff63 100%);
   border-radius: 2px;
   transition: all .3s;
@@ -112,26 +106,31 @@
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #F9BD08;
 }
+
 .textCarruzel {
   font-size: 3rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #F9BD08;
+  text-align: start;
+ padding-left: 2rem;
 }
-
+.textCarruzel2 {
+  font-size: 3rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #F9BD08;
+  text-align: end;
+  padding-right: 2rem;
+}
 .videoCabecera{
   position: relative;
   bottom: 18rem;
   right: 34rem;
-  
 }
-
 .conteiner-carruzel-home{
   margin-bottom: 40px;
+  justify-content: start;
+ 
 }
-.cagada{
-  margin-top: 40%;
-  
-}
-.parrafo{
-  margin-left: 30%;
+.cabecera{
+  border-bottom: #F7A600 groove 1rem;
 }

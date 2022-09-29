@@ -1,359 +1,48 @@
-.ContainerLanding{
-  background-image: url("../../assets/adminPanel.jpeg") ;
 
-}
 @media screen and (max-width: 450px) {
   .wrapper{
     min-width: 100vh;
     min-height: 100vh;
   }
 }
-
-.navBarLanding{
-  background-color: #09043f;
+.videitoFondo{
+    width: 100%;
+    height: 75%;  
+    object-fit: cover;
+    margin: 0%;
+    background: transparent;
+    border-bottom: #F7A600 groove 1rem;
 }
-.img-nav{
- 
-  display: flex;
-  align-items: flex-start;
-  
-}
-.btn-log{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: -30px;
-  margin-right: 50px;
-}
-.container-plan{
-background-color:  #09043f;
-  margin-top: 600px;
-  display: flexbox;
-  justify-content: center;
-  align-items: flex-end;
-} 
-.p{
- color:#F7A600;
- margin-top: 15px;
- font-size: 30px;
- font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.container-logo{
-  margin-left: 280px;
-  display: flex;
- justify-content:space-around;
- align-items: center;
- align-self: center;
- margin-right: 280px;
-}
-
-/* From uiverse.io by @mrhyddenn */
-.containerLanding {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card_box {
-  width: 200px;
-  height: 250px;
-  border-radius: 20px;
-  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+.videitoF{
   position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
-  cursor: pointer;
-  transition: all .3s;
 }
-
-.card_box:hover {
-  transform: scale(0.9);
+.textol{
+  position: absolute;
+  font-size: larger;
+  top: 35rem;
+  left: 50em;
 }
-
-.card_box span {
+.texto2{
   position: absolute;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
-  top: -10px;
-  left: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card_box span::before {
-  content: 'Silver';
-  position: absolute;
-  width: 150%;
-  height: 40px;
-  background-image: linear-gradient(45deg, #b5b5b5 0%, #aeaeae  51%, #6a6a6a  100%);
-  transform: rotate(-45deg) translateY(-20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
-}
-
-.card_box span::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  bottom: 0;
-  left: 0;
-  height: 10px;
-  z-index: -1;
-  box-shadow: 140px -140px #b1b1b1;
-  background-image: linear-gradient(45deg, #8a8989 0%, #797979  51%, #808080  100%);
-}
-
-
-
-
-.card_box2 {
-  width: 200px;
-  height: 250px;
-  border-radius: 20px;
-  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
-  position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
-  cursor: pointer;
-  transition: all .3s;
-}
-
-.card_box2:hover {
-  transform: scale(0.9);
-}
-
-.card_box2 span {
-  position: absolute;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
-  top: -10px;
-  left: -10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card_box2 span::before {
-  content: 'Gold';
-  position: absolute;
-  width: 150%;
-  height: 40px;
-  background-image: linear-gradient(45deg, #F7A600 0%, #F7A600  51%, #F7A600  100%);
-  transform: rotate(-45deg) translateY(-20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.23);
-}
-
-.card_box2 span::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  bottom: 0;
-  left: 0;
-  height: 10px;
-  z-index: -1;
-  box-shadow: 140px -140px #F7A600;
-  background-image: linear-gradient(45deg, #F7A600 0%, #F7A600  51%, #F7A600  100%);
-}
-
-/* From uiverse.io */
-.fancy {
-  background-color: black;
-  border: 2px solid #000;
-  border-radius: 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  /* float: right; */
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 1.25em 2em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  transition: all 0.3s ease-in-out;
-  user-select: none;
-  font-size: 13px;
- }
- 
- .fancy::before {
-  content: " ";
-  width: 1.5625rem;
-  height: 2px;
-  background: black;
-  top: 50%;
-  left: 1.5em;
-  position: absolute;
-  transform: translateY(-50%);
-  transform-origin: center;
-  transition: background 0.3s linear, width 0.3s linear;
- }
- 
- .fancy .text {
-  font-size: 1.125em;
-  line-height: 1.33333em;
-  padding-left: 2em;
-  display: block;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
- }
- 
- .fancy .top-key {
-  height: 2px;
-  width: 1.5625rem;
-  top: -2px;
-  left: 0.625rem;
-  position: absolute;
-  background:#F7A600;
-  transition: width 0.5s ease-out, left 0.3s ease-out;
- }
- 
- .fancy .bottom-key-1 {
-  height: 2px;
-  width: 1.5625rem;
-  right: 1.875rem;
-  bottom: -2px;
-  position: absolute;
-  background:#F7A600;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
- }
- 
- .fancy .bottom-key-2 {
-  height: 2px;
-  width: 0.625rem;
-  right: 0.625rem;
-  bottom: -2px;
-  position: absolute;
-  background:#F7A600;
-  transition: width 0.5s ease-out, right 0.3s ease-out;
- }
- 
- .fancy:hover {
+  font-size: larger;
+  top: 48rem;
+  left: 38em;
   color: #F7A600;
-  background: black;
- }
- 
- .fancy:hover::before {
-  width: 0.9375rem;
-  background:#F7A600;
- }
- 
- .fancy:hover .text {
-  color: #F7A600;
-  padding-left: 1.5em;
- }
- 
- .fancy:hover .top-key {
-  left: -2px;
-  width: 0px;
- }
- 
- .fancy:hover .bottom-key-1,
-  .fancy:hover .bottom-key-2 {
-  right: 0;
-  width: 0;
- }
+}
 
- /* Card box2 */
-.conteiner-shop-plan .card_box2{
-  transform:translatex(63px) translatey(-10px);
-  height:450px;
-  width:400px;
- }
- 
- /* Card box */
- .conteiner-shop-plan .card_box{
-  transform:translatex(152px) translatey(-9px);
-  width:400px;
-  height:450px;
- }
- 
- /* Paragraph */
- .conteiner-shop-plan .card_box2 p{
-  transform: translatey(146px);
-  margin-bottom:30px;
-  min-height:197px;
-  color:#f7a600;
-  font-weight:300;
-  text-decoration:none;
-  text-align:left;
-  text-shadow:none;
-  letter-spacing:0.8px;
-  word-spacing:2.2px;
-  column-count:1;
-  direction:rtl;
-  line-height:2.8em;
-  font-size:20px;
-  font-family:'tahoma';
- }
- 
- /* Paragraph */
- .conteiner-shop-plan .card_box p{
-  transform:translatex(0px) translatey(158px);
-  min-height:180px;
-  font-family:Tahoma,Verdana,Segoe,sans-serif;
-  font-weight:300;
-  color:#f7a600;
-  text-align:left;
-  letter-spacing:0.8px;
-  word-spacing:1.4px;
-  direction:rtl;
-  line-height:2.4em;
-  font-size:21px;
- }
- 
- /* Button */
- .conteiner-shop-plan div button{
-  padding-top:0px;
-  transform:translatex(-104px) translatey(153px);
- }
- 
- /* Fancy */
- .container-plan div .conteiner-shop-plan .containerLanding div:nth-child(2) .fancy{
-  width:232% !important;
- }
- 
- /* Division */
-.navBarLanding .btn-log > div{
-  transform:translatex(-52px) translatey(-22px);
-  background-color:transparent;
- }
- 
- /* Shine */
- .btn-log div .btn-shine{
-  background-color:#f7a600;
- }
- 
- /* Span Tag */
- .btn-log div span{
-  color:#000000;
- }
  
  /* ----------------- francoo ------- */
+ .container-plan{
+  background-image: url("../../assets/fondoBlue.jpg");
+  margin-top: -8px;
+  background-position: 50% -10%;
+  padding-top: 2%;
+}
  .contMembership{
   margin-bottom: 1%;
   display: flex;
  align-items: center;
+ margin-bottom: 10%;
  }
 
 .cardP {
@@ -364,12 +53,12 @@ background-color:  #09043f;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
-  border: groove silver 6px;
-  margin-left: 22%;
+  outline: groove silver 6px;
+  margin-left: 25%;
   margin-right: 10%;
  }
  .cardP:hover {
- border: double silver 8px;
+  outline: double silver 8px;
  }
  .cardP1 {
   width: 300px;
@@ -379,12 +68,12 @@ background-color:  #09043f;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
-  border: groove #F7A600 6px;
+  outline: groove #F7A600 6px;
   margin-left: 12%;
   margin-right: 20%;
  }
  .cardP1:hover {
- border: double #F7A600 8px;
+ outline: double #F7A600 8px;
  }
 
  .titleP {
@@ -535,3 +224,48 @@ background-color:  #09043f;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
  }
+
+ /* From uiverse.io by @mrhyddenn */
+.loader {
+  position: relative;
+}
+
+.loader span {
+  position: absolute;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  letter-spacing: 5px;
+}
+
+.loader span:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px  #F7A600;
+
+}
+
+.loader span:nth-child(2) {
+  color: #09043F;
+  -webkit-text-stroke: 1px #0e0762;
+  animation: uiverse723 3s ease-in-out infinite;
+}
+
+@keyframes uiverse723 {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 
+     54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+
+  50% {
+    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 
+     51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
+.flechita{
+  margin-top: 3rem;
+  max-width: 5rem;
+}
+.flechita:hover{
+  margin-top: 2rem;
+  max-width: 5rem;
+}
