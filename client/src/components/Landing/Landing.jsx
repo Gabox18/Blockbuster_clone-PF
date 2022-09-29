@@ -1,19 +1,26 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
-import LoginButton from "../User/Login";
-import logo from "../../assets/Logo.png";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncallMovies } from "../../redux/slice";
-import { Link } from "react-router-dom";
+import { asyncallMovies,asyncGetUser } from "../../redux/slice";
+import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
+import video from "../../assets/video.mp4"
+import Nav from "../Nav Bar/Navbar"
+import flecha from "../../assets/flecha.png"
+
+
 
 export default function Landing() {
+  const { user } = useAuth0();
+  //let userDB = useSelector(state=>state.alldata.user)
+  console.log(user,'user')
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
-  }, [dispatch]);
+    dispatch(asyncGetUser(user))
+  }, [dispatch, user]);
 
   let { copyAllMovies } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
@@ -23,20 +30,18 @@ console.log(moviesCarrusel)
     <>
       <div className="ContainerLanding">
         <div>
-          <nav className="navBarLanding">
-            <div>
-              <div className="img-nav">
-                <Link to={"/"}>
-                  <img src={logo} width="100px" alt="logo" />
-                </Link>
-              </div>
-            </div>
-            <div className="btn-log">
-              <div>
-                <LoginButton />
-              </div>
-            </div>
-          </nav>
+       <Nav/>     
+        </div>
+        <div className="vieitoF">
+      <video src={video} muted loop autoPlay className="videitoFondo" />
+         <div className="textol"> <div className="loader">
+    <span>BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
+
+</div>
+     <div className="texto2"><b>Fasten your seat belts, this is going to be a busy night!!</b>
+     <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
         </div>
         <div className="container-plan">
           <div>
@@ -73,14 +78,14 @@ console.log(moviesCarrusel)
             <p className="p">MADE ESPECIALLY FOR YOU</p>
           </div>
           <div className="contMembership">
-            <div class="cardP">
-              <p class="titleP">Silver</p>
-              <div class="pricecontainerP">
-                <p class="priceP">U$D 19.99</p>
-                <p class="pricedescriptor">/month</p>
+            <div className="cardP">
+              <p className="titleP">Silver</p>
+              <div className="pricecontainerP">
+                <p className="priceP">U$D 19.99</p>
+                <p className="pricedescriptor">/month</p>
               </div>
-              <p class="includesP">This Plan Includes:</p>
-              <ul class="benefitlistP">
+              <p className="includesP">This Plan Includes:</p>
+              <ul className="benefitlistP">
                 <li>Full HD 1080pi</li>
                 <li>20 movies</li>
                 <li>Fav list</li>
@@ -88,14 +93,14 @@ console.log(moviesCarrusel)
           
               <button className="btn"> Button</button> 
             </div>
-            <div class="cardP1">
-              <p class="titleP1">Gold</p>
-              <div class="pricecontainerP">
-                <p class="priceP">U$D 24.99</p>
-                <p class="pricedescriptor">/month</p>
+            <div className="cardP1">
+              <p className="titleP1">Gold</p>
+              <div className="pricecontainerP">
+                <p className="priceP">U$D 24.99</p>
+                <p className="pricedescriptor">/month</p>
               </div>
-              <p class="includesP">This Plan Includes:</p>
-              <ul class="benefitlistP">
+              <p className="includesP">This Plan Includes:</p>
+              <ul className="benefitlistP">
                 <li>Full HD 4k</li>
                 <li>40 movies</li>
                 <li>Fav list</li>

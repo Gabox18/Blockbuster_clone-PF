@@ -1,78 +1,87 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { asyncDeleteComment } from "../../../redux/slice";
-import { useParams } from 'react-router-dom';
+import { asyncDeleteComment, asyncEditComment } from "../../../redux/slice";
+import { useSelector } from "react-redux";
+import "./Comment.css";
+import { useParams } from "react-router-dom";
+import avatar from "../../../assets/avatar.png";
+import tachito from "../../../assets/tachito.png";
+import pencil from "../../../assets/pencil.png";
 
-
-export default function Comment (info) {
+export default function Comment({
+  name,
+  idComment,
+  picture,
+  movieId,
+  coment,
+  idUser,
+}) {
   const [input, setInput] = useState({
     id: "",
     coment: "",
   });
+
   let edit = false;
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  let { user } = useSelector((state) => state.alldata);
+  let { id } = useParams();
 
-  let{idMovie} = useParams()
+  async function handleDelete(idComment) {
+    dispatch(asyncDeleteComment(idComment, parseInt(id)));
+    console.log(id, "movie id");
+    console.log(idComment, "comment id");
+  }
 
-  function handleOnEdit(e) {
-    edit = true
-    setInput({
-      ...input,
-      id: info.id,
-      coment: e.target.value,
-      
-    });
- 
+  async function handleEdit({id, coment}) {
+    dispatch(asyncEditComment(idComment, parseInt(id)));
+    console.log(id, "movie id");
+    console.log(idComment, "comment id");
   }
-  function handleOnChange (e){
-    setInput({
-        ...input,
-        coment:e.target.value,
-        id:info.id
-    })
-  }
-  function handleDelete(idMovie){
-    
-    console.log(info.id,"esto es el id")
-    dispatch(asyncDeleteComment(info.id,idMovie))
-  }
-  function handleOnSubmit (e){
-    e.preventDefault(e)
-    setInput({
-        ...input,
-    })
-    dispatch()
-  }
+
   return (
     <div>
       <div className="info-comment">
         <div className="info-profile">
-            
-                {/* <div>
-            <img src={user.picture} alt="fotito"/>
-          <h3>{user.nickname}</h3>
-          </div> */}
-          
+          <div>
+            {picture ? (
+              <img src={picture} alt="fotito" className="fotitox" />
+            ) : (
+              <img src={avatar} alt="fotito" className="fotitox" />
+            )}
+            <h3 className="nameUs">{name}</h3>
+          </div>
         </div>
 
+        <div className="comment">
+          <p className="textComent">{coment}</p>
+        </div>
 
-          <div className="comment">
-            <p>{info.coment}</p>
-          </div>
-        
         {/* <div>
           <input type="text" name="comment"value={info.coment} className="textInput" />
          </div> */}
-
-        
+        <div>
+          {user.id == idUser ? (
+            <div className="buttonsComents">
+              <button
+                className="botonD"
+                onClick={() => handleDelete(idComment)}
+              >
+                <img className="imgTacho" src={tachito} alt="tachito" />
+              </button>
+              <button className="botonD" onClick={() => handleEdit(input)}>
+                <img className="imgPencil" src={pencil} alt="tachito" />
+              </button>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
       <div>
         {/* {edit ? <button >Submit</button>:
         <button onClick={handleOnEdit}>Edit</button>} */}
-        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );
-};
+}
