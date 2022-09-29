@@ -1,0 +1,15 @@
+.impAdmin{
+    border: inset grey 3px;
+    margin: 0rem 0rem 1rem 3rem;
+    min-width: 193px;
+}
+.titleInp{
+    margin: 0;
+    font-size:larger;
+}
+.allFondo{
+    background-color: silver;
+    border: inset grey 1rem;
+    margin: auto;
+    max-width: 50%;
+}

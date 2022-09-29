@@ -12,8 +12,9 @@ const initialState = {
     user:{},
     commentUsers:{},
     commentMovie:{},
-    commentFromMovies:[]
-
+    commentFromMovies:[],
+    allUsers:[]
+   
   };
 
 export const dataSlice = createSlice({
@@ -76,8 +77,19 @@ export const dataSlice = createSlice({
         editComment:(state,action) =>{
           state.commentFromMovies = action.payload
         },
-    }
-})
+        allUserAdmin:(state,action)=>{
+          state.allUsers = action.payload
+        },
+        banUserAdmin:(state,action)=>{
+         state.allUsers = action.payload
+        },
+        unBanUserAdmin:(state,action)=>{
+          state.allUsers = action.payload
+        },
+        newAdmin:(state,action)=>{
+          state.allUsers = action.payload
+        }
+  }})
 
 //-------------------------------------------------------------------------------------------------------------------
 //------------------------------------------ function Movies ------------------------------------------------------
@@ -189,6 +201,51 @@ export const asyncInfoAdmin = (input) =>{
     return dispatch(infoAdmin(input))
   }
 }
+// export const asyncallUsers = ()=>{
+//   return async function (dispatch){
+//    try{
+//     let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
+//     return dispatch(allUserAdmin(response.data))
+//    }catch(e){}
+//   }
+// }
+export const asyncallUsers = () => {
+  return async function(dispatch){
+    try {
+      let response = await axios("https://back-end-movies-henry2.onrender.com/users")
+      return dispatch(allUserAdmin(response.data))
+    } catch (error) {
+      console.log(error,'from allUSERS')
+    } 
+  }
+}
+
+
+
+
+export const asynbanUsers = (id)=>{
+  return async function (dispatch){
+     await axios.put("https://back-end-movies-henry2.onrender.com/bannUser",id)
+     let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
+    
+    return dispatch(banUserAdmin(response))
+  }}
+
+  export const asynDesBanUsers = (id)=>{
+    return async function (dispatch){
+       await axios.put("https://back-end-movies-henry2.onrender.com/unBannUser",id)
+       let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
+      
+      return dispatch(unBanUserAdmin(response))
+    }}
+
+    export const asynNewAdmin = (id)=>{
+      return async function (dispatch){
+         await axios.put("https://back-end-movies-henry2.onrender.com/createAdm",id)
+         let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
+        
+        return dispatch(newAdmin(response))
+      }}
 
 
 
@@ -196,6 +253,6 @@ export const asyncInfoAdmin = (input) =>{
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin} = dataSlice.actions
 
 export default dataSlice.reducer
