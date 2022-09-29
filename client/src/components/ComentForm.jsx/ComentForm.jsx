@@ -1,120 +1,103 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncFormComment } from "../../redux/slice";
+import { asyncFormComment, asyncCommentById } from "../../redux/slice";
 import { useState } from "react";
 import "./ComentForm.css";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-export default function ComentForm() {
-  const { user, isAuthenticated } = useAuth0();
+
+
+export default function ComentForm({idParams}) {
+
+  let { id } = useParams();
   const dispatch = useDispatch();
-  let infoComments = useSelector((state) => state.commentUsers);
-  let comment = "";
-    console.log(infoComments,"averga")
-
+  let userdb = useSelector((state) => state.alldata.user);
+  let {commentMovie} = useSelector((state) => state.alldata);
   const [input, setInput] = useState({
-    comment: "",
-    commentfull: "",
+    coment: "",
   });
-  let commentary = input.commentfull;
+
+  // useEffect(()=>{
+  //   if(Object.keys(commentMovie).length !== 0) {
+  //     console.log(parseInt(idParams),commentMovie,'------->')
+  //     dispatch(asyncCommentById(parseInt(idParams)))}
+
+  // },[])
 
   const handleOnChange = (e) => {
     console.log(input);
     setInput({
       ...input,
-      [e.target.name]: e.target.value,
+      name: userdb.name,
+      idUser: userdb.id,
+      email: userdb.email,
+      picture: userdb.picture,
+      coment: e.target.value,
+      status: true,
     });
   };
+
 
   const handleOnsubmit = (e) => {
     e.preventDefault(e);
     console.log(input);
-    dispatch(asyncFormComment(input));
-    console.log(comment, "commentsadas");
+    dispatch(asyncFormComment(input, id));
+    dispatch(asyncCommentById(parseInt(idParams)))
+    setTimeout(() => {
+      dispatch(asyncCommentById(parseInt(idParams)))
+  }, 1000);
+    
+    
     setInput({
-      ...input,
-      commentfull: input.comment,
+      coment: "",
     });
   };
 
   const validate = (data) => {
     let error = {};
-    if (data.comment.length < 3 || data.comment.length > 50)
-      error.comment = "Complete the field comment";
+    if (data.coment.length < 3 || data.coment.length > 300)
+      error.coment = "Complete the field comment";
     return error;
   };
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
-    if (error.comment) return true;
+    if (error.coment) return true;
   }
-  console.log(commentary, "antes del render");
   return (
     <div className="container-1">
-      <div className="container-2">
-        <div className="containerinfo">
-          <div>
-            {isAuthenticated ? (
-              <div className="img">
-                <img src={user.picture} className="rounded-circle img-fluid" />
-              </div>
-            ) : (
-              <p></p>
-            )}
-            {isAuthenticated ? (
-              user.given_name ? (
-                <div className="name">
-                  <h3>
-                    {" "}
-                    {user.given_name.toUpperCase()} , your comment of this
-                    movie!
-                  </h3>
-                </div>
-              ) : (
-                <div className="name">
-                  <h3> {user.nickname}, your comment of this movie!</h3>
-                </div>
-              )
-            ) : (
-              <p></p>
-            )}
-            {commentary.length < 1 ? (
-              <form onSubmit={(e) => handleOnsubmit(e)}>
-                <div>
-                  <div className="textInputWrapper">
-                    <input
-                      type="message"
-                      name="comment"
-                      className="textInput"
-                      placeholder="comment of the movie"
-                      onChange={handleOnChange}
-                      autoFocus
-                    />
-                  </div>
-                  <div>
-                    <div>
-                      <button type="submit" disabled={invalidAdd(input)}>
-                        {" "}
-                        Add comment
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            ) : (
-              <div className="containerComments">
-                <div>
-                  <p className="inputcomment">My comment: {input.comment}</p>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="borbo">
-            <h5>comments from other users about this movie.</h5>
-            <div>
-            </div>
-          </div>
+      <div className="containerinfo">
+        <div>
+         
+            <img src={userdb.picture} className="imgPefil" />
+         
+          
         </div>
+        <form onSubmit={(e) => handleOnsubmit(e)}>
+          <div className="textNComent">
+            <textarea
+              type="message"
+              name="comment"
+              value={input.coment}
+              className="input"
+              placeholder="Your review"
+              onChange={handleOnChange}
+              autoFocus
+            />
+          </div>
+
+          <button
+            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+            type="submit"
+            disabled={invalidAdd(input)}
+          >
+            Send
+          </button>
+        </form>
+      </div>
+      <div className="borbo">
+        <h5>comments from other users about this movie.</h5>
       </div>
     </div>
   );

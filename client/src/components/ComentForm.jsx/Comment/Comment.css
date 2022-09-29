@@ -1,0 +1,26 @@
+.info-comment{
+    /* background-image: url("https://images4.alphacoders.com/657/657326.jpg");
+    
+        background-position-x:0%;
+        background-clip:border-box;
+        background-size:cover;
+        background-position-y:21%; */
+        background-color: black;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 2%;
+        border: solid #F7A600 4px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 10px;
+       }
+       .comment{
+        margin-top: 10%;
+        font-size: 20px;
+        font-weight: bold;
+        color:#F7A600;
+        
+       }
+       
+
+       

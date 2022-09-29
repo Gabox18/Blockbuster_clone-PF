@@ -6,24 +6,21 @@
     scroll-snap-align: start;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    background: rgba(0, 0, 0, 0.445);
   }
   .containerCarruzel .mainCarruzel .sliderCarruzel {
-    width: 200px;
+    max-width: 200px;
   }
   .containerCarruzel::-webkit-scrollbar{
     display: none;
   }
-  .mainCarruzel .sliderCarruzel:hover {
-    transform: scale(1.08);
-  }
+
   .mainCarruzel .sliderCarruzel .imgCarr {
     width: 12rem;
     height: 18rem;
     display: inline-block;
     object-fit: cover;
     scroll-snap-align: center;
-    animation: cambio 10s infinite;
+     animation: cambio 10s infinite; 
   }
   @keyframes cambio {
     0%{margin-left: 0;}

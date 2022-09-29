@@ -1,9 +1,9 @@
 .detailRender {
-  min-height: 100vh; 
+  min-height: 100vh;
   min-height: 100vh;
 }
 
-.videoBg video{
+.videoBg video {
   width: auto;
   height: auto;
   min-height: 100%;
@@ -12,594 +12,78 @@
   overflow: hidden;
   position: fixed;
   z-index: -100;
-  background-size:cover;
+  background-size: cover;
   right: 0;
 }
-
-.cardStyle {
-  width: 50rem;
-  margin: 0px auto;
-  /* background-color: #0c0f0249; */
-  background-color: black;
-  border: solid black;
+.App .detailRender .cardStyle {
+  background-color: rgba(0, 0, 0, 0.83) !important;
 }
 
 .card-img-top {
-  width: 29rem;
-  height: 25rem;
-}
-
-.player-wrapper {
-  position: relative;
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  width: 300px;
+  border: solid #f7a600 3px;
   display: flex;
-  margin-left: 80px;
-  margin-top: 30px;
-  margin-block-end: -90px;
-  align-self: flex-start;
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-left: 3%;
 }
 
-.react-player {
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 50rem;
-  /* justify-content: center;
-  bottom: 170px;
-  width: 50rem; */
+.cardStyle {
+  background-color: rgba(0, 0, 0, 0.662);
+  border: solid #f7a600;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 10px;
+  margin-top: 2%;
+}
+.infodetail {
+  color: #f7a600;
+  display: flexbox;
+  flex-direction: row;
+  margin-left: 2rem;
 }
 
-.cardDetail {
-  width: 50rem;
-  height: 354px;
-  border-radius: 5px;
-  background: black;
+.title {
+  font-size: 40px;
+}
+.director {
+  font-size: 20px;
   display: flex;
-  gap: 8px;
-  padding: 6px;
-  right:50px;
-  margin: 0px auto;
+}
+.year {
+  font-size: 20px;
+  display: flex;
+}
+.genre {
+  font-size: 20px;
+  display: flex;
 }
 
-.cardDetail p {
-  display: grid;
-  height: 100%;
-  flex: 1;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all .5s;
-  background: #212121;
-  border: 1px solid #ff5a91;
+.language {
+  font-size: 20px;
   display: flex;
-  justify-content: baseline;
+}
+.rating {
+  font-size: 20px;
+  display: flex;
+}
+
+.actors {
+  font-size: 20px;
+  display: flex;
+}
+
+.cardDetail{
+  display: flex;
   align-items: center;
 }
-
-.cardDetail p:hover {
-  flex: 4;
+.alert{
+  font-size: 50px;
+  color: #f7a600;
+  background-color: rgba(0, 0, 0, 0.83);
+  border: #f7a600 solid;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top:2%;
+  border-radius: 10px;
 }
-
-.cardDetail p span {
-  min-width: 14em;
-  padding: .5em;
-  text-align: center;
-  transform: rotate(-90deg);
-  transition: all .5s;
-  text-transform: uppercase;
-  color: #ff568e;
-  letter-spacing: .1em;
-}
-
-.cardDetail p:hover span {
-  transform: rotate(0);
-}
-
-
-/* Image */
-.detailRender img{
-  display:inline-block;
-  width:263px;
-  transform:translatex(-220px) translatey(5px);
- }
- 
- /* Iframe */
- .react-player div iframe{
-  display:inline-block;
-  height:275px;
-  width:93% !important;
-  margin-right:167px;
- }
- 
- /* Division */
- .player-wrapper .react-player div{
-  transform:translatex(-34px) translatey(-13px);
-  width:83% !important;
- }
- 
- /* Heading */
- .detailRender div h2{
-  transform:translatex(875px) translatey(-759px);
-  width:18%;
-  color:#f7a600;
-  border-width:1px;
-  border-color:#f7a600;
- }
- 
-/* Card style */
-.App .detailRender .cardStyle{
-  transform:translatex(3px) translatey(27px);
-  background-color:rgba(0,0,0,0.68);
-  height:527px;
- }
- 
- /* Player wrapper */
- .detailRender .cardStyle .player-wrapper{
-  display:none;
- }
- 
- /* Division */
- .detailRender .cardStyle div{
-  margin-left:0px;
-  width:60%;
- }
- 
- /* Division */
- #root .App .detailRender .cardStyle div{
-  height:49px !important;
-  transform:translatex(309px) translatey(-398px) !important;
- }
- 
- .detailRender div:nth-child(9){
-  min-height:146px;
- }
- 
- /* Paragraph */
- .detailRender div > p{
-  text-align:left;
-  color:#f7a600;
-  min-height:41px;
-  transform:translatex(6px) translatey(-6px);
-  font-weight:600;
-  text-shadow:none;
-  letter-spacing:0.8px;
-  word-spacing:-0.5px;
-  white-space:normal;
- }
- 
- /* Division */
- .detailRender .cardStyle div:nth-child(3){
-  font-size:34px;
-  transform:translatex(309px) translatey(-398px);
-  text-decoration:none;
-  text-align:left;
- }
- 
- /* Paragraph */
- #root .App .detailRender .cardStyle div > p{
-  line-height:1em !important;
- }
- 
- /* Paragraph */
- .detailRender .title p{
-  font-size:40px;
- }
- 
- /* Paragraph */
- #root .App .detailRender .cardStyle .title p{
-  line-height:1.2em !important;
- }
- 
- /* Paragraph */
- .detailRender .actors p{
-  transform:translatex(7px) translatey(0px);
-  margin-left:0px;
-  margin-top:9px;
-  font-size:20px;
- }
- 
- /* Actors */
- #root .App .detailRender .cardStyle .actors{
-  height:43px !important;
- }
- 
- /* Paragraph */
- .detailRender .year p{
-  transform:translatex(6px) translatey(10px);
-  width:65%;
-  margin-bottom:0px;
- }
- 
- /* Paragraph */
- .detailRender .rating > p{
-  text-align:left;
-  width:47%;
-  transform:translatex(6px) translatey(7px);
-  font-size:18px;
- }
- 
- /* Language */
- .detailRender .language{
-  width:28% !important;
-  transform:translatex(215px) translatey(-164px) !important;
- }
- 
- /* Year */
- .detailRender .year{
-  width:23% !important;
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .genre p{
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .director p{
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .language p{
-  font-size:18px;
- }
- 
- /* Rating */
- .detailRender .rating{
-  width:21% !important;
- }
- 
- /* Rating */
- #root .App .detailRender .cardStyle .rating{
-  transform:translatex(309px) translatey(-423px) !important;
- }
- 
- /* Button */
- .detailRender div button{
-  margin-bottom:0px;
-  min-height:58px;
-  transform:translatex(323px) translatey(-57px);
-  width:106px;
- }
-
- /* Card style */
-.App .detailRender .cardStyle{
-  transform:translatex(3px) translatey(27px);
-  background-color:rgba(0,0,0,0.68);
-  height:527px;
- }
- 
- /* Player wrapper */
- .detailRender .cardStyle .player-wrapper{
-  display:none;
- }
- 
- /* Division */
- .detailRender .cardStyle div{
-  margin-left:0px;
-  width:60%;
- }
- 
- /* Division */
- #root .App .detailRender .cardStyle div{
-  height:49px !important;
-  transform:translatex(309px) translatey(-398px) !important;
- }
- 
- .detailRender div:nth-child(9){
-  min-height:146px;
- }
- 
- /* Paragraph */
- .detailRender div > p{
-  text-align:left;
-  color:#f7a600;
-  min-height:41px;
-  transform:translatex(6px) translatey(-6px);
-  font-weight:600;
-  text-shadow:none;
-  letter-spacing:0.8px;
-  word-spacing:-0.5px;
-  white-space:normal;
- }
- 
- /* Division */
- .detailRender .cardStyle div:nth-child(3){
-  font-size:34px;
-  transform:translatex(309px) translatey(-398px);
-  text-decoration:none;
-  text-align:left;
- }
- 
- /* Paragraph */
- #root .App .detailRender .cardStyle div > p{
-  line-height:1em !important;
- }
- 
- /* Paragraph */
- .detailRender .title p{
-  font-size:40px;
- }
- 
- /* Paragraph */
- #root .App .detailRender .cardStyle .title p{
-  line-height:1.2em !important;
- }
- 
- /* Paragraph */
- .detailRender .actors p{
-  transform:translatex(7px) translatey(0px);
-  margin-left:0px;
-  margin-top:9px;
-  font-size:20px;
- }
- 
- /* Actors */
- #root .App .detailRender .cardStyle .actors{
-  height:43px !important;
- }
- 
- /* Paragraph */
- .detailRender .year p{
-  transform:translatex(6px) translatey(10px);
-  width:65%;
-  margin-bottom:0px;
- }
- 
- /* Paragraph */
- .detailRender .rating > p{
-  text-align:left;
-  width:47%;
-  transform:translatex(6px) translatey(7px);
-  font-size:18px;
- }
- 
- /* Language */
- .detailRender .language{
-  width:28% !important;
-  transform:translatex(215px) translatey(-164px) !important;
- }
- 
- /* Year */
- .detailRender .year{
-  width:23% !important;
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .genre p{
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .director p{
-  font-size:18px;
- }
- 
- /* Paragraph */
- .detailRender .language p{
-  font-size:18px;
- }
- 
- /* Rating */
- .detailRender .rating{
-  width:21% !important;
- }
- 
- /* Rating */
- #root .App .detailRender .cardStyle .rating{
-  transform:translatex(309px) translatey(-423px) !important;
- }
- 
- /* Button */
- .detailRender div button{
-  margin-bottom:0px;
-  min-height:58px;
-  transform:translatex(323px) translatey(-57px);
-  width:106px;
- }
- 
-
- /* From uiverse.io by @Navarog21 */
-button {
-  position: relative;
-  width: 11em;
-  height: 4em;
-  outline: none;
-  transition: 0.1s;
-  background-color: transparent;
-  border: none;
-  font-size: 13px;
-  font-weight: bold;
-  color: #F7A600;
-}
-
-#clip {
-  --color: #F7A600;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  border: 5px double var(--color);
-  box-shadow: inset 0px 0px 15px #F7A600;
-  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-}
-
-.arrow {
-  position: absolute;
-  transition: 0.2s;
-  background-color: #F7A600;
-  top: 35%;
-  width: 11%;
-  height: 30%;
-}
-
-#leftArrow {
-  left: -13.5%;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
-}
-
-#rightArrow {
-  -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
-  left: 102%;
-}
-
-button:hover #rightArrow {
-  background-color: #F7A600;
-  left: -15%;
-  animation: 0.6s ease-in-out both infinite alternate rightArrow8;
-}
-
-button:hover #leftArrow {
-  background-color:#F7A600;
-  left: 103%;
-  animation: 0.6s ease-in-out both infinite alternate leftArrow8;
-}
-
-.corner {
-  position: absolute;
-  width: 4em;
-  height: 4em;
-  background-color:#F7A600;
-  box-shadow: inset 1px 1px 8px #F7A600;
-  transform: scale(1) rotate(45deg);
-  transition: 0.2s;
-}
-
-#rightTop {
-  top: -1.98em;
-  left: 91%;
-}
-
-#leftTop {
-  top: -1.96em;
-  left: -3.0em;
-}
-
-#leftBottom {
-  top: 2.10em;
-  left: -2.15em;
-}
-
-#rightBottom {
-  top: 45%;
-  left: 88%;
-}
-
-button:hover #leftTop {
-  animation: 0.1s ease-in-out 0.05s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
-}
-
-button:hover #rightTop {
-  animation: 0.1s ease-in-out 0.15s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
-}
-
-button:hover #rightBottom {
-  animation: 0.1s ease-in-out 0.25s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
-}
-
-button:hover #leftBottom {
-  animation: 0.1s ease-in-out 0.35s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
-}
-
-button:hover .corner {
-  transform: scale(1.25) rotate(45deg);
-}
-
-button:hover #clip {
-  animation: 0.2s ease-in-out 0.55s both greenLight8;
-  --color:black;
-}
-
-@keyframes changeColor8 {
-  from {
-    background-color: #F7A600;
-  }
-
-  to {
-    background-color: black;
-  }
-}
-
-@keyframes lightEffect8 {
-  from {
-    box-shadow: black;
-  }
-
-  to {
-    box-shadow: 0 0 2px black;
-  }
-}
-
-@keyframes greenLight8 {
-  from {
-  }
-
-  to {
-    box-shadow: inset 0px 0px 32px black;
-  }
-}
-
-@keyframes leftArrow8 {
-  from {
-    transform: translate(0px);
-  }
-
-  to {
-    transform: translateX(10px);
-  }
-}
-
-@keyframes rightArrow8 {
-  from {
-    transform: translate(0px);
-  }
-
-  to {
-    transform: translateX(-10px);
-  }
-}
-
-/* Paragraph */
-.detailRender .title p{
-  min-height:102px;
-  font-size:30px;
- }
- 
- 
- .App .detailRender .cardStyle{
-  border-color:#f7a600;
-  border-style:solid;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
- }
- 
-
- /* Image */
-.detailRender img{
-  transform:translatex(-244px) translatey(9px);
- }
- 
- /* Language */
-.detailRender .language{
-  width:434px !important;
- }
- 
- /* Paragraph */
- .detailRender .language p{
-  transform:translatex(6px) translatey(-10px);
- }
- 
- .detailRender .actors p{
-  transform:translatex(0px) translatey(13px);
- }
- 
- 

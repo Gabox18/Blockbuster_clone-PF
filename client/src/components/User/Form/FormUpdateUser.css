@@ -49,11 +49,7 @@
   min-height:32px !important;
   transform:translatex(180px) translatey(16px) !important;
  }
- body{
-  background-image: url("https://st.depositphotos.com/2097531/2145/i/600/depositphotos_21458013-stock-photo-vintage-theatre-spot-light-on.jpg");
-  background-size:cover ;
-  background-position: center;
- }
+
 
 .cards-form .name h3{
   transform:translatex(0px) translatey(0px);

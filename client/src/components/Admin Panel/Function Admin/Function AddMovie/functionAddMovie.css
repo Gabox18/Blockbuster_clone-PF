@@ -1,0 +1,20 @@
+
+.submit-button {
+    display:grid ;
+    background-color:rgb(120, 193, 12);
+    color: white;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 20rem;
+    outline: inset .5rem greenyellow;
+    margin-right: 1rem;
+
+}
+.descriptionArea{
+    border: .3rem inset silver;
+    margin-left: 3rem;
+} 
+.formulario{
+    display: flex;
+    align-items: center;
+}

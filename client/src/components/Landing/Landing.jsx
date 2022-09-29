@@ -1,41 +1,47 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
-import LoginButton from "../User/Login";
-import logo from "../../assets/Logo.png";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncallMovies } from "../../redux/slice";
-import { Link } from "react-router-dom";
+import { asyncallMovies,asyncGetUser } from "../../redux/slice";
+import { useAuth0 } from "@auth0/auth0-react";
+import Footer from "../Footer/Footer";
+import video from "../../assets/video.mp4"
+import Nav from "../Nav Bar/Navbar"
+import flecha from "../../assets/flecha.png"
+
 
 
 export default function Landing() {
-
+  const { user } = useAuth0();
+  //let userDB = useSelector(state=>state.alldata.user)
+  console.log(user,'user')
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
-  }, [dispatch]);
+    dispatch(asyncGetUser(user))
+  }, [dispatch, user]);
 
-  let {copyAllMovies} = useSelector(state => state.alldata);
-
+  let { copyAllMovies } = useSelector((state) => state.alldata);
+const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
+console.log(copyAllMovies)
+console.log(moviesCarrusel)
   return (
     <>
       <div className="ContainerLanding">
         <div>
-          <nav className="navBarLanding">
-            <div>
-              <div className="img-nav">
-                <Link to={'/'}>
-                  <img src={logo} width="100px" alt="logo" />
-                </Link>
-              </div>
-            </div>
-            <div className="btn-log">
-              <div>
-                <LoginButton />
-              </div>
-            </div>
-          </nav>
+       <Nav/>     
+        </div>
+        <div className="vieitoF">
+      <video src={video} muted loop autoPlay className="videitoFondo" />
+         <div className="textol"> <div className="loader">
+    <span>BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
+
+</div>
+     <div className="texto2"><b>Ajusten sus cinturones. Va a ser una noche movida.</b>
+     <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
         </div>
         <div className="container-plan">
           <div>
@@ -71,49 +77,47 @@ export default function Landing() {
             <p className="p">START ENJOYING THE BEST STORIES</p>
             <p className="p">MADE ESPECIALLY FOR YOU</p>
           </div>
+          <div className="contMembership">
+            <div className="cardP">
+              <p className="titleP">Silver</p>
+              <div className="pricecontainerP">
+                <p className="priceP">U$D 19.99</p>
+                <p className="pricedescriptor">/month</p>
+              </div>
+              <p className="includesP">This Plan Includes:</p>
+              <ul className="benefitlistP">
+                <li>Full HD 1080pi</li>
+                <li>20 movies</li>
+                <li>Fav list</li>
+              </ul>
+          
+              <button className="btn"> Button</button> 
+            </div>
+            <div className="cardP1">
+              <p className="titleP1">Gold</p>
+              <div className="pricecontainerP">
+                <p className="priceP">U$D 24.99</p>
+                <p className="pricedescriptor">/month</p>
+              </div>
+              <p className="includesP">This Plan Includes:</p>
+              <ul className="benefitlistP">
+                <li>Full HD 4k</li>
+                <li>40 movies</li>
+                <li>Fav list</li>
+              </ul>
+              <button className="btn1"> Button</button>
+            </div>
+          </div>
           <div>
             <div className="conteiner-shop-plan">
               <div className="containerLanding">
-                <div className="card_box">
-                  <span>Silver</span>
-                  <p>
-                    .Maximum quality 1080p.<br></br>.1 device at a time.<br></br>
-                    .You can watch 20 movies per month.
-                  </p>
-                </div>
-                    
-                  <Link to={'/'} className="fancy">
-                    <span className="top-key"></span>
-                    <span className="text">Buy Plan</span>
-                    <span className="bottom-key-1"></span>
-                    <span className="bottom-key-2"></span>
-                  </Link>
-                  <div>
-              <h3>$300 per Month</h3>
               </div>
-
-                <div className="card_box2">
-                  <span> </span>
-                  <p>
-                    .Maximum quality 4K.<br></br>.4 device at a time.<br></br>
-                    .You can watch 50 movies per month.
-                  </p>
-                </div>
-                
-              
-                  <Link to={'/'} className="fancy">
-                    <span className="top-key"></span>
-                    <span className="text">Buy Plan</span>
-                    <span className="bottom-key-1"></span>
-                    <span className="bottom-key-2"></span>
-                  </Link>
-
-              </div><div>
-              <h3>$500 per Month</h3>
+              <div>   
               </div>
               <div className="carrusel">
-                <Carrusel array={copyAllMovies}/>
+                <Carrusel array={moviesCarrusel} />
               </div>
+              <Footer/>
             </div>
           </div>
         </div>
