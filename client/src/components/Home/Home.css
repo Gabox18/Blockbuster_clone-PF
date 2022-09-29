@@ -78,7 +78,7 @@
   object-fit: cover;
 }
 
-.cabecera .contenido {
+.contenido {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -89,22 +89,6 @@
   background-color: black;
   opacity: 0.8;
   font-family: 'fjalla one', 'sans-serif';
-}
-.cabecera .contenido h1 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 10rem;
-  color: #F9BD08;
-  position: relative;
-  bottom: 8rem;
-}
-.cabecera .contenido h3 {
-  width: 20rem;
-  position: relative;
-  left: 15rem;
-  bottom: 6rem;
-  text-align: right;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #F9BD08;
 }
 
 .textCarruzel {
@@ -121,16 +105,32 @@
   text-align: end;
   padding-right: 2rem;
 }
-.videoCabecera{
-  position: relative;
-  bottom: 18rem;
-  right: 34rem;
-}
 .conteiner-carruzel-home{
   margin-bottom: 40px;
   justify-content: start;
- 
+  
 }
 .cabecera{
   border-bottom: #F7A600 groove 1rem;
+}
+.blocktitle{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 10rem;
+  color: #F9BD08;
+  position: relative;
+  bottom: -2rem;
+}
+.subBlockTittle{
+  width: 20rem;
+  position: relative;
+  left: 15rem;
+  bottom: -3rem;
+  text-align: right;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #F9BD08;
+}
+.videoCabecera{
+  position: relative;
+  bottom: 8rem;
+  right: 23rem;
 }

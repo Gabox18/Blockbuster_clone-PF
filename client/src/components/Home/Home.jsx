@@ -35,8 +35,8 @@ function Home() {
         <section className="cabecera">
           <img className="" src={img} alt={"poster"} />
           <div className="contenido">
-            <h1>Blockbuster</h1>
-            <h3>
+            <h1 className="blocktitle">Blockbuster</h1>
+            <h3 className="subBlockTittle">
               Life is unpredictable and control is just an illusion that makes
               us feel small and helpless.
             </h3>
