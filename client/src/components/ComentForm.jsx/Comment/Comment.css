@@ -1,26 +1,59 @@
-.info-comment{
-    /* background-image: url("https://images4.alphacoders.com/657/657326.jpg");
-    
-        background-position-x:0%;
-        background-clip:border-box;
-        background-size:cover;
-        background-position-y:21%; */
-        background-color: black;
-        margin-left: 20%;
-        margin-right: 20%;
-        margin-top: 2%;
-        border: solid #F7A600 4px;
-        display: flex;
-        flex-direction: row;
-        border-radius: 10px;
-       }
-       .comment{
-        margin-top: 10%;
-        font-size: 20px;
-        font-weight: bold;
-        color:#F7A600;
-        
-       }
-       
+.info-comment {
+  background-color: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 2%;
+  border: solid #f7a600 4px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.comment {
+  margin: 3% 0 0 3%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f7a600;
+  font-family: "Arial Narrow";
+  padding-left: 1rem;
+}
+.fotitox {
+  border-radius: 50%;
+}
 
-       
+.nameUs {
+  color: #f7a600;
+  font-size: 1rem;
+}
+/*------------ BOTON DELET COMENT -------------- */
+/* From uiverse.io by @hannahyockel */
+/* From uiverse.io by @hannahyockel */
+.botonD {
+  border-radius: 15%;
+  margin: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #0e0808;
+  border: solid rgba(255, 0, 0, 0.498) 0.1px;
+  justify-content: end;
+}
+.imgTacho {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.imgPencil {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+/*---------------------- HASTA ACA DELET COMENT -------------*/
+.textComent {
+  float: right;
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+  margin: 0 0 1em 1em;
+}
+.buttonsComents{
+    display: flex;
+    flex-direction: column;
+}

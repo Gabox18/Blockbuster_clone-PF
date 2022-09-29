@@ -1,37 +1,90 @@
-  /* CARRUZEL */
-  .containerCarruzel {
-    display: flex;
-    width: 100%;
-    height: 300px; 
-    scroll-snap-align: start;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+/* CARRUZEL */
+.containerCarruzel {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  scroll-snap-align: start;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.containerCarruzel .mainCarruzel .sliderCarruzel {
+  max-width: 200px;
+}
+.containerCarruzel::-webkit-scrollbar {
+  display: none;
+}
+
+.mainCarruzel .sliderCarruzel .imgCarr {
+  width: 12rem;
+  height: 18rem;
+  display: inline-block;
+  object-fit: cover;
+  scroll-snap-align: center;
+  animation: cambio 10s infinite;
+}
+.mainCarruzel .sliderCarruzel .imgCarr1 {
+  width: 12rem;
+  height: 18rem;
+  display: inline-block;
+  object-fit: cover;
+  scroll-snap-align: center;
+  animation: cambio1 10s infinite;
+}
+@keyframes cambio {
+  0% {
+    margin-left: 0;
   }
-  .containerCarruzel .mainCarruzel .sliderCarruzel {
-    max-width: 200px;
-  }
-  .containerCarruzel::-webkit-scrollbar{
-    display: none;
+  20% {
+    margin-left: 0;
   }
 
-  .mainCarruzel .sliderCarruzel .imgCarr {
-    width: 12rem;
-    height: 18rem;
-    display: inline-block;
-    object-fit: cover;
-    scroll-snap-align: center;
-     animation: cambio 10s infinite; 
+  25% {
+    margin-left: -400%;
   }
-  @keyframes cambio {
-    0%{margin-left: 0;}
-    20%{margin-left: 0;}
-  
-    25%{margin-left: -400%;}
-    45%{margin-left: -400%;}
-  
-    50%{margin-left: -800%;}
-    70%{margin-left: -800%;}
-  
-    75%{margin-left: -1200%;}
-    100%{margin-left: -1200%;}
+  45% {
+    margin-left: -400%;
   }
+
+  50% {
+    margin-left: -800%;
+  }
+  70% {
+    margin-left: -800%;
+  }
+
+  75% {
+    margin-left: -1200%;
+  }
+  100% {
+    margin-left: -1200%;
+  }
+}
+@keyframes cambio1 {
+  0% {
+    margin-right: 0;
+  }
+  20% {
+    margin-right: 0;
+  }
+
+  25% {
+    margin-right: -400%;
+  }
+  45% {
+    margin-right: -400%;
+  }
+
+  50% {
+    margin-right: -800%;
+  }
+  70% {
+    margin-right: -800%;
+  }
+
+  75% {
+    margin-right: -1200%;
+  }
+  100% {
+    margin-right: -1200%;
+  }
+}

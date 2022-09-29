@@ -5,6 +5,7 @@ import { useState } from "react";
 import "./ComentForm.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import avatar from "../../assets/avatar.png"
 
 
 
@@ -69,9 +70,9 @@ export default function ComentForm({idParams}) {
     <div className="container-1">
       <div className="containerinfo">
         <div>
-         
-            <img src={userdb.picture} className="imgPefil" />
-         
+
+            <img src={userdb.picture} className="imgPefil" alt="fotito"/>   
+
           
         </div>
         <form onSubmit={(e) => handleOnsubmit(e)}>
