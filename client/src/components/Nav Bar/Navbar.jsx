@@ -5,7 +5,7 @@ import FilteringSorting from "./filtering&sorting/filtering&sorting.jsx";
 import Searchbar from "./search bar/search.jsx";
 import img from "../../assets/Logo.png";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link, Route , Route} from "react-router-dom";
+import { Link, Route} from "react-router-dom";
 import { asyncGetUser } from "../../redux/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
