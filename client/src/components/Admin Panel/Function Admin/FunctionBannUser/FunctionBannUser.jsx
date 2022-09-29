@@ -44,7 +44,7 @@ function FunctionBannUser() {
   };
   return (
     <div className="allFondo">
-      <h1>ESTO ES BANEAR UN USUARIO</h1>
+      <h1>USUERS</h1>
 
       <div>
         <p className="titleInp">
@@ -53,32 +53,33 @@ function FunctionBannUser() {
         <select className="impAdmin" onChange={handeOnBan}>
           {Array.isArray(allUsers) ? (
             usersAll.map((e) => {
+              console.log(e)
               return (
                 <option value={e.id}>
-                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status}
+                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status.toString()}
                 </option>
               );
             })
           ) : (
-            <option>cargando !!</option>
+            <option>Loading !!</option>
           )}
         </select>
       </div>
       <div>
         <p className="titleInp">
-          <b>DesBann User</b>
+          <b>UnBann User</b>
         </p>
         <select className="impAdmin" onChange={handeOnDesBan}>
           {Array.isArray(allUsers) ? (
             usersAll.map((e) => {
               return (
                 <option value={e.id}>
-                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status}
+                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status.toString()}
                 </option>
               );
             })
           ) : (
-            <option>cargando !!</option>
+            <option>Loading !!</option>
           )}
         </select>
         <p className="titleInp">
@@ -94,10 +95,11 @@ function FunctionBannUser() {
               );
             })
           ) : (
-            <option>cargando !!</option>
+            <option>Loading !!</option>
           )}
         </select>
       </div>
+      <div><b>With great power comes great responsibility</b></div>
     </div>
   );
 }

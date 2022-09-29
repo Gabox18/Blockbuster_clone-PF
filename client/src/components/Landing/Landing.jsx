@@ -40,7 +40,7 @@ console.log(moviesCarrusel)
 </div> 
 
 </div>
-     <div className="texto2"><b>Ajusten sus cinturones. Va a ser una noche movida.</b>
+     <div className="texto2"><b>Fasten your seat belts, this is going to be a busy night!!</b>
      <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
         </div>
         <div className="container-plan">

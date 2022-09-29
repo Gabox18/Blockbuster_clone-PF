@@ -179,7 +179,7 @@ export const asyncallMovies = () => {
   export const asyncEditComment = (info) =>{
     return async function(dispatch){
       try {
-        let response = await axios.post()
+        let response = await axios.post("https://back-end-movies-henry2.onrender.com/editComment",info)
       } catch (error) {
         
       }
