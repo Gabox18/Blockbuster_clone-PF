@@ -265,6 +265,13 @@ export const asynbanUsers = (id)=>{
         return dispatch(newAdmin(response))
       }}
 
+export const asyncDeleteMovie =(id) =>{
+  return async function (){
+    //let idNumber = parseInt(id)
+    const objetito = {id}
+    let response = axios.put(`https://back-end-movies-henry2.onrender.com/removeM/`,objetito)
+  }
+}
 
 
 

@@ -9,6 +9,7 @@ import FunctionAddMovie from "./Function Admin/Function AddMovie/FunctionAddMovi
 import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector } from "react-redux";
+import FunctionDeleteMovie from "./Function Admin/Function DeleteMovie/FunctionDeleteMovie";
 
 function AdminPanel() {
   const allUsers = useSelector((state) => state.user);
@@ -64,7 +65,9 @@ function AdminPanel() {
               >
                 <i className="fas fa-clipboard"></i>New Movie
               </button>
-              <a href="#">Delete Movie</a>
+              <button className="linkAdmin" onClick={() => setFunct('deletemovie')}>
+              <i className="fas fa-clipboard"></i>Delete Movie
+            </button>
             </div>
           </li>
           <li className="menu-item" id="settings">
@@ -90,9 +93,9 @@ function AdminPanel() {
             <FunctionBannUser />
           ) : funct === "createmovie" ? (
             <FunctionAddMovie />
-          ) : (
-            <></>
-          )}
+          ) : funct === "deletemovie" ? (
+            <FunctionDeleteMovie/>
+          ) : <></>}
         </div>
       </div>
     </>
