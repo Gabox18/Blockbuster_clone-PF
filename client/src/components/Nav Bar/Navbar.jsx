@@ -5,10 +5,21 @@ import FilteringSorting from "./filtering&sorting/filtering&sorting.jsx";
 import Searchbar from "./search bar/search.jsx";
 import img from "../../assets/Logo.png";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route , Route} from "react-router-dom";
+import { asyncGetUser } from "../../redux/slice.js";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+
 
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
+    let userDB = useSelector(state=>state.alldata.user)
+    let dispatch = useDispatch()
+    console.log(typeof(userDB)==='string')// verifica si lo que hay en store.user === 'string
+    useEffect (()=>{
+        dispatch(asyncGetUser(user?.email))
+    },[dispatch, user?.email])
+
   return (
     <>
       <nav className="navbarFix navbar bg-dark navbar-expand-lg bg-light">
@@ -32,9 +43,23 @@ function Navbar(prop) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <Route  path="/home"> 
+
+                {/*para que no se rendererise los filtrados en el componete de profile */}
+
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <Route  path='/home'>
               <FilteringSorting setCurrentPage={prop.setCurrentPage} />
+                        </Route>
             </ul>
+                        
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0"> 
+                        <Route  path='Home/result'>
+                            <FilteringSorting setCurrentPage={prop.setCurrentPage}/> 
+                        </Route>
+                        </ul>
+                       
+                 {/*para que no se rendererise los filtrados en el componete de profile */}
+
           </Route>
             <Route path="/home">
               <Searchbar setCurrentPage={prop.setCurrentPage} />
@@ -48,7 +73,7 @@ function Navbar(prop) {
                 <Logoutbutton />
                 <Link to={"/profile"}>
                   <img
-                    src={user.picture}
+                    src={typeof(userDB)==='string'?user.picture:userDB.picture}
                     alt="profile"
                     width={"40px"}
                     className="imgPerfil"
