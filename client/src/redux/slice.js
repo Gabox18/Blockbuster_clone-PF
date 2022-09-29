@@ -88,14 +88,14 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload
         },
         newAdmin:(state,action)=>{
-          state.allUsers = action.payload
+          state.allUsers = action.payload},
     
         deleteComment:(state,action) =>{
           state.commetDeleteMessage = action.payload
         }
   
     }
-  }})
+  })
 
 //-------------------------------------------------------------------------------------------------------------------
 //------------------------------------------ function Movies ------------------------------------------------------

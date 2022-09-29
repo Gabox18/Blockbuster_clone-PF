@@ -4,15 +4,7 @@ import "./Landing.css";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncallMovies,asyncGetUser } from "../../redux/slice";
-import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-<<<<<<< HEAD
-import { asyncallMovies } from "../../redux/slice";
-=======
-import { asyncallMovies,asyncGetUser } from "../../redux/slice";
-import { Link } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
->>>>>>> dev
 import Footer from "../Footer/Footer";
 import video from "../../assets/video.mp4"
 import Nav from "../Nav Bar/Navbar"
