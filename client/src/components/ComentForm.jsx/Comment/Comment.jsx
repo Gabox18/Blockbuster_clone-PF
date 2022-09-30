@@ -118,7 +118,7 @@ export default function Comment({
                 <img className="imgTacho" src={tachito} alt="tachito" />
               </button>
               <button className="botonD" onClick={() => handleEdit(input)}>
-                <img className="imgPencil" src={pencil} alt="tachito" />
+                <img className="imgPencil" src={pencil} alt="pencil" />
               </button>
             </div>
           ) : (

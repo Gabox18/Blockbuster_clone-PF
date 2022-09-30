@@ -1,15 +1,14 @@
 
 .card {
-    width: 190px;
-    height: 254px;
-    border-radius: 1em;
+    width: 150px;
+    height: 200px;
+    border-radius: 7%;
     padding: 1.9rem;
     background:transparent;
     position: relative;
     display: flex;
     align-items: flex-end;
     transition: 0.4s ease-out;
-    
     /* box-shadow: 0px 7px 20px rgba(43, 8, 37, 0.2); */
    }
    

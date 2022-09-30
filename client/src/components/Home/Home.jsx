@@ -21,6 +21,8 @@ function Home() {
 
   let arrFeaturedMovies = copyAllMovies.filter((e) => e.imdbRating > 8);
   let arrRecentMovies = copyAllMovies.filter((e) => e.year >= 2020);
+  let arrActionMovies = copyAllMovies.filter((e) => e.genre >= "Action");
+  let arrThrillerMovies = copyAllMovies.filter((e) => e.genre >= "Thriller");
   let arrPopularMovies = copyAllMovies.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
@@ -31,7 +33,7 @@ function Home() {
     <>
       <div className="homeContainer">
         <div className="navbarContainer">
-          <Navbar />
+          <Navbar className="navbarFixy" />
         </div>
 
         <section className="cabecera">
@@ -66,6 +68,11 @@ function Home() {
           <h2 className="textCarruzel">Popular movies</h2>
           <Carrusel array={arrPopularMovies} />
         </div>
+        <div className="conteiner-carruzel-home">
+          <h2 className="textCarruzel2">Action movies</h2>
+          <Carrusel1 array={arrActionMovies} />
+        </div>
+    
 
         <div className="footerContainer">
           <Footer />

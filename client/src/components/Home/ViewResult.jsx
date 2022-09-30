@@ -5,11 +5,13 @@ import Paginado from "../Paginado/Paginado";
 import Navbar from "../Nav Bar/Navbar";
 import Card from "../Card/Card";
 import './ViewResult.css'
+import Footer from "../Footer/Footer"
+
 function ViewResult(){
     let { allMovies } = useSelector((state) => state.alldata);
 
     const [currentPage, setCurrentPage] = useState(1); 
-    const moviesPerPage = 6;
+    const moviesPerPage = 8;
     //const [orden, setOrden] = useState("");
     const indexOfLastMovies = currentPage * moviesPerPage; 
     const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; 
@@ -39,8 +41,8 @@ function ViewResult(){
               return (
                 
                 <Link to={"/details/" + e.id} key={i}>
-                  <div>
-                    <Card img={e.poster} Title={e.name}  Plot={e.plot}/>
+                  <div className="containterRes">
+                    <Card  className="cartitass" img={e.poster} Title={e.name}  Plot={e.plot}/>
                   </div>
                 </Link>
                 
@@ -48,15 +50,17 @@ function ViewResult(){
             })}
           </div>
             <div className="containerPaginado">
+          {  currentMovies.length>8?
               <Paginado
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
                 moviesPerPage={moviesPerPage}
                 allMovies={allMovies.length}
                 paginado={paginado}
-              />
+              />:<></>}
             </div>
           </div>
+          <Footer/>
         </div>        
     )
 }

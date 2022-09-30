@@ -50,32 +50,37 @@ console.log(moviesCarrusel)
                 src="https://logodownload.org/wp-content/uploads/2021/03/paramount-plus-logo-0.png"
                 width="120px"
                 alt="img"
+                className="LogosM"
               />
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/DC_Comics_logo.png/600px-DC_Comics_logo.png"
                 width="100px"
                 alt="img"
+                className="LogosM"
               />
               <img
                 src="https://logodownload.org/wp-content/uploads/2017/05/marvel-logo-0.png"
                 width="120px"
                 alt="img"
+                className="LogosM"
               />
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Warner_Bros_logo.svg/1200px-Warner_Bros_logo.svg.png"
                 width="90px"
                 alt="img"
+                className="LogosM"
               />
               <img
                 src="https://logos-world.net/wp-content/uploads/2021/11/Universal-Logo.png"
                 width="130px"
                 alt="img"
+                className="LogosM"
               />
             </div>
           </div>
           <div>
-            <p className="p">START ENJOYING THE BEST STORIES</p>
-            <p className="p">MADE ESPECIALLY FOR YOU</p>
+            <p className="pMmembership">START ENJOYING THE BEST STORIES</p>
+            <p className="pMmembership">MADE ESPECIALLY FOR YOU</p>
           </div>
           <div className="contMembership">
             <div className="cardP">
