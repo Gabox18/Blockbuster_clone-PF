@@ -12,17 +12,33 @@ import { useEffect } from "react";
 
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
-  let userDB = useSelector((state) => state.alldata.user);
-  let dispatch = useDispatch();
-  console.log(typeof userDB === "string"); // verifica si lo que hay en store.user === 'string
+
+  let userDB = useSelector(state => state.alldata.user)
+  let dispatch = useDispatch()
+
+  let categoryGold = "GoldCategory-style"
+  let categorySilver = "SilverCatery-style"
+  let categoryUser = "UserCategory-style"
+  let Unregistered = "Unregistered-style"
+//userDB.category==='user'?categoryGold:
+  console.log(typeof (userDB) === 'string')// verifica si lo que hay en store.user === 'string
   useEffect(() => {
-    dispatch(asyncGetUser(user?.email));
-  }, [dispatch, user?.email]);
+    dispatch(asyncGetUser(user?.email))
+  }, [dispatch, user?.email])
+
 
   return (
     <>
       <nav className="navbar-expand-lg">
         <div className="container-fluid">
+
+          <div className="navbar-brand text-light">
+
+            <Link to={"/home"}>
+              <img src={img} width="60px" alt="logo" />
+            </Link>
+          </div>
+
           <button
             className="navbar-toggler navbarButon"
             type="button"
@@ -36,74 +52,46 @@ function Navbar(prop) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Route path="/home">
+
+
+              {/*para que no se rendererise los filtrados en el componete de profile */}
+
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <Route path="/home">
+                <Route path='/home'>
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
 
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <Route path="Home/result">
+                <Route path='Home/result'>
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
-              <ul className="logoNav"><Link to={"/home"}>
-              <img src={img} width="90px" alt="logo" />
-            </Link></ul>
+
               {/*para que no se rendererise los filtrados en el componete de profile */}
+
             </Route>
-            
             <Route path="/home">
               <Searchbar setCurrentPage={prop.setCurrentPage} />
             </Route>
-            <Route path="/details/:id">
-              <ul className="logoNavDetail"><Link to={"/home"}>
-              <img src={img} width="90px" alt="logo" />
-            </Link></ul>
-              <Searchbar className="searchDetail" setCurrentPage={prop.setCurrentPage} />
-              {isAuthenticated ? (
-                <>
-                  <Logoutbutton />
-                  <Link to={"/profile"}>
-                    <img
-                      src={
-                        typeof userDB === "string"
-                          ? user.picture
-                          : userDB.picture
-                      }
-                      alt="profile"
-                      width={"40px"}
-                      className="imgPerfil"
-                    />
-                  </Link>
-                </>
-              ) : (
-                <button
-                  type="buttonNavbar"
-                  className="btn btn-outline-primary text-light btn-xs btnLogin"
-                  onClick={() => loginWithRedirect()}
-                >
-                  Login
-                </button>
-              )}
-            </Route>
-            
-            <Route strict path="/home/"></Route>
+            <Route strict path="/home/">
+
+            </Route >
             <Route path="/home">
-              {isAuthenticated ? (
+              {isAuthenticated || userDB.status ? (
                 <>
                   <Logoutbutton />
                   <Link to={"/profile"}>
-                    <img
-                      src={
-                        typeof userDB === "string"
-                          ? user.picture
-                          : userDB.picture
-                      }
+                    <div>
+                      <img
+                      src={typeof (userDB) === 'string' ? user.picture : userDB.picture}
                       alt="profile"
                       width={"40px"}
-                      className="imgPerfil"
-                    />
+                      className={userDB===''?Unregistered 
+                      :userDB.category==='user'?categoryUser
+                      :userDB.category==='silver'?categorySilver:categoryGold}
+                      />
+                    </div>
                   </Link>
                 </>
               ) : (
@@ -115,7 +103,9 @@ function Navbar(prop) {
                   Login
                 </button>
               )}
-            </Route>
+
+            </Route >
+
             <Route exact path="/">
               <button
                 type="buttonNavbar"
@@ -124,9 +114,7 @@ function Navbar(prop) {
               >
                 Login
               </button>
-     
-              <img className="logoLanding"src={img} width="90px" alt="logo" />
-            
+
             </Route>
           </div>
         </div>

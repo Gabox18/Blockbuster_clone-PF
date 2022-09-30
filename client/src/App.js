@@ -6,7 +6,11 @@ import {Route, Switch} from 'react-router-dom';
 import LandingPage from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import Profile from "./components/User/Profile";
+
 import exile from "../src/components/Exile/Exile"
+
+import Play from './components/Detail/Play/Play';
+
 
 //boostrap
 // You can specify which plugins you need
@@ -33,6 +37,7 @@ function App() {
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/Home/result" component={ViewResult}/>
           <Route exact path="/details/:id" component={Detail}/>
+          <Route exact path="/details/:id/play" component={Play}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
           <Route exact path= "/infoprofile" component={Form} />
         </Switch>

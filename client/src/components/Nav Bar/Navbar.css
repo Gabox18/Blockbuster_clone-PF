@@ -25,6 +25,61 @@
     height: 4rem;
 }
 
+
+.Unregistered-style{
+    border-radius:50%;
+    outline: 3px solid #ff0000 ;
+    margin: 1rem;
+}
+
+.Unregistered-style:hover{
+    border-radius:50%;
+    outline: 6px solid #ff0000 ;
+    margin: 1rem;
+}
+
+
+
+.UserCategory-style{
+    border-radius:50%;
+    outline: 3px solid #ffffff ;
+    margin: 1rem;
+}
+
+.UserCategory-style:hover{
+    border-radius:50%;
+    outline: 6px solid #ffffff ;
+    margin: 1rem;
+}
+
+
+.SilverCatery-style{
+    border-radius:50%;
+    outline: 3px solid #C0C0C0 ;
+    margin: 1rem;
+}
+
+.SilverCatery-style:hover{
+    border-radius:50%;
+    outline: 6px solid #C0C0C0 ;
+    margin: 1rem;
+}
+
+
+.GoldCategory-style{
+    border-radius:50%;
+    outline: 3px solid #ff930f ;
+    margin: 1rem;
+}
+
+.GoldCategory-style:hover{
+    border-radius:50%;
+    outline: 3px solid #ff930f ;
+    margin: 1rem;
+}
+
+
+
 .logoNav{
     margin-right: 25rem;
     margin-bottom: -.5rem;
