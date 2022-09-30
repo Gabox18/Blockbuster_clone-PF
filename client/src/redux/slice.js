@@ -91,7 +91,15 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload},
     
         deleteComment:(state,action) =>{
+
+          state.commetDeleteMessage = action.payload
+        },
+
+        updateUser:(state,action)=>{
+          state.user = action.payload
+
           state.commentFromMovies  = action.payload
+
         }
   
     }
@@ -212,6 +220,19 @@ export const asyncallMovies = () => {
     }
   }
 
+  export const asynUpdateUser = (objUpdate) =>{
+    return async function (dispatch){
+      try {
+
+        console.log(objUpdate,'--------------->')
+        let response = await axios.put(`https://back-end-movies-henry2.onrender.com/editU`,objUpdate)
+        return dispatch(updateUser(response.data))
+        //return dispatch(updateUser(objUpdate))
+      } catch (error) {  
+      }
+    }
+  }
+
 
 //--------------------------------------------------------------------------------------------------------------------
 //------------------------------------function admin----------------------------------------------------------------------  
@@ -280,6 +301,6 @@ export const asyncDeleteMovie =(id) =>{
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser} = dataSlice.actions
 
 export default dataSlice.reducer

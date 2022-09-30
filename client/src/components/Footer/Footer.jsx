@@ -21,19 +21,19 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 className="text-upercase mb-4 font-weight-bold text-warning">Tecnologies</h5>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>React.js</a>
+                <a href={"https://reactjs.org/"} target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>React.js</a>
               </p>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>TypeScript</a>
+                <a href="https://www.typescriptlang.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>TypeScript</a>
               </p>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Redux Toolkits</a>
+                <a href="https://redux-toolkit.js.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>Redux Toolkits</a>
               </p>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Node.js</a>
+                <a href="https://nodejs.org/es/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>Node.js</a>
               </p>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>MySql</a>
+                <a href="https://www.mysql.com/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>MySql</a>
               </p>
             </div>
 
@@ -59,7 +59,7 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
                 <AiOutlineHome /> New York, NY 2333, US
               </p>
               <p>
-                <BsEnvelope /> SoyHenry@gmail.com
+                <BsEnvelope /><a href="mailto:blockbusterpf@gmail.com?Subject=welcome%20to%20blockbuster%20state%20your%20concern" target="_blank" rel="noreferrer"> blockbusterpf@gmail.com </a>
               </p>
               <p>
                 <AiOutlinePhone /> +01 335 439 22
