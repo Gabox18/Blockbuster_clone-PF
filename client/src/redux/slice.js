@@ -91,15 +91,11 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload},
     
         deleteComment:(state,action) =>{
-
           state.commetDeleteMessage = action.payload
         },
 
         updateUser:(state,action)=>{
           state.user = action.payload
-
-          state.commentFromMovies  = action.payload
-
         }
   
     }
