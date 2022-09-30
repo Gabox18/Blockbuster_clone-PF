@@ -41,6 +41,7 @@ console.log(moviesCarrusel)
 
 </div>
      <div className="texto2"><b>Fasten your seat belts, this is going to be a busy night!!</b>
+    <div className="scrollArrow">scroll down</div>
      <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
         </div>
         <div className="container-plan">

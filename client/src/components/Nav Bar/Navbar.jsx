@@ -10,9 +10,9 @@ import { asyncGetUser } from "../../redux/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
+
   let userDB = useSelector(state => state.alldata.user)
   let dispatch = useDispatch()
 
@@ -26,16 +26,16 @@ function Navbar(prop) {
     dispatch(asyncGetUser(user?.email))
   }, [dispatch, user?.email])
 
+
   return (
     <>
-      <nav className="navbarFix navbar bg-dark navbar-expand-lg bg-light">
+      <nav className="navbar-expand-lg">
         <div className="container-fluid">
+
           <div className="navbar-brand text-light">
 
-            <Link to={"/home"}>
-              <img src={img} width="60px" alt="logo" />
-            </Link>
           </div>
+
           <button
             className="navbar-toggler navbarButon"
             type="button"
@@ -49,9 +49,6 @@ function Navbar(prop) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Route path="/home">
-
-              {/*para que no se rendererise los filtrados en el componete de profile */}
-
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Route path='/home'>
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
@@ -63,17 +60,12 @@ function Navbar(prop) {
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
-
-              {/*para que no se rendererise los filtrados en el componete de profile */}
-
+              <Link to={"/home"}>
+              <img  className="logoNav" src={img} width="90px" alt="logo" />
+              </Link>
             </Route>
             <Route path="/home">
               <Searchbar setCurrentPage={prop.setCurrentPage} />
-            </Route>
-            <Route strict path="/home/">
-
-            </Route >
-            <Route path="/home">
               {isAuthenticated || userDB.status ? (
                 <>
                   <Logoutbutton />
@@ -99,7 +91,44 @@ function Navbar(prop) {
                   Login
                 </button>
               )}
-            </Route >
+            </Route>
+      
+
+            <Route path="/details/:id">
+            <Link to={"/home"}>
+              <img  className="logoNavDetail" src={img} width="90px" alt="logo" />
+              </Link>
+              <Searchbar className="searchDetail" setCurrentPage={prop.setCurrentPage} />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                      src={typeof (userDB) === 'string' ? user.picture : userDB.picture}
+                      alt="profile"
+                      width={"40px"}
+                      className={userDB===''?Unregistered 
+                      :userDB.category==='user'?categoryUser
+                      :userDB.category==='silver'?categorySilver:categoryGold}
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route>
+
+
+
+
             <Route exact path="/">
               <button
                 type="buttonNavbar"
@@ -108,6 +137,9 @@ function Navbar(prop) {
               >
                 Login
               </button>
+              <Link to={"/home"}>
+              <img className="logoLanding" src={img} width="90px" alt="logo" />
+            </Link>
             </Route>
           </div>
         </div>

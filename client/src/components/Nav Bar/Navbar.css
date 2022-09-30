@@ -78,3 +78,31 @@
     margin: 1rem;
 }
 
+
+
+.logoNav{
+    margin-right: 28rem;
+
+}
+.navbar-expand-lg{
+    border-bottom: #F7A600 groove .5rem;
+    width: 100%;
+    background-image: url('../../assets/fondoBlue.jpg');
+    background-position: 50% -10%;
+
+}
+
+
+.logoNavDetail{
+   margin-left: 54.5rem;
+   margin-right: 23rem;
+
+}
+.searchDetail{
+    margin-left: 10rem;
+}
+
+.logoLanding{
+    margin-left: 45rem;
+
+}
