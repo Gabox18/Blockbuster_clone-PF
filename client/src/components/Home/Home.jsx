@@ -9,6 +9,7 @@ import Navbar from "../Nav Bar/Navbar";
 import ReactPlayer from "react-player";
 import Carrusel from "../Carrusel/Carrusel.jsx";
 import img from "../../assets/imgHome.jpg";
+import Carrusel1 from "../Carrusel/Carrusel1.jsx";
 
 function Home() {
   let dispatch = useDispatch();
@@ -19,7 +20,7 @@ function Home() {
   }, [copyAllMovies, dispatch]);
 
   let arrFeaturedMovies = copyAllMovies.filter((e) => e.imdbRating > 8);
-  let arrRecentMovies = copyAllMovies.filter((e) => e.year >= 2021);
+  let arrRecentMovies = copyAllMovies.filter((e) => e.year >= 2020);
   let arrPopularMovies = copyAllMovies.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
@@ -48,6 +49,7 @@ function Home() {
                 url="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
                 playing={true}
                 onReady
+                muted
               />
             </div>
           </div>
@@ -58,7 +60,7 @@ function Home() {
         </div>
         <div className="conteiner-carruzel-home">
           <h2 className="textCarruzel2">Recent movies</h2>
-          <Carrusel array={arrRecentMovies} />
+          <Carrusel1 array={arrRecentMovies} />
         </div>
         <div className="conteiner-carruzel-home">
           <h2 className="textCarruzel">Popular movies</h2>
