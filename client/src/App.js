@@ -20,7 +20,6 @@ import Detail from "./components/Detail/Detail";
 import Form from "./components/User/Form/FormUpdateUser";
 import ViewResult from "./components/Home/ViewResult";
 import adminPanel from "./components/Admin Panel/AdminPanel";
-import { ProfileCard } from "./components/Profile/ProfileCard";
 // Profile
 // import prfofile from "./components/Profile/Profile"
 
@@ -33,7 +32,6 @@ function App() {
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/Exile" component={exile}/>
           <Route exact path="/Home" component={Home}/>
-          <Route exact path="/profileUser" component={ProfileCard}/>
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/Home/result" component={ViewResult}/>
           <Route exact path="/details/:id" component={Detail}/>
