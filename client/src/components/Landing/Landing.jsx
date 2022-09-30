@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncallMovies,asyncGetUser } from "../../redux/slice";
+import { asyncallMovies,asyncGetUser,asynPaymentSilver,asynPaymentGold } from "../../redux/slice";
 import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 import video from "../../assets/video.mp4"
@@ -13,19 +13,32 @@ import flecha from "../../assets/flecha.png"
 
 
 export default function Landing() {
-  const { user } = useAuth0();
-  //let userDB = useSelector(state=>state.alldata.user)
+  const { user,loginWithRedirect } = useAuth0();
+  let userDB = useSelector(state=>state.alldata.user)
   console.log(user,'user')
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
-    dispatch(asyncGetUser(user))
+    dispatch(asyncGetUser(user?.email))
   }, [dispatch, user]);
 
-  let { copyAllMovies } = useSelector((state) => state.alldata);
+let { copyAllMovies } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
 console.log(copyAllMovies)
 console.log(moviesCarrusel)
+
+function handleSubmitSilver() {
+  userDB?.id?
+  dispatch(asynPaymentSilver())
+  :loginWithRedirect()
+  
+}
+function handleSubmitGold() {
+  userDB?.id?
+  dispatch(asynPaymentGold())
+  :loginWithRedirect()
+}
+
   return (
     <>
       <div className="ContainerLanding">
@@ -97,7 +110,7 @@ console.log(moviesCarrusel)
                 <li>Fav list</li>
               </ul>
           
-              <button className="btn"> Button</button> 
+              <button className="btn" onClick={handleSubmitSilver}> Button</button> 
             </div>
             <div className="cardP1">
               <p className="titleP1">Gold</p>
@@ -111,7 +124,7 @@ console.log(moviesCarrusel)
                 <li>40 movies</li>
                 <li>Fav list</li>
               </ul>
-              <button className="btn1"> Button</button>
+              <button className="btn1" onClick={handleSubmitGold} > Button</button>
             </div>
           </div>
           <div>

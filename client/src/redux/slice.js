@@ -13,8 +13,8 @@ const initialState = {
     commetDeleteMessage:'',
     commentMovie:{},
     commentFromMovies:[],
-    allUsers:[]
-   
+    allUsers:[],
+    payPaypal:{}
   };
 
 export const dataSlice = createSlice({
@@ -96,6 +96,9 @@ export const dataSlice = createSlice({
 
         updateUser:(state,action)=>{
           state.user = action.payload
+        },
+        payPayment:(state,action)=>{
+          state.payPaypal = action.payload
         }
     }
   })
@@ -228,6 +231,27 @@ export const asyncallMovies = () => {
     }
   }
 
+  export const asynPaymentSilver =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentSilver/")
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
+  export const asynPaymentGold =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentGold/")
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
 
 //--------------------------------------------------------------------------------------------------------------------
 //------------------------------------function admin----------------------------------------------------------------------  
@@ -296,6 +320,6 @@ export const asyncDeleteMovie =(id) =>{
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment} = dataSlice.actions
 
 export default dataSlice.reducer

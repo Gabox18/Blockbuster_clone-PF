@@ -15,7 +15,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
       <React.StrictMode>
-        <Auth0Provider domain={domain} clientId={clientId} redirectUri={`${window.location.origin}/home`}>
+        <Auth0Provider domain={domain} clientId={clientId} redirectUri={`${window.location.origin}/`}>
           <App />
         </Auth0Provider>
       </React.StrictMode>

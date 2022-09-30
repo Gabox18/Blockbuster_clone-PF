@@ -124,23 +124,30 @@ function Navbar(prop) {
                   Login
                 </button>
               )}
-            </Route>
-
-
-
+            </Route > 
+            {userDB.id?
 
             <Route exact path="/">
+            <Link to={'/home'}>
+            <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin">
+                  Home
+                </button>
+            </Link>
+            </Route>
+              :<Route exact path="/">
               <button
                 type="buttonNavbar"
                 className="btn btn-outline-primary text-light btn-xs btnLogin"
-                onClick={() => loginWithRedirect()}
-              >
+                onClick={() => loginWithRedirect()}>
                 Login
               </button>
               <Link to={"/home"}>
               <img className="logoLanding" src={img} width="90px" alt="logo" />
             </Link>
             </Route>
+            }
           </div>
         </div>
       </nav>
