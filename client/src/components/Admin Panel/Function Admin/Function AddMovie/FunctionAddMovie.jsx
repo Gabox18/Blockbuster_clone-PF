@@ -204,6 +204,8 @@ export default function FunctionAddMovie() {
               type="number"
               value={input.year}
               name="year"
+              min="2000"
+              max="2022"
               autocomplete="off"
               onChange={(e) => handleChange(e)}
               placeholder="Ex: 2011"
@@ -437,7 +439,7 @@ export default function FunctionAddMovie() {
 
             {errors.poster && <p className="error">{errors.poster}</p>}
 
-            <img src={imagen} alt=""  />
+            <img src={imagen} alt="" width={"150px"}  />
           </div>
 
             <button className="submit-button" type="submit">
