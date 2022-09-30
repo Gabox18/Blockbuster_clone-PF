@@ -1,3 +1,7 @@
+.container-general{
+  background-image: url("../../../assets/fondoBlue.jpg");
+  margin: auto;
+}
 .cards-form{
   background-color:rgba(0, 0, 0, 0.368) ;
   margin: auto;
@@ -16,7 +20,7 @@
   padding-top: 0.3rem;
   padding-bottom: 0.1rem;
   padding-left: 1rem;
-  width: 400px;
+  width: 70%;
 }
 .textInputMessage{
   width: 400px;
@@ -80,7 +84,7 @@
  }
 
  /* Button */
-.card-bodysform div button{
+.card-bodysform div button , .button-update-gohome{
   background-color:#020202;
   border-color:#f7a600;
   border-style:solid;
@@ -96,4 +100,21 @@
   transform:translatex(0px) translatey(0px); color:#f7a600;
  }
  
+ .button-update-profile , .button-update-gohome{
+  margin-top: 1rem;
+  height: 3rem;
+  color: #f7a600;
+ }
+
+.danger{
+    color: red;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.validate-field{
+  color: rgb(72, 255, 0);
+    font-size: 0.9rem;
+}
  

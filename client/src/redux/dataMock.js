@@ -1981,3 +1981,18 @@ let genres = [];
   });
   let setGenre = new Set(genres.map((e) => e.trim()));
   export let allgenre = [...setGenre];
+
+  export let user = {
+    id: 17,
+    name: "gabotonder",
+    lastname: "villasssssss",
+    nickname: "gefv1891",
+    picture: "https://lh3.googleusercontent.com/a-/ACNPEu_Jglj41TwwdBvDquVg3nWv5a0LZ0SK5XSaby10UQ=s96-c",
+    email: "gefv1891@gmail.com",
+    date: "1991-09-18",
+    status: true,
+    category: "user",
+    createdAt: "2022-09-27T01:25:57.093Z",
+    updatedAt: "2022-09-29T21:23:45.461Z",
+    deletedAt: null
+  }
