@@ -6,11 +6,11 @@ export default function Card({ Title, Plot, img }) {
   return (
     <>
       <div>
-        <div class="card">
-          <div class="card-img"><img src={img} alt={'poster'} /></div>
-          <div class="card-info">
-            <p class="text-title">{Title}</p>
-            <p class="text-body">{Plot}</p>
+        <div className="card">
+          <div className="card-img"><img className="posterCard" src={img} alt={'poster'} /></div>
+          <div className="card-info">
+            <p className="text-title">{Title}</p>
+            <p className="text-body">{Plot}</p>
           </div>
         </div>
       </div>
