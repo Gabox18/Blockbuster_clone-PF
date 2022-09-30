@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
 import Carrusel from "../Carrusel/Carrusel";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncallMovies,asyncGetUser } from "../../redux/slice";
+import { asyncallMovies,asyncGetUser, asyncPaymentGold, asyncPaymentSilver } from "../../redux/slice";
 import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 import video from "../../assets/video.mp4"
@@ -20,12 +20,23 @@ export default function Landing() {
   useEffect(() => {
     dispatch(asyncallMovies());
     dispatch(asyncGetUser(user))
+    
   }, [dispatch, user]);
 
   let { copyAllMovies } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
 console.log(copyAllMovies)
 console.log(moviesCarrusel)
+
+
+  function handleSubmitSilver(){
+    dispatch(asyncPaymentSilver());
+  }
+
+  function handleSubmitGold(){
+    dispatch(asyncPaymentGold());
+  }
+
   return (
     <>
       <div className="ContainerLanding">
@@ -40,7 +51,7 @@ console.log(moviesCarrusel)
 </div> 
 
 </div>
-     <div className="texto2"><b>Ajusten sus cinturones. Va a ser una noche movida.</b>
+     <div className="texto2"><b>Fasten your seat belts, this is going to be a busy night!!</b>
      <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
         </div>
         <div className="container-plan">
@@ -77,7 +88,9 @@ console.log(moviesCarrusel)
             <p className="p">START ENJOYING THE BEST STORIES</p>
             <p className="p">MADE ESPECIALLY FOR YOU</p>
           </div>
+
           <div className="contMembership">
+
             <div className="cardP">
               <p className="titleP">Silver</p>
               <div className="pricecontainerP">
@@ -91,8 +104,12 @@ console.log(moviesCarrusel)
                 <li>Fav list</li>
               </ul>
           
-              <button className="btn"> Button</button> 
+              <button 
+                className="btn" 
+                onClick={handleSubmitSilver}
+              > Button</button> 
             </div>
+
             <div className="cardP1">
               <p className="titleP1">Gold</p>
               <div className="pricecontainerP">
@@ -105,8 +122,13 @@ console.log(moviesCarrusel)
                 <li>40 movies</li>
                 <li>Fav list</li>
               </ul>
-              <button className="btn1"> Button</button>
+
+              <button 
+                className="btn1" 
+                onClick={handleSubmitGold}
+              > Button</button>
             </div>
+
           </div>
           <div>
             <div className="conteiner-shop-plan">
