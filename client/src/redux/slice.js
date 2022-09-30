@@ -91,7 +91,7 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload},
     
         deleteComment:(state,action) =>{
-          state.commetDeleteMessage = action.payload
+          state.commentFromMovies  = action.payload
         }
   
     }
@@ -176,23 +176,25 @@ export const asyncallMovies = () => {
       }      
     }
   }
-  export const asyncEditComment = (info) =>{
+  export const asyncEditComment = (input) =>{
     return async function(dispatch){
       try {
-        let response = await axios.post("https://back-end-movies-henry2.onrender.com/editComment",info)
+        console.log(input,'input')
+        let response = await axios.put("https://back-end-movies-henry2.onrender.com/editComment",input)
+        dispatch(editComment(response.data))
       } catch (error) {
         
       }
     } 
   }
-  export const asyncDeleteComment =(idComment, id) =>{
+  export const asyncDeleteComment =(id,movieId) =>{
     return async function (dispatch){
       try {
-        console.log({id:idComment} , "llega?")
-        console.log(id, 'y esto')
-        let response = await axios.delete(`https://back-end-movies-henry2.onrender.com/detail/${id}`,{"id":idComment})
+        let obj = {id}
+     
+      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
        
-       return dispatch(deleteComment(response.data))
+      return dispatch(deleteComment(response.data))
       } catch (error) {
         console.log(error,'from delete')
       }
