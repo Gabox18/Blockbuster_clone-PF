@@ -135,6 +135,9 @@ function Navbar(prop) {
                   Home
                 </button>
             </Link>
+            <Link to={"/home"}>
+              <img className="logoLanding" src={img} width="90px" alt="logo" />
+            </Link>
             </Route>
               :<Route exact path="/">
               <button
