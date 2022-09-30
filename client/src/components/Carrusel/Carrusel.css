@@ -22,7 +22,6 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
-
 .imgCarr {
   width: 12rem;
   height: 18rem;

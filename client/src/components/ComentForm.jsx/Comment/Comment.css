@@ -29,12 +29,12 @@
 /* From uiverse.io by @hannahyockel */
 /* From uiverse.io by @hannahyockel */
 .botonD {
-  border-radius: 15%;
+  border-radius: 40%;
   margin: 1rem;
   width: 2.5rem;
   height: 2.5rem;
   background-color: #0e0808;
-  border: solid rgba(255, 0, 0, 0.498) 0.1px;
+  border: solid #f7a600 0.2px;
   justify-content: end;
 }
 .imgTacho {
