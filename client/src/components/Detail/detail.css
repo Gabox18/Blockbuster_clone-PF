@@ -1,6 +1,7 @@
 .detailRender {
   min-height: 100vh;
   min-height: 100vh;
+  
 }
 
 .videoBg video {
@@ -21,11 +22,12 @@
 
 .card-img-top {
   width: 300px;
+  height: 450px;
   border: solid #f7a600 3px;
   display: flex;
   border-radius: 10px;
-  margin-top: 2%;
-  margin-left: 3%;
+  margin-bottom: 100%;
+  margin-left: 5%;
 }
 
 .cardStyle {
@@ -35,55 +37,175 @@
   margin-right: 30%;
   border-radius: 10px;
   margin-top: 2%;
+  
 }
 .infodetail {
   color: #f7a600;
   display: flexbox;
   flex-direction: row;
   margin-left: 2rem;
+  
+  
 }
-
+.plot .titleInfo label{
+ background-color:#f7a600;
+ border-style:solid;
+ color: black;
+ border-radius: 3%;
+ font-weight:500;
+ 
+}
 .title {
   font-size: 40px;
-}
-.director {
-  font-size: 20px;
-  display: flex;
-}
-.year {
-  font-size: 20px;
-  display: flex;
-}
-.genre {
-  font-size: 20px;
-  display: flex;
+  color: black;
+  background-color: #f7a600;
+  margin-right: 5%;
+  margin-top: 8%;
+  border-radius: 3%;
+  font-weight:600;
+
+
+  
 }
 
 .language {
-  font-size: 20px;
+  font-size: 14px;
   display: flex;
-}
-.rating {
-  font-size: 20px;
-  display: flex;
+  gap: 7px;
 }
 
-.actors {
-  font-size: 20px;
-  display: flex;
+.plot {
+  font-size: 22px;
+  margin-bottom: 80%;
+  margin-right: 5%;
+  gap: 7px;
+  text-align: left;
+ 
+}
+.lessInfo {
+  margin-top: 30px;
 }
 
-.cardDetail{
+.cardDetail {
   display: flex;
   align-items: center;
+  margin-bottom: -30%;
 }
-.alert{
-  font-size: 50px;
+.alert {
+  font-size: 30px;
   color: #f7a600;
   background-color: rgba(0, 0, 0, 0.83);
   border: #f7a600 solid;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top:2%;
+  margin-top: 2%;
   border-radius: 10px;
 }
+.alert2 {
+  background-color: rgba(0, 0, 0, 0.83);
+  border: #f7a600 solid;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #f7a600;
+}
+
+/*---------------------------------------switch */
+.switch {
+  position: relative;
+  width: 55px;
+  height: 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: limegreen;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0px;
+  bottom: -5px;
+  background-color: #06a606;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-sizing: border-box;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: red;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(30px);
+  background: red;
+  box-sizing: border-box;
+  border: 10px solid white;
+}
+
+.slider1 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: red;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider1:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  right: 0px;
+  bottom: -5px;
+  background-color: red;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  box-sizing: border-box;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+input:checked + .slider1 {
+  background-color: limegreen;
+}
+
+input:checked + .slider1:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(30px);
+  background: limegreen;
+  box-sizing: border-box;
+  border: 10px solid white;
+}
+
+/* ----------------------------- */

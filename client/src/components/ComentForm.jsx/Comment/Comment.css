@@ -159,3 +159,7 @@
   height: 4px;
   top: calc(50% - 2px);
 }
+.botonD:hover{
+  background-color: #f7a600;
+  border-radius: 50%;
+}

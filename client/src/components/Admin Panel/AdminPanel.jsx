@@ -1,6 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { asyncgetDetails } from "../../redux/slice";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 
 //funciones admin
 import FunctionCreateAdmin from "./Function Admin/Function CreateAdmin/FunctionCreateAdmin";
@@ -10,10 +15,14 @@ import "./adminPanel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector } from "react-redux";
 import FunctionDeleteMovie from "./Function Admin/Function DeleteMovie/FunctionDeleteMovie";
+import FunctionBanMovie from "./Function Admin/Function BanMovie/FunctionBanMovie";
 
 function AdminPanel() {
   const allUsers = useSelector((state) => state.user);
   let [funct, setFunct] = useState("");
+  let {id} = useParams()
+  let dispatch = useDispatch()
+
 
   return (
     <>
@@ -67,6 +76,10 @@ function AdminPanel() {
               </button>
               <button className="linkAdmin" onClick={() => setFunct('deletemovie')}>
               <i className="fas fa-clipboard"></i>Delete Movie
+            </button >
+            
+            <button className="linkAdmin" onClick={() => setFunct('banmovie')} >
+            <i className="fas fa-clipboard"></i>Ban Movie
             </button>
             </div>
           </li>
@@ -95,7 +108,10 @@ function AdminPanel() {
             <FunctionAddMovie />
           ) : funct === "deletemovie" ? (
             <FunctionDeleteMovie/>
-          ) : <></>}
+          ) : funct === 'banmovie' ? (
+            <FunctionBanMovie />
+          ):(
+          <></>)}
         </div>
       </div>
     </>
