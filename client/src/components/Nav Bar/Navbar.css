@@ -24,3 +24,21 @@
 .navbarFix{
     height: 4rem;
 }
+
+.logoNav{
+    margin-right: 25rem;
+    margin-bottom: -.5rem;
+}
+.navbar-expand-lg{
+    border-bottom: #F7A600 groove .5rem;
+    width: 100%;
+}
+
+.logoNavDetail{
+   margin-left: 50rem;
+   margin-right: 23rem;
+    margin-bottom: -.5rem;
+}
+.searchDetail{
+    margin-left: 10rem;
+}
