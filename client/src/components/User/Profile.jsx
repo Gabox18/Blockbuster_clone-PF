@@ -9,16 +9,18 @@ import Footer from "../Footer/Footer.jsx";
 import "./Profile.css";
 
 const Profile = () => {
-  const { user, isAuthenticated } = useAuth0();
+  const { user,isAuthenticated } = useAuth0();
   let userBD = useSelector((state) => state.alldata.user);
   const dispatch = useDispatch();
-  console.log(userBD,'desde redux')
 
-    const validate = (data) => {
-      let error = {};
-      if (!data.date) error.date = "Complete the field date";
-      return error;
-    };
+  let date = new Date();
+  let currentDate = date.toISOString().split('T')[0]
+
+  const validate = (data) => {
+    let error = {};
+    if (!data.date) error.date = "Complete the field date";
+    return error;
+  };
 
   const [input, setInput] = useState({
     name: user?.given_name,
@@ -53,10 +55,9 @@ const Profile = () => {
 
   return (
     <div>
-      <Navbar/>
-      {isAuthenticated ? (
-        //https://mdbootstrap.com/docs/standard/extended/profiles/
+      {isAuthenticated || userBD.status? (
         <section className="profileBg-dark">
+          <Navbar/>
           <div className="contain-profile">  
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-md-10 col-xl-4">
@@ -66,12 +67,12 @@ const Profile = () => {
                     <div className="mt-3 mb-9" >
                       <img src={user?.picture} className="img-profile" alt="perfil-phot"/>
                     </div>
-                    <h4 className="name-profile">{user?.name}</h4>
+                    <h4 className="name-profile">{userBD?.name}</h4>
                     <p className="nick-profile"> Nickname:<span className="mx-2">{user?.nickname}</span>{" "}</p>
                     <p className="email-profile">Email : {user?.email}</p>
       
                     {
-                    !userBD.status
+                    !userBD.category
                           ? (<div class="div-complete-profile">
                               <h4 className="h4-complete-profile">complete your information</h4>
                               <p className="Birth-profile">Date of Birth</p>
@@ -82,6 +83,7 @@ const Profile = () => {
                                   className="input-complete"
                                   placeholder="Date of Birth"
                                   onChange={handleOnChange}
+                                  max={currentDate}
                                 />
                                 <button type="submit" className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg completeProfile">Complete profile</button>
                               </form>
@@ -92,25 +94,22 @@ const Profile = () => {
                       </div>
                     </Link>
                     }
-                    
                   </div>
                   </div>
-                  
                   <Link to={"/home"}>
                     <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">
                       Home
                     </div>
                   </Link>
-                  
               </div>
             </div>
             </div>
           </div>
+          <Footer/>
         </section>
       ) : (
         <LoginButton />
       )}
-      <Footer/>
     </div>
   );
 };

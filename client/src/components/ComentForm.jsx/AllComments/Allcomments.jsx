@@ -22,7 +22,7 @@ export default function Allcomments({idParams}) {
         ?commentFromMovies.map(e => (
           <Comment
             className='comment'
-            idComment={e.id}
+            id={e.id}
             name={e.name}
             movieId={e.movieId}
             picture={e.picture}
