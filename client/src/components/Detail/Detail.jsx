@@ -62,13 +62,14 @@ export default function Detail() {
             <label className="language"><b>Actors:</b> {details.actors}</label>
           </div>
         </div>
-        <Link to="/play">
+        <Link to={`/details/${id}/play`}>
           <button
             className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
             type="shadow-lg p-3 mb-5 bg-body rounded"
           >
             {" "}
-            Play{" "}
+            Play
+            {" "}
           </button>
         </Link>
       </div>
