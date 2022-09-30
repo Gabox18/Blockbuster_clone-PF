@@ -124,6 +124,9 @@ function Navbar(prop) {
               >
                 Login
               </button>
+     
+              <img className="logoLanding"src={img} width="90px" alt="logo" />
+            
             </Route>
           </div>
         </div>
