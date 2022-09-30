@@ -97,7 +97,6 @@ export const dataSlice = createSlice({
         updateUser:(state,action)=>{
           state.user = action.payload
         }
-  
     }
   })
 
