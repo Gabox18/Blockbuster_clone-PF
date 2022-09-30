@@ -13,7 +13,8 @@ const initialState = {
     commetDeleteMessage:'',
     commentMovie:{},
     commentFromMovies:[],
-    allUsers:[]
+    allUsers:[],
+    Paypal: {}
    
   };
 
@@ -92,6 +93,9 @@ export const dataSlice = createSlice({
     
         deleteComment:(state,action) =>{
           state.commentFromMovies  = action.payload
+        },
+        Payment:(state,action) =>{
+          state.Paypal  = action.payload
         }
   
     }
@@ -275,11 +279,27 @@ export const asyncDeleteMovie =(id) =>{
   }
 }
 
+// Payment
+export const asyncPaymentGold =() =>{
+  return async function (dispatch){
+    let response = axios.post(`https://back-end-movies-henry2.onrender.com/create-paymentGold/`)
+    console.log('response Gold ->', response);
+    return dispatch(Payment(response.data))
+  }
+}
+
+export const asyncPaymentSilver =() =>{
+  return async function (dispatch){
+    let response = axios.post(`https://back-end-movies-henry2.onrender.com/create-paymentSilver/`)
+    console.log('response Silver ->', response);
+    return dispatch(Payment(response.data))
+  }
+}
 
 
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment, Payment} = dataSlice.actions
 
 export default dataSlice.reducer
