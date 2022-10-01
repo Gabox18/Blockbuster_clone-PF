@@ -100,15 +100,15 @@ function handleSubmitGold() {
           <div className="contMembership">
             <div className="cardP">
               <p className="titleP">Silver</p>
-              <div className="pricecontainerP">
+              <div className="pricecontainerP1">
                 <p className="priceP">U$D 19.99</p>
                 <p className="pricedescriptor">/month</p>
               </div>
               <p className="includesP">This Plan Includes:</p>
               <ul className="benefitlistP">
-                <li>Full HD 1080pi</li>
-                <li>20 movies</li>
-                <li>Fav list</li>
+                <li className="listMmemer">Full HD 1080pi</li>
+                <li className="listMmemer">20 movies</li>
+                <li className="listMmemer">Fav list</li>
               </ul>
 
               <button className="btn" onClick={handleSubmitSilver}>
@@ -124,9 +124,9 @@ function handleSubmitGold() {
               </div>
               <p className="includesP">This Plan Includes:</p>
               <ul className="benefitlistP">
-                <li>Full HD 4k</li>
-                <li>40 movies</li>
-                <li>Fav list</li>
+                <li className="listMmemer">Full HD 4k</li>
+                <li className="listMmemer">40 movies</li>
+                <li className="listMmemer">Fav list</li>
               </ul>
               <button className="btn1" onClick={handleSubmitGold}>
                 {" "}

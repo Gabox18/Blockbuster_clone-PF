@@ -105,11 +105,35 @@
   text-align: end;
   padding-right: 2rem;
 }
+
+.conteiner-carruzel-home:hover{
+
+  box-shadow: 8px 8px 16px #12273e, -8px -8px 16px #12273e;
+}
 .conteiner-carruzel-home{
   margin-bottom: 40px;
   justify-content: start;
-  
+  filter: blur();
+  color:#000000;
+  background-color:#030303ca;
+  outline: outset 3px #12273e;
+    margin-bottom: 40px;
+  justify-content: start; 
+} 
+.conteiner-carruzel-home1:hover{
+  box-shadow: 8px 8px 16px #12273e, -8px -8px 16px #12273e;
 }
+.conteiner-carruzel-home1{
+  margin-bottom: 40px;
+  justify-content: start;
+  filter: blur();
+  color:#000000;
+  background-color:#030303ca;
+  outline: outset 3px #12273e;
+    margin-bottom: 40px;
+  justify-content: start; 
+} 
+
 .cabecera{
   border-bottom: #F7A600 groove .5rem;
 

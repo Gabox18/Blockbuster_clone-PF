@@ -1,108 +1,98 @@
 .form-control {
-    height: 2rem;
-    margin-top: 1rem;
+  height: 2rem;
+  margin-top: 1rem;
 }
 
-.imgPerfil{
-    border-radius:50%;
-    outline: 3px solid #ff930f ;
-    margin: 1rem;
+.imgPerfil {
+  border-radius: 50%;
+  outline: 3px solid #ff930f;
+  margin: 1rem;
 }
 .navbar-toggler {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
-.buttonNavbar{
-    width: 1rem;
-    height: 1rem;
-    
+.buttonNavbar {
+  width: 1rem;
+  height: 1rem;
 }
-.btnLogin{
-    width: 6rem;
-    height: 2.3rem;
+.btnLogin {
+  width: 6rem;
+  height: 2.3rem;
 }
-.navbarFix{
-    height: 4rem;
-}
-
-
-.Unregistered-style{
-    border-radius:50%;
-    outline: 3px solid #ff0000 ;
-    margin: 1rem;
+.navbarFix {
+  height: 4rem;
 }
 
-.Unregistered-style:hover{
-    border-radius:50%;
-    outline: 6px solid #ff0000 ;
-    margin: 1rem;
+.Unregistered-style {
+  border-radius: 50%;
+  outline: 3px solid #ff0000;
+  margin: 1rem;
 }
 
-
-
-.UserCategory-style{
-    border-radius:50%;
-    outline: 3px solid #ffffff ;
-    margin: 1rem;
+.Unregistered-style:hover {
+  border-radius: 50%;
+  outline: 6px solid #ff0000;
+  margin: 1rem;
 }
 
-.UserCategory-style:hover{
-    border-radius:50%;
-    outline: 6px solid #ffffff ;
-    margin: 1rem;
+.UserCategory-style {
+  border-radius: 50%;
+  outline: 3px solid #ffffff;
+  margin: 1rem;
 }
 
-
-.SilverCatery-style{
-    border-radius:50%;
-    outline: 3px solid #C0C0C0 ;
-    margin: 1rem;
+.UserCategory-style:hover {
+  border-radius: 50%;
+  outline: 2px solid #ffffff;
+  box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #ffffff;
+  margin: 1rem;
 }
 
-.SilverCatery-style:hover{
-    border-radius:50%;
-    outline: 6px solid #C0C0C0 ;
-    margin: 1rem;
+.SilverCatery-style {
+  border-radius: 50%;
+  outline: 3px solid #c0c0c0;
+  margin: 1rem;
 }
 
-
-.GoldCategory-style{
-    border-radius:50%;
-    outline: 3px solid #ff930f ;
-    margin: 1rem;
+.SilverCatery-style:hover {
+  border-radius: 50%;
+  outline: 2px solid #c0c0c0;
+  box-shadow: 6px 6px 12px #c0c0c0, -6px -6px 12px #c0c0c0;
+  margin: 1rem;
 }
 
-.GoldCategory-style:hover{
-    border-radius:50%;
-    outline: 3px solid #ff930f ;
-    margin: 1rem;
+.GoldCategory-style {
+  border-radius: 50%;
+  outline: 3px solid #ff930f;
+  margin: 1rem;
 }
 
-
-
-.logoNav{
-    margin-right: 28rem;
-
-}
-.navbar-expand-lg{
-    border-bottom: #F7A600 groove .5rem;
-    width: 100%;
-    background-image: url('../../assets/fondoBlue.jpg');
-    background-position: 50% -10%;
-
+.GoldCategory-style:hover {
+  border-radius: 50%;
+  outline: 2px solid #ff930f;
+  box-shadow: 6px 6px 12px #ff930f, -6px -6px 12px #ff930f;
+  margin: 1rem;
 }
 
-
-.logoNavDetail{
-   margin-left: 54.5rem;
-   margin-right: 23rem;
-
+.logoNav {
+  margin-right: 28rem;
 }
-.searchDetail{
-    margin-left: 10rem;
+.navbar-expand-lg {
+  border-bottom: #f7a600 groove 0.5rem;
+  width: 100%;
+  background-image: url("../../assets/fondoBlue.jpg");
+  background-position: 50% -10%;
 }
 
-.logoLanding{
-    margin-left: 45rem;
+.logoNavDetail {
+  margin-left: 54.5rem;
+  margin-right: 23rem;
+}
+.searchDetail {
+  margin-left: 10rem;
+}
 
+.logoLanding {
+  margin-left: 45rem;
 }

@@ -66,6 +66,9 @@
 .textInput:active {
   box-shadow: 2px 2px 15px #f5a400 inset;
 }
+.listMmemer{
+  margin-left: -2.3rem;
+}
 /*--------------------------*/
 button {
   color: #090909;

@@ -58,7 +58,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <div className="conteiner-carruzel-home">
+        <div className="conteiner-carruzel-home1">
           <h2 className="textCarruzel">Featured movies</h2>
           <Carrusel array={arrFeaturedMovies} />
         </div>
