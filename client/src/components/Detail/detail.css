@@ -209,15 +209,27 @@ input:checked + .slider1:before {
 }
 
 /* ----------------------------- */
-  .textCarruzel22 {
+  .textCarruzel {
     font-size: 3rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #F9BD08;
     text-align: left;
     padding-right: 2rem;
+    background-color: black;
+   
   }
-  .conteiner-carruzel-home2{
+  .conteiner-carruzel-home{
     margin-bottom: 40px;
     justify-content: start;
+    filter: blur();
+    color:#000000;
+    background-color:#030303ca;
+    border:solid 3px;
+    border-color:#f7a600;
+
     
   }
+  .plot .titleInfo label{
+    background-color:#f7a600;
+   }
+
