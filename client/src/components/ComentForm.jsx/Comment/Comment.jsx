@@ -8,8 +8,6 @@ import {
 } from "../../../redux/slice";
 import { useSelector } from "react-redux";
 import "./Comment.css";
-import { useParams } from "react-router-dom";
-import avatar from "../../../assets/avatar.png";
 import tachito from "../../../assets/tachito.png";
 import pencil from "../../../assets/pencil.png";
 
@@ -34,17 +32,8 @@ export default function Comment({
     coment: "",
   });
   let { user } = useSelector((state) => state.alldata);
-  let { commentFromMovies } = useSelector((state) => state.alldata);
 
-  let info = commentFromMovies.map((e)=> e.idUser)
-  let suma = 1  
-  for (let i = 0; i < info.length; i++) {
-      if(info[i+1] === info[i]){
-        suma=suma +1
-      }
-  }
-  console.log(suma, "se recibe");
-  console.log(info, "user");
+
 
 
   
@@ -59,6 +48,7 @@ export default function Comment({
     setTimeout(() => {
       dispatch(asyncCommentById(movieId));
     }, 1000);
+    
   }
 
   async function handleEdit() {

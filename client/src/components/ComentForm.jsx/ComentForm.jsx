@@ -7,15 +7,16 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import avatar from "../../assets/avatar.png";
 
-export default function ComentForm({ idParams }) {
+export default function ComentForm({ idParams , handleDelete }) {
   let { id } = useParams();
   const dispatch = useDispatch();
   let userdb = useSelector((state) => state.alldata.user);
+  console.log(userdb,'asdasdsad')
   let { commentMovie } = useSelector((state) => state.alldata);
   const [input, setInput] = useState({
     coment: "",
   });
-
+let [suma ,setSuma] =useState(0)
   // useEffect(()=>{
   //   if(Object.keys(commentMovie).length !== 0) {
   //     console.log(parseInt(idParams),commentMovie,'------->')
@@ -25,15 +26,11 @@ export default function ComentForm({ idParams }) {
 
   let { commentFromMovies } = useSelector((state) => state.alldata);
 
-  let info = commentFromMovies.map((e) => e.idUser);
-  let suma = 1;
-  for (let i = 0; i < info.length; i++) {
-    if (info[i + 1] === info[i]) {
-      suma = suma + 1;
-    }
-  }
-  console.log(suma, "se recibe");
-  console.log(info, "user");
+  let info = commentFromMovies.filter((e) => userdb.id == e.idUser );
+
+  console.log(commentFromMovies,'a ver')
+  console.log(info, "se recibe");
+  // console.log(info, "user");
   const handleOnChange = (e) => {
     console.log(input);
     setInput({
@@ -58,7 +55,9 @@ export default function ComentForm({ idParams }) {
 
     setInput({
       coment: "",
+      
     });
+    
   };
 
   const validate = (data) => {
@@ -67,6 +66,7 @@ export default function ComentForm({ idParams }) {
       error.coment = "Complete the field comment";
     return error;
   };
+  
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
@@ -78,7 +78,7 @@ export default function ComentForm({ idParams }) {
         <div>
           <img src={userdb.picture} className="imgPefil" alt="fotito" />
         </div>
-        {suma !== 3 ? (
+        {info.length !== 3 ? (
           <form onSubmit={(e) => handleOnsubmit(e)}>
             <div className="textNComent">
               <textarea
