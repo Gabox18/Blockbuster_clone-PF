@@ -52,7 +52,9 @@ export const dataSlice = createSlice({
         },
 
         DetailsMovies : (state, action)=>{
+          console.log(action.payload,'actionpayload')
             state.details = action.payload
+            
         },
 
         clearDetail : (state)=>{
@@ -88,18 +90,20 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload
         },
         newAdmin:(state,action)=>{
-          state.allUsers = action.payload},
-    
-        deleteComment:(state,action) =>{
-          state.commetDeleteMessage = action.payload
+          state.allUsers = action.payload
         },
-
+    
         updateUser:(state,action)=>{
           state.user = action.payload
         },
+       
+        bannMovie:(state, action) =>{
+          state.allMovies = action.payload
+        },
         payPayment:(state,action)=>{
           state.payPaypal = action.payload
-        }
+        },
+        
     }
   })
 
@@ -162,9 +166,9 @@ export const asyncallMovies = () => {
   export const asyncFormComment = (input,idMovie) =>{
     return async function(dispatch){
     try {
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
+      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
       console.log(input,"en asyncform")
-        return dispatch(commentInput(response.data))
+        
       }
      catch (error) {
       console.log(error,'from Details')
@@ -193,14 +197,13 @@ export const asyncallMovies = () => {
       }
     } 
   }
-  export const asyncDeleteComment =(id,movieId) =>{
+  export const asyncDeleteComment =(id) =>{
     return async function (dispatch){
       try {
         let obj = {id}
      
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
+      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
        
-      return dispatch(deleteComment(response.data))
       } catch (error) {
         console.log(error,'from delete')
       }
@@ -315,11 +318,21 @@ export const asyncDeleteMovie =(id) =>{
   }
 }
 
+export const asyncUpdateMovie =(id) =>{
+  return async function (dispatch){
+  
+    let response =  axios.put(`https://back-end-movies-henry2.onrender.com/removeM`,id)
+     dispatch(bannMovie(response.data))
+  }
+}
 
 
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment} = dataSlice.actions
+
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment,bannMovie} = dataSlice.actions
+
 
 export default dataSlice.reducer

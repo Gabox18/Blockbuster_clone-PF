@@ -14,7 +14,7 @@ export default function Allcomments({idParams}) {
     dispatch(asyncCommentById(idParams));
   }, [ dispatch,idParams]);
   
-  console.log(commentFromMovies,"commentFromMovies")
+
   return (
     <div className="container-principal">
       <div className="container-comment">

@@ -126,10 +126,6 @@ export default function Comment({
           )}
         </div>
       </div>
-      <div>
-        {/* {edit ? <button >Submit</button>:
-        <button onClick={handleOnEdit}>Edit</button>} */}
-      </div>
     </div>
   );
 }

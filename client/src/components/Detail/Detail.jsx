@@ -4,39 +4,45 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./detail.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { asyncgetDetails, clearDetail } from "../../redux/slice.js";
+import {
+  asyncgetDetails,
+  clearDetail,
+  asyncUpdateMovie,
+} from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
 import ComentForm from "../ComentForm.jsx/ComentForm";
 import { useAuth0 } from "@auth0/auth0-react";
-import Footer from "../Footer/Footer"
-import NavBar from '../Nav Bar/Navbar'
+import Footer from "../Footer/Footer";
+import NavBar from "../Nav Bar/Navbar";
 import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
 
-
 export default function Detail() {
-  const {isAuthenticated , loginWithRedirect} = useAuth0();
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
   let { details } = useSelector((store) => store.alldata);
-  let userdb = useSelector(store => store.alldata.user)
-    
+  let userdb = useSelector((store) => store.alldata.user);
 
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
+
     return () => {
       dispatch(clearDetail());
     };
   }, [dispatch, id]);
 
+  function handleBannMovie() {
+    let obj ={id}
+    dispatch(asyncUpdateMovie(obj));
+  }
+
   return (
-    
     <div className="detailRender">
-      
       <div className="videoBg">
         <video src={video} muted loop autoPlay></video>
       </div>
-      <NavBar/>
+      <NavBar />
 
       <div className="cardStyle">
         <div className="cardDetail">
@@ -54,12 +60,35 @@ export default function Detail() {
             <div className="title">
               <p>{details.name}</p>
             </div>
-            <label className="language"><b>Director: </b>{details.director} </label>
-            <label className="language"><b>Year:</b>  {details.year}</label>
-            <label className="language"><b>Genre:</b>  {details.genre}</label>
-            <label className="language"><b>Language:</b>  {details.language}</label>
-            <label className="language"><b>Rating:</b> {details.imdbRating}</label>
-            <label className="language"><b>Actors:</b> {details.actors}</label>
+            <div className="plot">
+              <div className="titleInfo">
+            <label className="backtitle" >
+              <b>Descrption:</b> {details.plot}
+            </label>
+            </div>
+            <div className="lessInfo">
+             <label className="language">
+              <b>Director: </b>
+              {details.director}{" "}
+            </label>
+            <label className="language">
+              <b>Year:</b> {details.year}
+            </label>
+            <label className="language">
+              <b>Genre:</b> {details.genre}
+            </label>
+            <label className="language">
+              <b>Language:</b> {details.language}
+            </label>
+            <label className="language">
+              <b>Rating:</b> {details.imdbRating}
+            </label>
+            <label className="language">
+              <b>Actors:</b> {details.actors}
+            </label>  
+            </div>
+           
+            </div>
           </div>
         </div>
         <Link to={`/details/${id}/play`}>
@@ -68,24 +97,42 @@ export default function Detail() {
             type="shadow-lg p-3 mb-5 bg-body rounded"
           >
             {" "}
-            Play
-            {" "}
+            Play{" "}
           </button>
         </Link>
+        {userdb.category === "admin" ? (
+          <div>
+            <label class="switch">
+              <input type="checkbox" onChange={handleBannMovie} />
+          { details.status === true ?
+              <span className="slider"></span>
+              :
+              <span className="slider1"></span>}
+            </label>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
       <div>
-        { userdb.picture ?
-        <ComentForm idParams={parseInt(id)}/>
-        :
-        <div> 
-          <a onClick={()=>loginWithRedirect()}>
-        <p className="alert" >Click on my to login </p>
-        </a>
-        </div>
-}
+        {userdb.picture ? (
+          <ComentForm idParams={parseInt(id)} />
+        ) : (
+          <div>
+            <a onClick={() => loginWithRedirect()}>
+              <p className="alert">Click on my to login </p>
+            </a>
+
+            <Link to="/">
+              <p className="alert2">
+                If you are logged in, complete the information in the profile.
+              </p>
+            </Link>
+          </div>
+        )}
       </div>
       <div>
-         <Allcomments idParams={parseInt(id)}/>
+        <Allcomments idParams={parseInt(id)} />
       </div>
       <div className="card-bodyDi col-auto p-5 justify-content-center">
         <Link to="/home">
@@ -99,8 +146,7 @@ export default function Detail() {
         </Link>
         {/* <a href="#" className="card-link">Another link</a> */}
       </div>
-      <Footer/>
+      <Footer />
     </div>
-
   );
 }
