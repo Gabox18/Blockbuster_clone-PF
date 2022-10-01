@@ -111,7 +111,8 @@
   
 }
 .cabecera{
-  border-bottom: #F7A600 groove 1rem;
+  border-bottom: #F7A600 groove .5rem;
+
 }
 .blocktitle{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
