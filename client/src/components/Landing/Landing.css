@@ -216,22 +216,28 @@
   width: 300px;
   max-height: 500px;
   padding: 1rem;
-  background: rgb(45, 45, 45);
+  background-image: url("../../assets/cartaMember.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
   outline: groove silver 6px;
   margin-left: 25%;
   margin-right: 10%;
+  box-shadow: 2px 2px 6px #c5c5c5, -2px -2px -6px #ffffff;
  }
  .cardP:hover {
-  outline: double silver 8px;
+  outline: 2px solid white;
+  box-shadow: 8px 8px 16px #c5c5c5, -8px -8px 16px #ffffff;
  }
+ ul{
+  list-style: none;
+ }
+
  .cardP1 {
   width: 300px;
   max-height: 500px;
   padding: 1rem;
-  background: rgb(45, 45, 45);
+  background-image: url("../../assets/cartaMember.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
@@ -241,6 +247,8 @@
  }
  .cardP1:hover {
  outline: double #F7A600 8px;
+ outline: 2px solid #F7A600;
+ box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
  }
 
  .titleP {
@@ -257,8 +265,8 @@
   font-weight: bold;
   font-size: x-large;
   color: #F7A600;
-
  }
+
  
  .pricecontainerP {
   width: 100%;
@@ -266,6 +274,25 @@
   border-radius: 7%;
   background-color: rgb(30,30,30);
   box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
+  border: outset #f7a500b2 5px;
+ }
+ .pricecontainerP:hover {
+  border: inset #f7a500b2 5px;
+  box-shadow: 2px 2px 6px #F7A600, -2px -2px 6px #F7A600;
+ }
+
+ .pricecontainerP1 {
+  width: 100%;
+  margin-top: 0.7em;
+  border-radius: 7%;
+  background-color: rgb(30,30,30);
+  box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
+  border: outset #6C6C6C 5px;
+ }
+ .pricecontainerP1:hover {
+  border: inset #6c6c6caf 5px;
+  box-shadow: 2px 2px 6px #6c6c6caf, -2px -2px 6px #6c6c6caf;
+
  }
  
  .priceP {
@@ -299,9 +326,7 @@
   text-align: center;
   text-decoration: none;
  }
-::marker{
-  color: #F7A600;
-}
+
    .benefitlistP li:nth-child(1) {
   margin-top: 0.4em;
   text-decoration: none;
@@ -359,6 +384,7 @@
  
  button:hover {
   color: black;
+  
  }
  
  .btn:after {
@@ -385,11 +411,14 @@
   bottom: 0;
   transform: skewX(-45deg) scale(0, 1);
   transition: all 0.5s;
+  
  }
  button:hover:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  outline: 2px solid #F7A600;
+  box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
  }
 
  /* From uiverse.io by @mrhyddenn */
