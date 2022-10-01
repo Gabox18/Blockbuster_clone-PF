@@ -43,20 +43,21 @@ function handleSubmitGold() {
     <>
       <div className="ContainerLanding">
         <div>
-       <Nav/>     
+          <Nav />
         </div>
-        <div className="vieitoF">
-      <video src={video} muted loop autoPlay className="videitoFondo" />
-         <div className="textol"> <div className="loader">
-    <span>BlockBuster</span>
-    <span>BlockBuster</span>
-</div> 
 
-</div>
-     <div className="texto2"><b>Fasten your seat belts, this is going to be a busy night!!</b>
-    <div className="scrollArrow">scroll down</div>
-     <div><img className="flechita" src={flecha} alt="flechicta"/></div></div>
-        </div>
+        {/* <!-- ======= Hero Section ======= --> */}
+        <section id="hero">
+          <div className="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1 className="mb-4 pb-0">Block<span>Buster</span> Experience</h1>
+            <p className="mb-4 pb-0">Why can't you eat just one!</p>
+            <a href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4" className="glightbox play-btn mb-4"></a>
+            <a href="#about" className="about-btn scrollto">About The Event</a>
+          </div>
+        </section>
+        {/* <!-- End Hero Section --> */}
+
+
         <div className="container-plan">
           <div>
             <div className="container-logo">
@@ -109,8 +110,11 @@ function handleSubmitGold() {
                 <li>20 movies</li>
                 <li>Fav list</li>
               </ul>
-          
-              <button className="btn" onClick={handleSubmitSilver}> Button</button> 
+
+              <button className="btn" onClick={handleSubmitSilver}>
+                {" "}
+                Button
+              </button>
             </div>
             <div className="cardP1">
               <p className="titleP1">Gold</p>
@@ -124,19 +128,20 @@ function handleSubmitGold() {
                 <li>40 movies</li>
                 <li>Fav list</li>
               </ul>
-              <button className="btn1" onClick={handleSubmitGold} > Button</button>
+              <button className="btn1" onClick={handleSubmitGold}>
+                {" "}
+                Button
+              </button>
             </div>
           </div>
           <div>
             <div className="conteiner-shop-plan">
-              <div className="containerLanding">
-              </div>
-              <div>   
-              </div>
+              <div className="containerLanding"></div>
+              <div></div>
               <div className="carrusel">
                 <Carrusel array={moviesCarrusel} />
               </div>
-              <Footer/>
+              <Footer />
             </div>
           </div>
         </div>
