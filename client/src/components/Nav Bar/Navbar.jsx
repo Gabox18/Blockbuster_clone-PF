@@ -9,6 +9,7 @@ import { Link, Route } from "react-router-dom";
 import { asyncGetUser } from "../../redux/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Cookies from 'universal-cookie';
 
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
@@ -21,12 +22,18 @@ function Navbar(prop) {
   let categoryUser = "UserCategory-style"
   let Unregistered = "Unregistered-style"
 //userDB.category==='user'?categoryGold:
-  console.log(typeof (userDB) === 'string')// verifica si lo que hay en store.user === 'string
+//  console.log(typeof (userDB) === 'string')// verifica si lo que hay en store.user === 'string
+  
+  const cookies = new Cookies();
+  console.log(cookies.get('isAuthenticated'),'cookies nav')
+  if(isAuthenticated !== cookies.get('isAuthenticated')) cookies.set('isAuthenticated', isAuthenticated,{ path: '/' })
+  let hiCookie = cookies.get('isAuthenticated')==="true"? true : false
   useEffect(() => {
     dispatch(asyncGetUser(user?.email))
+
   }, [dispatch, user?.email])
 
-
+  console.log(isAuthenticated,"auth0")
   return (
     <>
       <nav className="navbar-expand-lg">
@@ -125,8 +132,7 @@ function Navbar(prop) {
                 </button>
               )}
             </Route > 
-            {userDB.id?
-
+            {hiCookie?
             <Route exact path="/">
             <Link to={'/home'}>
             <button
@@ -139,6 +145,7 @@ function Navbar(prop) {
               <img className="logoLanding" src={img} width="90px" alt="logo" />
             </Link>
             </Route>
+            
               :<Route exact path="/">
               <button
                 type="buttonNavbar"
