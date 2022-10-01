@@ -62,7 +62,7 @@ export const dataSlice = createSlice({
         },
 
         searchBar:(state,action) =>{
-           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload))   
+           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload)&& e.status === true)   
         },
 
         infoAdmin:(state,action) =>{
