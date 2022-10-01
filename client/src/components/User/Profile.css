@@ -1,5 +1,5 @@
 .container-profile-details{
-  background: url('https://wallpapercave.com/wp/wp3172270.jpg');
+  background: url('../../assets/backFormPefil.PNG');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -32,6 +32,9 @@
   
   .cardPerf:hover {
     height: 50%;
+  }
+  .imgPencil{
+    padding-bottom: 1rem;
   }
   
   .imgPerf {

@@ -32,12 +32,12 @@ function App() {
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/Exile" component={exile}/>
           <Route exact path="/Home" component={Home}/>
+          <Route exact path= "/profile/Form" component={Form} />
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/Home/result" component={ViewResult}/>
           <Route exact path="/details/:id" component={Detail}/>
           <Route exact path="/details/:id/play" component={Play}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
-          <Route exact path= "/infoprofile" component={Form} />
         </Switch>
     </div>
   );

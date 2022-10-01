@@ -2,7 +2,7 @@
 .cards-form {
   border: solid 2px;
   margin: auto;
-  background-image: url("../../../assets/fondoBlue.jpg");
+  background-image: url("../../../assets/backFormPefil.PNG");
 }
 
 /* From uiverse.io by @david-mohseni */
@@ -21,6 +21,7 @@
 .marcoForm:hover {
   box-shadow: inset 5px 5px 10px #f5a400, inset -5px -5px 10px #f5a400;
 }
+
 
 .picPerfil1 {
   border-radius: 50%;
@@ -94,5 +95,8 @@ button:active {
   color: white;
 }
 .validate-field{
-  color: rgb(193, 57, 57);
+  color: rgb(254, 254, 254);
+}
+.danger{
+  color: white
 }

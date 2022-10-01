@@ -90,7 +90,7 @@ const Profile = () => {
                       </div>)
                       : (<div>
                         <li>Category :{` ${userBD?.category}`}</li>
-                        <Link to={"/infoprofile"}>
+                        <Link to={"/profile/Form"}>
                           <button className="botonD" >
                             <img className="imgPencil" src={pencil} alt="pencil" />
                           </button>

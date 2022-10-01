@@ -28,13 +28,13 @@ export default function FormUpdateUser() {
     else if (!onlyLetter.test(data.name))
       error.name = "Only letter without space";
     else if (data.name?.length < 4 || data.name?.length > 15)
-      error.name = "characters Min=4 Max=15";
+      error.name = " Min: 4 - Max: 15";
 
     if (!data.lastname) error.lastname = "complete lastname";
     else if (!onlyLetter.test(data.lastname))
       error.lastname = "Only letter without space";
     else if (data.lastname?.length < 4 || data.lastname?.length > 15)
-      error.lastname = "characters Min=4 Max=15";
+      error.lastname = "Min:4 Max:15";
 
     if (!data.date) error.date = "Complete the field date";
     return error;
@@ -110,7 +110,7 @@ export default function FormUpdateUser() {
                     {validate(input).name ? (
                       <p className="danger">{validate(input).name}</p>
                     ) : (
-                      <p className="validate-field">{"Validate name"}</p>
+                      <p className="validate-field">{"✔️"}</p>
                     )}
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function FormUpdateUser() {
                     {validate(input).lastname ? (
                       <p className="danger">{validate(input).lastname}</p>
                     ) : (
-                      <p className="validate-field">{"Validate lastname"}</p>
+                      <p className="validate-field">{"✔️"}</p>
                     )}
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function FormUpdateUser() {
                     {validate(input).date ? (
                       <p className="danger">{validate(input).date}</p>
                     ) : (
-                      <p className="validate-field">{"Validate Date"}</p>
+                      <p className="validate-field">{"✔️"}</p>
                     )}
                   </div>
                 </div>
