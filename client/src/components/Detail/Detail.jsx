@@ -8,6 +8,7 @@ import {
   asyncgetDetails,
   clearDetail,
   asyncUpdateMovie,
+  asyncallMovies,
 } from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
@@ -16,24 +17,23 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 import NavBar from "../Nav Bar/Navbar";
 import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
+import Carrusel from "../Carrusel/Carrusel";
 
 export default function Detail() {
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const {  loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
   let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
+ 
 
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-
-    return () => {
-      dispatch(clearDetail());
-    };
+ 
   }, [dispatch, id]);
 
   function handleBannMovie() {
-    let obj ={id}
+    let obj = { id };
     dispatch(asyncUpdateMovie(obj));
   }
 
@@ -62,32 +62,31 @@ export default function Detail() {
             </div>
             <div className="plot">
               <div className="titleInfo">
-            <label className="backtitle" >
-              <b>Descrption:</b> {details.plot}
-            </label>
-            </div>
-            <div className="lessInfo">
-             <label className="language">
-              <b>Director: </b>
-              {details.director}{" "}
-            </label>
-            <label className="language">
-              <b>Year:</b> {details.year}
-            </label>
-            <label className="language">
-              <b>Genre:</b> {details.genre}
-            </label>
-            <label className="language">
-              <b>Language:</b> {details.language}
-            </label>
-            <label className="language">
-              <b>Rating:</b> {details.imdbRating}
-            </label>
-            <label className="language">
-              <b>Actors:</b> {details.actors}
-            </label>  
-            </div>
-           
+                <label className="backtitle">
+                  <b>Descrption:</b> {details.plot}
+                </label>
+              </div>
+              <div className="lessInfo">
+                <label className="language">
+                  <b>Director: </b>
+                  {details.director}{" "}
+                </label>
+                <label className="language">
+                  <b>Year:</b> {details.year}
+                </label>
+                <label className="language">
+                  <b>Genre:</b> {details.genre}
+                </label>
+                <label className="language">
+                  <b>Language:</b> {details.language}
+                </label>
+                <label className="language">
+                  <b>Rating:</b> {details.imdbRating}
+                </label>
+                <label className="language">
+                  <b>Actors:</b> {details.actors}
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -104,10 +103,11 @@ export default function Detail() {
           <div>
             <label class="switch">
               <input type="checkbox" onChange={handleBannMovie} />
-          { details.status === true ?
-              <span className="slider"></span>
-              :
-              <span className="slider1"></span>}
+              {details.status === true ? (
+                <span className="slider"></span>
+              ) : (
+                <span className="slider1"></span>
+              )}
             </label>
           </div>
         ) : (
@@ -146,7 +146,10 @@ export default function Detail() {
         </Link>
         {/* <a href="#" className="card-link">Another link</a> */}
       </div>
+
       <Footer />
     </div>
   );
 }
+
+
