@@ -20,7 +20,7 @@
 .cardPerf {
     width: 350px;
     height: 170px;
-    background-color: #09043F;
+    background-image: url("../../assets/backForms.jpg");
     text-align: center;
     border: 10px groove #f7a600;
     border-radius: 20px;
