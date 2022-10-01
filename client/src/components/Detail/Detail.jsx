@@ -8,6 +8,7 @@ import {
   asyncgetDetails,
   clearDetail,
   asyncUpdateMovie,
+  asyncallMovies,
 } from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
@@ -16,24 +17,27 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 import NavBar from "../Nav Bar/Navbar";
 import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
+import Carrusel from "../Carrusel/Carrusel";
 
 export default function Detail() {
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const {  loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
   let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
+  let { copyAllMovies } = useSelector((store) => store.alldata);
+  console.log(details)
+  const filterTrue =copyAllMovies.filter(e => e.status === true && e.name !== details.name)
+  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8)
+
 
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-
-    return () => {
-      dispatch(clearDetail());
-    };
+    dispatch(asyncallMovies())
   }, [dispatch, id]);
 
   function handleBannMovie() {
-    let obj ={id}
+    let obj = { id };
     dispatch(asyncUpdateMovie(obj));
   }
 
@@ -47,7 +51,7 @@ export default function Detail() {
       <div className="cardStyle">
         <div className="cardDetail">
           <div className="image">
-            <img src={details.poster} className="card-img-top" alt="..." />
+            <img src={details.poster} className="card-img-top" alt="..." autofocus/>
           </div>
           {/* <div className="player-wrapper">
          <ReactPlayer
@@ -62,36 +66,36 @@ export default function Detail() {
             </div>
             <div className="plot">
               <div className="titleInfo">
-            <label className="backtitle" >
-              <b>Descrption:</b> {details.plot}
-            </label>
-            </div>
-            <div className="lessInfo">
-             <label className="language">
-              <b>Director: </b>
-              {details.director}{" "}
-            </label>
-            <label className="language">
-              <b>Year:</b> {details.year}
-            </label>
-            <label className="language">
-              <b>Genre:</b> {details.genre}
-            </label>
-            <label className="language">
-              <b>Language:</b> {details.language}
-            </label>
-            <label className="language">
-              <b>Rating:</b> {details.imdbRating}
-            </label>
-            <label className="language">
-              <b>Actors:</b> {details.actors}
-            </label>  
-            </div>
-           
+                <label className="backtitle">
+                  <b>Descrption:</b> {details.plot}
+                </label>
+              </div>
+              <div className="lessInfo">
+                <label className="language">
+                  <b>Director: </b>
+                  {details.director}{" "}
+                </label>
+                <label className="language">
+                  <b>Year:</b> {details.year}
+                </label>
+                <label className="language">
+                  <b>Genre:</b> {details.genre}
+                </label>
+                <label className="language">
+                  <b>Language:</b> {details.language}
+                </label>
+                <label className="language">
+                  <b>Rating:</b> {details.imdbRating}
+                </label>
+                <label className="language">
+                  <b>Actors:</b> {details.actors}
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <Link to={`/details/${id}/play`}>
+        { userdb.category === 'admin'||userdb.category === 'gold' ||userdb.category === 'silver' ?
+          <Link to={`/details/${id}/play`}>
           <button
             className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
             type="shadow-lg p-3 mb-5 bg-body rounded"
@@ -99,15 +103,26 @@ export default function Detail() {
             {" "}
             Play{" "}
           </button>
-        </Link>
+        </Link> 
+        : <button
+        className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+        type="shadow-lg p-3 mb-5 bg-body rounded"
+        disabled
+      >
+        {" "}
+        Play{" "}
+      </button>
+        }
+        
         {userdb.category === "admin" ? (
           <div>
             <label class="switch">
               <input type="checkbox" onChange={handleBannMovie} />
-          { details.status === true ?
-              <span className="slider"></span>
-              :
-              <span className="slider1"></span>}
+              {details.status === true ? (
+                <span className="slider"></span>
+              ) : (
+                <span className="slider1"></span>
+              )}
             </label>
           </div>
         ) : (
@@ -146,7 +161,14 @@ export default function Detail() {
         </Link>
         {/* <a href="#" className="card-link">Another link</a> */}
       </div>
+      <div className="conteiner-carruzel-home">
+          <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
+          <Carrusel array={moviesCarrusel} />
+        </div>
+
       <Footer />
     </div>
   );
 }
+
+

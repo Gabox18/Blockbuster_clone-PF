@@ -36,7 +36,7 @@ function ViewResult(){
           <div className="containerC">
           <div className="cardContainerViewResult">
             {allMovies.length === 0  //renderizado condicional 
-            ? <h2 className="not-result">We couldn’t find any movie matchin</h2>
+            ? <h2 className="not-result">We couldn’t find any movie matching</h2>
             :currentMovies?.map((e, i) => {
               return (
                 

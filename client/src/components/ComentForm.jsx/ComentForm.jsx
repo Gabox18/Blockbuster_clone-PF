@@ -5,20 +5,18 @@ import { useState } from "react";
 import "./ComentForm.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import avatar from "../../assets/avatar.png"
+import avatar from "../../assets/avatar.png";
 
-
-
-export default function ComentForm({idParams}) {
-
+export default function ComentForm({ idParams , handleDelete }) {
   let { id } = useParams();
   const dispatch = useDispatch();
   let userdb = useSelector((state) => state.alldata.user);
-  let {commentMovie} = useSelector((state) => state.alldata);
+  console.log(userdb,'asdasdsad')
+  let { commentMovie } = useSelector((state) => state.alldata);
   const [input, setInput] = useState({
     coment: "",
   });
-
+let [suma ,setSuma] =useState(0)
   // useEffect(()=>{
   //   if(Object.keys(commentMovie).length !== 0) {
   //     console.log(parseInt(idParams),commentMovie,'------->')
@@ -26,6 +24,13 @@ export default function ComentForm({idParams}) {
 
   // },[])
 
+  let { commentFromMovies } = useSelector((state) => state.alldata);
+
+  let info = commentFromMovies.filter((e) => userdb.id == e.idUser );
+
+  console.log(commentFromMovies,'a ver')
+  console.log(info, "se recibe");
+  // console.log(info, "user");
   const handleOnChange = (e) => {
     console.log(input);
     setInput({
@@ -39,20 +44,20 @@ export default function ComentForm({idParams}) {
     });
   };
 
-
   const handleOnsubmit = (e) => {
     e.preventDefault(e);
     console.log(input);
     dispatch(asyncFormComment(input, id));
-    dispatch(asyncCommentById(parseInt(idParams)))
+    dispatch(asyncCommentById(parseInt(idParams)));
     setTimeout(() => {
-      dispatch(asyncCommentById(parseInt(idParams)))
-  }, 1000);
-    
-    
+      dispatch(asyncCommentById(parseInt(idParams)));
+    }, 1000);
+
     setInput({
       coment: "",
+      
     });
+    
   };
 
   const validate = (data) => {
@@ -61,6 +66,7 @@ export default function ComentForm({idParams}) {
       error.coment = "Complete the field comment";
     return error;
   };
+  
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
@@ -70,32 +76,37 @@ export default function ComentForm({idParams}) {
     <div className="container-1">
       <div className="containerinfo">
         <div>
-
-            <img src={userdb.picture} className="imgPefil" alt="fotito"/>   
-
-          
+          <img src={userdb.picture} className="imgPefil" alt="fotito" />
         </div>
-        <form onSubmit={(e) => handleOnsubmit(e)}>
-          <div className="textNComent">
-            <textarea
-              type="message"
-              name="comment"
-              value={input.coment}
-              className="input"
-              placeholder="Your review"
-              onChange={handleOnChange}
-              autoFocus
-            />
-          </div>
+        {info.length !== 3 ? (
+          <form onSubmit={(e) => handleOnsubmit(e)}>
+            <div className="textNComent">
+              <textarea
+                type="message"
+                name="comment"
+                value={input.coment}
+                className="input"
+                placeholder="Your review"
+                onChange={handleOnChange}
+                autoFocus
+              />
+            </div>
 
-          <button
-            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
-            type="submit"
-            disabled={invalidAdd(input)}
-          >
-            Send
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="icon-btn add-btn"
+              disabled={invalidAdd(input)}
+            >
+              <div className="add-icon"></div>
+              <div className="btn-txt">Comment</div>
+            </button>
+          </form>
+        ) : (
+        
+            <p className="textlimit">you can only comment 3 times per movie</p>
+          
+            
+        )}
       </div>
       <div className="borbo">
         <h5>comments from other users about this movie.</h5>

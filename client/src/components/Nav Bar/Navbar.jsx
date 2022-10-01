@@ -133,6 +133,38 @@ function Navbar(prop) {
               )}
             </Route > 
             {hiCookie?
+            <Route path="/profile">
+            <Link to={"/home"}>
+              <img  className="logoNavDetail" src={img} width="90px" alt="logo" />
+              </Link>
+              <Searchbar className="searchDetail" setCurrentPage={prop.setCurrentPage} />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                      src={typeof (userDB) === 'string' ? user.picture : userDB.picture}
+                      alt="profile"
+                      width={"40px"}
+                      className={userDB===''?Unregistered 
+                      :userDB.category==='user'?categoryUser
+                      :userDB.category==='silver'?categorySilver:categoryGold}
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route > 
+            {userDB.id?
             <Route exact path="/">
             <Link to={'/home'}>
             <button

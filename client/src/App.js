@@ -45,6 +45,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/Home" component={Home}/>
+          <Route exact path= "/profile/Form" component={Form} />
           <Route exact path="/profile" component={Profile}/>
           <Route exact path="/Home/result" component={ViewResult}/>
           <Route exact path="/details/:id" component={Detail}/>

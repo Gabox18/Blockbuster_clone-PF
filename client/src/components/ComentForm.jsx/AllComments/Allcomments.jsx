@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 
 export default function Allcomments({idParams}) {
   let { commentFromMovies } = useSelector((state) => state.alldata);
+ 
   let dispatch = useDispatch()
   useEffect(() => {
     dispatch(asyncCommentById(idParams));
