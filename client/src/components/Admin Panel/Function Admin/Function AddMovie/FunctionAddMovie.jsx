@@ -33,8 +33,8 @@ function validate(input) {
   if (!input.rated || input.rated.length < 1 || input.rated.length > 10) {
     error.rated = "Fill in the rated, maximum 10 digits";
   }
-  if (!input.runtime || input.runtime.length < 2 ||input.runtime.length > 3) {
-    error.runtime = "Complete the field runtime";
+  if (!input.runtime || input.runtime > 200) {
+    error.runtime = "Fill in the duration, maximum 3 digits";
   }
   if (
     !input.director || (input.director.length < 7) ||
@@ -68,7 +68,8 @@ function validate(input) {
   }
   if (!input.imdbRating || input.imdbRating > 10) {
     error.imdbRating = "Complete the field rating";
-  } else if (!input.poster) {
+  } 
+  else if (!input.poster ) {
     error.poster = "Complete the field poster";
   }
   return error;
@@ -79,6 +80,7 @@ export default function FunctionAddMovie() {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const [imagen, setImagen] = useState("");
+  const [poster, setPoster] =useState("")
   const [input, setInput] = useState({
     name: "",
     released: "",
@@ -118,6 +120,16 @@ export default function FunctionAddMovie() {
     });
   };
 
+  function handleDelete(e) {
+    e.preventDefault();
+    setImagen({imagen:""})
+    setInput({
+      ...input,
+        poster: ""
+    })
+    console.log("soy nicoleto", input)
+}
+
   function handleChange(e) {                      
     setInput({                                  
         ...input,
@@ -128,7 +140,7 @@ export default function FunctionAddMovie() {
         [e.target.name]: e.target.value
     }));
     console.log(input);
-}
+}           
 
   function handleSubmit(e) {
     console.log(errors.year)
@@ -179,6 +191,7 @@ export default function FunctionAddMovie() {
               value={input.name}
               name="name"
               autoComplete="off"
+              isInvalid={!!errors.name}
               onChange={(e) => handleChange(e)}
             />
             {errors.name && <p className="error">{errors.name}</p>}
@@ -421,21 +434,22 @@ export default function FunctionAddMovie() {
             />
             {errors.status && <p className="error">{errors.status}</p>} */}
 
-            <input
+            <input 
               className="impAdmin"
               name="poster" //ESTE INPUT NO PUEDE TENER VALUE
               placeholder=""
               type="file"
               onChange={uploadImage}
+              isInvalid={!!errors.poster}
             />
-
             {errors.poster && <p className="error">{errors.poster}</p>}
-
-
-            <img src={imagen} alt=""  width="150px" />
-            
+      
+      <div>
+          <button className="botonXMovie" onClick={handleDelete}>X</button> 
+      </div>
+            {imagen?
+            <img src={imagen} alt=""  width="150px" /> : null } 
           </div>
-
             <button className="submit-button" type="submit">
               {" "}
               Load movie{" "}
