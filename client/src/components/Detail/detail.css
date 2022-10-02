@@ -222,3 +222,87 @@ input:checked + .slider1:before {
     margin-bottom: 40px;
    }
 
+/*-------------------------------LIKE MOVIE ----------------------*/
+
+ /* From uiverse.io by @barisdogansutcu */
+ .containerLike {
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 15px 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  max-width: 30%;
+  margin-bottom: 1rem;
+ }
+ 
+ .heart {
+  display: none;
+ }
+ 
+ .heart:checked + .containerLike svg {
+  fill: hsl(0deg 100% 50%);
+  stroke: hsl(0deg 100% 50%);
+  animation: heartButton 1s infinite;
+ }
+ 
+ @keyframes heartButton {
+  0% {
+   transform: scale(1);
+  }
+ 
+  25% {
+   transform: scale(1.3);
+  }
+ 
+  50% {
+   transform: scale(1);
+  }
+ 
+  75% {
+   transform: scale(1.3);
+  }
+ 
+  100% {
+   transform: scale(1);
+  }
+ }
+ 
+ .heart + .containerLike .action {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+ }
+ 
+ .heart + .containerLike .action span {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  transition: all .5s;
+ }
+ 
+ .heart + .containerLike .action span.option-1 {
+  transform: translate(0px,0%);
+  opacity: 1;
+ }
+ 
+ .heart:checked + .containerLike .action span.option-1 {
+  transform: translate(0px,-100%);
+  opacity: 0;
+ }
+ 
+ .heart + .containerLike .action span.option-2 {
+  transform: translate(0px,100%);
+  opacity: 0;
+ }
+ 
+ .heart:checked + .containerLike .action span.option-2 {
+  transform: translate(0px,0%);
+  opacity: 1;
+ }
+ 
