@@ -1,8 +1,4 @@
-.detailRender {
-  min-height: 100vh;
-  min-height: 100vh;
-  
-}
+
 
 .videoBg video {
   width: auto;
@@ -28,6 +24,7 @@
   border-radius: 10px;
   margin-bottom: 100%;
   margin-left: 5%;
+  margin-top: 35%;
 }
 
 .cardStyle {
@@ -36,15 +33,14 @@
   margin-left: 30%;
   margin-right: 30%;
   border-radius: 10%;
-  margin-top: 2%;
-  
+
 }
 .infodetail {
   color: #f7a600;
   display: flexbox;
   flex-direction: row;
   margin-left: 2rem;
-  
+  margin-top: 20%;
   
 }
 .plot .titleInfo label{

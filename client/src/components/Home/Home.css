@@ -76,6 +76,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+ 
 }
 
 .contenido {
@@ -89,6 +90,7 @@
   background-color: black;
   opacity: 0.8;
   font-family: 'fjalla one', 'sans-serif';
+  margin-top: 6%;
 }
 
 .textCarruzel {

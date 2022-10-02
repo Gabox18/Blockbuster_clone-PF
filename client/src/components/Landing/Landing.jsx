@@ -49,8 +49,10 @@ function handleSubmitGold() {
         {/* <!-- ======= Hero Section ======= --> */}
         <section id="hero">
           <div className="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <h1 className="mb-4 pb-0">Block<span>Buster</span> Experience</h1>
-            <p className="mb-4 pb-0">Why can't you eat just one!</p>
+          <div className="loader">
+    <span className="landingName">BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
             <a href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4" className="glightbox play-btn mb-4"></a>
             <a href="#about" className="about-btn scrollto">About The Event</a>
           </div>
