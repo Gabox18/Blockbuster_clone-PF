@@ -106,12 +106,12 @@ export const dataSlice = createSlice({
         payPayment:(state,action)=>{
           state.payPaypal = action.payload
         },
-        favoriteArray:(state,action)=>{
-          
-          state.favoriteMovie= action.payload
-        
+        favoriteArray:(state,action)=>{ 
+          state.favoriteMovie= action.payload  
         },
-        
+        infoAdmin:(state,action)=>{
+          state.allMovies = action.payload
+         },
     }
   })
 
@@ -277,20 +277,18 @@ export const asyncallMovies = () => {
 //--------------------------------------------------------------------------------------------------------------------
 //------------------------------------function admin----------------------------------------------------------------------  
 //-----------------------------------------------------------------------------------------------------------------
-export const asyncInfoAdmin = (input) =>{
+export const asyncInfoAdmin = (payload) =>{
   return async function(dispatch){
-
-    return dispatch(infoAdmin(input))
+    console.log("soy la nueva movie",payload)
+    try {
+      const response = await axios.post('https://back-end-movies-henry2.onrender.com/addM', payload)
+      return dispatch(infoAdmin(response.data))
+    }catch (error) {
+      console.log(error)
+    } 
+    }      
   }
-}
-// export const asyncallUsers = ()=>{
-//   return async function (dispatch){
-//    try{
-//     let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
-//     return dispatch(allUserAdmin(response.data))
-//    }catch(e){}
-//   }
-// }
+
 export const asyncallUsers = () => {
   return async function(dispatch){
     try {
@@ -331,7 +329,6 @@ export const asynbanUsers = (id)=>{
 
 export const asyncDeleteMovie =(id) =>{
   return async function (){
-    //let idNumber = parseInt(id)
     const objetito = {id}
     let response = axios.put(`https://back-end-movies-henry2.onrender.com/removeM/`,objetito)
   }

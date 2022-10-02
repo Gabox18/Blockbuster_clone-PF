@@ -206,46 +206,55 @@
   padding-top: 2%;
 }
  .contMembership{
-  margin-bottom: 1%;
   display: flex;
  align-items: center;
  margin-bottom: 10%;
  }
 
 .cardP {
-  width: 300px;
-  max-height: 500px;
+  width: 20rem;
+  min-width: 15rem;
+  min-width: 15rem;
   padding: 1rem;
-  background: rgb(45, 45, 45);
+  background-image: url("../../assets/cartaMember.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
   outline: groove silver 6px;
   margin-left: 25%;
   margin-right: 10%;
+  box-shadow: 2px 2px 6px #c5c5c5, -2px -2px -6px #ffffff;
  }
  .cardP:hover {
-  outline: double silver 8px;
+  outline: 2px solid white;
+  box-shadow: 8px 8px 16px #c5c5c5, -8px -8px 16px #ffffff;
  }
+ ul{
+  list-style: none;
+ }
+
  .cardP1 {
-  width: 300px;
-  max-height: 500px;
+  width: 20rem;
+  min-width: 15rem;
+  max-height: 35rem;
   padding: 1rem;
-  background: rgb(45, 45, 45);
+  background-image: url("../../assets/cartaMember.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
-  outline: groove #F7A600 6px;
+  outline: groove #F7A600 0.4rem;
   margin-left: 12%;
   margin-right: 20%;
  }
  .cardP1:hover {
- outline: double #F7A600 8px;
+ outline: double #F7A600 .5rem;
+ outline: 2px solid #F7A600;
+ box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
  }
 
  .titleP {
   text-align: center;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   font-weight: bold;
   font-size: x-large;
   color: silver;
@@ -253,19 +262,38 @@
  }
  .titleP1 {
   text-align: center;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   font-weight: bold;
   font-size: x-large;
   color: #F7A600;
-
  }
+
  
  .pricecontainerP {
+  width: 100%;
+  margin-top: 0.7rem;
+  border-radius: 7%;
+  background-color: rgb(30,30,30);
+  box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
+  outline: outset #f7a500b2 5px;
+ }
+ .pricecontainerP:hover {
+  outline: inset #f7a500b2 .3rem;
+  box-shadow: 2px 2px 6px #F7A600, -2px -2px 6px #F7A600;
+ }
+
+ .pricecontainerP1 {
   width: 100%;
   margin-top: 0.7em;
   border-radius: 7%;
   background-color: rgb(30,30,30);
   box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
+  outline: outset #6C6C6C .3rem;
+ }
+ .pricecontainerP1:hover {
+  outline: inset #6c6c6caf .3rem;
+  box-shadow: 2px 2px 6px #6c6c6caf, -2px -2px 6px #6c6c6caf;
+
  }
  
  .priceP {
@@ -299,9 +327,7 @@
   text-align: center;
   text-decoration: none;
  }
-::marker{
-  color: #F7A600;
-}
+
    .benefitlistP li:nth-child(1) {
   margin-top: 0.4em;
   text-decoration: none;
@@ -349,7 +375,7 @@
   color: white;
   border: none;
   border-radius: 0.625em;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
   position: relative;
@@ -359,6 +385,7 @@
  
  button:hover {
   color: black;
+  
  }
  
  .btn:after {
@@ -385,11 +412,14 @@
   bottom: 0;
   transform: skewX(-45deg) scale(0, 1);
   transition: all 0.5s;
+  
  }
  button:hover:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  outline: 2px solid #F7A600;
+  box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
  }
 
  /* From uiverse.io by @mrhyddenn */
@@ -401,15 +431,17 @@
   position: absolute;
   color: #fff;
   transform: translate(-50%, -50%);
-  font-size: 10rem;
+  font-size: 7rem;
+  min-width: none;
   letter-spacing: 5px;
 }
 
 .loader span:nth-child(1) {
   color: transparent;
   -webkit-text-stroke: 2px  #F7A600;
-
+  
 }
+
 
 .loader span:nth-child(2) {
   color: #09043F;
@@ -446,4 +478,59 @@
 }
 .LogosM{
   margin: 0rem 1rem 1rem 1rem;
+}
+.loader{
+  margin-bottom: 5rem;
+  max-width: 10rem;
+}
+
+
+@media screen and (max-width: 725px) {
+  .loader span {
+    font-size: 3rem;
+  }
+  .cardP {
+    padding: 1rem;
+    outline: groove silver 6px;
+    box-shadow: 2px 2px 6px #c5c5c5, -2px -2px -6px #ffffff;
+    margin-left: -5rem;
+   }
+   .cardP1 {
+    margin-left: 0;
+    margin-right: 0rem;
+   }
+   .pricecontainerP1 {
+    width: 100%;
+   }
+   .includesP{
+    padding: 0%;
+margin-top: 0;
+margin-bottom: 0;
+  }
+   .pricedescriptor {
+    text-align: center;
+    color: rgb(118, 118, 118);
+    font-size: medium;
+    padding: 0;
+    margin: auto;
+   }
+   .priceP{
+   padding-top: 0;
+    margin-bottom: 0;
+   }
+   .btn1 {
+    margin: -2em 0.5em 0.5em 0.5em;
+   }
+   .btn {
+    margin: -0.7em 0.5em 0.5em 0.5em;
+   }
+}
+
+@media screen and (max-width: 1600px) {
+  .cardP1 {
+    margin-left: 0;
+  }
+  .cardP {
+    margin-left: 15%;
+  }
 }

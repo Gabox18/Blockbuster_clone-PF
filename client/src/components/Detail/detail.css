@@ -1,8 +1,4 @@
-.detailRender {
-  min-height: 100vh;
-  min-height: 100vh;
-  
-}
+
 
 .videoBg video {
   width: auto;
@@ -23,32 +19,32 @@
 .card-img-top {
   width: 300px;
   height: 450px;
-  border: solid #f7a600 3px;
+  border: groove #f7a600 3px;
   display: flex;
   border-radius: 10px;
   margin-bottom: 100%;
   margin-left: 5%;
+  margin-top: 35%;
 }
 
 .cardStyle {
   background-color: rgba(0, 0, 0, 0.662);
-  border: solid #f7a600;
+  border: groove #f7a600 .5rem;
   margin-left: 30%;
   margin-right: 30%;
-  border-radius: 10px;
-  margin-top: 2%;
-  
+  border-radius: 10%;
+
 }
 .infodetail {
   color: #f7a600;
   display: flexbox;
   flex-direction: row;
   margin-left: 2rem;
-  
+  margin-top: 20%;
   
 }
 .plot .titleInfo label{
- background-color:#f7a600;
+ background-color:#f7a50088;
  border-style:solid;
  color: black;
  border-radius: 3%;
@@ -57,11 +53,10 @@
 }
 .title {
   font-size: 40px;
-  color: black;
-  background-color: #f7a600;
+  color: rgb(255, 248, 248);
   margin-right: 5%;
   margin-top: 8%;
-  border-radius: 3%;
+  border-radius: 40%;
   font-weight:600;
 
 
@@ -218,17 +213,7 @@ input:checked + .slider1:before {
     background-color: black;
    
   }
-  .conteiner-carruzel-home{
-    margin-bottom: 40px;
-    justify-content: start;
-    filter: blur();
-    color:#000000;
-    background-color:#030303ca;
-    border:solid 3px;
-    border-color:#f7a600;
-
-    
-  }
+  
   .plot .titleInfo label{
     background-color:#f7a600;
    }

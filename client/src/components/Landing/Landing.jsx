@@ -49,8 +49,10 @@ function handleSubmitGold() {
         {/* <!-- ======= Hero Section ======= --> */}
         <section id="hero">
           <div className="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <h1 className="mb-4 pb-0">Block<span>Buster</span> Experience</h1>
-            <p className="mb-4 pb-0">Why can't you eat just one!</p>
+          <div className="loader">
+    <span className="landingName">BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
             <a href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4" className="glightbox play-btn mb-4"></a>
             <a href="#about" className="about-btn scrollto">About The Event</a>
           </div>
@@ -100,15 +102,15 @@ function handleSubmitGold() {
           <div className="contMembership">
             <div className="cardP">
               <p className="titleP">Silver</p>
-              <div className="pricecontainerP">
+              <div className="pricecontainerP1">
                 <p className="priceP">U$D 19.99</p>
                 <p className="pricedescriptor">/month</p>
               </div>
               <p className="includesP">This Plan Includes:</p>
               <ul className="benefitlistP">
-                <li>Full HD 1080pi</li>
-                <li>20 movies</li>
-                <li>Fav list</li>
+                <li className="listMmemer">Full HD 1080pi</li>
+                <li className="listMmemer">20 movies</li>
+                <li className="listMmemer">Fav list</li>
               </ul>
 
               <button className="btn" onClick={handleSubmitSilver}>
@@ -124,9 +126,9 @@ function handleSubmitGold() {
               </div>
               <p className="includesP">This Plan Includes:</p>
               <ul className="benefitlistP">
-                <li>Full HD 4k</li>
-                <li>40 movies</li>
-                <li>Fav list</li>
+                <li className="listMmemer">Full HD 4k</li>
+                <li className="listMmemer">40 movies</li>
+                <li className="listMmemer">Fav list</li>
               </ul>
               <button className="btn1" onClick={handleSubmitGold}>
                 {" "}
