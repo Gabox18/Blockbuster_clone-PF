@@ -9,13 +9,16 @@ import { Link, Route } from "react-router-dom";
 import { asyncGetUser } from "../../redux/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import Cookies from 'universal-cookie';
 
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
 
   let userDB = useSelector((state) => state.alldata.user);
   let dispatch = useDispatch();
-
+  const cookies = new Cookies();
+  if(isAuthenticated !== cookies.get('isAuthenticated')) cookies.set('isAuthenticated', isAuthenticated,{ path: '/' })
+  let cookiesLogin = cookies.get('isAuthenticated')==="true"? true:false
   let categoryGold = "GoldCategory-style";
   let categorySilver = "SilverCatery-style";
   let categoryUser = "UserCategory-style";
@@ -197,7 +200,7 @@ function Navbar(prop) {
                 </button>
               )}
             </Route>
-            {userDB.id ? (
+            {cookiesLogin ? (
               <Route exact path="/">
                 <Link to={"/home"}>
                   <button
