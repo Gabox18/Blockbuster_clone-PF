@@ -1,99 +1,105 @@
-.cards-form{
-  background-color:rgba(0, 0, 0, 0.368) ;
+/* From uiverse.io by @bhaveshxrawat */
+.cards-form {
+  border: solid 2px;
   margin: auto;
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-bottom: 10%;
-  border-radius: 5%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border:solid #F7A600 4px ;
+  background-image: url("../../../assets/backFormPefil.PNG");
 }
 
-.textInput{
-  border-radius: 5%;
-  padding-top: 0.3rem;
-  padding-bottom: 0.1rem;
+/* From uiverse.io by @david-mohseni */
+.marcoForm {
+  width: 30%;
+  height: 50%;
+  background-image: url("../../../assets/backForms.jpg");
+  text-align: center;
+  border: 10px solid #f5a400;
+  margin: auto;
+  border-radius: 1.5rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-bottom: 1rem;
+}
+.marcoForm:hover {
+  box-shadow: inset 5px 5px 10px #f5a400, inset -5px -5px 10px #f5a400;
+}
+
+
+.picPerfil1 {
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  color: red;
+  font-size: 30px;
+  background-color: #eee;
+  margin: 20px auto;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+}
+
+.content {
+  color: #999;
+  background-color: #eee;
+  padding: 10px;
+  margin: 5px 20px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 10px #ddd, -8px -8px 10px #fff;
+}
+
+.content h3 {
+  text-shadow: 2px 2px 0px #fff;
+}
+/*----------------*/
+.textInput {
+  color: #f5a400;
+  border: 2px solid #f5a400;
+  border-radius: 10px;
+  background: bl;
+  max-width: 190px;
+  margin: 0;
   padding-left: 1rem;
-  width: 400px;
-}
-.textInputMessage{
-  width: 400px;
-  height: 6rem;
-  padding-top: 0rem;
-}  
-.category{
-  display: flex;
-  
 }
 
+.textInput:active {
+  box-shadow: 2px 2px 15px #f5a400 inset;
+}
+.listMmemer{
+  margin-left: -2.3rem;
+}
+/*--------------------------*/
+button {
+  color: #090909;
+  padding: 0.2rem;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  margin: 0.2rem;
+}
 
-#root .App div .container-general div div .cards-form .card-bodysform form .form-group .textInputWrapper .category{
-  width:21% !important;
- }
- 
- 
- .card-bodysform .textInputWrapper .category{
-  min-height:27px;
-  transform:translatex(185px) translatey(16px);
- }
- 
+button:hover {
+  border: 1px solid white;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
 
- #root .App div .container-general div div .cards-form .card-bodysform form .category{
-  width:18% !important;
- }
- 
-
- .card-bodysform form .category{
-  min-height:32px !important;
-  transform:translatex(180px) translatey(16px) !important;
- }
-
-
-.cards-form .name h3{
-  transform:translatex(0px) translatey(0px);
-  color:#f7a600;
- }
-
- .cards-form > div > p{
-  color:#f7a600;
- }
- 
-
- .card-bodysform .textInputWrapper .category{
-  color:#f7a600;
-  font-size:17px;
-  line-height:1.5em;
-  font-weight:700;
- }
- 
-
- .card-bodysform form .category{
-  color:#f7a600;
-  font-weight:700;
- }
- 
- 
- .App div .cards-form{
-  background-color:rgba(0,0,0,0.69);
- }
-
- /* Button */
-.card-bodysform div button{
-  background-color:#020202;
-  border-color:#f7a600;
-  border-style:solid;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  width:134px;
-  top:12px;
- }
- 
- .cards-form .name h3{
-  transform:translatex(0px) translatey(0px); color:#f7a600;
- }
- 
- 
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+.category {
+  font-size: medium;
+  border-radius: 20%;
+  color: rgb(255, 255, 255);
+}
+.nameUser{
+  color: white;
+}
+.validate-field{
+  color: rgb(254, 254, 254);
+}
+.danger{
+  color: white
+}

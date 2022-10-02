@@ -2,7 +2,7 @@
 
 # Final Project - Henry Blockbuster
 
-<img width="400" src="./Blockbuster_logo.png" />
+<img width="400" src="./Logo.png" />
 
 ## Resumen:
 

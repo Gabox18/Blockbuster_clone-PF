@@ -19,9 +19,13 @@ function Home() {
     if (!copyAllMovies) dispatch(asyncallMovies());
   }, [copyAllMovies, dispatch]);
 
-  let arrFeaturedMovies = copyAllMovies.filter((e) => e.imdbRating > 8);
-  let arrRecentMovies = copyAllMovies.filter((e) => e.year >= 2020);
-  let arrPopularMovies = copyAllMovies.filter(
+  let arrMovieFiltrado = copyAllMovies.filter((e) => e.status === true);
+  let arrFeaturedMovies = arrMovieFiltrado.filter((e) => e.imdbRating > 8);
+  let arrRecentMovies = arrMovieFiltrado.filter((e) => e.year >= 2019);
+  let arrActionMovies = arrMovieFiltrado.filter((e) => e.genre >= "Action");
+
+
+  let arrPopularMovies = arrMovieFiltrado.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
 
@@ -31,13 +35,16 @@ function Home() {
     <>
       <div className="homeContainer">
         <div className="navbarContainer">
-          <Navbar />
+          <Navbar className="navbarFixy" />
         </div>
 
         <section className="cabecera">
           <img className="" src={img} alt={"poster"} />
           <div className="contenido">
-            <h1 className="blocktitle">Blockbuster</h1>
+          <div className="loader1">
+    <span className="landingName">BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
             <h3 className="subBlockTittle">
               Life is unpredictable and control is just an illusion that makes
               us feel small and helpless.
@@ -54,7 +61,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <div className="conteiner-carruzel-home">
+        <div className="conteiner-carruzel-home1">
           <h2 className="textCarruzel">Featured movies</h2>
           <Carrusel array={arrFeaturedMovies} />
         </div>
@@ -66,6 +73,11 @@ function Home() {
           <h2 className="textCarruzel">Popular movies</h2>
           <Carrusel array={arrPopularMovies} />
         </div>
+        <div className="conteiner-carruzel-home">
+          <h2 className="textCarruzel2">Action movies</h2>
+          <Carrusel1 array={arrActionMovies} />
+        </div>
+    
 
         <div className="footerContainer">
           <Footer />

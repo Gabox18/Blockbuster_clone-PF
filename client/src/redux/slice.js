@@ -14,8 +14,8 @@ const initialState = {
     commentMovie:{},
     commentFromMovies:[],
     allUsers:[],
-    Paypal: {}
-   
+    payPaypal:{},
+    favoriteMovie:[],
   };
 
 export const dataSlice = createSlice({
@@ -28,8 +28,10 @@ export const dataSlice = createSlice({
         },
 
         allMovies : (state, action)=>{
+          
             state.allMovies = action.payload
             state.copyAllMovies = action.payload
+          
         },
 
         setUser:(state,action) =>{
@@ -53,7 +55,9 @@ export const dataSlice = createSlice({
         },
 
         DetailsMovies : (state, action)=>{
+          console.log(action.payload,'actionpayload')
             state.details = action.payload
+            
         },
 
         clearDetail : (state)=>{
@@ -61,7 +65,7 @@ export const dataSlice = createSlice({
         },
 
         searchBar:(state,action) =>{
-           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload))   
+           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload)&& e.status === true)   
         },
 
         infoAdmin:(state,action) =>{
@@ -89,15 +93,25 @@ export const dataSlice = createSlice({
           state.allUsers = action.payload
         },
         newAdmin:(state,action)=>{
-          state.allUsers = action.payload},
-    
-        deleteComment:(state,action) =>{
-          state.commentFromMovies  = action.payload
+          state.allUsers = action.payload
         },
-        Payment:(state,action) =>{
-          state.Paypal  = action.payload
-        }
-  
+    
+        updateUser:(state,action)=>{
+          state.user = action.payload
+        },
+       
+        bannMovie:(state, action) =>{
+          state.allMovies = action.payload
+        },
+        payPayment:(state,action)=>{
+          state.payPaypal = action.payload
+        },
+        favoriteArray:(state,action)=>{ 
+          state.favoriteMovie= action.payload  
+        },
+        infoAdmin:(state,action)=>{
+          state.allMovies = action.payload
+         },
     }
   })
 
@@ -160,9 +174,9 @@ export const asyncallMovies = () => {
   export const asyncFormComment = (input,idMovie) =>{
     return async function(dispatch){
     try {
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
+      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
       console.log(input,"en asyncform")
-        return dispatch(commentInput(response.data))
+        
       }
      catch (error) {
       console.log(error,'from Details')
@@ -191,14 +205,13 @@ export const asyncallMovies = () => {
       }
     } 
   }
-  export const asyncDeleteComment =(id,movieId) =>{
+  export const asyncDeleteComment =(id) =>{
     return async function (dispatch){
       try {
         let obj = {id}
      
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
+      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
        
-      return dispatch(deleteComment(response.data))
       } catch (error) {
         console.log(error,'from delete')
       }
@@ -216,23 +229,66 @@ export const asyncallMovies = () => {
     }
   }
 
+  export const asynUpdateUser = (objUpdate) =>{
+    return async function (dispatch){
+      try {
 
+        console.log(objUpdate,'--------------->')
+        let response = await axios.put(`https://back-end-movies-henry2.onrender.com/editU`,objUpdate)
+        return dispatch(updateUser(response.data))
+        //return dispatch(updateUser(objUpdate))
+      } catch (error) {  
+      }
+    }
+  }
+
+  export const asynPaymentSilver =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentSilver/")
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
+  export const asynPaymentGold =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentGold/")
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  } 
+
+  export const asyncFavoriteMovie =(input) =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.put("https://back-end-movies-henry2.onrender.com/",input)
+        return dispatch(favoriteArray(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  } 
 //--------------------------------------------------------------------------------------------------------------------
 //------------------------------------function admin----------------------------------------------------------------------  
 //-----------------------------------------------------------------------------------------------------------------
-export const asyncInfoAdmin = (input) =>{
+export const asyncInfoAdmin = (payload) =>{
   return async function(dispatch){
-    return dispatch(infoAdmin(input))
+    console.log("soy la nueva movie",payload)
+    try {
+      const response = await axios.post('https://back-end-movies-henry2.onrender.com/addM', payload)
+      return dispatch(infoAdmin(response.data))
+    }catch (error) {
+      console.log(error)
+    } 
+    }      
   }
-}
-// export const asyncallUsers = ()=>{
-//   return async function (dispatch){
-//    try{
-//     let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
-//     return dispatch(allUserAdmin(response.data))
-//    }catch(e){}
-//   }
-// }
+
 export const asyncallUsers = () => {
   return async function(dispatch){
     try {
@@ -273,26 +329,16 @@ export const asynbanUsers = (id)=>{
 
 export const asyncDeleteMovie =(id) =>{
   return async function (){
-    //let idNumber = parseInt(id)
     const objetito = {id}
     let response = axios.put(`https://back-end-movies-henry2.onrender.com/removeM/`,objetito)
   }
 }
 
-// Payment
-export const asyncPaymentGold =() =>{
+export const asyncUpdateMovie =(id) =>{
   return async function (dispatch){
-    let response = axios.post(`https://back-end-movies-henry2.onrender.com/create-paymentGold/`)
-    console.log('response Gold ->', response);
-    return dispatch(Payment(response.data))
-  }
-}
-
-export const asyncPaymentSilver =() =>{
-  return async function (dispatch){
-    let response = axios.post(`https://back-end-movies-henry2.onrender.com/create-paymentSilver/`)
-    console.log('response Silver ->', response);
-    return dispatch(Payment(response.data))
+  
+    let response =  axios.put(`https://back-end-movies-henry2.onrender.com/removeM`,id)
+     dispatch(bannMovie(response.data))
   }
 }
 
@@ -300,6 +346,9 @@ export const asyncPaymentSilver =() =>{
 
 
 //----------------------------------------------------------------------------------------------------------------
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment, Payment} = dataSlice.actions
+
+
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment,bannMovie,favoriteArray} = dataSlice.actions
+
 
 export default dataSlice.reducer

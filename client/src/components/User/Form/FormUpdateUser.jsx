@@ -1,50 +1,51 @@
-import React, { useEffect, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useDispatch } from "react-redux";
-import {  } from "../../../redux/slice";
-import './FormUpdateUser.css'
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { asynUpdateUser } from "../../../redux/slice";
+import "./FormUpdateUser.css";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Nav Bar/Navbar";
-
-
+import { Link, useHistory } from "react-router-dom";
 
 export default function FormUpdateUser() {
-  const { user, isAuthenticated } = useAuth0();
+  let userDB = useSelector((state) => state.alldata.user);
   const dispatch = useDispatch();
-  console.log(user)
+  let history = useHistory();
   const [input, setInput] = useState({
-    name: user?.given_name,
-    lastname: user?.family_name,
-    nickname: user?.nickname,
-    picture : user.picture,
-    email : user.email,
+    name: "",
     date: "",
-    status: true,
-    category: "user",
+    lastname: "",
+    id: userDB?.id,
   });
-  
+
+  let date = new Date();
+  let currentDate = date.toISOString().split("T")[0]; //fecha de hoy
+
   const validate = (data) => {
     let error = {};
-    if (data.name?.length < 3 || data.name?.length > 12)
-      error.lastname = "invalid name";
-    if (data.lastname?.length < 3 || data.lastname?.length > 12)
-      error.lastname = "invalid lastname";
+    const onlyLetter = new RegExp("^[A-Z]+$", "i");
+
+    if (!data.name) error.name = "complete name";
+    else if (!onlyLetter.test(data.name))
+      error.name = "Only letter without space";
+    else if (data.name?.length < 4 || data.name?.length > 15)
+      error.name = " Min: 4 - Max: 15";
+
+    if (!data.lastname) error.lastname = "complete lastname";
+    else if (!onlyLetter.test(data.lastname))
+      error.lastname = "Only letter without space";
+    else if (data.lastname?.length < 4 || data.lastname?.length > 15)
+      error.lastname = "Min:4 Max:15";
+
     if (!data.date) error.date = "Complete the field date";
     return error;
   };
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
-    if (error.name || error.lastname || error.date  )
-      return true;
+    if (error.name || error.lastname || error.date) return true;
   }
 
-  useEffect(() => {
-    //dispatch(asyncallMovies());
-  }, [dispatch]);
-
   const handleOnChange = (e) => {
-    console.log(input,'onchange');
     setInput({
       ...input,
       [e.target.name]: e.target.value,
@@ -53,110 +54,119 @@ export default function FormUpdateUser() {
 
   const handleOnsubmit = (e) => {
     e.preventDefault(e);
-    console.log(input, 'sutmit');
-    setInput({
-      ...input,
-      picture : user.picture,
-      email : user.email,
-      status: true,
-      category: "user",
-      
-    });
-    //dispatch(asynSetUser(input));
-    alert("added profile info");
-    setInput({
-      name: "",
-      nickname: "",
-      lastname: "",
-      date: "",
-    });
+    console.log(input, "sutmit");
+    if (invalidAdd(input)) {
+      alert("Complete fields");
+    } else {
+      //-------por error en la ruta al back-----------------------
+      let invertir = {
+        name: input.name,
+        date: input.lastname,
+        lastname: input.date,
+        id: input.id,
+      };
+      //-------por error en la ruta al back--------------------------
+      dispatch(asynUpdateUser(invertir));
+      alert("added profile info");
+      setInput({
+        name: "",
+        date: "",
+        lastname: "",
+        id: 0,
+      });
+      history.push("/profile");
+    }
   };
 
   return (
-    <div>
-      <Navbar/>
-      <div className="container-general">
-            <div className="cards-form">
-              {isAuthenticated ? (
-                <div className="img">
-                  <img
-                    src={user.picture}
-                    className=""
-                    alt="poster" />
+    <div className="container-general">
+      <Navbar />
+      <div>
+        <div className="cards-form">
+          <div className="marcoForm">
+            <div className="img">
+              <img src={userDB?.picture} className="picPerfil1" alt="poster" />
+            </div>
+            <div className="name">
+              <h3 className="nameUser"> Welcome {userDB?.name}!</h3>
+            </div>
+            <div>
+              <p className="nameUser">Complete your profile to have a better experience!</p>
+            </div>
+            <div className="card-bodysform">
+              <form action="" onSubmit={handleOnsubmit}>
+                <div className="form-group">
+                  <div className="textInpuraper">
+                    <p className="category"><b>Name</b></p>
+                    <input
+                      type="text"
+                      name="name"
+                      value={input.name}
+                      className="textInput"
+                      placeholder="name"
+                      onChange={handleOnChange}
+                      autoFocus
+                    />
+                    {validate(input).name ? (
+                      <p className="danger">{validate(input).name}</p>
+                    ) : (
+                      <p className="validate-field">{"✔️"}</p>
+                    )}
+                  </div>
                 </div>
-              ) : (
-                <p></p>
-              )}
-              {isAuthenticated ? (
-                user.given_name ? (
-                  <div className="name">
-                    <h3>Welcome {user.given_name}!</h3>
-                  </div>
-                ) : (
-                  <div className="name">
-                    <h3> Welcome{user.nickname}!</h3>
-                  </div>
-                )
-              ) : (
-                <p></p>
-              )}
-              <div>
-                <p>Complete your profile to have a better experience!</p>
-              </div>
-              <div className="card-bodysform">
-                <form action="" onSubmit={handleOnsubmit}>
-                  <div className="form-group">
-                    <div class="textInputWrapper">
-                      <p className="category">Name</p>
-                      <input
-                        type="text"
-                        name="name"
-                        value={input.name}
-                        className="textInput"
-                        placeholder="name"
-                        onChange={handleOnChange}
-                        autoFocus
-                      />
-                    </div>
 
+                <p className="category"><b>Last Name</b></p>
+                <div className="form-group">
+                  <div className="textInputWrapper">
+                    <input
+                      type="text"
+                      name="lastname"
+                      value={input.lastname}
+                      className="textInput"
+                      placeholder="lastname"
+                      onChange={handleOnChange}
+                    />
+                    {validate(input).lastname ? (
+                      <p className="danger">{validate(input).lastname}</p>
+                    ) : (
+                      <p className="validate-field">{"✔️"}</p>
+                    )}
                   </div>
-                  <p className="category">LastName</p>
-                  <div className="form-group">
-                    <div class="textInputWrapper">
-                      <input
-                        type="text"
-                        name="lastname"
-                        value={input.lastname}
-                        className="textInput"
-                        placeholder="lastname"
-                        onChange={handleOnChange}
-                      />
-                    </div>
-                  </div>
+                </div>
 
-                  <div className="form-group">
-                    <div class="textInputWrapper">
-                      <p className="category">Date</p>
-                      <input
-                        type="date"
-                        name="date"
-                        className="textInput"
-                        placeholder="Date of Birth"
-                        onChange={handleOnChange}
-                        autoFocus
-                      />
-                    </div>
+                <div className="form-group">
+                  <div className="textInputWrapper">
+                    <p className="category"><b>Date</b></p>
+                    <input
+                      type="date"
+                      name="date"
+                      className="textInput"
+                      placeholder="Date of Birth"
+                      onChange={handleOnChange}
+                      autoFocus
+                      max={currentDate} //no puede colocar una fecha mayor a la del dia actual
+                    />
+                    {validate(input).date ? (
+                      <p className="danger">{validate(input).date}</p>
+                    ) : (
+                      <p className="validate-field">{"✔️"}</p>
+                    )}
                   </div>
-                  <div>
-                    <button type="submit" disabled={invalidAdd(input)}>
-                      ADD
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>       
+                </div>
+                <div>
+                  <button className="button-update-profile" type="submit">
+                    finished
+                  </button>
+                </div>
+              </form>
+              <Link to={"/home"}>
+                <button className="button-update-gohome">Home</button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
