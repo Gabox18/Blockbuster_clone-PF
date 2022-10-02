@@ -7,32 +7,22 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import avatar from "../../assets/avatar.png";
 
-export default function ComentForm({ idParams , handleDelete }) {
+export default function ComentForm({ idParams, handleDelete }) {
   let { id } = useParams();
   const dispatch = useDispatch();
   let userdb = useSelector((state) => state.alldata.user);
-  console.log(userdb,'asdasdsad')
   let { commentMovie } = useSelector((state) => state.alldata);
   const [input, setInput] = useState({
     coment: "",
   });
-let [suma ,setSuma] =useState(0)
-  // useEffect(()=>{
-  //   if(Object.keys(commentMovie).length !== 0) {
-  //     console.log(parseInt(idParams),commentMovie,'------->')
-  //     dispatch(asyncCommentById(parseInt(idParams)))}
-
-  // },[])
-
+  let [suma, setSuma] = useState(0);
   let { commentFromMovies } = useSelector((state) => state.alldata);
+  let info = commentFromMovies.filter((e) => userdb.id == e.idUser);
 
-  let info = commentFromMovies.filter((e) => userdb.id == e.idUser );
 
-  console.log(commentFromMovies,'a ver')
-  console.log(info, "se recibe");
-  // console.log(info, "user");
+
   const handleOnChange = (e) => {
-    console.log(input);
+
     setInput({
       ...input,
       name: userdb.name,
@@ -55,9 +45,7 @@ let [suma ,setSuma] =useState(0)
 
     setInput({
       coment: "",
-      
     });
-    
   };
 
   const validate = (data) => {
@@ -66,7 +54,6 @@ let [suma ,setSuma] =useState(0)
       error.coment = "Complete the field comment";
     return error;
   };
-  
 
   function invalidAdd(inputs) {
     let error = validate(inputs);
@@ -102,10 +89,7 @@ let [suma ,setSuma] =useState(0)
             </button>
           </form>
         ) : (
-        
-            <p className="textlimit">you can only comment 3 times per movie</p>
-          
-            
+          <p className="textlimit">you can only comment 3 times per movie</p>
         )}
       </div>
       <div className="borbo">

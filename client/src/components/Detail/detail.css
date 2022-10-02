@@ -217,4 +217,8 @@ input:checked + .slider1:before {
   .plot .titleInfo label{
     background-color:#f7a600;
    }
+   .btn-detail{
+    height: 90px;
+    margin-bottom: 40px;
+   }
 
