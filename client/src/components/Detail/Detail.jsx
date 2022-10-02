@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -9,6 +9,7 @@ import {
   clearDetail,
   asyncUpdateMovie,
   asyncallMovies,
+  asyncFavoriteMovie,
 } from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
@@ -20,21 +21,35 @@ import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
 import Carrusel from "../Carrusel/Carrusel";
 
 export default function Detail() {
-  const {  loginWithRedirect } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
   let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
   let { copyAllMovies } = useSelector((store) => store.alldata);
-  console.log(details)
-  const filterTrue =copyAllMovies.filter(e => e.status === true && e.name !== details.name)
-  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8)
-
+  console.log(details);
+  const filterTrue = copyAllMovies.filter(
+    (e) => e.status === true && e.name !== details.name
+  );
+  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8);
+  const idUser = userdb.id;
+  const [input, setInput] = useState({
+    idMovie: parseInt(id),
+    idUser: idUser,
+   
+   
+  });
 
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-    dispatch(asyncallMovies())
+    dispatch(asyncallMovies());
+    return ()=>{dispatch(clearDetail())}
   }, [dispatch, id]);
+
+  function handleAddFav() {
+    console.log(input, "esto es el inpout fav");
+    dispatch(asyncFavoriteMovie(input));
+  }
 
   function handleBannMovie() {
     let obj = { id };
@@ -51,7 +66,12 @@ export default function Detail() {
       <div className="cardStyle">
         <div className="cardDetail">
           <div className="image">
-            <img src={details.poster} className="card-img-top" alt="..." autofocus/>
+            <img
+              src={details.poster}
+              className="card-img-top"
+              alt="..."
+              autofocus
+            />
           </div>
           {/* <div className="player-wrapper">
          <ReactPlayer
@@ -94,26 +114,30 @@ export default function Detail() {
             </div>
           </div>
         </div>
-        { userdb.category === 'admin'||userdb.category === 'gold' ||userdb.category === 'silver' ?
+        {userdb.category === "admin" ||
+        userdb.category === "gold" ||
+        userdb.category === "silver" ? (
           <Link to={`/details/${id}/play`}>
+            <button
+              className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+              type="shadow-lg p-3 mb-5 bg-body rounded"
+            >
+              {" "}
+              Play{" "}
+            </button>
+          </Link>
+        ) : (
           <button
             className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
             type="shadow-lg p-3 mb-5 bg-body rounded"
+            disabled
           >
             {" "}
             Play{" "}
           </button>
-        </Link> 
-        : <button
-        className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
-        type="shadow-lg p-3 mb-5 bg-body rounded"
-        disabled
-      >
-        {" "}
-        Play{" "}
-      </button>
-        }
-        
+        )}
+        <button onClick={handleAddFav}>fav</button>
+        {/*-----------------------------------------------------------------------*/}
         {userdb.category === "admin" ? (
           <div>
             <label class="switch">
@@ -128,6 +152,18 @@ export default function Detail() {
         ) : (
           <></>
         )}
+      </div>
+      <div className="card-bodyDi col-auto p-5 justify-content-center btn-detail">
+        <Link to="/home">
+          <button
+            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+            type="shadow-lg p-3 mb-5 bg-body rounded"
+          >
+            {" "}
+            Back{" "}
+          </button>
+        </Link>
+        {/* <a href="#" className="card-link">Another link</a> */}
       </div>
       <div>
         {userdb.picture ? (
@@ -149,26 +185,13 @@ export default function Detail() {
       <div>
         <Allcomments idParams={parseInt(id)} />
       </div>
-      <div className="card-bodyDi col-auto p-5 justify-content-center">
-        <Link to="/home">
-          <button
-            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
-            type="shadow-lg p-3 mb-5 bg-body rounded"
-          >
-            {" "}
-            Back{" "}
-          </button>
-        </Link>
-        {/* <a href="#" className="card-link">Another link</a> */}
-      </div>
+     
       <div className="conteiner-carruzel-home">
-          <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
-          <Carrusel array={moviesCarrusel} />
-        </div>
+        <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
+        <Carrusel array={moviesCarrusel} />
+      </div>
 
       <Footer />
     </div>
   );
 }
-
-
