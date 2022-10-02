@@ -159,7 +159,7 @@ export default function FormUpdateUser() {
                   </button>
                 </div>
               </form>
-              <Link to={"home"}>
+              <Link to={"/home"}>
                 <button className="button-update-gohome">Home</button>
               </Link>
             </div>

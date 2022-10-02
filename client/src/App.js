@@ -23,6 +23,7 @@ import adminPanel from "./components/Admin Panel/AdminPanel";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUser } from "./redux/slice";
 import { useAuth0 } from "@auth0/auth0-react";
+import SilverPayZone from "./components/PayZone/SilverPayZone";
 // Profile
 // import prfofile from "./components/Profile/Profile"
 
@@ -49,6 +50,7 @@ function App() {
           <Route exact path="/details/:id" component={Detail}/>
           <Route exact path="/details/:id/play" component={Play}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
+          <Route exact path="/Home/silver" component={SilverPayZone}/>
         </Switch>}
     </div>
   );
