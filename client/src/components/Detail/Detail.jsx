@@ -20,20 +20,21 @@ import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
 import Carrusel from "../Carrusel/Carrusel";
 
 export default function Detail() {
-  const {  loginWithRedirect } = useAuth0();
+  const { loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
   let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
   let { copyAllMovies } = useSelector((store) => store.alldata);
-  console.log(details)
-  const filterTrue =copyAllMovies.filter(e => e.status === true && e.name !== details.name)
-  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8)
-
+  console.log(details);
+  const filterTrue = copyAllMovies.filter(
+    (e) => e.status === true && e.name !== details.name
+  );
+  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8);
 
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-    dispatch(asyncallMovies())
+    dispatch(asyncallMovies());
   }, [dispatch, id]);
 
   function handleBannMovie() {
@@ -51,7 +52,12 @@ export default function Detail() {
       <div className="cardStyle">
         <div className="cardDetail">
           <div className="image">
-            <img src={details.poster} className="card-img-top" alt="..." autofocus/>
+            <img
+              src={details.poster}
+              className="card-img-top"
+              alt="..."
+              autofocus
+            />
           </div>
           {/* <div className="player-wrapper">
          <ReactPlayer
@@ -94,26 +100,55 @@ export default function Detail() {
             </div>
           </div>
         </div>
-        { userdb.category === 'admin'||userdb.category === 'gold' ||userdb.category === 'silver' ?
+        {userdb.category === "admin" ||
+        userdb.category === "gold" ||
+        userdb.category === "silver" ? (
           <Link to={`/details/${id}/play`}>
+            <button
+              className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+              type="shadow-lg p-3 mb-5 bg-body rounded"
+            >
+              {" "}
+              Play{" "}
+            </button>
+          </Link>
+        ) : (
           <button
             className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
             type="shadow-lg p-3 mb-5 bg-body rounded"
+            disabled
           >
             {" "}
             Play{" "}
           </button>
-        </Link> 
-        : <button
-        className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
-        type="shadow-lg p-3 mb-5 bg-body rounded"
-        disabled
-      >
-        {" "}
-        Play{" "}
-      </button>
-        }
-        
+        )}
+        <input
+          className="heart"
+          type="checkbox"
+          id="favorite"
+          name="favorite-checkbox"
+          value="favorite-button"
+        />
+        <label for="favorite" className="containerLike">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="feather feather-heart"
+          >
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <div className="action">
+            <span className="option-1">Add to Favorites</span>
+            <span className="option-2">Added to Favorites</span>
+          </div>
+        </label>
         {userdb.category === "admin" ? (
           <div>
             <label class="switch">
@@ -129,6 +164,7 @@ export default function Detail() {
           <></>
         )}
       </div>
+
       <div>
         {userdb.picture ? (
           <ComentForm idParams={parseInt(id)} />
@@ -162,13 +198,11 @@ export default function Detail() {
         {/* <a href="#" className="card-link">Another link</a> */}
       </div>
       <div className="conteiner-carruzel-home">
-          <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
-          <Carrusel array={moviesCarrusel} />
-        </div>
+        <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
+        <Carrusel array={moviesCarrusel} />
+      </div>
 
       <Footer />
     </div>
   );
 }
-
-

@@ -41,7 +41,10 @@ function Home() {
         <section className="cabecera">
           <img className="" src={img} alt={"poster"} />
           <div className="contenido">
-            <h1 className="blocktitle">Blockbuster</h1>
+          <div className="loader1">
+    <span className="landingName">BlockBuster</span>
+    <span>BlockBuster</span>
+</div> 
             <h3 className="subBlockTittle">
               Life is unpredictable and control is just an illusion that makes
               us feel small and helpless.
