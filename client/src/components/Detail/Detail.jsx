@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -9,6 +9,7 @@ import {
   clearDetail,
   asyncUpdateMovie,
   asyncallMovies,
+  asyncFavoriteMovie,
 } from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
@@ -32,10 +33,27 @@ export default function Detail() {
   );
   const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8);
 
+  const idUser = userdb.id;
+  const [input, setInput] = useState({
+    idMovie: parseInt(id),
+    idUser: idUser,
+   
+   
+  });
+
+
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
     dispatch(asyncallMovies());
+
+    return ()=>{dispatch(clearDetail())}
+
   }, [dispatch, id]);
+
+  function handleAddFav() {
+    console.log(input, "esto es el inpout fav");
+    dispatch(asyncFavoriteMovie(input));
+  }
 
   function handleBannMovie() {
     let obj = { id };
@@ -122,7 +140,9 @@ export default function Detail() {
             Play{" "}
           </button>
         )}
-        <input
+
+        <input 
+          onClick={handleAddFav}
           className="heart"
           type="checkbox"
           id="favorite"
@@ -149,6 +169,7 @@ export default function Detail() {
             <span className="option-2">Added to Favorites</span>
           </div>
         </label>
+
         {userdb.category === "admin" ? (
           <div>
             <label class="switch">
@@ -163,6 +184,19 @@ export default function Detail() {
         ) : (
           <></>
         )}
+      </div>
+
+      <div className="card-bodyDi col-auto p-5 justify-content-center btn-detail">
+        <Link to="/home">
+          <button
+            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+            type="shadow-lg p-3 mb-5 bg-body rounded"
+          >
+            {" "}
+            Back{" "}
+          </button>
+        </Link>
+        {/* <a href="#" className="card-link">Another link</a> */}
       </div>
 
       <div>
@@ -185,18 +219,7 @@ export default function Detail() {
       <div>
         <Allcomments idParams={parseInt(id)} />
       </div>
-      <div className="card-bodyDi col-auto p-5 justify-content-center">
-        <Link to="/home">
-          <button
-            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
-            type="shadow-lg p-3 mb-5 bg-body rounded"
-          >
-            {" "}
-            Back{" "}
-          </button>
-        </Link>
-        {/* <a href="#" className="card-link">Another link</a> */}
-      </div>
+     
       <div className="conteiner-carruzel-home">
         <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
         <Carrusel array={moviesCarrusel} />
