@@ -45,7 +45,7 @@
   }
   
   .card_box span::before {
-    content: 'Silver';
+    content: 'Gold';
     position: absolute;
     width: 150%;
     height: 40px;
