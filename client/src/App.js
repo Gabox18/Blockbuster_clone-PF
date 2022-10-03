@@ -24,6 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncGetUser } from "./redux/slice";
 import { useAuth0 } from "@auth0/auth0-react";
 import SilverPayZone from "./components/PayZone/SilverPayZone";
+import GoldPayZone from "./components/PayZone/GoldPayZone";
 // Profile
 // import prfofile from "./components/Profile/Profile"
 
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/details/:id/play" component={Play}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
           <Route exact path="/silver" component={SilverPayZone}/>
+          <Route exact path="/gold" component={GoldPayZone}/>
         </Switch>}
     </div>
   );
