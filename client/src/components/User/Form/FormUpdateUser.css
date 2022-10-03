@@ -2,14 +2,14 @@
 .cards-form {
   border: solid 2px;
   margin: auto;
-  background-image: url("../../../assets/backFormPefil.PNG");
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773994/BlockBuster%20Nuestro/backFormPefil_f5iadx.webp");
 }
 
 /* From uiverse.io by @david-mohseni */
 .marcoForm {
   width: 30%;
   height: 50%;
-  background-image: url("../../../assets/backForms.jpg");
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
   text-align: center;
   border: 10px solid #f5a400;
   margin: auto;

@@ -1,5 +1,5 @@
 .container-profile-details{
-  background: url('../../assets/backFormPefil.PNG');
+  background: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664773994/BlockBuster%20Nuestro/backFormPefil_f5iadx.webp');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -20,7 +20,7 @@
 .cardPerf {
     width: 350px;
     height: 170px;
-    background-image: url("../../assets/backForms.jpg");
+    background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
     text-align: center;
     border: 10px groove #f7a600;
     border-radius: 20px;
