@@ -23,9 +23,10 @@ export default function Landing() {
   }, [dispatch, user]);
 
 let { copyAllMovies } = useSelector((state) => state.alldata);
+let { payPaypal } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
 console.log(copyAllMovies)
-console.log(moviesCarrusel)
+console.log(payPaypal.data)
 
 function handleSubmitSilver() {
   userDB?.id?
@@ -113,10 +114,16 @@ function handleSubmitGold() {
                 <li className="listMmemer">Fav list</li>
               </ul>
 
-              <button className="btn" onClick={handleSubmitSilver}>
+              {typeof payPaypal.data === "string"
+              ?<button className="btn1" onClick={()=>{window.location.href = payPaypal.data}}>
+                {" "}
+                Redirect
+              </button>
+              :<button className="btn1" onClick={handleSubmitSilver}>
                 {" "}
                 Button
-              </button>
+              </button>}
+              
             </div>
             <div className="cardP1">
               <p className="titleP1">Gold</p>
@@ -130,10 +137,15 @@ function handleSubmitGold() {
                 <li className="listMmemer">40 movies</li>
                 <li className="listMmemer">Fav list</li>
               </ul>
-              <button className="btn1" onClick={handleSubmitGold}>
+              {typeof payPaypal.data === "string"
+              ?<button className="btn1" onClick={()=>{window.location.href = payPaypal.data}}>
+                {" "}
+                Redirect
+              </button>
+              :<button className="btn1" onClick={handleSubmitGold}>
                 {" "}
                 Button
-              </button>
+              </button>}
             </div>
           </div>
           <div>

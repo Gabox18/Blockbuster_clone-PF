@@ -16,6 +16,7 @@ const initialState = {
     allUsers:[],
     payPaypal:{},
     favoriteMovie:[],
+    categorySwich:{}
   };
 
 export const dataSlice = createSlice({
@@ -112,6 +113,9 @@ export const dataSlice = createSlice({
         infoAdmin:(state,action)=>{
           state.allMovies = action.payload
          },
+        categoryswichRE:(state,action)=>{
+          state.categorySwich = action.payload
+        }
     }
   })
 
@@ -274,6 +278,17 @@ export const asyncallMovies = () => {
       }
     }
   } 
+
+  export const asyncCategorySwich =(idUser) =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.put("https://back-end-movies-henry2.onrender.com/apiSilver",idUser)
+        return dispatch(categoryswichRE(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  } 
 //--------------------------------------------------------------------------------------------------------------------
 //------------------------------------function admin----------------------------------------------------------------------  
 //-----------------------------------------------------------------------------------------------------------------
@@ -348,7 +363,7 @@ export const asyncUpdateMovie =(id) =>{
 //----------------------------------------------------------------------------------------------------------------
 
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment,bannMovie,favoriteArray} = dataSlice.actions
+export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment,bannMovie,favoriteArray,categoryswichRE} = dataSlice.actions
 
 
 export default dataSlice.reducer

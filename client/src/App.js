@@ -50,7 +50,7 @@ function App() {
           <Route exact path="/details/:id" component={Detail}/>
           <Route exact path="/details/:id/play" component={Play}/>
           <Route exact path="/Home/admin" component={adminPanel}/>
-          <Route exact path="/Home/silver" component={SilverPayZone}/>
+          <Route exact path="/silver" component={SilverPayZone}/>
         </Switch>}
     </div>
   );
