@@ -4,6 +4,7 @@ import './Footer.css'
 import { AiOutlineHome } from 'react-icons/ai';
 import { BsEnvelope } from 'react-icons/bs';
 import { AiOutlinePhone } from 'react-icons/ai';
+import { Link } from "react-router-dom";
 
 
 function Footer() {
@@ -39,18 +40,26 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
 
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Usefull links</h5>
+              <Link to='/terms'>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Account</a>
+                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Terms and conditions</a>
               </p>
+              </Link>
+              <Link to='privacy'>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Become an Affiliates</a>
+                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Privacy Policy</a>
               </p>
+              </Link>
+              <Link to='legal'>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>shipping Rates</a>
+                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Legal Information</a>
               </p>
+              </Link>
+             <Link to='/about'>
               <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Help</a>
+                <a href="#" className="text-white" style={{"text-decoration":"none"}}>About us</a>
               </p>
+              </Link>
             </div>
 
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

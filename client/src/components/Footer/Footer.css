@@ -2,3 +2,56 @@
 .footercito{
     background-color: #1D0FBD;
 }
+.container-info{
+    background-image: url("../../assets/fondoBlue.jpg");
+    background-size: cover;
+}
+.container-info2{
+
+    text-align:start;
+    margin-left: 20%;
+    margin-right:20%;
+    border: #f7a600 double 10px;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+}
+.li{
+ list-style-type:disc;
+ list-style-position:inside;
+ list-style-image:none;
+}
+.title-privacy{
+    color: #f7a600;
+    font-size: 90px;
+    padding:230px;
+    
+}
+.subtitle{
+    color: #f7a600;
+}
+.introduction{
+    color:  wheat;
+}
+.personal-information{
+color:  wheat;
+}
+.minititle{
+    color: #f7a600;
+}
+.use-information{
+    color: wheat;
+}
+.disclosure-information{
+    color: wheat;
+}
+.third-party{
+    color: wheat;
+}
+.security{
+    color: wheat;
+}
+.options{
+    color: wheat;
+}

@@ -37,8 +37,6 @@ export default function Detail() {
   const [input, setInput] = useState({
     idMovie: parseInt(id),
     idUser: idUser,
-   
-   
   });
 
 

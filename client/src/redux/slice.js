@@ -1,369 +1,459 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {allgenre} from './dataMock.js'
-import ordering from '../Funciones_js/Ordenamiento.js'
+import { allgenre } from "./dataMock.js";
+import ordering from "../Funciones_js/Ordenamiento.js";
 
 const initialState = {
-    allMovies: [],
-    copyAllMovies:[],
-    genres : [],
-    details:{},
-    infoInput:{},
-    user:{},
-    commetDeleteMessage:'',
-    commentMovie:{},
-    commentFromMovies:[],
-    allUsers:[],
-    payPaypal:{},
-    favoriteMovie:[],
-    categorySwich:{}
-  };
+  allMovies: [],
+  copyAllMovies: [],
+  genres: [],
+  details: {},
+  infoInput: {},
+  user: {},
+  commetDeleteMessage: "",
+  commentMovie: {},
+  commentFromMovies: [],
+  allUsers: [],
+  payPaypal: {},
+  favoriteMovie: [],
+  categorySwich: {},
+};
 
 export const dataSlice = createSlice({
-    name:'allData',
-    initialState,
-    reducers:{
+  name: "allData",
+  initialState,
+  reducers: {
+    getUser: (state, action) => {
+      state.user = action.payload;
+    },
 
-        getUser : (state, action)=>{
-          state.user = action.payload
-        },
+    allMovies: (state, action) => {
+      state.allMovies = action.payload;
+      state.copyAllMovies = action.payload;
+    },
 
-        allMovies : (state, action)=>{
-          
-            state.allMovies = action.payload
-            state.copyAllMovies = action.payload
-          
-        },
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
 
-        setUser:(state,action) =>{
-          state.user = action.payload
-        },
+    allgenres: (state, action) => {
+      state.genres = action.payload;
+    },
 
-        allgenres :(state, action)=>{
-          state.genres = action.payload
-        },
-
-        filterGenre :(state, action)=>{
-          let auxMovies = state.copyAllMovies
-          state.allMovies = action.payload === 'all'
+    filterGenre: (state, action) => {
+      let auxMovies = state.copyAllMovies;
+      state.allMovies =
+        action.payload === "all"
           ? state.copyAllMovies
-          : auxMovies.filter((e) => e.genre?.includes(action.payload))
-        },
+          : auxMovies.filter((e) => e.genre?.includes(action.payload));
+    },
 
-        orderMovies : (state, action)=>{
-          let auxMovies = state.allMovies
-          state.allMovies = ordering(auxMovies,action.payload)
-        },
+    orderMovies: (state, action) => {
+      let auxMovies = state.allMovies;
+      state.allMovies = ordering(auxMovies, action.payload);
+    },
 
-        DetailsMovies : (state, action)=>{
-          console.log(action.payload,'actionpayload')
-            state.details = action.payload
-            
-        },
+    DetailsMovies: (state, action) => {
+      console.log(action.payload, "actionpayload");
+      state.details = action.payload;
+    },
 
-        clearDetail : (state)=>{
-            state.details = []
-        },
+    clearDetail: (state) => {
+      state.details = [];
+    },
 
-        searchBar:(state,action) =>{
-           state.allMovies = state.copyAllMovies.filter(e => e.name.toLowerCase().includes(action.payload)&& e.status === true)   
-        },
+    searchBar: (state, action) => {
+      state.allMovies = state.copyAllMovies.filter(
+        (e) =>
+          e.name.toLowerCase().includes(action.payload) && e.status === true
+      );
+    },
 
-        infoAdmin:(state,action) =>{
-          state.infoInput = action.payload 
-        },
+    infoAdmin: (state, action) => {
+      state.infoInput = action.payload;
+    },
 
-        commentInput:(state,action) =>{
-          state.commentMovie = action.payload
-        },
+    commentInput: (state, action) => {
+      state.commentMovie = action.payload;
+    },
 
-        commentByid:(state,action) =>{
-          state.commentFromMovies = action.payload
-        },
+    commentByid: (state, action) => {
+      state.commentFromMovies = action.payload;
+    },
 
-        editComment:(state,action) =>{
-          state.commentFromMovies = action.payload
-        },
-        allUserAdmin:(state,action)=>{
-          state.allUsers = action.payload
-        },
-        banUserAdmin:(state,action)=>{
-         state.allUsers = action.payload
-        },
-        unBanUserAdmin:(state,action)=>{
-          state.allUsers = action.payload
-        },
-        newAdmin:(state,action)=>{
-          state.allUsers = action.payload
-        },
-    
-        updateUser:(state,action)=>{
-          state.user = action.payload
-        },
-       
-        bannMovie:(state, action) =>{
-          state.allMovies = action.payload
-        },
-        payPayment:(state,action)=>{
-          state.payPaypal = action.payload
-        },
-        favoriteArray:(state,action)=>{ 
-          state.favoriteMovie= action.payload  
-        },
-        infoAdmin:(state,action)=>{
-          state.allMovies = action.payload
-         },
-        categoryswichRE:(state,action)=>{
-          state.categorySwich = action.payload
-        }
-    }
-  })
+    editComment: (state, action) => {
+      state.commentFromMovies = action.payload;
+    },
+    allUserAdmin: (state, action) => {
+      state.allUsers = action.payload;
+    },
+    banUserAdmin: (state, action) => {
+      state.allUsers = action.payload;
+    },
+    unBanUserAdmin: (state, action) => {
+      state.allUsers = action.payload;
+    },
+    newAdmin: (state, action) => {
+      state.allUsers = action.payload;
+    },
+
+    updateUser: (state, action) => {
+      state.user = action.payload;
+    },
+
+    bannMovie: (state, action) => {
+      state.allMovies = action.payload;
+    },
+    payPayment: (state, action) => {
+      state.payPaypal = action.payload;
+    },
+    favoriteArray: (state, action) => {
+      state.favoriteMovie = action.payload;
+    },
+    infoAdmin: (state, action) => {
+      state.allMovies = action.payload;
+    },
+    categoryswichRE: (state, action) => {
+      state.categorySwich = action.payload;
+    },
+    sendSpam: (state, action) => {
+      state.allUsers = action.payload;
+    },
+  },
+});
 
 //-------------------------------------------------------------------------------------------------------------------
 //------------------------------------------ function Movies ------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------
 
 export const asyncallMovies = () => {
-    return async function(dispatch){
-      try {
-        let response = await axios("https://back-end-movies-henry2.onrender.com/")
-        return dispatch(allMovies(response.data))
-      } catch (error) {
-        console.log(error,'from allMovies')
-      } 
+  return async function (dispatch) {
+    try {
+      let response = await axios(
+        "https://back-end-movies-henry2.onrender.com/"
+      );
+      return dispatch(allMovies(response.data));
+    } catch (error) {
+      console.log(error, "from allMovies");
     }
-  }
-  
-  export const asyncgetDetails = (id) => {
-    return async function(dispatch){
-      try {
-        let response = await axios.get(`https://back-end-movies-henry2.onrender.com/detail/${id}`)
-        return dispatch(DetailsMovies(response.data[0]))
-      } catch (error) {
-        console.log(error,'from Details')
-      }      
-    }
-  }
+  };
+};
 
-  export const asyncAllgenres = (id) => {
-    return async function(dispatch){
-      //let response = await axios.get(`http://localhost:3000/home/:${id}`)
-      return dispatch(allgenres(allgenre))
+export const asyncgetDetails = (id) => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.get(
+        `https://back-end-movies-henry2.onrender.com/detail/${id}`
+      );
+      return dispatch(DetailsMovies(response.data[0]));
+    } catch (error) {
+      console.log(error, "from Details");
     }
-  }
+  };
+};
 
-  export const asyncGetName = (name) =>{
-    return  async function(dispatch){
-      return dispatch(searchBar(name))
-    }
-  }
+export const asyncAllgenres = (id) => {
+  return async function (dispatch) {
+    //let response = await axios.get(`http://localhost:3000/home/:${id}`)
+    return dispatch(allgenres(allgenre));
+  };
+};
 
- 
+export const asyncGetName = (name) => {
+  return async function (dispatch) {
+    return dispatch(searchBar(name));
+  };
+};
 
 //--------------------------------------------------------------------------------------------------------
 //----------------------------------- function user ------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
- export const asynSetUser = (input) =>{
-  return  async function(dispatch){
-    console.log(input, 'el asyn del slices' )
+export const asynSetUser = (input) => {
+  return async function (dispatch) {
+    console.log(input, "el asyn del slices");
     try {
-      let response = await axios.post(`https://back-end-movies-henry2.onrender.com/newU`,input)
-    return dispatch(setUser(response.data))
+      let response = await axios.post(
+        `https://back-end-movies-henry2.onrender.com/newU`,
+        input
+      );
+      return dispatch(setUser(response.data));
     } catch (error) {
-      console.log(error,'from create user')
+      console.log(error, "from create user");
     }
-    }
-  }
+  };
+};
 
-  export const asyncFormComment = (input,idMovie) =>{
-    return async function(dispatch){
+export const asyncFormComment = (input, idMovie) => {
+  return async function (dispatch) {
     try {
-      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,input)
-      console.log(input,"en asyncform")
-        
-      }
-     catch (error) {
-      console.log(error,'from Details')
+      await axios.post(
+        `https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,
+        input
+      );
+      console.log(input, "en asyncform");
+    } catch (error) {
+      console.log(error, "from Details");
     }
-  }
-  }
-  export const asyncCommentById = (id) =>{
-    return async function(dispatch){
-      try {
-        let response = await axios.get(`https://back-end-movies-henry2.onrender.com/allComments`)
-        let filtrados = response.data.filter((e)=>e.movieId === id)
-        return dispatch(commentByid(filtrados))
-      } catch (error) {
-        console.log(error,'comment in detail')
-      }      
+  };
+};
+export const asyncCommentById = (id) => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.get(
+        `https://back-end-movies-henry2.onrender.com/allComments`
+      );
+      let filtrados = response.data.filter((e) => e.movieId === id);
+      return dispatch(commentByid(filtrados));
+    } catch (error) {
+      console.log(error, "comment in detail");
     }
-  }
-  export const asyncEditComment = (input) =>{
-    return async function(dispatch){
-      try {
-        console.log(input,'input')
-        let response = await axios.put("https://back-end-movies-henry2.onrender.com/editComment",input)
-        dispatch(editComment(response.data))
-      } catch (error) {
-        
-      }
-    } 
-  }
-  export const asyncDeleteComment =(id) =>{
-    return async function (dispatch){
-      try {
-        let obj = {id}
-     
-      await axios.post(`https://back-end-movies-henry2.onrender.com/detail/`,obj)
-       
-      } catch (error) {
-        console.log(error,'from delete')
-      }
-    }
-  }
+  };
+};
+export const asyncEditComment = (input) => {
+  return async function (dispatch) {
+    try {
+      console.log(input, "input");
+      let response = await axios.put(
+        "https://back-end-movies-henry2.onrender.com/editComment",
+        input
+      );
+      dispatch(editComment(response.data));
+    } catch (error) {}
+  };
+};
+export const asyncDeleteComment = (id) => {
+  return async function (dispatch) {
+    try {
+      let obj = { id };
 
-
-  export const asyncGetUser = (userMail)=>{
-    return async function (dispatch){
-      try {
-        let response = await axios.get(`https://back-end-movies-henry2.onrender.com/Uemail/${userMail}`)
-        return dispatch(getUser(response.data))
-      } catch (error) {  
-      }
+      await axios.post(
+        `https://back-end-movies-henry2.onrender.com/detail/`,
+        obj
+      );
+    } catch (error) {
+      console.log(error, "from delete");
     }
-  }
+  };
+};
 
-  export const asynUpdateUser = (objUpdate) =>{
-    return async function (dispatch){
-      try {
+export const asyncGetUser = (userMail) => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.get(
+        `https://back-end-movies-henry2.onrender.com/Uemail/${userMail}`
+      );
+      return dispatch(getUser(response.data));
+    } catch (error) {}
+  };
+};
 
-        console.log(objUpdate,'--------------->')
-        let response = await axios.put(`https://back-end-movies-henry2.onrender.com/editU`,objUpdate)
-        return dispatch(updateUser(response.data))
-        //return dispatch(updateUser(objUpdate))
-      } catch (error) {  
-      }
+export const asynUpdateUser = (objUpdate) => {
+  return async function (dispatch) {
+    try {
+      console.log(objUpdate, "--------------->");
+      let response = await axios.put(
+        `https://back-end-movies-henry2.onrender.com/editU`,
+        objUpdate
+      );
+      return dispatch(updateUser(response.data));
+      //return dispatch(updateUser(objUpdate))
+    } catch (error) {}
+  };
+};
+
+export const asynPaymentSilver = () => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.post(
+        "https://back-end-movies-henry2.onrender.com/create-paymentSilver/"
+      );
+      return dispatch(payPayment(response.data));
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+};
 
-  export const asynPaymentSilver =() =>{
-    return async function (dispatch){
-      try {
-        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentSilver/")
-        return dispatch(payPayment(response.data))
-      } catch (error) {
-        console.log(error)
-      }
+export const asynPaymentGold = () => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.post(
+        "https://back-end-movies-henry2.onrender.com/create-paymentGold/"
+      );
+      return dispatch(payPayment(response.data));
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+};
 
-  export const asynPaymentGold =() =>{
-    return async function (dispatch){
-      try {
-        let response = await axios.post("https://back-end-movies-henry2.onrender.com/create-paymentGold/")
-        return dispatch(payPayment(response.data))
-      } catch (error) {
-        console.log(error)
-      }
+export const asyncFavoriteMovie = (input) => {
+  return async function (dispatch) {
+    try {
+      console.log(input, "input favorite mvoie");
+      let response = await axios.post(
+        "https://back-end-movies-henry2.onrender.com/addFav",
+        input
+      );
+      console.log(response.data, "response puntodata");
+      return dispatch(favoriteArray(response.data));
+    } catch (error) {
+      console.log(error, "error in favorite Movie");
     }
-  } 
+  };
+};
 
-  export const asyncFavoriteMovie =(input) =>{
-    return async function (dispatch){
-      try {
-        let response = await axios.put("https://back-end-movies-henry2.onrender.com/",input)
-        return dispatch(favoriteArray(response.data))
-      } catch (error) {
-        console.log(error)
-      }
+export const asyncCategorySwich = (idUser) => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.put(
+        "https://back-end-movies-henry2.onrender.com/apiSilver",
+        idUser
+      );
+      return dispatch(categoryswichRE(response.data));
+    } catch (error) {
+      console.log(error);
     }
-  } 
-
-  export const asyncCategorySwich =(idUser) =>{
-    return async function (dispatch){
-      try {
-        let response = await axios.put("https://back-end-movies-henry2.onrender.com/apiSilver",idUser)
-        return dispatch(categoryswichRE(response.data))
-      } catch (error) {
-        console.log(error)
-      }
-    }
-  } 
+  };
+};
+export const asyncFavList = () => {
+  return async function (dispatch) {
+    try {
+      let response = await axios(
+        "https://back-end-movies-henry2.onrender.com/allFavs"
+      );
+      return dispatch(favoriteList(response.data));
+    } catch (error) {}
+  };
+};
 //--------------------------------------------------------------------------------------------------------------------
-//------------------------------------function admin----------------------------------------------------------------------  
+//------------------------------------function admin----------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------
-export const asyncInfoAdmin = (payload) =>{
-  return async function(dispatch){
-    console.log("soy la nueva movie",payload)
+export const asyncInfoAdmin = (payload) => {
+  return async function (dispatch) {
+    console.log("soy la nueva movie", payload);
     try {
-      const response = await axios.post('https://back-end-movies-henry2.onrender.com/addM', payload)
-      return dispatch(infoAdmin(response.data))
-    }catch (error) {
-      console.log(error)
-    } 
-    }      
-  }
+      const response = await axios.post(
+        "https://back-end-movies-henry2.onrender.com/addM",
+        payload
+      );
+      return dispatch(infoAdmin(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export const asyncallUsers = () => {
-  return async function(dispatch){
+  return async function (dispatch) {
     try {
-      let response = await axios("https://back-end-movies-henry2.onrender.com/users")
-      return dispatch(allUserAdmin(response.data))
+      let response = await axios(
+        "https://back-end-movies-henry2.onrender.com/users"
+      );
+      return dispatch(allUserAdmin(response.data));
     } catch (error) {
-      console.log(error,'from allUSERS')
-    } 
-  }
-}
+      console.log(error, "from allUSERS");
+    }
+  };
+};
 
+export const asynbanUsers = (id) => {
+  return async function (dispatch) {
+    await axios.put("https://back-end-movies-henry2.onrender.com/bannUser", id);
+    let response = await axios.get(
+      "https://back-end-movies-henry2.onrender.com/users"
+    );
 
+    return dispatch(banUserAdmin(response));
+  };
+};
 
+export const asynDesBanUsers = (id) => {
+  return async function (dispatch) {
+    await axios.put(
+      "https://back-end-movies-henry2.onrender.com/unBannUser",
+      id
+    );
+    let response = await axios.get(
+      "https://back-end-movies-henry2.onrender.com/users"
+    );
 
-export const asynbanUsers = (id)=>{
-  return async function (dispatch){
-     await axios.put("https://back-end-movies-henry2.onrender.com/bannUser",id)
-     let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
-    
-    return dispatch(banUserAdmin(response))
-  }}
+    return dispatch(unBanUserAdmin(response));
+  };
+};
 
-  export const asynDesBanUsers = (id)=>{
-    return async function (dispatch){
-       await axios.put("https://back-end-movies-henry2.onrender.com/unBannUser",id)
-       let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
-      
-      return dispatch(unBanUserAdmin(response))
-    }}
+export const asynNewAdmin = (id) => {
+  return async function (dispatch) {
+    await axios.put(
+      "https://back-end-movies-henry2.onrender.com/createAdm",
+      id
+    );
+    let response = await axios.get(
+      "https://back-end-movies-henry2.onrender.com/users"
+    );
 
-    export const asynNewAdmin = (id)=>{
-      return async function (dispatch){
-         await axios.put("https://back-end-movies-henry2.onrender.com/createAdm",id)
-         let response = await axios.get("https://back-end-movies-henry2.onrender.com/users")
-        
-        return dispatch(newAdmin(response))
-      }}
+    return dispatch(newAdmin(response));
+  };
+};
 
-export const asyncDeleteMovie =(id) =>{
-  return async function (){
-    const objetito = {id}
-    let response = axios.put(`https://back-end-movies-henry2.onrender.com/removeM/`,objetito)
-  }
-}
+export const asyncDeleteMovie = (id) => {
+  return async function () {
+    const objetito = { id };
+    let response = axios.put(
+      `https://back-end-movies-henry2.onrender.com/removeM/`,
+      objetito
+    );
+  };
+};
 
-export const asyncUpdateMovie =(id) =>{
-  return async function (dispatch){
-  
-    let response =  axios.put(`https://back-end-movies-henry2.onrender.com/removeM`,id)
-     dispatch(bannMovie(response.data))
-  }
-}
+export const asyncUpdateMovie = (id) => {
+  return async function (dispatch) {
+    let response = axios.put(
+      `https://back-end-movies-henry2.onrender.com/removeM`,
+      id
+    );
+    dispatch(bannMovie(response.data));
+  };
+};
 
-
-
+export const asyncSendSpam = () => {
+  return async function (dispatch) {
+    let response = axios(
+      "https://back-end-movies-henry2.onrender.com/nodemailer"
+    );
+    return dispatch(sendSpam(response));
+  };
+};
 
 //----------------------------------------------------------------------------------------------------------------
 
+export const {
+  allMovies,
+  DetailsMovies,
+  clearDetail,
+  allgenres,
+  filterGenre,
+  orderMovies,
+  searchBar,
+  formInput,
+  infoAdmin,
+  commentInput,
+  commentByid,
+  editComment,
+  setUser,
+  allUserAdmin,
+  banUserAdmin,
+  unBanUserAdmin,
+  newAdmin,
+  getUser,
+  deleteComment,
+  updateUser,
+  payPayment,
+  bannMovie,
+  favoriteArray,
+  categoryswichRE,
+  favoriteList,
+  sendSpam,
+} = dataSlice.actions;
 
-export const {allMovies,DetailsMovies,clearDetail,allgenres,filterGenre,orderMovies,searchBar,formInput,infoAdmin,commentInput,commentByid,editComment,setUser,allUserAdmin,banUserAdmin,unBanUserAdmin,newAdmin,getUser,deleteComment,updateUser,payPayment,bannMovie,favoriteArray,categoryswichRE} = dataSlice.actions
-
-
-export default dataSlice.reducer
+export default dataSlice.reducer;
