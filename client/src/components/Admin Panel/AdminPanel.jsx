@@ -19,12 +19,16 @@ import FunctionBanMovie from "./Function Admin/Function BanMovie/FunctionBanMovi
 
 function AdminPanel() {
   const allUsers = useSelector((state) => state.user);
+  const allUserAdmin = useSelector((state) => state.allUsers)
+  let userdb = useSelector((store) => store.alldata.user);
   let [funct, setFunct] = useState("");
   let {id} = useParams()
   let dispatch = useDispatch()
 
-
+   
   return (
+    <div>
+    {userdb.category === "admin"? (
     <>
       <nav className="navbar navbar-expand-lg navbar-light blue fixed-top">
         <button id="sidebarCollapse" className="btn navbar-btn">
@@ -45,7 +49,7 @@ function AdminPanel() {
           <span className="navbar-toggler-icon"></span>
         </button>
       </nav>
-
+      
       <div className="containerAdmin">
         <div className="menuAdmin">
           <li className="menu-item" id="profile">
@@ -53,6 +57,7 @@ function AdminPanel() {
               <i className="far fa-user"></i>
               User
             </a>
+            
             <div className="menu-item__sub">
               <button
                 className="linkAdmin"
@@ -113,9 +118,20 @@ function AdminPanel() {
           ):(
           <></>)}
         </div>
-      </div>
-    </>
-  );
+      </div> </>) 
+      : <div> 
+      Ruta protegida, solo accede el administrador
+      <Link to="/home">
+          <button
+            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+            type="shadow-lg p-3 mb-5 bg-body rounded"
+          >
+            {" "}
+           Home{" "}
+          </button>
+        </Link>
+      </div> }
+      </div> );
 }
 
 export default AdminPanel;
