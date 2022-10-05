@@ -5,10 +5,15 @@
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../../assets/fondoBlue.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
+}
+
+#hero .videoLanding {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -19,7 +24,7 @@
 
 #hero:before {
   content: "";
-  background: rgba(6, 12, 34, 0.8);
+  background: rgba(6, 12, 34, 0.548);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -44,6 +49,14 @@
 @media (max-width: 991px) {
   #hero .hero-container {
     top: 70px;
+  }
+}
+
+@media (max-width: 991px) {
+  .contMembership {
+    display: flex; 
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
@@ -200,7 +213,7 @@
  
  /* ----------------- francoo ------- */
  .container-plan{
-  background-image: url("../../assets/fondoBlue.jpg");
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
   margin-top: -8px;
   background-position: 50% -10%;
   padding-top: 2%;
@@ -216,7 +229,7 @@
   min-width: 15rem;
   min-width: 15rem;
   padding: 1rem;
-  background-image: url("../../assets/cartaMember.jpg");
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773992/BlockBuster%20Nuestro/cartaMember_k6ffba.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;
@@ -238,7 +251,7 @@
   min-width: 15rem;
   max-height: 35rem;
   padding: 1rem;
-  background-image: url("../../assets/cartaMember.jpg");
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773992/BlockBuster%20Nuestro/cartaMember_k6ffba.jpg");
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
   transition-duration: 0.5s;
   border-radius: 7%;

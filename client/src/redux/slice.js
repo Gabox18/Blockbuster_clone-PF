@@ -3,6 +3,11 @@ import axios from "axios";
 import { allgenre } from "./dataMock.js";
 import ordering from "../Funciones_js/Ordenamiento.js";
 
+
+
+
+// const urlBack = process.env.URL_SLICE;
+
 const initialState = {
   allMovies: [],
   copyAllMovies: [],
@@ -127,30 +132,30 @@ export const dataSlice = createSlice({
 //----------------------------------------------------------------------------------------------------------------
 
 export const asyncallMovies = () => {
-  return async function (dispatch) {
-    try {
-      let response = await axios(
-        "https://back-end-movies-henry2.onrender.com/"
-      );
-      return dispatch(allMovies(response.data));
-    } catch (error) {
-      console.log(error, "from allMovies");
+
+    return async function(dispatch){
+      try {
+
+        let response = await axios(`https://block-buster-fantastic7.up.railway.app/`)
+        return dispatch(allMovies(response.data))
+      } catch (error) {
+        console.log(error,'from allMovies')
+      } 
+    }
+  }
+  
+  export const asyncgetDetails = (id) => {
+    return async function(dispatch){
+      try {
+        let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/detail/${id}`)
+        return dispatch(DetailsMovies(response.data[0]))
+      } catch (error) {
+        console.log(error,'from Details')
+      }      
     }
   };
 };
 
-export const asyncgetDetails = (id) => {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(
-        `https://back-end-movies-henry2.onrender.com/detail/${id}`
-      );
-      return dispatch(DetailsMovies(response.data[0]));
-    } catch (error) {
-      console.log(error, "from Details");
-    }
-  };
-};
 
 export const asyncAllgenres = (id) => {
   return async function (dispatch) {
@@ -172,11 +177,9 @@ export const asynSetUser = (input) => {
   return async function (dispatch) {
     console.log(input, "el asyn del slices");
     try {
-      let response = await axios.post(
-        `https://back-end-movies-henry2.onrender.com/newU`,
-        input
-      );
-      return dispatch(setUser(response.data));
+
+      let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/newU`,input)
+    return dispatch(setUser(response.data))
     } catch (error) {
       console.log(error, "from create user");
     }
@@ -186,52 +189,47 @@ export const asynSetUser = (input) => {
 export const asyncFormComment = (input, idMovie) => {
   return async function (dispatch) {
     try {
-      await axios.post(
-        `https://back-end-movies-henry2.onrender.com/detail/${idMovie}`,
-        input
-      );
-      console.log(input, "en asyncform");
-    } catch (error) {
-      console.log(error, "from Details");
+      await axios.post(`https://block-buster-fantastic7.up.railway.app/detail/${idMovie}`,input)
+      console.log(input,"en asyncform")
+        
+      }
+     catch (error) {
+      console.log(error,'from Details')
     }
-  };
-};
-export const asyncCommentById = (id) => {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(
-        `https://back-end-movies-henry2.onrender.com/allComments`
-      );
-      let filtrados = response.data.filter((e) => e.movieId === id);
-      return dispatch(commentByid(filtrados));
-    } catch (error) {
-      console.log(error, "comment in detail");
+  }
+  }
+  export const asyncCommentById = (id) =>{
+    return async function(dispatch){
+      try {
+        let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/allComments`)
+        let filtrados = response.data.filter((e)=>e.movieId === id)
+        return dispatch(commentByid(filtrados))
+      } catch (error) {
+        console.log(error,'comment in detail')
+      }      
     }
-  };
-};
-export const asyncEditComment = (input) => {
-  return async function (dispatch) {
-    try {
-      console.log(input, "input");
-      let response = await axios.put(
-        "https://back-end-movies-henry2.onrender.com/editComment",
-        input
-      );
-      dispatch(editComment(response.data));
-    } catch (error) {}
-  };
-};
-export const asyncDeleteComment = (id) => {
-  return async function (dispatch) {
-    try {
-      let obj = { id };
-
-      await axios.post(
-        `https://back-end-movies-henry2.onrender.com/detail/`,
-        obj
-      );
-    } catch (error) {
-      console.log(error, "from delete");
+  }
+  export const asyncEditComment = (input) =>{
+    return async function(dispatch){
+      try {
+        console.log(input,'input')
+        let response = await axios.put(`https://block-buster-fantastic7.up.railway.app/editComment`,input)
+        dispatch(editComment(response.data))
+      } catch (error) {
+        
+      }
+    } 
+  }
+  export const asyncDeleteComment =(id) =>{
+    return async function (dispatch){
+      try {
+        let obj = {id}
+     
+      await axios.post(`https://block-buster-fantastic7.up.railway.app/detail/`,obj)
+       
+      } catch (error) {
+        console.log(error,'from delete')
+      }
     }
   };
 };
@@ -247,72 +245,72 @@ export const asyncGetUser = (userMail) => {
   };
 };
 
-export const asynUpdateUser = (objUpdate) => {
-  return async function (dispatch) {
-    try {
-      console.log(objUpdate, "--------------->");
-      let response = await axios.put(
-        `https://back-end-movies-henry2.onrender.com/editU`,
-        objUpdate
-      );
-      return dispatch(updateUser(response.data));
-      //return dispatch(updateUser(objUpdate))
-    } catch (error) {}
-  };
-};
 
-export const asynPaymentSilver = () => {
-  return async function (dispatch) {
-    try {
-      let response = await axios.post(
-        "https://back-end-movies-henry2.onrender.com/create-paymentSilver/"
-      );
-      return dispatch(payPayment(response.data));
-    } catch (error) {
-      console.log(error);
+
+  export const asyncGetUser = (userMail)=>{
+    return async function (dispatch){
+      try {
+        let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/Uemail/${userMail}`)
+        return dispatch(getUser(response.data))
+      } catch (error) {  
+      }
     }
-  };
-};
+  }
 
-export const asynPaymentGold = () => {
-  return async function (dispatch) {
-    try {
-      let response = await axios.post(
-        "https://back-end-movies-henry2.onrender.com/create-paymentGold/"
-      );
-      return dispatch(payPayment(response.data));
-    } catch (error) {
-      console.log(error);
+  export const asynUpdateUser = (objUpdate) =>{
+    return async function (dispatch){
+      try {
+
+        console.log(objUpdate,'--------------->')
+        let response = await axios.put(`https://block-buster-fantastic7.up.railway.app/editU`,objUpdate)
+        return dispatch(updateUser(response.data))
+        //return dispatch(updateUser(objUpdate))
+      } catch (error) {  
+      }
     }
-  };
-};
+  }
 
-export const asyncFavoriteMovie = (input) => {
-  return async function (dispatch) {
-    try {
-      console.log(input, "input favorite mvoie");
-      let response = await axios.post(
-        "https://back-end-movies-henry2.onrender.com/addFav",
-        input
-      );
-      console.log(response.data, "response puntodata");
-      return dispatch(favoriteArray(response.data));
-    } catch (error) {
-      console.log(error, "error in favorite Movie");
+  export const asynPaymentSilver =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/create-paymentSilver/`)
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
     }
-  };
-};
+  }
 
-export const asyncCategorySwich = (idUser) => {
-  return async function (dispatch) {
-    try {
-      let response = await axios.put(
-        "https://back-end-movies-henry2.onrender.com/apiSilver",
-        idUser
-      );
-      return dispatch(categoryswichRE(response.data));
-    } catch (error) {
-      console.log(error);
+  export const asynPaymentGold =() =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/create-paymentGold/`)
+        return dispatch(payPayment(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  } 
+
+  export const asyncFavoriteMovie =(input) =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.put(`https://block-buster-fantastic7.up.railway.app/`,input)
+        return dispatch(favoriteArray(response.data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  } 
+
+  export const asyncCategorySwich =(idUser) =>{
+    return async function (dispatch){
+      try {
+        let response = await axios.put(`https://block-buster-fantastic7.up.railway.app/piSilver`,idUser)
+        return dispatch(categoryswichRE(response.data))
+      } catch (error) {
+        console.log(error)
+      }
     }
   };
 };
@@ -333,88 +331,68 @@ export const asyncInfoAdmin = (payload) => {
   return async function (dispatch) {
     console.log("soy la nueva movie", payload);
     try {
-      const response = await axios.post(
-        "https://back-end-movies-henry2.onrender.com/addM",
-        payload
-      );
-      return dispatch(infoAdmin(response.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
+
+      const response = await axios.post(`https://block-buster-fantastic7.up.railway.app/addM`, payload)
+      return dispatch(infoAdmin(response.data))
+    }catch (error) {
+      console.log(error)
+    } 
+    }      
+  }
 
 export const asyncallUsers = () => {
   return async function (dispatch) {
     try {
-      let response = await axios(
-        "https://back-end-movies-henry2.onrender.com/users"
-      );
-      return dispatch(allUserAdmin(response.data));
+      let response = await axios(`https://block-buster-fantastic7.up.railway.app/users`)
+      return dispatch(allUserAdmin(response.data))
     } catch (error) {
-      console.log(error, "from allUSERS");
-    }
-  };
-};
+      console.log(error,'from allUSERS')
+    } 
+  }
+}
 
-export const asynbanUsers = (id) => {
-  return async function (dispatch) {
-    await axios.put("https://back-end-movies-henry2.onrender.com/bannUser", id);
-    let response = await axios.get(
-      "https://back-end-movies-henry2.onrender.com/users"
-    );
 
-    return dispatch(banUserAdmin(response));
-  };
-};
 
-export const asynDesBanUsers = (id) => {
-  return async function (dispatch) {
-    await axios.put(
-      "https://back-end-movies-henry2.onrender.com/unBannUser",
-      id
-    );
-    let response = await axios.get(
-      "https://back-end-movies-henry2.onrender.com/users"
-    );
 
-    return dispatch(unBanUserAdmin(response));
-  };
-};
+export const asynbanUsers = (id)=>{
+  return async function (dispatch){
+     await axios.put(`https://block-buster-fantastic7.up.railway.app/bannUser`,id)
+     let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/users`)
+    
+    return dispatch(banUserAdmin(response))
+  }}
 
-export const asynNewAdmin = (id) => {
-  return async function (dispatch) {
-    await axios.put(
-      "https://back-end-movies-henry2.onrender.com/createAdm",
-      id
-    );
-    let response = await axios.get(
-      "https://back-end-movies-henry2.onrender.com/users"
-    );
+  export const asynDesBanUsers = (id)=>{
+    return async function (dispatch){
+       await axios.put(`https://block-buster-fantastic7.up.railway.app/unBannUser`,id)
+       let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/users`)
+      
+      return dispatch(unBanUserAdmin(response))
+    }}
 
-    return dispatch(newAdmin(response));
-  };
-};
+    export const asynNewAdmin = (id)=>{
+      return async function (dispatch){
+         await axios.put(`https://block-buster-fantastic7.up.railway.app/createAdm`,id)
+         let response = await axios.get(`https://block-buster-fantastic7.up.railway.app/users`)
+        
+        return dispatch(newAdmin(response))
+      }}
 
-export const asyncDeleteMovie = (id) => {
-  return async function () {
-    const objetito = { id };
-    let response = axios.put(
-      `https://back-end-movies-henry2.onrender.com/removeM/`,
-      objetito
-    );
-  };
-};
+export const asyncDeleteMovie =(id) =>{
+  return async function (){
+    const objetito = {id}
+    let response = axios.put(`https://block-buster-fantastic7.up.railway.app/removeM/`,objetito)
+  }
+}
 
-export const asyncUpdateMovie = (id) => {
-  return async function (dispatch) {
-    let response = axios.put(
-      `https://back-end-movies-henry2.onrender.com/removeM`,
-      id
-    );
-    dispatch(bannMovie(response.data));
-  };
-};
+export const asyncUpdateMovie =(id) =>{
+  return async function (dispatch){
+  
+    let response =  axios.put(`https://block-buster-fantastic7.up.railway.app/removeM`,id)
+     dispatch(bannMovie(response.data))
+  }
+}
+
 
 export const asyncSendSpam = () => {
   return async function (dispatch) {

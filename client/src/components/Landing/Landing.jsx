@@ -40,6 +40,11 @@ function handleSubmitGold() {
   :loginWithRedirect()
 }
 
+function scrollButton(){
+  console.log('scroll boton!')
+  window.scrollY(100, 100)
+}
+
   return (
     <>
       <div className="ContainerLanding">
@@ -49,17 +54,26 @@ function handleSubmitGold() {
 
         {/* <!-- ======= Hero Section ======= --> */}
         <section id="hero">
-          <div className="hero-container" data-aos="zoom-in" data-aos-delay="100">
-          <div className="loader">
-    <span className="landingName">BlockBuster</span>
-    <span>BlockBuster</span>
-</div> 
-            <a href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4" className="glightbox play-btn mb-4"></a>
-            <a href="#about" className="about-btn scrollto">About The Event</a>
+          <video src={video} className='videoLanding' muted loop autoPlay ></video>
+          <div
+            className="hero-container"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div className="loader">
+              <span className="landingName">BlockBuster</span>
+              <span>BlockBuster</span>
+            </div>
+            <a
+              href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
+              className="glightbox play-btn mb-4"
+            ></a>
+            <a href="#»primerp»" className="about-btn scrollto">
+              About our plans
+            </a>
           </div>
         </section>
         {/* <!-- End Hero Section --> */}
-
 
         <div className="container-plan">
           <div>
@@ -100,7 +114,11 @@ function handleSubmitGold() {
             <p className="pMmembership">START ENJOYING THE BEST STORIES</p>
             <p className="pMmembership">MADE ESPECIALLY FOR YOU</p>
           </div>
-          <div className="contMembership">
+
+          <div className="contMembership" id='»primerp»'>
+          
+          
+
             <div className="cardP">
               <p className="titleP">Silver</p>
               <div className="pricecontainerP1">
@@ -114,17 +132,24 @@ function handleSubmitGold() {
                 <li className="listMmemer">Fav list</li>
               </ul>
 
-              {typeof payPaypal.data === "string"
-              ?<button className="btn1" onClick={()=>{window.location.href = payPaypal.data}}>
-                {" "}
-                Redirect
-              </button>
-              :<button className="btn1" onClick={handleSubmitSilver}>
-                {" "}
-                Button
-              </button>}
-              
+              {typeof payPaypal.data === "string" ? (
+                <button
+                  className="btn1"
+                  onClick={() => {
+                    window.location.href = payPaypal.data;
+                  }}
+                >
+                  {" "}
+                  Redirect
+                </button>
+              ) : (
+                <button className="btn1" onClick={handleSubmitSilver}>
+                  {" "}
+                  Button
+                </button>
+              )}
             </div>
+
             <div className="cardP1">
               <p className="titleP1">Gold</p>
               <div className="pricecontainerP">
@@ -137,16 +162,24 @@ function handleSubmitGold() {
                 <li className="listMmemer">40 movies</li>
                 <li className="listMmemer">Fav list</li>
               </ul>
-              {typeof payPaypal.data === "string"
-              ?<button className="btn1" onClick={()=>{window.location.href = payPaypal.data}}>
-                {" "}
-                Redirect
-              </button>
-              :<button className="btn1" onClick={handleSubmitGold}>
-                {" "}
-                Button
-              </button>}
+              {typeof payPaypal.data === "string" ? (
+                <button
+                  className="btn1"
+                  onClick={() => {
+                    window.location.href = payPaypal.data;
+                  }}
+                >
+                  {" "}
+                  Redirect
+                </button>
+              ) : (
+                <button className="btn1" onClick={handleSubmitGold}>
+                  {" "}
+                  Button
+                </button>
+              )}
             </div>
+
           </div>
           <div>
             <div className="conteiner-shop-plan">
