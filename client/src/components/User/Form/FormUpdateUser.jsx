@@ -160,7 +160,7 @@ export default function FormUpdateUser() {
                 </div>
               </form>
               <Link to={"/home"}>
-                <button className="button-update-gohome">Home</button>
+                <button className="button-update-profile">Home</button>
               </Link>
             </div>
           </div>

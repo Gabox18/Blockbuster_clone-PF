@@ -5,7 +5,8 @@
   -o-background-size: cover;
   background-size: cover;
   min-height: 100vh;
-  padding-top: 3rem;
+  padding-top: 6rem;
+
 }
 
 .notDecaration{
@@ -18,8 +19,9 @@
 
 /* From uiverse.io by @david-mohseni */
 .cardPerf {
-    width: 350px;
-    height: 170px;
+    width: 20%;
+    height: 11rem;
+    margin-top: 5%;
     background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
     text-align: center;
     border: 10px groove #f7a600;
@@ -32,6 +34,7 @@
   
   .cardPerf:hover {
     height: 50%;
+    width: 35%;
   }
   .imgPencil{
     padding-bottom: 1rem;

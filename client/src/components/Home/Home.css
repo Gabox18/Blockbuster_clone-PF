@@ -1,3 +1,11 @@
+
+@font-face {
+  font-family:besan;
+  src: url("../../assets/Besan.otf");
+}
+
+
+
 .homeContainer{
   background: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -95,18 +103,20 @@
 }
 
 .textCarruzel {
-  font-size: 3rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #F9BD08;
+  font-size: 2rem;
+  font-family: besan;
+  color: #bd9725;
   text-align: start;
  padding-left: 2rem;
+ padding-top: 10px;
 }
 .textCarruzel2 {
-  font-size: 3rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #F9BD08;
+  font-size: 2rem;
+  font-family:besan;
+  color: #bd9725;
   text-align: end;
   padding-right: 2rem;
+  padding-top: 10px;
 }
 
 .conteiner-carruzel-home:hover{
@@ -146,20 +156,20 @@
   font-size: 10rem;
   color: #F9BD08;
   position: relative;
-  bottom: -2rem;
+  top: 25rem;
 }
 .subBlockTittle{
   width: 20rem;
   position: relative;
   left: 15rem;
-  bottom: -3rem;
+  bottom: -5rem;
   text-align: right;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:besan;
   color: #F9BD08;
 }
 .videoCabecera{
   position: relative;
-  bottom: 8rem;
+  bottom: 12rem;
   right: 23rem;
 }
 .navbarFixy{
@@ -216,3 +226,8 @@
     .loader1 span {
       font-size: 3rem;
     }}
+    span{
+      position: relative;
+      top: 5rem;
+      left: 2rem;
+    }
