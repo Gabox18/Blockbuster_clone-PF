@@ -25,6 +25,10 @@ import { asyncGetUser } from "./redux/slice";
 import { useAuth0 } from "@auth0/auth0-react";
 import SilverPayZone from "./components/PayZone/SilverPayZone";
 import GoldPayZone from "./components/PayZone/GoldPayZone";
+import  Privacy  from "./components/Footer/Privacy";
+import Legal from "./components/Footer/Legal";
+import Terms from "./components/Footer/Terms";
+import Aboutus from "./components/Footer/Aboutus";
 // Profile
 // import prfofile from "./components/Profile/Profile"
 
@@ -53,6 +57,10 @@ function App() {
           <Route exact path="/Home/admin" component={adminPanel}/>
           <Route exact path="/silver" component={SilverPayZone}/>
           <Route exact path="/gold" component={GoldPayZone}/>
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/legal" component={Legal} />
+          <Route exact path="/terms" component={Terms} />
+          <Route exact path='/about' component={Aboutus} />
         </Switch>}
     </div>
   );

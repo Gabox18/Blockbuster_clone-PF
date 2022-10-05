@@ -5,7 +5,7 @@ import "./functionAddMovie.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { asyncInfoAdmin } from "../../../../redux/slice";
+import { asyncInfoAdmin, asyncSendSpam } from "../../../../redux/slice";
 import { useEffect } from "react";
 import { asyncAllgenres } from "../../../../redux/slice";
 
@@ -152,6 +152,7 @@ export default function FunctionAddMovie() {
     alert ("Todos los campos deben ser requeridos")
   } else {
     dispatch(asyncInfoAdmin(input));
+    // dispatch(asyncSendSpam())
     alert("Película creada con éxito");
     setInput({
       name: "",
