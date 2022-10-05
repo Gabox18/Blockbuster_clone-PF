@@ -8,12 +8,13 @@ import gabo from "../../assets/gabo.jpg";
 import Footer from '../Footer/Footer'
 import franco from "../../assets/franco.jpg";
 import mollo from "../../assets/mollo.jpeg";
+import Navbar from "../Nav Bar/Navbar";
 
 export default function Aboutus() {
   return (
     <>
       <div className="container-about">
-
+<Navbar/>
           <div className="title-about">
             <h1 >
               <b className="aboutus">About us</b>

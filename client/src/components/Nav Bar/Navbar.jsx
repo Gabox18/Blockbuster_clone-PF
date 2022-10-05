@@ -151,6 +151,204 @@ function Navbar(prop) {
                 </button>
               )}
             </Route>
+            {/**?8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
+            <Route path="/terms">
+              <Link to={"/home"}>
+                <img
+                  className="logoNavDetail"
+                  src={img}
+                  width="90px"
+                  alt="logo"
+                />
+              </Link>
+              <Searchbar
+                className="searchDetail"
+                setCurrentPage={prop.setCurrentPage}
+              />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                        src={
+                          typeof userDB === "string"
+                            ? user.picture
+                            : userDB.picture
+                        }
+                        alt="profile"
+                        width={"40px"}
+                        className={
+                          userDB === ""
+                            ? Unregistered
+                            : userDB.category === "user"
+                            ? categoryUser
+                            : userDB.category === "silver"
+                            ? categorySilver
+                            : categoryGold
+                        }
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route>
+
+            <Route path="/privacy">
+              <Link to={"/home"}>
+                <img
+                  className="logoNavDetail"
+                  src={img}
+                  width="90px"
+                  alt="logo"
+                />
+              </Link>
+              <Searchbar
+                className="searchDetail"
+                setCurrentPage={prop.setCurrentPage}
+              />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                        src={
+                          typeof userDB === "string"
+                            ? user.picture
+                            : userDB.picture
+                        }
+                        alt="profile"
+                        width={"40px"}
+                        className={
+                          userDB === ""
+                            ? Unregistered
+                            : userDB.category === "user"
+                            ? categoryUser
+                            : userDB.category === "silver"
+                            ? categorySilver
+                            : categoryGold
+                        }
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route>
+            <Route path="/about">
+              <Link to={"/home"}>
+                <img
+                  className="logoNavDetail"
+                  src={img}
+                  width="90px"
+                  alt="logo"
+                />
+              </Link>
+              <Searchbar
+                className="searchDetail"
+                setCurrentPage={prop.setCurrentPage}
+              />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                        src={
+                          typeof userDB === "string"
+                            ? user.picture
+                            : userDB.picture
+                        }
+                        alt="profile"
+                        width={"40px"}
+                        className={
+                          userDB === ""
+                            ? Unregistered
+                            : userDB.category === "user"
+                            ? categoryUser
+                            : userDB.category === "silver"
+                            ? categorySilver
+                            : categoryGold
+                        }
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route>
+            <Route path="/legal">
+              <Link to={"/home"}>
+                <img
+                  className="logoNavDetail"
+                  src={img}
+                  width="90px"
+                  alt="logo"
+                />
+              </Link>
+              <Searchbar
+                className="searchDetail"
+                setCurrentPage={prop.setCurrentPage}
+              />
+              {isAuthenticated || userDB.status ? (
+                <>
+                  <Logoutbutton />
+                  <Link to={"/profile"}>
+                    <div>
+                      <img
+                        src={
+                          typeof userDB === "string"
+                            ? user.picture
+                            : userDB.picture
+                        }
+                        alt="profile"
+                        width={"40px"}
+                        className={
+                          userDB === ""
+                            ? Unregistered
+                            : userDB.category === "user"
+                            ? categoryUser
+                            : userDB.category === "silver"
+                            ? categorySilver
+                            : categoryGold
+                        }
+                      />
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <button
+                  type="buttonNavbar"
+                  className="btn btn-outline-primary text-light btn-xs btnLogin"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </button>
+              )}
+            </Route>
             <Route path="/profile">
               <Link to={"/home"}>
                 <img

@@ -5,6 +5,7 @@ import Footer from "./Footer";
 export default function Privacy() {
   return (
     <div className="container-info">
+      <Navbar/>
       <div className="container-info2">
         <h1>
           <b className="title-privacy">Privacy Policy</b>

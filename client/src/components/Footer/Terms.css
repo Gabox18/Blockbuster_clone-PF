@@ -3,15 +3,18 @@
     background-size: cover;
     color: wheat;
     text-align: start;
+    padding-top: 6rem;
     
 }
 .container-infoterms{
+    margin: auto;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 7%;
     border: double  #f7a600 10px;
     border-radius: 10px;
     padding: 30px;
+    
 }
 .title-terms{
     color: #f7a600 ;

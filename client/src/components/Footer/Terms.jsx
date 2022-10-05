@@ -6,9 +6,11 @@ import "./Terms.css";
 export default function Terms() {
   return (
     <>
+    <Navbar/>
       <div className="container-terms">
+        
         <div className="container-infoterms">
-          <div>
+          <div className="card-terms">
             <h1>
               <b className="title-terms">
                 Terms and Conditions for Blockbuster

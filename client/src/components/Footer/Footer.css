@@ -9,12 +9,14 @@
 .container-info2{
 
     text-align:start;
+    margin: auto;
     margin-left: 20%;
     margin-right:20%;
     border: #f7a600 double 10px;
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 40px;
+    padding-top: 6rem;
 
 }
 .li{
