@@ -1,19 +1,20 @@
 .cardContainerViewResult{
     display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15%;
-    grid-auto-rows: 30rem;
-    margin-left: -3rem;
+    grid-template-columns: 15% 15% 15% 15%;
+    gap: 3rem;
+    padding-top: 3rem;
+    margin: auto;
 }
 .conteinerViewResult{
     background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg") ;
     background-position: center;
-    background-repeat: no-repeat;
+     background-repeat:repeat-y; 
     background-size: cover;  
   
 }
 /* conteinerViewResult */
  .conteinerViewResult{
-    min-height:950px;
+    min-height:100%;
     transform:translatex(0px) translatey(0px);
    }
    
@@ -38,7 +39,6 @@
     font-size: 3rem;
     color: #fff;
     margin-left: 55rem;
-
 }
    
    
@@ -54,8 +54,10 @@
     border-radius: 7%;
 }
 .containterRes{
-    margin: 2% 0% 10% 0%;
-    padding-bottom: 10%;
-    margin-bottom: 10%;
-
+   display: flex;
+   gap:10rem;
+}
+.containerC{
+    height: 100vh;
+    width: 100%;
 }
