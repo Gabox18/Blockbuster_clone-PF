@@ -1,32 +1,30 @@
-.all-legal{
-    background-image: url("../../assets/fondoBlue.jpg");
-    background-size: cover;
+.all-legal {
+  background-image: url("../../assets/fondoBlue.jpg");
+  background-size: cover;
 }
-.legal-information{
-    height:1500px;
-    border: #f7a600 double 10px;
-    border-radius: 10px; 
-    margin-left: 20%;
-    margin-right: 20%;
-    text-align: justify;
-    color: wheat;
-    font-size: 18px;
-    padding-top: 8rem;
-    font-size: 1.3rem;
+.legal-information {
+  height: 1500px;
+  border: #f7a600 double 10px;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: justify;
+  color: wheat;
+  font-size: 18px;
+  padding-top: 8rem;
+  font-size: 1.3rem;
 }
-.legal-title{
-    color:  #f7a600;
-    font-size: 90px;
-    padding:180px;
-    
+.legal-title {
+  color: #f7a600;
+  font-size: 90px;
+  padding: 180px;
 }
 
-.App .all-legal .legal-information{
-    height:636px;
-   }
-   .p-legal{
-    margin: auto;
-    margin-left: 11%;
-    line-height:2.1em;
-   }
-  
+.App .all-legal .legal-information {
+  height: 636px;
+}
+.p-legal {
+  margin: auto;
+  margin-left: 11%;
+  line-height: 2.1em;
+}
