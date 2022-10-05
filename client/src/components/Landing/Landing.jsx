@@ -10,10 +10,12 @@ import video from "../../assets/video.mp4"
 import Nav from "../Nav Bar/Navbar"
 import flecha from "../../assets/flecha.png"
 import axios from "axios";
+import { useRef } from "react";
 
 
 
 export default function Landing() {
+  const scrollCard = useRef();
   const { user,loginWithRedirect } = useAuth0();
   let userDB = useSelector(state=>state.alldata.user)
   let [start, setStart]=  useState(4)
@@ -41,9 +43,21 @@ function handleSubmitGold() {
   :loginWithRedirect()
 }
 
-function scrollButton(){
-  console.log('scroll boton!')
-  window.scrollY(100, 100)
+// function scrollButton(){
+//   console.log('se mando scroll!')
+//   let elementScroll = document.getElementById('cardScroll')
+//   elementScroll.scrollIntoView({
+//     behaviour: "smooth",
+//     block: "start",
+//     inline: "nearest"
+//   })
+// }
+
+const scrollButton = (elementRef) => {
+  window.scrollTo({
+    top: elementRef.current.offsetTop,
+    behavior: 'smooth',
+  })
 }
 
   return (
@@ -65,13 +79,11 @@ function scrollButton(){
               <span className="landingName">BlockBuster</span>
               <span>BlockBuster</span>
             </div>
-            {/* <a
-              href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
+
+            <a
+              onClick={() => scrollButton(scrollCard)}
               className="glightbox play-btn mb-4"
-            ></a> */}
-            <a href="#»primerp»" className="about-btn scrollto">
-              About our plans
-            </a>
+            ></a>
           </div>
         </section>
         {/* <!-- End Hero Section --> */}
@@ -116,9 +128,7 @@ function scrollButton(){
             <p className="pMmembership">MADE ESPECIALLY FOR YOU</p>
           </div>
 
-          <div className="contMembership" id='»primerp»'>
-          
-          
+          <div className="contMembership" ref={scrollCard} >
 
             <div className="cardP">
               <p className="titleP">Silver</p>
