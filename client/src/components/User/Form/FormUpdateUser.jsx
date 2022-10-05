@@ -61,8 +61,8 @@ export default function FormUpdateUser() {
       //-------por error en la ruta al back-----------------------
       let invertir = {
         name: input.name,
-        date: input.lastname,
-        lastname: input.date,
+        date: input.date,
+        lastname: input.lastname,
         id: input.id,
       };
       //-------por error en la ruta al back--------------------------
