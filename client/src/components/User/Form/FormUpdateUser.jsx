@@ -5,6 +5,7 @@ import "./FormUpdateUser.css";
 import Footer from "../../Footer/Footer";
 import Navbar from "../../Nav Bar/Navbar";
 import { Link, useHistory } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 export default function FormUpdateUser() {
   let userDB = useSelector((state) => state.alldata.user);
@@ -56,7 +57,12 @@ export default function FormUpdateUser() {
     e.preventDefault(e);
     console.log(input, "sutmit");
     if (invalidAdd(input)) {
-      alert("Complete fields");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Complete the required field.',
+        footer: '<a href="">Why do I have this issue?</a>'
+      })
     } else {
       //-------por error en la ruta al back-----------------------
       let invertir = {
@@ -67,7 +73,13 @@ export default function FormUpdateUser() {
       };
       //-------por error en la ruta al back--------------------------
       dispatch(asynUpdateUser(invertir));
-      alert("added profile info");
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'added profile info!',
+        showConfirmButton: false,
+        timer: 1500
+      })
       setInput({
         name: "",
         date: "",

@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer.jsx";
 import pencil from "../../assets/pencil.png";
 import submit from "../../assets/iconSubmit.png"
 import "./Profile.css";
+import Swal from 'sweetalert2';
 
 const Profile = () => {
   const { user,isAuthenticated } = useAuth0();
@@ -46,10 +47,21 @@ const Profile = () => {
     e.preventDefault(e);
     let error = validate(input)
        if(Object.keys(error).length !== 0){
-        alert("Complete the required field");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Complete the required field.',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
        }else{
         dispatch(asynSetUser(input));
-        alert("added profile info");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'added profile info',
+          showConfirmButton: false,
+          timer: 1500
+        })
        }
     
   };
