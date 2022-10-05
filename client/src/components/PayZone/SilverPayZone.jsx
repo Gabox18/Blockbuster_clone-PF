@@ -23,7 +23,7 @@ export default function SilverPayZone(){
             <section className='sectionPay'>
                 <div class="containerPay">
                     <div class="card_box">
-                        <span></span>
+                        <span>Silver</span>
                         <div className='containerPay'>
                             <div className='contentPay'>
                                 <p className='p-style-silver'>Silver Subscription</p>
