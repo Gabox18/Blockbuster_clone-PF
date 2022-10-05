@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Landing.css";
 import Carrusel from "../Carrusel/Carrusel";
@@ -9,13 +9,14 @@ import Footer from "../Footer/Footer";
 import video from "../../assets/video.mp4"
 import Nav from "../Nav Bar/Navbar"
 import flecha from "../../assets/flecha.png"
+import axios from "axios";
 
 
 
 export default function Landing() {
   const { user,loginWithRedirect } = useAuth0();
   let userDB = useSelector(state=>state.alldata.user)
-  console.log(user,'user')
+  let [start, setStart]=  useState(4)
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(asyncallMovies());
@@ -136,11 +137,27 @@ function scrollButton(){
                 <button
                   className="btn1"
                   onClick={() => {
-                    window.location.href = payPaypal.data;
+                    let token = payPaypal.data.split('').slice(49,66).join('')
+                    console.log(token,"token desde landing")
+                    let userToken = {
+                      id:userDB.id,
+                      token: token
+                    }
+                    try {
+                      axios.put(`/setTokenSilver`,userToken)
+                    } catch (error) {
+                      console.log(error)
+                    }
+                    setTimeout(()=>{
+                      window.location.href = payPaypal.data;
+                      },3000)
+                      setInterval(()=>{
+                      setStart(start= start-1)
+                    },1000)
                   }}
                 >
                   {" "}
-                  Redirect
+                  {`Redirect ${start}`}
                 </button>
               ) : (
                 <button className="btn1" onClick={handleSubmitSilver}>
