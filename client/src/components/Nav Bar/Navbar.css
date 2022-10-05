@@ -75,9 +75,6 @@
   margin: 1rem;
 }
 
-.logoNav {
-  margin-right: 28rem;
-}
 .navbar-expand-lg {
   border-bottom: #f7a600 groove 0.5rem;
   width: 100%;
@@ -93,8 +90,4 @@
 }
 .searchDetail {
   margin-left: 10rem;
-}
-
-.logoLanding {
-  margin-left: 45rem;
 }

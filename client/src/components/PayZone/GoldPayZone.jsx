@@ -22,7 +22,7 @@ export default function GoldPayZone(){
             <section className='sectionPay'>
                 <div class="containerPay">
                     <div class="card_box">
-                        <span></span>
+                        <span>Gold</span>
                         <div className='containerPay'>
                             <div className='contentPay'>
                                 <p className='p-style-silver'>Gold Subscription</p>
