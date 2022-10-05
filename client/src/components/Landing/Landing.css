@@ -5,10 +5,15 @@
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg") top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
+}
+
+#hero .videoLanding {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -19,7 +24,7 @@
 
 #hero:before {
   content: "";
-  background: rgba(6, 12, 34, 0.8);
+  background: rgba(6, 12, 34, 0.548);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -44,6 +49,14 @@
 @media (max-width: 991px) {
   #hero .hero-container {
     top: 70px;
+  }
+}
+
+@media (max-width: 991px) {
+  .contMembership {
+    display: flex; 
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
