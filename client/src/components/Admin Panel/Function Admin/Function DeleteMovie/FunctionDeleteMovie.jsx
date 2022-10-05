@@ -3,6 +3,7 @@ import axios from "axios";
 import { asyncallMovies, asyncDeleteMovie } from "../../../../redux/slice";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import FunctionBanMovie from "../Function BanMovie/FunctionBanMovie";
 
 
 export default function FunctionDeleteMovie(){
@@ -33,13 +34,17 @@ function handleChange(e){
  
 
     return( 
-        <div>
+        <div className="allFondo">
         <select onChange={(e)=> handleChange(e)}>
           {allMovies&&allMovies.map((movies) => (
               <option value={movies.id}>{movies.name}</option>
           ))} </select>
           <button onClick={() => handleDelete()}> Delete </button>
+
+          <FunctionBanMovie/>
       </div>
+
+      
     )
 
 }

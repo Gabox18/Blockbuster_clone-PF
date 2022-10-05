@@ -30,7 +30,7 @@ function AdminPanel() {
     <div>
     {userdb.category === "admin"? (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light blue fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <button id="sidebarCollapse" className="btn navbar-btn">
           <i className="fas fa-lg fa-bars"></i>
         </button>
@@ -80,12 +80,12 @@ function AdminPanel() {
                 <i className="fas fa-clipboard"></i>New Movie
               </button>
               <button className="linkAdmin" onClick={() => setFunct('deletemovie')}>
-              <i className="fas fa-clipboard"></i>Delete Movie
+              <i className="fas fa-clipboard"></i>Delete/Ban Movie
             </button >
             
-            <button className="linkAdmin" onClick={() => setFunct('banmovie')} >
-            <i className="fas fa-clipboard"></i>Ban Movie
-            </button>
+            {/* <button className="linkAdmin" onClick={() => setFunct('banmovie')} >
+            <i className="fas fa-clipboard"></i> Movie
+            </button> */}
             </div>
           </li>
           <li className="menu-item" id="settings">
@@ -118,7 +118,8 @@ function AdminPanel() {
           ):(
           <></>)}
         </div>
-      </div> </>) 
+      </div> </>
+      ) 
       : <div> 
       Ruta protegida, solo accede el administrador
       <Link to="/home">
