@@ -1,4 +1,8 @@
 
+@font-face {
+  font-family: besan;
+  src: url("../../assets/Besan.otf");
+}
 
 .videoBg video {
   width: auto;
@@ -204,15 +208,6 @@ input:checked + .slider1:before {
 }
 
 /* ----------------------------- */
-  .textCarruzel {
-    font-size: 3rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #F9BD08;
-    text-align: left;
-    padding-right: 2rem;
-    background-color: black;
-   
-  }
   
   .plot .titleInfo label{
     background-color:#f7a600;

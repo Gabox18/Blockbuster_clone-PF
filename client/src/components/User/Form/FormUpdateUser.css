@@ -3,6 +3,7 @@
   border: solid 2px;
   margin: auto;
   background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773994/BlockBuster%20Nuestro/backFormPefil_f5iadx.webp");
+padding-top: 6rem;
 }
 
 /* From uiverse.io by @david-mohseni */
@@ -54,7 +55,7 @@
 }
 /*----------------*/
 .textInput {
-  color: #f5a400;
+  color: #010101;
   border: 2px solid #f5a400;
   border-radius: 10px;
   background: bl;
@@ -70,7 +71,7 @@
   margin-left: -2.3rem;
 }
 /*--------------------------*/
-button {
+.button-update-profile {
   color: #090909;
   padding: 0.2rem;
   font-size: 18px;
@@ -81,12 +82,13 @@ button {
   margin: 0.2rem;
 }
 
-button:hover {
+.button-update-profile:hover {
   border: 1px solid white;
   box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-}
+ outline: 2px solid #f5a400;
+} 
 
-button:active {
+.button-update-profile:active {
   box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
 }
 .category {
