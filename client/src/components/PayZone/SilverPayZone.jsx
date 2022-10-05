@@ -3,18 +3,22 @@ import Navbar from '../Nav Bar/Navbar'
 import { asyncCategorySwich } from '../../redux/slice'
 import './SilverPayZone.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 export default function SilverPayZone(){
     let dispatch = useDispatch();
     let userDB = useSelector((state) => state.alldata.user);
     const { token } = useParams();
+    let location = useLocation();
+
 
     function handleSubmitSilver() {
-        console.log(userDB?.id,"el componete silver")
+        
         console.log(token,'soy el token')
         dispatch(asyncCategorySwich(userDB.id))
       }
+      console.log(window.location.href,"url-------------->con window.location.href")
+      console.log(location.pathname,"url-------------->con pathname")
     return(
         <>
             <div>
