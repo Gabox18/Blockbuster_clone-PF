@@ -85,9 +85,15 @@
 }
 
 .logoNavDetail {
-  margin-left: 54.5rem;
   margin-right: 23rem;
 }
-.searchDetail {
-  margin-left: 10rem;
+
+.logoLanding1 {
+  position: relative;
+  left: 80rem;
+}
+
+.searchDetailNav {
+  position: relative;
+  left: 50%;
 }
