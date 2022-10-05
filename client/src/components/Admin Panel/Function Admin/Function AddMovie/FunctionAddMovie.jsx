@@ -15,8 +15,8 @@ function validate(input) {
   if (!input.name || input.name.length < 2 || input.name.length > 17) {
     error.name = "Complete the field name";
   }
-  if (!input.released || input.released < newDate) {
-    error.released = "Complete the field released";
+  if (!input.year || input.year < newDate) {
+    error.year = "Complete the field year";
   }
   // if (!input.year || input.year > input.newDate || input.year.length !== 4) {
   //   error.year = "Fill in the year, only four digits";
@@ -30,11 +30,11 @@ function validate(input) {
   if (!input.description ||input.description.length < 5 ||input.description.length > 400) {
     error.description = "Complete the field description";
   }
-  if (!input.rated || input.rated.length < 1 || input.rated.length > 10) {
-    error.rated = "Fill in the rated, maximum 10 digits";
+  if (!input.rated || input.rated > 10) {
+    error.rated = "Fill in the rated, maximum 10";
   }
-  if (!input.runtime || input.runtime > 200) {
-    error.runtime = "Fill in the duration, maximum 3 digits";
+  if (!input.runtime || input.runtime.length > 3 || input.runtime > 350) {
+    error.runtime = "Fill in the duration, maximum 350 min";
   }
   if (
     !input.director || (input.director.length < 7) ||
@@ -83,7 +83,7 @@ export default function FunctionAddMovie() {
   const [poster, setPoster] =useState("")
   const [input, setInput] = useState({
     name: "",
-    released: "",
+    year: "",
     recommendation: "",
     genre: [],
     description: "",
@@ -94,9 +94,10 @@ export default function FunctionAddMovie() {
     language: "",
     plot: "",
     country: "",
-    imdbVotes: "",
+    imdbVotes: "" + ",0",
     imdbRating: "",
     poster: "",
+    status: true
   });
 
   useEffect(() => {
@@ -127,7 +128,7 @@ export default function FunctionAddMovie() {
       ...input,
         poster: ""
     })
-    console.log("soy nicoleto", input)
+    console.log(input)
 }
 
   function handleChange(e) {                      
@@ -147,8 +148,8 @@ export default function FunctionAddMovie() {
     e.preventDefault();
     setErrors(validate(input))
     const errorCompletarFormu = validate(input)
-    console.log("soy el tito",input)
-    if(input.name === "" || input.year === "" || input.recommendation === "" || input.description === "" || input.rated ==="" || input.released === ""|| input.runtime === ""|| input.director ===""|| input.actors === "" || input.language === ""|| input.plot ==="" ||input.genre === []|| input.country ==="" || input.imdbVote ==="" || input.imdbRating ===""|| input.poster ===""){
+    console.log(input)
+    if(input.name === "" || input.year === "" || input.recommendation === "" || input.description === "" || input.rated ==="" || input.year === ""|| input.runtime === ""|| input.director ===""|| input.actors === "" || input.language === ""|| input.plot ==="" ||input.genre === []|| input.country ==="" || input.imdbVote ==="" || input.imdbRating ===""|| input.poster ===""){
     alert ("Todos los campos deben ser requeridos")
   } else {
     dispatch(asyncInfoAdmin(input));
@@ -156,7 +157,7 @@ export default function FunctionAddMovie() {
     alert("Película creada con éxito");
     setInput({
       name: "",
-      released: "",
+      year: "",
       recommendation: "",
       genre: [],
       description: "",
@@ -167,12 +168,13 @@ export default function FunctionAddMovie() {
       language: "",
       plot: "",
       country: "",
-      imdbVote: "",
+      imdbVotes: "",
       imdbRating: "",
       poster: "",
+      status: true
     });
     setImagen("");
-    console.log("soy input", input);
+    console.log(input);
   }
   }
 
@@ -197,19 +199,19 @@ export default function FunctionAddMovie() {
             />
             {errors.name && <p className="error">{errors.name}</p>}
             <p className="titleCMovie">
-              <b>Released</b>
+              <b>year</b>
             </p>
 
             <input
               className="impAdmin"
               placeholder=""
               type="date"
-              value={input.released}
-              name="released"
+              value={input.year}
+              name="year"
               autoComplete="off"
               onChange={(e) => handleChange(e)}
             />
-            {errors.released && <p className="error">{errors.released}</p>}
+            {errors.year && <p className="error">{errors.year}</p>}
             {/* <p className="titleCMovie">
               <b>Year</b>
             </p>
@@ -287,11 +289,13 @@ export default function FunctionAddMovie() {
 
             <input
               className="impAdmin"
-              placeholder=""
+              placeholder="1-10"
               type="number"
+              min="1"
+              max="10"
               value={input.rated}
               name="rated"
-              autoComplete="off"
+              autoComplete="on"
               onChange={(e) => handleChange(e)}
             />
             {errors.rated && <p className="error">{errors.rated}</p>}
@@ -306,7 +310,8 @@ export default function FunctionAddMovie() {
               type="number"
               value={input.runtime}
               name="runtime"
-              min="0"
+              min="5"
+              max="350"
               onChange={(e) => handleChange(e)}
             />
             {errors.runtime && <p className="error">{errors.runtime}</p>}
@@ -413,27 +418,13 @@ export default function FunctionAddMovie() {
               className="impAdmin"
               placeholder=""
               type="number"
+              min="1"
+              max="10"
               value={input.imdbRating}
               name="imdbRating"
-              min="0"
               onChange={(e) => handleChange(e)}
             />
             {errors.imdbRating && <p className="error">{errors.imdbRating}</p>}
-{/* 
-            <p className="titleCMovie">
-              <b>Status</b>
-            </p>
-
-            <input
-              className="impAdmin"
-              placeholder=""
-              type="text"
-              value={input.status}
-              name="status"
-              autoComplete="off"
-              onChange={(e) => handleChange(e)}
-            />
-            {errors.status && <p className="error">{errors.status}</p>} */}
 
             <input 
               className="impAdmin"
