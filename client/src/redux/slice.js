@@ -304,7 +304,7 @@ export const asyncCategorySwich = (idUser) => {
   return async function (dispatch) {
     try {
       let response = await axios.put(
-        `/piSilver`,
+        `/apiSilver`,
         idUser
       );
       return dispatch(categoryswichRE(response.data));
