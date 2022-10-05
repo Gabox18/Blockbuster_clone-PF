@@ -64,10 +64,10 @@ function scrollButton(){
               <span className="landingName">BlockBuster</span>
               <span>BlockBuster</span>
             </div>
-            <a
+            {/* <a
               href="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
               className="glightbox play-btn mb-4"
-            ></a>
+            ></a> */}
             <a href="#»primerp»" className="about-btn scrollto">
               About our plans
             </a>
@@ -106,7 +106,7 @@ function scrollButton(){
                 src="https://logos-world.net/wp-content/uploads/2021/11/Universal-Logo.png"
                 width="130px"
                 alt="img"
-                className="LogosM"
+                className="c"
               />
             </div>
           </div>
