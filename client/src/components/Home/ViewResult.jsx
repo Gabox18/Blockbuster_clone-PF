@@ -33,19 +33,15 @@ function ViewResult(){
           <div className="navbarContainer">
             <Navbar setCurrentPage={setCurrentPage} />
           </div>
-          <div className="containerC">
+          <section className="containerC">
           <div className="cardContainerViewResult">
             {allMovies.length === 0  //renderizado condicional 
             ? <h2 className="not-result">We couldn’t find any movie matching</h2>
             :currentMovies?.map((e, i) => {
-              return (
-                
+              return ( 
                 <Link to={"/details/" + e.id} key={i}>
-                  <div className="containterRes">
                     <Card  className="cartitass" img={e.poster} Title={e.name}  Plot={e.plot}/>
-                  </div>
-                </Link>
-                
+                </Link> 
               );
             })}
           </div>
@@ -59,7 +55,7 @@ function ViewResult(){
                 paginado={paginado}
               />:<></>}
             </div>
-          </div>
+          </section>
           <Footer/>
         </div>        
     )
