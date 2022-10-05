@@ -50,7 +50,7 @@ export default function ComentForm({ idParams, handleDelete }) {
 
   const validate = (data) => {
     let error = {};
-    if (data.coment.length < 3 || data.coment.length > 300)
+    if (data.coment.length < 3 || data.coment.length > 250)
       error.coment = "Complete the field comment";
     return error;
   };
@@ -58,7 +58,9 @@ export default function ComentForm({ idParams, handleDelete }) {
   function invalidAdd(inputs) {
     let error = validate(inputs);
     if (error.coment) return true;
+    console.log(error.coment)
   }
+
   return (
     <div className="container-1">
       <div className="containerinfo">
