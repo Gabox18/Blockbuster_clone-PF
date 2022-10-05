@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family:besan;
+  src: url("../../assets/Besan.otf");
+}
 /*--------------------------------------------------------------
 # PanelHero Section
 --------------------------------------------------------------*/
@@ -44,6 +47,7 @@
   flex-direction: column;
   text-align: center;
   padding: 0 15px;
+  gap: 5rem;
 }
 
 @media (max-width: 991px) {
@@ -176,6 +180,7 @@
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 2px solid rgb(205, 150, 0);
+ 
 }
 
 #hero .about-btn:hover {
@@ -485,9 +490,9 @@
 }
 
 .pMmembership{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: besan;
   font-size: 1.5rem;
-  color: #F9BD08;
+  color: #bd9725;
 }
 .LogosM{
   margin: 0rem 1rem 1rem 1rem;
