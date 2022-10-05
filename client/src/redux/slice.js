@@ -293,7 +293,7 @@ export const asyncFavoriteMovie = (input) => {
   return async function (dispatch) {
     try {
       let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/`,
+        `https://block-buster-fantastic7.up.railway.app/allFavs`,
         input
       );
       return dispatch(favoriteArray(response.data));
