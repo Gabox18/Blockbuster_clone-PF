@@ -3,7 +3,6 @@ import axios from "axios";
 import { allgenre } from "./dataMock.js";
 import ordering from "../Funciones_js/Ordenamiento.js";
 
-// const urlBack = process.env.URL_SLICE;
 
 const initialState = {
   allMovies: [],
@@ -131,8 +130,7 @@ export const dataSlice = createSlice({
 export const asyncallMovies = () => {
   return async function (dispatch) {
     try {
-      let response = await axios(
-        `https://block-buster-fantastic7.up.railway.app/`
+      let response = await axios(  ``
       );
       return dispatch(allMovies(response.data));
     } catch (error) {
@@ -145,7 +143,7 @@ export const asyncgetDetails = (id) => {
   return async function (dispatch) {
     try {
       let response = await axios.get(
-        `https://block-buster-fantastic7.up.railway.app/detail/${id}`
+        `/detail/${id}`
       );
       return dispatch(DetailsMovies(response.data[0]));
     } catch (error) {
@@ -156,7 +154,6 @@ export const asyncgetDetails = (id) => {
 
 export const asyncAllgenres = (id) => {
   return async function (dispatch) {
-    //let response = await axios.get(`http://localhost:3000/home/:${id}`)
     return dispatch(allgenres(allgenre));
   };
 };
@@ -175,7 +172,7 @@ export const asynSetUser = (input) => {
     console.log(input, "el asyn del slices");
     try {
       let response = await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/newU`,
+        `/newU`,
         input
       );
       return dispatch(setUser(response.data));
@@ -189,7 +186,7 @@ export const asyncFormComment = (input, idMovie) => {
   return async function (dispatch) {
     try {
       await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/detail/${idMovie}`,
+        `/detail/${idMovie}`,
         input
       );
       console.log(input, "en asyncform");
@@ -202,7 +199,7 @@ export const asyncCommentById = (id) => {
   return async function (dispatch) {
     try {
       let response = await axios.get(
-        `https://block-buster-fantastic7.up.railway.app/allComments`
+        `/allComments`
       );
       let filtrados = response.data.filter((e) => e.movieId === id);
       return dispatch(commentByid(filtrados));
@@ -216,7 +213,7 @@ export const asyncEditComment = (input) => {
     try {
       console.log(input, "input");
       let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/editComment`,
+        `/editComment`,
         input
       );
       dispatch(editComment(response.data));
@@ -229,7 +226,7 @@ export const asyncDeleteComment = (id) => {
       let obj = { id };
 
       await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/detail/`,
+        `/detail/`,
         obj
       );
     } catch (error) {
@@ -242,7 +239,7 @@ export const asyncGetUser = (userMail) => {
   return async function (dispatch) {
     try {
       let response = await axios.get(
-        `https://block-buster-fantastic7.up.railway.app/Uemail/${userMail}`
+        `/Uemail/${userMail}`
       );
       return dispatch(getUser(response.data));
     } catch (error) {}
@@ -254,7 +251,7 @@ export const asynUpdateUser = (objUpdate) => {
     try {
       console.log(objUpdate, "--------------->");
       let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/editU`,
+        `/editU`,
         objUpdate
       );
       return dispatch(updateUser(response.data));
@@ -267,7 +264,7 @@ export const asynPaymentSilver = () => {
   return async function (dispatch) {
     try {
       let response = await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/create-paymentSilver/`
+        `/create-paymentSilver/`
       );
       return dispatch(payPayment(response.data));
     } catch (error) {
@@ -280,7 +277,7 @@ export const asynPaymentGold = () => {
   return async function (dispatch) {
     try {
       let response = await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/create-paymentGold/`
+        `/create-paymentGold/`
       );
       return dispatch(payPayment(response.data));
     } catch (error) {
@@ -293,7 +290,7 @@ export const asyncFavoriteMovie = (input) => {
   return async function (dispatch) {
     try {
       let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/allFavs`,
+        `/allFavs`,
         input
       );
       return dispatch(favoriteArray(response.data));
@@ -307,7 +304,7 @@ export const asyncCategorySwich = (idUser) => {
   return async function (dispatch) {
     try {
       let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/piSilver`,
+        `/piSilver`,
         idUser
       );
       return dispatch(categoryswichRE(response.data));
@@ -321,7 +318,7 @@ export const asyncFavList = () => {
   return async function (dispatch) {
     try {
       let response = await axios(
-        "https://block-buster-fantastic7.up.railway.app/allFavs"
+        "/allFavs"
       );
       return dispatch(favoriteArray(response.data));
     } catch (error) {}
@@ -335,7 +332,7 @@ export const asyncInfoAdmin = (payload) => {
     console.log("soy la nueva movie", payload);
     try {
       const response = await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/addM`,
+        `/addM`,
         payload
       );
       return dispatch(infoAdmin(response.data));
@@ -349,7 +346,7 @@ export const asyncallUsers = () => {
   return async function (dispatch) {
     try {
       let response = await axios(
-        `https://block-buster-fantastic7.up.railway.app/users`
+        `/users`
       );
       return dispatch(allUserAdmin(response.data));
     } catch (error) {
@@ -361,11 +358,11 @@ export const asyncallUsers = () => {
 export const asynbanUsers = (id) => {
   return async function (dispatch) {
     await axios.put(
-      `https://block-buster-fantastic7.up.railway.app/bannUser`,
+      `/bannUser`,
       id
     );
     let response = await axios.get(
-      `https://block-buster-fantastic7.up.railway.app/users`
+      `/users`
     );
 
     return dispatch(banUserAdmin(response));
@@ -375,11 +372,11 @@ export const asynbanUsers = (id) => {
 export const asynDesBanUsers = (id) => {
   return async function (dispatch) {
     await axios.put(
-      `https://block-buster-fantastic7.up.railway.app/unBannUser`,
+      `/unBannUser`,
       id
     );
     let response = await axios.get(
-      `https://block-buster-fantastic7.up.railway.app/users`
+      `/users`
     );
 
     return dispatch(unBanUserAdmin(response));
@@ -389,11 +386,11 @@ export const asynDesBanUsers = (id) => {
 export const asynNewAdmin = (id) => {
   return async function (dispatch) {
     await axios.put(
-      `https://block-buster-fantastic7.up.railway.app/createAdm`,
+      `/createAdm`,
       id
     );
     let response = await axios.get(
-      `https://block-buster-fantastic7.up.railway.app/users`
+      `/users`
     );
 
     return dispatch(newAdmin(response));
@@ -404,7 +401,7 @@ export const asyncDeleteMovie = (id) => {
   return async function () {
     const objetito = { id };
     let response = axios.put(
-      `https://block-buster-fantastic7.up.railway.app/removeM/`,
+      `/removeM/`,
       objetito
     );
   };
@@ -413,7 +410,7 @@ export const asyncDeleteMovie = (id) => {
 export const asyncUpdateMovie = (id) => {
   return async function (dispatch) {
     let response = axios.put(
-      `https://block-buster-fantastic7.up.railway.app/removeM`,
+      `/removeM`,
       id
     );
     dispatch(bannMovie(response.data));
@@ -423,7 +420,7 @@ export const asyncUpdateMovie = (id) => {
 export const asyncSendSpam = () => {
   return async function (dispatch) {
     let response = axios(
-      "https://block-buster-fantastic7.up.railway.app/nodemailer"
+      "/nodemailer"
     );
     return dispatch(sendSpam(response));
   };
