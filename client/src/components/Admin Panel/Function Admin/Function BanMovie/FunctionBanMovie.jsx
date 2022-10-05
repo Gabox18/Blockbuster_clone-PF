@@ -31,7 +31,7 @@ setInput({
 }
  function handleSubmitUnban(e){
     e.preventDefault()
-    console.log(input,'como llega')
+    console.log(input)
     dispatch(asyncUpdateMovie(input))
     setInput({
         id:''
