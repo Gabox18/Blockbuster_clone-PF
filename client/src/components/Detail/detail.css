@@ -1,8 +1,10 @@
 
+
 @font-face {
   font-family: besan;
   src: url("../../assets/Besan.otf");
 }
+
 
 .videoBg video {
   width: auto;
