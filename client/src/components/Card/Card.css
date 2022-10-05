@@ -120,6 +120,8 @@
 }
 
 .posterCard {
+  height: 27.875rem;
+  width: 18.875rem;
   border-radius: 20%;
   margin: 1rem;
   border: groove 1px goldenrod;
