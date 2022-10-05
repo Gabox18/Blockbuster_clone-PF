@@ -300,7 +300,7 @@ export const asyncallMovies = () => {
 //-----------------------------------------------------------------------------------------------------------------
 export const asyncInfoAdmin = (payload) =>{
   return async function(dispatch){
-    console.log("soy la nueva movie",payload)
+    console.log("soy la nueeva movie",payload)
     try {
       const response = await axios.post(`https://block-buster-fantastic7.up.railway.app/addM`, payload)
       return dispatch(infoAdmin(response.data))
