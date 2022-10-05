@@ -113,6 +113,12 @@
 
 
 .containerAdmin{
+  background: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664990106/BlockBuster%20Nuestro/ConfiguracionesAdmin_zktchr.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
   display: flex;
   margin-top: 5rem;
 }
@@ -125,7 +131,8 @@
     height: 100%;
     border-radius: 0.2rem;
     overflow: hidden;
-    background: rgb(73, 73, 255);
+    background: silver;
+    border-right: 1rem gray groove;
   }
   .menuAdmin a {
     text-decoration: none;
@@ -190,10 +197,15 @@
   }
   
   .menu-item:target .menu-item__sub {
-    max-height: 10em;
+    max-height: 16em;
   }
 
-
+.fixed-top{
+  background-color: silver;
+  outline: groove gray 1rem;
+  border: none;
+  
+}
 
 
 
