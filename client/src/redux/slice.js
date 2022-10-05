@@ -255,7 +255,7 @@ export const asyncallMovies = () => {
   export const asynPaymentSilver =() =>{
     return async function (dispatch){
       try {
-        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/reate-paymentSilver/`)
+        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/create-paymentSilver/`)
         return dispatch(payPayment(response.data))
       } catch (error) {
         console.log(error)
@@ -266,7 +266,7 @@ export const asyncallMovies = () => {
   export const asynPaymentGold =() =>{
     return async function (dispatch){
       try {
-        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/reate-paymentGold/`)
+        let response = await axios.post(`https://block-buster-fantastic7.up.railway.app/create-paymentGold/`)
         return dispatch(payPayment(response.data))
       } catch (error) {
         console.log(error)
