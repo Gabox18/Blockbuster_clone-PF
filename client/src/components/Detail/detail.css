@@ -222,7 +222,7 @@ input:checked + .slider1:before {
 /*-------------------------------LIKE MOVIE ----------------------*/
 
  /* From uiverse.io by @barisdogansutcu */
- .containerLike {
+ /* .containerLike {
   background-color:transparent;
   display: flex;
   align-items: center;
@@ -302,4 +302,27 @@ input:checked + .slider1:before {
   transform: translate(0px,0%);
   opacity: 1;
  }
+
+ .option-1{
+  color: #06a606;
+ } */
  
+ .buttonFav{
+  padding: 10px;
+  border: none;
+  outline: #f7a600 groove 5px;
+  background-color: black;
+  border-radius: 20%;
+  margin-bottom: 4%;
+  margin-top: 3%;
+  
+ }
+ 
+ .buttonFav1{
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  border-radius: 0%;
+  margin-bottom: 4%;
+  margin-top: 3%;
+ }

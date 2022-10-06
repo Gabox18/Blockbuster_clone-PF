@@ -1,5 +1,7 @@
 .cardSection {
-    background-color: black;
+    background-image: url('https://cdn.discordapp.com/attachments/1001529659852337252/1027368089488207892/fotito2.jpg');
+    background-size: inherit;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,11 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 44rem;
-    height: 56vh;
-    border-radius: 30px;
-    background: #212121;
-    box-shadow: 15px 15px 30px rgb(25, 25, 25),
-                -15px -15px 30px rgb(60, 60, 60);
+    border: double rgb(44, 44, 149) 10px;
+    width: 60rem;
+    height: 51vh;
+    background: black;
+    padding-bottom: 0;
     margin: 0 auto;
+    margin-top: 23.9%;
+    margin-left: 26.3%;
 }

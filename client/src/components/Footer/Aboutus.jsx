@@ -27,7 +27,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/GabiPic_cx133v.jpg'} alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/silversurferbeats">
+              <a href="https://github.com/silversurferbeats" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -42,7 +42,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/gabriel-suarez-7357931b3/">
+              <a href="https://www.linkedin.com/in/gabriel-suarez-7357931b3/" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="https://www.linkedin.com/in/gabriel-suarez-7357931b3/"
@@ -63,7 +63,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/FranPic_ypfgnh.jpg'} alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/Fras28">
+              <a href="https://github.com/Fras28" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -78,7 +78,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/francoselvarolo/">
+              <a href="https://www.linkedin.com/in/francoselvarolo/" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="https://www.linkedin.com/in/francoselvarolo/"
@@ -99,7 +99,7 @@ export default function Aboutus() {
 
             <img src='https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/GaboPic_btv2bg.jpg' alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/Gabox18">
+              <a href="https://github.com/Gabox18" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -114,7 +114,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/gabriel-ferrer-villasmil/">
+              <a href="https://www.linkedin.com/in/gabriel-ferrer-villasmil/" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/LucasPic_ourvnd.jpg'} alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/Lucaspedreira97">
+              <a href="https://github.com/Lucaspedreira97" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -150,7 +150,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/lucas-pedreira-66a15123a/">
+              <a href="https://www.linkedin.com/in/lucas-pedreira-66a15123a/" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="https://www.linkedin.com/in/lucas-pedreira-66a15123a/"
@@ -171,7 +171,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/MolloPic_bm9q4c.jpg'} alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/silversurferbeats">
+              <a href="https://github.com/silversurferbeats" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -186,7 +186,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/agustin-mollo">
+              <a href="https://www.linkedin.com/in/agustin-mollo" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +207,7 @@ export default function Aboutus() {
 
             <img src='https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/SantiPic_h4zemq.jpg'  alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/santiagohubert">
+              <a href="https://github.com/santiagohubert" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -222,7 +222,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://linkedin.com/in/santiago-hubert">
+              <a href="https://linkedin.com/in/santiago-hubert" target="_blank"> 
                 <button className="btn-git">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -243,7 +243,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947594/BlockBuster%20Nuestro/AbiPic_n6fudy.jpg'} alt="img" className="img-abi" />
             <div className="boton-coder">
-              <a href="https://github.com/AbimaelRueda">
+              <a href="https://github.com/AbimaelRueda" target="_blank">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
@@ -258,7 +258,7 @@ export default function Aboutus() {
                   </svg>
                 </button>
               </a>
-              <a href="https://www.linkedin.com/in/abimael-rueda-galindo-4b131b244/">
+              <a href="https://www.linkedin.com/in/abimael-rueda-galindo-4b131b244/" target="_blank">
                 <button className="btn-git">
                   <svg
                     xmlns="https://www.linkedin.com/in/abimael-rueda-galindo-4b131b244/"

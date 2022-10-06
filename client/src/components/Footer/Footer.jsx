@@ -14,7 +14,7 @@ function Footer() {
         <div className="container text-center text-md-left">
           <div className="row text-center text-md-left">
             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Block Buster</h5>
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Blockbuster</h5>
               <p>Our secret to resisting the big platforms is that they can't compete with our collection of classics. We are a bridge between the present and the past, almost a journey through time. We bring to every home an infinite horizon.
 Being the last Blockbuster in the world favors us because it makes us a very special place.</p>
             </div>
