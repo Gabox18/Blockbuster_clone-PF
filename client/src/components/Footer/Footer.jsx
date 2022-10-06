@@ -45,12 +45,12 @@ Being the last Blockbuster in the world favors us because it makes us a very spe
                 <a href="#" className="text-white" style={{"text-decoration":"none"}}>Terms and conditions</a>
               </p>
               </Link>
-              <Link to='privacy'>
+              <Link to='/privacy'>
               <p>
                 <a href="#" className="text-white" style={{"text-decoration":"none"}}>Privacy Policy</a>
               </p>
               </Link>
-              <Link to='legal'>
+              <Link to='/legal'>
               <p>
                 <a href="#" className="text-white" style={{"text-decoration":"none"}}>Legal Information</a>
               </p>
