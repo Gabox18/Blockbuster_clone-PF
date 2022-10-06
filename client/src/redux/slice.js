@@ -19,6 +19,7 @@ const initialState = {
   payPaypal: {},
   favoriteMovie: [],
   categorySwich: {},
+  lastFavorite:{}
 };
 
 export const dataSlice = createSlice({
@@ -110,7 +111,7 @@ export const dataSlice = createSlice({
       state.payPaypal = action.payload;
     },
     favoriteArray: (state, action) => {
-      state.favoriteMovie = action.payload;
+      state.lastFavorite = action.payload;
     },
     infoAdmin: (state, action) => {
       state.allMovies = action.payload;

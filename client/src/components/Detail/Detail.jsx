@@ -8,7 +8,6 @@ import {
   asyncgetDetails,
   clearDetail,
   asyncUpdateMovie,
-  asyncallMovies,
   asyncFavoriteMovie,
   asyncFavList,
 } from "../../redux/slice.js";
@@ -26,29 +25,22 @@ export default function Detail() {
   const { loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
-  let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
-  let { copyAllMovies } = useSelector((store) => store.alldata);
-  let { favoriteMovie } = useSelector((store) => store.alldata);
+  let { copyAllMovies,favoriteMovie,details } = useSelector((store) => store.alldata);
   let idMovie = favoriteMovie?.map((e) => e.idMovie);
   let userId = userdb.id;
-  // let mapFav = favoriteMovie?.map((e)=> e.idMovie );
-  let mapFav = favoriteMovie?.filter((e) => e.idUser == userId);
-  console.log(mapFav, "esto es idmovie");
-  const filterTrue = copyAllMovies?.filter(
-    (e) => e.status === true && e.name !== details.name
-  );
-  const moviesCarrusel = filterTrue?.filter(
-    (e) => mapFav.map((x) => x.idMovie) === e.id
-  );
-  console.log(moviesCarrusel, "esto es lo que se render");
+  let mapFav = favoriteMovie?.filter((e) => e.idUser === userId);
+  //recuerdo de agustin mollo ,espero que les sirva . saludos!!
+  const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
+  const arrId = mapFav.map((e)=> e.idMovie)
+  const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
+  //recuerdo de agustin mollo ,espero que les sirva . saludos!!
   const input = {
     idMovie: id,
     idUser: userdb.id,
   };
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-    dispatch(asyncallMovies());
     dispatch(asyncFavList());
 
     return () => {
@@ -59,6 +51,9 @@ export default function Detail() {
   function handleAddFav() {
     console.log(input, "esto es el inpout fav");
     dispatch(asyncFavoriteMovie(input));
+    setTimeout(() => {
+      dispatch(asyncFavList());
+    }, 1000);
   }
 
   function handleBannMovie() {
@@ -179,7 +174,7 @@ export default function Detail() {
           //   </label>
           // </div>
           <div className="butoncitofav">
-            <button  onClick={handleAddFav} className="buttonFav">
+            <button onClick={handleAddFav} className="buttonFav">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -197,7 +192,7 @@ export default function Detail() {
           </div>
         ) : (
           <div className="butoncitofav1">
-            <button  onClick={handleAddFav} className="buttonFav1">
+            <button onClick={handleAddFav} className="buttonFav1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
