@@ -84,7 +84,7 @@ const Profile = () => {
                   <li>Email : {userBD?.email || user?.email}</li>
                   <li>Date :{` ${userBD?.date}` || user.date}</li>
                   {
-                    userBD.category ?
+                    !userBD.category ?
                       (<div>
                         <p className="ProfileDangerRequerement"> Complete your Date</p>
                         <input
