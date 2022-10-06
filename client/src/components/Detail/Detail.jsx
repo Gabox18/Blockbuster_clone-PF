@@ -31,7 +31,6 @@ export default function Detail() {
   let idMovie = favoriteMovie?.map((e) => e.idMovie);
   let userId = userdb.id;
   let mapFav = favoriteMovie?.filter((e) => e.idUser === userId);
- 
   const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
   const arrId = mapFav.map((e)=> e.idMovie)
   const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
