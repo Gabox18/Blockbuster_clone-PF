@@ -22,9 +22,9 @@ const {id} = useParams()
         <>
         <Navbar />
         <section className="cardSection">
-            <div className="btn btn-outline-primary text-light btn-xs btnLogin btnPlayRedirect">
+            <button className="letraBT">
               <Link to={`/details/${id}`} >Detail</Link>
-            </div>
+            </button>
             <div className="cardContainer">
                 <div className="cardReactPlayer">
                     <ReactPlayer
