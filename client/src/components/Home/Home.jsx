@@ -19,13 +19,13 @@ function Home() {
     if (!copyAllMovies) dispatch(asyncallMovies());
   }, [copyAllMovies, dispatch]);
 
-  let arrMovieFiltrado = copyAllMovies.filter((e) => e.status === true);
-  let arrFeaturedMovies = arrMovieFiltrado.filter((e) => e.imdbRating > 8);
-  let arrRecentMovies = arrMovieFiltrado.filter((e) => e.year >= 2019);
-  let arrActionMovies = arrMovieFiltrado.filter((e) => e.genre >= "Action");
+  let arrMovieFiltrado = copyAllMovies?.filter((e) => e.status === true);
+  let arrFeaturedMovies = arrMovieFiltrado?.filter((e) => e.imdbRating > 8);
+  let arrRecentMovies = arrMovieFiltrado?.filter((e) => e.year >= 2019);
+  let arrActionMovies = arrMovieFiltrado?.filter((e) => e.genre >= "Action");
 
 
-  let arrPopularMovies = arrMovieFiltrado.filter(
+  let arrPopularMovies = arrMovieFiltrado?.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
 

@@ -1,21 +1,27 @@
 import React from "react";
 import Navbar from "../Nav Bar/Navbar";
+import { asyncCategorySwichGold } from '../../redux/slice'
 import './GoldPayZone.css'
-// import { asyncCategorySwich } from '../../redux/slice'
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function GoldPayZone(){
 
-    // let dispatch = useDispatch();
-    // let userDB = useSelector((state) => state.alldata.user);
+    let dispatch = useDispatch();
+    let userDB = useSelector((state) => state.alldata.user);
 
-    // function handleSubmitGold() {
-    //     console.log(userDB?.id,"el componete silver")
-    //     dispatch(asyncCategorySwich(userDB.id))
-    //   }
+    function handleSubmitGold() {
+        let idSwich = {id : userDB.id}
+        dispatch(asyncCategorySwichGold(idSwich))
+      }
+      console.log(window.location.href)
+      let url = window.location.href
+      let tokenredirec = url.split('').slice(47,64).join('')
+      console.log(tokenredirec)
 
     return(
-        <>
+        tokenredirec === userDB.token?
+        <div>
             <div>
                 <Navbar/>
             </div>
@@ -33,9 +39,8 @@ export default function GoldPayZone(){
                         </div>
                     </div>
                 </div>
-                <button 
-                    // onClick={handleSubmitGold}
-                >
+                <Link to={'/home'}>
+                <button  onClick={handleSubmitGold}>
                     <div class="default-btn">
                     <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#ffd300" height="20" width="20" viewBox="0 0 24 24"><circle r="1" cy="21" cx="9"></circle><circle r="1" cy="21" cx="20"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         <span>Welcome</span>
@@ -45,7 +50,9 @@ export default function GoldPayZone(){
                         <span>continue</span>
                     </div>
                 </button>
-            </section>
-        </>
+                </Link>
+            </section>  
+        </div>:
+         <div><Link to={"/home"}>try again </Link></div>
     )
 }
