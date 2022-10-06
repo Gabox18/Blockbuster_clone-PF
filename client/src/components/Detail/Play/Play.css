@@ -1,12 +1,13 @@
 .cardSection {
     background-image: url('https://cdn.discordapp.com/attachments/1001529659852337252/1027368089488207892/fotito2.jpg');
-    background-size: inherit;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
+    vertical-align:top;
 }
 
 .cardContainer {
@@ -14,11 +15,14 @@
     justify-content: center;
     align-items: center;
     border: double rgb(44, 44, 149) 10px;
-    width: 60rem;
-    height: 51vh;
+    width: 80rem;
+    height: 53vh;
     background: black;
     padding-bottom: 0;
     margin: 0 auto;
     margin-top: 23.9%;
-    margin-left: 26.3%;
+    margin-left: 23%;
+    margin-bottom: 2rem;
 }
+
+

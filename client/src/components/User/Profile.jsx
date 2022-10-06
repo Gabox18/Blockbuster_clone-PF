@@ -15,7 +15,6 @@ const Profile = () => {
   const { user,isAuthenticated } = useAuth0();
   let userBD = useSelector((state) => state.alldata.user);
   const dispatch = useDispatch();
-  console.log(user,'------->')
   let date = new Date();
   let currentDate = date.toISOString().split('T')[0]
 
@@ -85,9 +84,9 @@ const Profile = () => {
                   <li>Email : {userBD?.email || user?.email}</li>
                   <li>Date :{` ${userBD?.date}` || user.date}</li>
                   {
-                    !userBD.category ?
+                    userBD.category ?
                       (<div>
-                        <li>complete your Date</li>
+                        <p className="ProfileDangerRequerement"> Complete your Date</p>
                         <input
                           
                           type="date"
@@ -117,6 +116,13 @@ const Profile = () => {
             <Link to={"/home"}>
               <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Home</div>
             </Link>
+            {
+              userBD.category === 'admin' ?
+              <Link to={"/home/admin"}>
+                <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Admin</div>
+              </Link> :
+              <></>
+            }
           </div>
           <Footer />
         </section>
