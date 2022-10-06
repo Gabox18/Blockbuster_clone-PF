@@ -97,13 +97,13 @@ button {
     outline: none;
     cursor: pointer;
     border-radius: 50px;
-    background-color: hsl(255deg 50% 40%);
-    border: solid 4px hsl(50deg 100% 50%);
+    background-color: rgb(153, 58, 51);
+    border: solid 4px #F09819;
     font-family: inherit;
    }
    
    .default-btn,.hover-btn {
-    background-color: hsl(255deg 50% 40%);
+    background-color: rgb(17, 5, 112);
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -122,16 +122,17 @@ button {
    .hover-btn {
     position: absolute;
     inset: 0;
-    background-color: hsl(255deg 50% 49%);
+    background-color: rgb(2, 146, 43);
     transform: translate(0%,100%);
    }
    
    .default-btn span {
     color: hsl(0, 0%, 100%);
+    content: 'UPGRADE';
    }
    
    .hover-btn span {
-    color: hsl(50deg 100% 50%);
+    color: #F09819;
    }
    
    button:hover .default-btn {
