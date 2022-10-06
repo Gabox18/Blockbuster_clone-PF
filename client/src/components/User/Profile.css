@@ -13,8 +13,14 @@
   list-style:none;
 }
 
+.ProfileDangerRequerement{
+  color: red;
+  font-size: 20px;
+}
+
 .notDecaration li {
   text-align: left;
+  color: black;
 }
 
 /* From uiverse.io by @david-mohseni */

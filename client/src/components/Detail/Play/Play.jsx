@@ -3,14 +3,16 @@ import Navbar from "../../Nav Bar/Navbar";
 import Footer from "../../Footer/Footer";
 import ReactPlayer from "react-player";
 import './Play.css';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+ 
 
 
 
 function Play(){
 
 let userdb = useSelector((store) => store.alldata.user);
+const {id} = useParams()
 
     return(
         <div>
@@ -20,6 +22,9 @@ let userdb = useSelector((store) => store.alldata.user);
         <>
         <Navbar />
         <section className="cardSection">
+            <div className="btn btn-outline-primary text-light btn-xs btnLogin btnPlayRedirect">
+              <Link to={`/details/${id}`} >Detail</Link>
+            </div>
             <div className="cardContainer">
                 <div className="cardReactPlayer">
                     <ReactPlayer
