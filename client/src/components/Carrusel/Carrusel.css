@@ -7,28 +7,36 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
+
 .containerCarruzel .mainCarruzel .sliderCarruzel {
   max-width: 200px;
 }
+
 .containerCarruzel::-webkit-scrollbar {
   display: none;
 }
+
 .containerCarruzel1 {
   display: flex;
   width: 100%;
   height: 300px;
   scroll-snap-align: start;
-  /* animation: cambio1 10s none; */
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 }
 
-.containerCarruzel1:hover .imgCarr1 {
-  animation-play-state: paused;
-}
 .containerCarruzel:hover .imgCarr {
   animation-play-state: paused;
 }
+
+.containerCarruzel:hover .imgCarr {
+  animation-play-state: paused;
+}
+
+.containerCarruzel:hover .imgCarrF {
+  animation-play-state: paused;
+}
+
 .imgCarr {
   width: 12rem;
   height: 18rem;
@@ -39,8 +47,9 @@
   border-radius: 7%;
   margin: 5px;
 }
+
 .imgCarr1 {
- width: 12rem;
+  width: 12rem;
   height: 18rem;
   display: inline-block;
   object-fit: cover;
@@ -49,13 +58,24 @@
   border-radius: 7%;
   margin: 5px;
 }
-.imgCarr1:hover {
-border: groove 2px goldenrod;
- }
- .imgCarr:hover {
-  border: groove 2px goldenrod;
-   }
 
+.imgCarrF {
+  width: 12rem;
+  height: 18rem;
+  display: inline-block;
+  object-fit: cover;
+  scroll-snap-align: center;
+  animation: cambioF 9.09s infinite;
+  border-radius: 7%;
+  margin: 5px;
+}
+
+.imgCarr1:hover {
+  border: groove 2px goldenrod;
+}
+.imgCarr:hover {
+  border: groove 2px goldenrod;
+}
 
 @keyframes cambio {
   100% {
@@ -92,6 +112,7 @@ border: groove 2px goldenrod;
     margin-left: -1000%;
   }
 }
+
 @keyframes cambio1 {
   0% {
     margin-left: -0%;

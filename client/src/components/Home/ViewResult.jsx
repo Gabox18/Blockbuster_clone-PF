@@ -46,14 +46,14 @@ function ViewResult(){
             })}
           </div>
             <div className="containerPaginado">
-          {  currentMovies.length>8?
+          { 
               <Paginado
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
                 moviesPerPage={moviesPerPage}
                 allMovies={allMovies.length}
                 paginado={paginado}
-              />:<></>}
+              />}
             </div>
           </section>
           <Footer/>
