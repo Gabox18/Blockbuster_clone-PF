@@ -11,6 +11,7 @@ import Nav from "../Nav Bar/Navbar"
 import flecha from "../../assets/flecha.png"
 import axios from "axios";
 import { useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 
 
@@ -20,27 +21,30 @@ export default function Landing() {
   let userDB = useSelector(state=>state.alldata.user)
   let [start, setStart]=  useState(4)
   let dispatch = useDispatch();
+  let history = useHistory();
   useEffect(() => {
     dispatch(asyncallMovies());
     dispatch(asyncGetUser(user?.email))
   }, [dispatch, user]);
 
-let { copyAllMovies } = useSelector((state) => state.alldata);
-let { payPaypal } = useSelector((state) => state.alldata);
+let { copyAllMovies ,payPaypalSil , payPaypalGold } = useSelector((state) => state.alldata);
 const moviesCarrusel = copyAllMovies.filter(e => e.name !=='Spider-Man')
-console.log(copyAllMovies)
-console.log(payPaypal.data)
+
 
 function handleSubmitSilver() {
-  userDB?.id?
+  !user
+  ?loginWithRedirect()
+  :userDB?.id?
   dispatch(asynPaymentSilver())
-  :loginWithRedirect()
+  :history.push('/profile')
   
 }
 function handleSubmitGold() {
-  userDB?.id?
+  !user
+  ?loginWithRedirect()
+  :userDB?.id?
   dispatch(asynPaymentGold())
-  :loginWithRedirect()
+  :history.push('/profile')
 }
 
 // function scrollButton(){
@@ -143,12 +147,11 @@ const scrollButton = (elementRef) => {
                 <li className="listMmemer">Fav list</li>
               </ul>
 
-              {typeof payPaypal.data === "string" ? (
+              {typeof payPaypalSil.data === "string" ? (
                 <button
                   className="btn1"
                   onClick={() => {
-                    let token = payPaypal.data.split('').slice(49,66).join('')
-                    console.log(token,"token desde landing")
+                    let token = payPaypalSil.data.split('').slice(49,66).join('')
                     let userToken = {
                       id:userDB.id,
                       token: token
@@ -159,7 +162,7 @@ const scrollButton = (elementRef) => {
                       console.log(error)
                     }
                     setTimeout(()=>{
-                      window.location.href = payPaypal.data;
+                      window.location.href = payPaypalSil.data;
                       },3000)
                       setInterval(()=>{
                       setStart(start= start-1)
@@ -189,15 +192,30 @@ const scrollButton = (elementRef) => {
                 <li className="listMmemer">40 movies</li>
                 <li className="listMmemer">Fav list</li>
               </ul>
-              {typeof payPaypal.data === "string" ? (
+              {typeof payPaypalGold.data === "string" ? (
                 <button
                   className="btn1"
                   onClick={() => {
-                    window.location.href = payPaypal.data;
+                    let token = payPaypalGold.data.split('').slice(49,66).join('')
+                    let userToken = {
+                      id:userDB.id,
+                      token: token
+                    }
+                    try {
+                      axios.put(`/setTokenGold`,userToken)
+                    } catch (error) {
+                      console.log(error)
+                    }
+                    setTimeout(()=>{
+                      window.location.href = payPaypalGold.data;
+                      },3000)
+                      setInterval(()=>{
+                      setStart(start= start-1)
+                    },1000)
                   }}
                 >
                   {" "}
-                  Redirect
+                  {`Redirect ${start}`}
                 </button>
               ) : (
                 <button className="btn1" onClick={handleSubmitGold}>
