@@ -20,6 +20,7 @@ export default function Landing() {
   const { user,loginWithRedirect } = useAuth0();
   let userDB = useSelector(state=>state.alldata.user)
   let [start, setStart]=  useState(4)
+  let [disable, setDisable]=  useState(false)
   let dispatch = useDispatch();
   let history = useHistory();
   useEffect(() => {
@@ -150,7 +151,9 @@ const scrollButton = (elementRef) => {
               {typeof payPaypalSil.data === "string" ? (
                 <button
                   className="btn1"
+                  disabled={disable}
                   onClick={() => {
+                    setDisable(true)
                     let token = payPaypalSil.data.split('').slice(49,66).join('')
                     let userToken = {
                       id:userDB.id,
@@ -195,7 +198,9 @@ const scrollButton = (elementRef) => {
               {typeof payPaypalGold.data === "string" ? (
                 <button
                   className="btn1"
+                  disabled={disable}
                   onClick={() => {
+                    setDisable(true)
                     let token = payPaypalGold.data.split('').slice(49,66).join('')
                     let userToken = {
                       id:userDB.id,

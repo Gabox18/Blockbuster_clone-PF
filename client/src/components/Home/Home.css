@@ -101,6 +101,17 @@
   font-family: 'fjalla one', 'sans-serif';
   margin-top: 4%;
 }
+@media (max-width: 991px) {
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .subBlockTittle{
+    position: relative;
+    left: 0;
+  }
+}
 
 .textCarruzel {
   font-size: 2rem;
@@ -167,10 +178,21 @@
   font-family:besan;
   color: #F9BD08;
 }
+@media (max-width: 991px) {
+  .subBlockTittle{
+    position: relative;
+    left: 0;
+  }
+}
 .videoCabecera{
   position: relative;
   bottom: 12rem;
   right: 23rem;
+}
+@media (max-width: 991px) {
+  .videoCabecera{
+    display: none;
+  }
 }
 .navbarFixy{
   position: fixed;
@@ -182,6 +204,8 @@
   /*---------------------*/
   .loader1 {
     position: relative;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
   }
   
   .loader1 span {
@@ -217,11 +241,7 @@
        51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
     }
   }
-  .loader1{
-    margin-bottom: 5rem;
-    max-width: 10rem;
-    margin-top: 2%;
-  }
+
   @media screen and (max-width: 725px) {
     .loader1 span {
       font-size: 3rem;

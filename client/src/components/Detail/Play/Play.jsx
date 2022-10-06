@@ -14,9 +14,9 @@ function Play(){
                 <div className="cardReactPlayer">
                     <ReactPlayer
                         controls
-                        className="react-player-Play"
-                        url="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
-                        playing={true}
+                        className="react-player-Play1"
+                        url='https://res.cloudinary.com/dapicfoap/video/upload/v1665016891/BlockBuster%20Nuestro/BATMAN_rx1ghr.mp4'
+                         playing={true}
                         onReady      
                     />
                 </div>

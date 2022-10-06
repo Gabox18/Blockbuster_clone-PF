@@ -8,8 +8,8 @@ import {
   asyncgetDetails,
   clearDetail,
   asyncUpdateMovie,
-  asyncallMovies,
   asyncFavoriteMovie,
+  asyncFavList,
 } from "../../redux/slice.js";
 //import ReactPlayer from 'react-player';
 import video from "../../assets/video.mp4";
@@ -19,38 +19,41 @@ import Footer from "../Footer/Footer";
 import NavBar from "../Nav Bar/Navbar";
 import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
 import Carrusel from "../Carrusel/Carrusel";
+import { user } from "../../redux/dataMock";
 
 export default function Detail() {
   const { loginWithRedirect } = useAuth0();
   const { id } = useParams();
   const dispatch = useDispatch();
-  let { details } = useSelector((store) => store.alldata);
   let userdb = useSelector((store) => store.alldata.user);
-  let { copyAllMovies } = useSelector((store) => store.alldata);
-  console.log(details);
-  const filterTrue = copyAllMovies.filter(
-    (e) => e.status === true && e.name !== details.name
-  );
-  const moviesCarrusel = filterTrue.filter((e) => e.imdbRating > 8);
-
-  const idUser = userdb.id;
-  const [input, setInput] = useState({
-    idMovie: parseInt(id),
-    idUser: idUser,
-  });
-
-
+  let { copyAllMovies,favoriteMovie,details } = useSelector((store) => store.alldata);
+   //recuerdo de agustin mollo ,espero que les sirva . saludos!!
+  let idMovie = favoriteMovie?.map((e) => e.idMovie);
+  let userId = userdb.id;
+  let mapFav = favoriteMovie?.filter((e) => e.idUser === userId);
+  const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
+  const arrId = mapFav.map((e)=> e.idMovie)
+  const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
+  //recuerdo de agustin mollo ,espero que les sirva . saludos!!
+  const input = {
+    idMovie: id,
+    idUser: userdb.id,
+  };
   useEffect(() => {
     dispatch(asyncgetDetails(parseInt(id)));
-    dispatch(asyncallMovies());
+    dispatch(asyncFavList());
 
-    return ()=>{dispatch(clearDetail())}
-
+    return () => {
+      dispatch(clearDetail());
+    };
   }, [dispatch, id]);
 
   function handleAddFav() {
-    console.log(input, "esto es el inpout fav");
+
     dispatch(asyncFavoriteMovie(input));
+    setTimeout(() => {
+      dispatch(asyncFavList());
+    }, 1000);
   }
 
   function handleBannMovie() {
@@ -139,34 +142,73 @@ export default function Detail() {
           </button>
         )}
 
-        <input 
-          onClick={handleAddFav}
-          className="heart"
-          type="checkbox"
-          id="favorite"
-          name="favorite-checkbox"
-          value="favorite-button"
-        />
-        <label for="favorite" className="containerLike">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            className="feather feather-heart"
-          >
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
-          <div className="action">
-            <span className="option-1">Add to Favorites</span>
-            <span className="option-2">Added to Favorites</span>
+        {idMovie.includes(details.id) ? (
+          //   <div>
+          //   <input
+          //     onClick={handleAddFav}
+          //     className="heart"
+          //     type="checkbox"
+          //     id="favorite"
+          //     name="favorite-checkbox"
+          //     value="favorite-button"
+          //   />
+          //   <label for="favorite" className="containerLike">
+          //     <svg
+          //       xmlns="http://www.w3.org/2000/svg"
+          //       width="24"
+          //       height="24"
+          //       viewBox="0 0 24 24"
+          //       fill="none"
+          //       stroke="currentColor"
+          //       stroke-width="2"
+          //       stroke-linecap="round"
+          //       stroke-linejoin="round"
+          //       className="feather feather-heart"
+          //     >
+          //       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          //     </svg>
+          //     <div className="action">
+          //       <span className="option-2">Added to Favorites</span>
+          //       <span className="option-1">Add to Favorites</span>
+          //     </div>
+          //   </label>
+          // </div>
+          <div className="butoncitofav">
+            <button onClick={handleAddFav} className="buttonFav">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="red"
+                className="bi bi-heart-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+            </button>
           </div>
-        </label>
+        ) : (
+          <div className="butoncitofav1">
+            <button onClick={handleAddFav} className="buttonFav1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="yellow"
+                className="bi bi-heart-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
 
         {userdb.category === "admin" ? (
           <div>
@@ -217,9 +259,9 @@ export default function Detail() {
       <div>
         <Allcomments idParams={parseInt(id)} />
       </div>
-     
+
       <div className="conteiner-carruzel-home">
-        <h2 className="textCarruzel">Most popular in Blockbuster Henry</h2>
+        <h2 className="textCarruzel">My favorites movies</h2>
         <Carrusel array={moviesCarrusel} />
       </div>
 
