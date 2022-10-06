@@ -8,6 +8,7 @@
   display: flex;
   align-items: flex-end;
   transition: 0.4s ease-out;
+  text-decoration: none ;
 }
 
 .card-info {
@@ -21,7 +22,7 @@
   transition: 0.5s;
   height: 100%;
   width: 100%;
-
+  text-decoration: none;
 }
 
 
@@ -30,12 +31,14 @@
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 3rem;
+  text-decoration: none;
 }
 
 .text-body {
   letter-spacing: 1px;
   font-size: 0.9rem;
   margin: 5px 0 15px 0;
+  text-decoration: none;
 }
 
 /*Button*/
