@@ -3,10 +3,20 @@ import Navbar from "../../Nav Bar/Navbar";
 import Footer from "../../Footer/Footer";
 import ReactPlayer from "react-player";
 import './Play.css';
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+
 
 function Play(){
 
+let userdb = useSelector((store) => store.alldata.user);
+
     return(
+        <div>
+        {userdb.category === "admin" ||
+        userdb.category === "gold" ||
+        userdb.category === "silver" ? (
         <>
         <Navbar />
         <section className="cardSection">
@@ -23,7 +33,19 @@ function Play(){
             </div>
         </section>
         <Footer />
-        </>
+        </> ): <div> 
+        You must be a gold or silver user.
+      <Link to="/home">
+          <button
+            className="btn btn-primary btn-block mb-10 rounded-pill shadow-lg"
+            type="shadow-lg p-3 mb-5 bg-body rounded"
+          >
+            {" "}
+           Home{" "}
+          </button>
+        </Link>
+      </div> }
+        </div>
     )
 }
 export default Play;
