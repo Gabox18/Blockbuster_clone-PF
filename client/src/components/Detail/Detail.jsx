@@ -27,10 +27,11 @@ export default function Detail() {
   const dispatch = useDispatch();
   let userdb = useSelector((store) => store.alldata.user);
   let { copyAllMovies,favoriteMovie,details } = useSelector((store) => store.alldata);
+   //recuerdo de agustin mollo ,espero que les sirva . saludos!!
   let idMovie = favoriteMovie?.map((e) => e.idMovie);
   let userId = userdb.id;
   let mapFav = favoriteMovie?.filter((e) => e.idUser === userId);
-  //recuerdo de agustin mollo ,espero que les sirva . saludos!!
+ 
   const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
   const arrId = mapFav.map((e)=> e.idMovie)
   const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
@@ -49,7 +50,7 @@ export default function Detail() {
   }, [dispatch, id]);
 
   function handleAddFav() {
-    console.log(input, "esto es el inpout fav");
+
     dispatch(asyncFavoriteMovie(input));
     setTimeout(() => {
       dispatch(asyncFavList());
