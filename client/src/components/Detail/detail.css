@@ -310,7 +310,6 @@ input:checked + .slider1:before {
  .buttonFav{
   padding: 10px;
   border: none;
-  outline: #f7a600 groove 5px;
   background-color: black;
   border-radius: 20%;
   margin-bottom: 4%;
@@ -318,7 +317,7 @@ input:checked + .slider1:before {
   
  }
  
- .buttonFav1{
+ .buttonNoFav{
   padding: 10px;
   border: none;
   background-color: transparent;

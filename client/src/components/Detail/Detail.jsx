@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -18,8 +18,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Footer from "../Footer/Footer";
 import NavBar from "../Nav Bar/Navbar";
 import Allcomments from "../ComentForm.jsx/AllComments/Allcomments";
-import Carrusel from "../Carrusel/Carrusel";
-import { user } from "../../redux/dataMock";
+import CarruselFav from "../Carrusel/CarruselFav";
+
 
 export default function Detail() {
   const { loginWithRedirect } = useAuth0();
@@ -28,12 +28,13 @@ export default function Detail() {
   let userdb = useSelector((store) => store.alldata.user);
   let { copyAllMovies,favoriteMovie,details } = useSelector((store) => store.alldata);
    //recuerdo de agustin mollo ,espero que les sirva . saludos!!
-  let idMovie = favoriteMovie?.map((e) => e.idMovie);
+
   let userId = userdb.id;
   let mapFav = favoriteMovie?.filter((e) => e.idUser === userId);
   const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
   const arrId = mapFav.map((e)=> e.idMovie)
   const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
+  console.log(mapFav)
   //recuerdo de agustin mollo ,espero que les sirva . saludos!!
   const input = {
     idMovie: id,
@@ -49,7 +50,7 @@ export default function Detail() {
   }, [dispatch, id]);
 
   function handleAddFav() {
-
+console.log(input)
     dispatch(asyncFavoriteMovie(input));
     setTimeout(() => {
       dispatch(asyncFavList());
@@ -60,6 +61,10 @@ export default function Detail() {
     let obj = { id };
     dispatch(asyncUpdateMovie(obj));
   }
+
+
+
+
 
   return (
     <div className="detailRender">
@@ -142,40 +147,11 @@ export default function Detail() {
           </button>
         )}
 
-        {idMovie.includes(details.id) ? (
-          //   <div>
-          //   <input
-          //     onClick={handleAddFav}
-          //     className="heart"
-          //     type="checkbox"
-          //     id="favorite"
-          //     name="favorite-checkbox"
-          //     value="favorite-button"
-          //   />
-          //   <label for="favorite" className="containerLike">
-          //     <svg
-          //       xmlns="http://www.w3.org/2000/svg"
-          //       width="24"
-          //       height="24"
-          //       viewBox="0 0 24 24"
-          //       fill="none"
-          //       stroke="currentColor"
-          //       stroke-width="2"
-          //       stroke-linecap="round"
-          //       stroke-linejoin="round"
-          //       className="feather feather-heart"
-          //     >
-          //       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          //     </svg>
-          //     <div className="action">
-          //       <span className="option-2">Added to Favorites</span>
-          //       <span className="option-1">Add to Favorites</span>
-          //     </div>
-          //   </label>
-          // </div>
+        {arrId.includes(details.id) ? 
           <div className="butoncitofav">
+            {console.log("si cora",details.id)}
             <button onClick={handleAddFav} className="buttonFav">
-              <svg
+            <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -190,14 +166,15 @@ export default function Detail() {
               </svg>
             </button>
           </div>
-        ) : (
+         : 
           <div className="butoncitofav1">
-            <button onClick={handleAddFav} className="buttonFav1">
-              <svg
+            {console.log("no cora",id)}
+            <button onClick={handleAddFav} className="buttonNoFav">
+            <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
-                fill="yellow"
+                fill="white"
                 className="bi bi-heart-fill"
                 viewBox="0 0 16 16"
               >
@@ -208,7 +185,7 @@ export default function Detail() {
               </svg>
             </button>
           </div>
-        )}
+        }
 
         {userdb.category === "admin" ? (
           <div>
@@ -262,7 +239,7 @@ export default function Detail() {
 
       <div className="conteiner-carruzel-home">
         <h2 className="textCarruzel">My favorites movies</h2>
-        <Carrusel array={moviesCarrusel} />
+        <CarruselFav array={moviesCarrusel} />
       </div>
 
       <Footer />
