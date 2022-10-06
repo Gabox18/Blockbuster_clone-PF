@@ -1,7 +1,7 @@
 
 
 /* ----------------------------------- */
-.sectionPay {
+.sectionPayg {
     background-color: black;
     display: flex;
     justify-content: center;
@@ -11,13 +11,13 @@
     gap: 5rem;
 }
 
-.containerPay {
+.containerPayg {
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
-  .card_box {
+  .card_boxg {
     width: 20rem;
     height: 30rem;
     border-radius: 20px;
@@ -28,11 +28,11 @@
     transition: all .3s;
   }
   
-  .card_box:hover {
+  .card_boxg:hover {
     transform: scale(0.9);
   }
   
-  .card_box span {
+  .card_boxg span {
     position: absolute;
     overflow: hidden;
     width: 150px;
@@ -44,7 +44,7 @@
     justify-content: center;
   }
   
-  .card_box span::before {
+  .card_boxg span::before {
     content: 'Gold';
     position: absolute;
     width: 150%;
@@ -61,7 +61,7 @@
     box-shadow: 0 5px 10px rgba(0,0,0,0.23);
   }
   
-  .card_box span::after {
+  .card_boxg span::after {
     content: '';
     position: absolute;
     width: 10px;
@@ -73,7 +73,7 @@
     background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   }
 
-  .contentPay {
+  .contentPayg {
     position: relative;
     top: 5rem;
     justify-content: center;
@@ -82,7 +82,7 @@
 
 }
 
-  .p-style-silver{
+  .p-style-silverg{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: larger;
     color: #F09819;
@@ -91,7 +91,7 @@
 
 /*--------------------------------------------------------------------------------*/
 
-button {
+.button {
     position: relative;
     overflow: hidden;
     outline: none;
@@ -102,7 +102,7 @@ button {
     font-family: inherit;
    }
    
-   .default-btn,.hover-btn {
+   .default-btng,.hover-btng {
     background-color: rgb(17, 5, 112);
     display: -webkit-box;
     display: -moz-box;
@@ -119,26 +119,30 @@ button {
     transition: all .3s ease;
    }
    
-   .hover-btn {
+   .hover-btng {
     position: absolute;
     inset: 0;
     background-color: rgb(2, 146, 43);
     transform: translate(0%,100%);
    }
    
-   .default-btn span {
+   .default-btng span {
     color: hsl(0, 0%, 100%);
     content: 'UPGRADE';
    }
    
-   .hover-btn span {
+   .hover-btng span {
     color: #F09819;
    }
    
-   button:hover .default-btn {
+   .button:hover .default-btn {
     transform: translate(0%,-100%);
    }
    
-   button:hover .hover-btn {
+   .button:hover .hover-btn {
     transform: translate(0%,0%);
+   }
+   .titleGold{
+    color: #F09819;
+    margin-top: 1rem;
    }

@@ -77,7 +77,7 @@ const Profile = () => {
               <div className="imgPerf">
                 <img className="picPerfil" src={userBD?.picture || user.picture} alt="fotito"></img>
               </div>
-              <div className="contentPef">
+              <div className="contentPef" >
                 {<h3>{userBD?.nickname || user.nickname}</h3>}
                 <ul className="notDecaration">
                   <li>Name : {userBD?.name || user?.name}</li>
@@ -89,6 +89,7 @@ const Profile = () => {
                       (<div>
                         <li>complete your Date</li>
                         <input
+                          
                           type="date"
                           name="date"
                           className="input-complete"
@@ -96,7 +97,8 @@ const Profile = () => {
                           onChange={handleOnChange}
                           max={currentDate}
                         />
-                        <button className="botonD" onClick={handleOnsubmit}>
+                        <button className="botonD" onClick={handleOnsubmit}
+                        autofocus>
                           <img className="imgPencil" src={submit} alt="pencil" />
                         </button>
                       </div>)
