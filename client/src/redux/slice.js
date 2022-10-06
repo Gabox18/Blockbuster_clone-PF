@@ -121,6 +121,9 @@ export const dataSlice = createSlice({
     sendSpam: (state, action) => {
       state.allUsers = action.payload;
     },
+    favoriteAllMovies: (state, action) => {
+      state.favoriteMovie = action.payload;
+    },
   },
 });
 
@@ -292,8 +295,8 @@ export const asynPaymentGold = () => {
 export const asyncFavoriteMovie = (input) => {
   return async function (dispatch) {
     try {
-      let response = await axios.put(
-        `https://block-buster-fantastic7.up.railway.app/allFavs`,
+      let response = await axios.post(
+        `https://block-buster-fantastic7.up.railway.app/addFav`,
         input
       );
       return dispatch(favoriteArray(response.data));
@@ -323,7 +326,7 @@ export const asyncFavList = () => {
       let response = await axios(
         "https://block-buster-fantastic7.up.railway.app/allFavs"
       );
-      return dispatch(favoriteArray(response.data));
+      return dispatch(favoriteAllMovies(response.data));
     } catch (error) {}
   };
 };
@@ -457,6 +460,7 @@ export const {
   favoriteArray,
   categoryswichRE,
   sendSpam,
+  favoriteAllMovies,
 } = dataSlice.actions;
 
 export default dataSlice.reducer;

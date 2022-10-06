@@ -77,7 +77,6 @@ export default function ComentForm({ idParams, handleDelete }) {
                 className="input"
                 placeholder="Your review"
                 onChange={handleOnChange}
-                autoFocus
               />
             </div>
 
