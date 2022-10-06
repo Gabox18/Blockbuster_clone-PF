@@ -448,6 +448,28 @@ export const asyncSendSpam = () => {
   };
 };
 
+export const asyncSpamBan = (email) => {
+  return async function (dispatch) {
+    
+    let objetito = {email}
+    console.log(objetito,'acaaaaaaaaaaaaaaaaaa')
+    let response = axios(`/nodemailerb`,objetito
+    );
+    return dispatch(sendSpam(response));
+  };
+};
+
+export const asyncSpamUnban = (email) => {
+  return async function (dispatch) {
+    
+    let objetito = {email}
+    console.log(objetito,'acaaaaaaaaaaaaaaaaaa')
+    let response = axios(
+      `/nodemailerun`,objetito
+    );
+    return dispatch(sendSpam(response));
+  };
+};
 //----------------------------------------------------------------------------------------------------------------
 
 export const {

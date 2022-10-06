@@ -5,6 +5,8 @@ import {
   asyncallUsers,
   asynDesBanUsers,
   asynNewAdmin,
+  asyncSpamBan,
+  asyncSpamUnban,
 } from "../../../../redux/slice";
 import "./functionBannUser.css";
 
@@ -12,6 +14,13 @@ function FunctionBannUser() {
   const dispatch = useDispatch();
 
   let { allUsers } = useSelector((state) => state.alldata);
+
+  let [obj, setObj] = useState({
+    email: "",
+  });
+  let user = allUsers;
+  console.log(obj);
+
   useEffect(() => {
     Array.isArray(allUsers)
       ? dispatch(asyncallUsers())
@@ -19,20 +28,36 @@ function FunctionBannUser() {
   }, [dispatch, allUsers]);
 
   const usersAll = allUsers;
-
   const handeOnBan = (e) => {
     e.preventDefault();
     let objetito = { id: e.target.value };
-    console.log(objetito);
+    
+    let infoUserBan = allUsers.filter((x) => x.id == objetito.id);  
+    let email = infoUserBan.map((e)=> e.email)
+    let emailS = email.pop()
+    
+    console.log(obj)
     dispatch(asynbanUsers(objetito));
     dispatch(asyncallUsers());
+    dispatch(asyncSpamBan(emailS));
   };
+
   const handeOnDesBan = (e) => {
     e.preventDefault();
+    setObj({
+      id: e.target.value,
+    });
     let objetito = { id: e.target.value };
+    let infoNode = {
+      id: obj.id,
+    };
+    let infoUserBan = allUsers.filter((x) => x.id == objetito.id);  
+    let email = infoUserBan.map((e)=> e.email)
+    let emailS = email.pop()
     console.log(objetito);
     dispatch(asynDesBanUsers(objetito));
     dispatch(asyncallUsers());
+    dispatch(asyncSpamUnban(emailS))
   };
 
   const handeOnNewAdmin = (e) => {
@@ -53,10 +78,10 @@ function FunctionBannUser() {
         <select className="impAdmin" onChange={handeOnBan}>
           {Array.isArray(allUsers) ? (
             usersAll.map((e) => {
-              console.log(e)
               return (
                 <option value={e.id}>
-                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status.toString()}
+                  Nickname: {e.nickname} ~ id:{e.id} ~ status:{" "}
+                  {e.status.toString()}
                 </option>
               );
             })
@@ -74,7 +99,8 @@ function FunctionBannUser() {
             usersAll.map((e) => {
               return (
                 <option value={e.id}>
-                  Nickname: {e.nickname} ~ id:{e.id} ~ status: {e.status.toString()}
+                  Nickname: {e.nickname} ~ id:{e.id} ~ status:{" "}
+                  {e.status.toString()}
                 </option>
               );
             })
@@ -99,7 +125,9 @@ function FunctionBannUser() {
           )}
         </select>
       </div>
-      <div><b>With great power comes great responsibility</b></div>
+      <div>
+        <b>With great power comes great responsibility</b>
+      </div>
     </div>
   );
 }
