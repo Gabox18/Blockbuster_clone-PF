@@ -1,59 +1,66 @@
-import React from 'react';
-import Navbar from '../Nav Bar/Navbar'
-import { asyncCategorySwich } from '../../redux/slice'
-import './SilverPayZone.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Navbar from "../Nav Bar/Navbar";
+import { asyncCategorySwich } from "../../redux/slice";
+import "./SilverPayZone.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
+export default function SilverPayZone() {
+  let dispatch = useDispatch();
+  let userDB = useSelector((state) => state.alldata.user);
 
-export default function SilverPayZone(){
-    let dispatch = useDispatch();
-    let userDB = useSelector((state) => state.alldata.user);
-    
-
-    function handleSubmitSilver() {
-        let idSwich = {id : userDB.id}
-        dispatch(asyncCategorySwich(idSwich))
-
-      }
-      console.log(window.location.href)
-      let url = window.location.href
-      let tokenredirec = url.split('').slice(47,64).join('')
-      console.log(tokenredirec)
-    return(
-        tokenredirec === userDB.token?
-        <div>
-            <div>
-                <Navbar/>
+  function handleSubmitSilver() {
+    let idSwich = { id: userDB.id };
+    dispatch(asyncCategorySwich(idSwich));
+  }
+  console.log(window.location.href);
+  let url = window.location.href;
+  let tokenredirec = url.split("").slice(47, 64).join("");
+  console.log(tokenredirec);
+  return tokenredirec === userDB.token || userDB.category === "admin" ? (
+    <div>
+      <div>
+        <Navbar />
+      </div>
+      <section className="sectionPay">
+        <div className="containerPay">
+          <div className="card_box1">
+            <span>Silver</span>
+            <div className="containerPay">
+              <div className="contentPay">
+                <h2 className="titleSilver">Silver Subscription</h2>
+                <h3 className="subtitle">This Plan Includes:</h3>
+                <p className="p-style-silver">Full HD 1080pi</p>
+                <p className="p-style-silver">20 movies</p>
+                <p className="p-style-silver">Fav list</p>
+                <h3 className="subtitle">U$D 19.99</h3>
+                <img
+                  src="https://res.cloudinary.com/dapicfoap/image/upload/v1664773992/BlockBuster%20Nuestro/Logo_enzyls.png"
+                  width="90px"
+                  alt="loguito"
+                />
+              </div>
             </div>
-            <section className='sectionPay'>
-                <div class="containerPay">
-                    <div class="card_box">
-                        <span>Silver</span>
-                        <div className='containerPay'>
-                            <div className='contentPay'>
-                                <p className='p-style-silver'>Silver Subscription</p>
-                                <p className='p-style-silver'>Total</p>
-                                <p className='p-style-silver'>19.99</p>
-                            </div>
+          </div>
+        </div>
+        <Link to={"/home"}>
+          {/*onClick={handleSubmitSilver}*/}
 
-                        </div>
-                    </div>
-                </div>
-                <Link to={'/home'}>
-                <button onClick={handleSubmitSilver}>
-                    <div class="default-btn">
-                    <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#ffd300" height="20" width="20" viewBox="0 0 24 24"><circle r="1" cy="21" cx="9"></circle><circle r="1" cy="21" cx="20"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                        <span>Welcome</span>
-                    </div>
-                    <div class="hover-btn">
-                        <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#FFF" height="20" width="20" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle r="3" cy="12" cx="12"></circle></svg>
-                        <span>continue</span>
-                    </div>
-                </button>
-                </Link>
-            </section>
-        </div>:
-        <div><Link to={"/home"}>try again </Link></div>
-    )
+          <div className="button" onClick={handleSubmitSilver}>
+            <div className="box">⬆️</div>
+            <div className="box">H</div>
+            <div className="box">O</div>
+            <div className="box">V</div>
+            <div className="box">E</div>
+            <div className="box">R</div>
+            <div className="box">⬆️</div>
+          </div>
+        </Link>
+      </section>
+    </div>
+  ) : (
+    <div>
+      <Link to={"/home"}>try again </Link>
+    </div>
+  );
 }

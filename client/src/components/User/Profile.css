@@ -20,7 +20,7 @@
 /* From uiverse.io by @david-mohseni */
 .cardPerf {
     width: 20%;
-    height: 11rem;
+    height: 45%;
     margin-top: 5%;
     background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
     text-align: center;
@@ -31,11 +31,7 @@
     margin: auto;
     padding-bottom: 1rem;
   }
-  
-  .cardPerf:hover {
-    height: 50%;
-    width: 35%;
-  }
+
   .imgPencil{
     padding-bottom: 1rem;
   }
@@ -58,13 +54,9 @@
     margin: 5px 20px;
     border-radius: 8px;
     box-shadow: 8px 8px 10px #f7a600, -8px -8px 10px #f7a600;
-    transform: translateY(-80px) scale(0);
-    transition: all 1s;
   }
   
-  .cardPerf:hover .contentPef {
-    transform: translateY(0) scale(1)
-  }
+
   
   .contentPef h3 {
     text-shadow: 2px 2px 0px #fff;

@@ -9,6 +9,7 @@ import Footer from "../Footer/Footer.jsx";
 import pencil from "../../assets/pencil.png";
 import submit from "../../assets/iconSubmit.png"
 import "./Profile.css";
+import Swal from 'sweetalert2';
 
 const Profile = () => {
   const { user,isAuthenticated } = useAuth0();
@@ -46,10 +47,21 @@ const Profile = () => {
     e.preventDefault(e);
     let error = validate(input)
        if(Object.keys(error).length !== 0){
-        alert("Complete the required field");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Complete the required field.',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
        }else{
         dispatch(asynSetUser(input));
-        alert("added profile info");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'added profile info',
+          showConfirmButton: false,
+          timer: 1500
+        })
        }
     
   };
@@ -65,7 +77,7 @@ const Profile = () => {
               <div className="imgPerf">
                 <img className="picPerfil" src={userBD?.picture || user.picture} alt="fotito"></img>
               </div>
-              <div className="contentPef">
+              <div className="contentPef" >
                 {<h3>{userBD?.nickname || user.nickname}</h3>}
                 <ul className="notDecaration">
                   <li>Name : {userBD?.name || user?.name}</li>
@@ -77,6 +89,7 @@ const Profile = () => {
                       (<div>
                         <li>complete your Date</li>
                         <input
+                          
                           type="date"
                           name="date"
                           className="input-complete"
@@ -84,7 +97,8 @@ const Profile = () => {
                           onChange={handleOnChange}
                           max={currentDate}
                         />
-                        <button className="botonD" onClick={handleOnsubmit}>
+                        <button className="botonD" onClick={handleOnsubmit}
+                        autofocus>
                           <img className="imgPencil" src={submit} alt="pencil" />
                         </button>
                       </div>)

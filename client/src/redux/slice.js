@@ -15,7 +15,8 @@ const initialState = {
   commentMovie: {},
   commentFromMovies: [],
   allUsers: [],
-  payPaypal: {},
+  payPaypalSil: {},
+  payPaypalGold: {},
   favoriteMovie: [],
   categorySwich: {},
 };
@@ -105,8 +106,11 @@ export const dataSlice = createSlice({
     bannMovie: (state, action) => {
       state.allMovies = action.payload;
     },
-    payPayment: (state, action) => {
-      state.payPaypal = action.payload;
+    payPaymentSil: (state, action) => {
+      state.payPaypalSil = action.payload;
+    },
+    payPaymentGold: (state, action) => {
+      state.payPaypalGold = action.payload;
     },
     favoriteArray: (state, action) => {
       state.favoriteMovie = action.payload;
@@ -266,7 +270,7 @@ export const asynPaymentSilver = () => {
       let response = await axios.post(
         `/create-paymentSilver/`
       );
-      return dispatch(payPayment(response.data));
+      return dispatch(payPaymentSil(response.data));
     } catch (error) {
       console.log(error);
     }
@@ -279,7 +283,7 @@ export const asynPaymentGold = () => {
       let response = await axios.post(
         `/create-paymentGold/`
       );
-      return dispatch(payPayment(response.data));
+      return dispatch(payPaymentGold(response.data));
     } catch (error) {
       console.log(error);
     }
@@ -305,6 +309,20 @@ export const asyncCategorySwich = (idUser) => {
     try {
       let response = await axios.put(
         `/apiSilver`,
+        idUser
+      );
+      return dispatch(categoryswichRE(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const asyncCategorySwichGold = (idUser) => {
+  return async function (dispatch) {
+    try {
+      let response = await axios.put(
+        `/apiGold`,
         idUser
       );
       return dispatch(categoryswichRE(response.data));
@@ -449,7 +467,8 @@ export const {
   getUser,
   deleteComment,
   updateUser,
-  payPayment,
+  payPaymentSil,
+  payPaymentGold,
   bannMovie,
   favoriteArray,
   categoryswichRE,
