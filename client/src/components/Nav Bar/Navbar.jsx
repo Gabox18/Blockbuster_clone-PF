@@ -59,8 +59,23 @@ function Navbar(prop) {
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
+              <Route path="/home">
+                {
+                  userDB.category === 'user' ?
+                  <Link to={"/"}>
+                    <button
+                      type="buttonNavbar"
+                      className="btn btn-outline-primary text-light btn-xs btnLogin"
+                    >
+                      Payment
+                    </button>                
+                  </Link> :
+                  <></>
+                }
+              </Route>
+               
               <Link to={"/home"}>
-                <img className="logoNav" src={img} width="80px" alt="logo" />
+                <img className="logoNav" src={img} width="60px" alt="logo" />
               </Link>
             </Route>
             <Route path="/home">
