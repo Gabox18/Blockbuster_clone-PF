@@ -298,9 +298,10 @@ export const asyncFavoriteMovie = (input) => {
   return async function (dispatch) {
     try {
       let response = await axios.post(
-        `https://block-buster-fantastic7.up.railway.app/addFav`,
+        `https://purring-turkey-production.up.railway.app/addfav`,
         input
       );
+      console.log(response.data,'asdjkoasnduasmdisamdkmasik')
       return dispatch(favoriteArray(response.data));
     } catch (error) {
       console.log(error);
@@ -340,7 +341,7 @@ export const asyncFavList = () => {
   return async function (dispatch) {
     try {
       let response = await axios(
-        "/allFavs"
+        "https://purring-turkey-production.up.railway.app/allFavs"
       );
       return dispatch(favoriteAllMovies(response.data));
     } catch (error) {}
