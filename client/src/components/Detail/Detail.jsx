@@ -214,7 +214,7 @@ console.log(input)
         {/* <a href="#" className="card-link">Another link</a> */}
       </div>
 
-      <div>
+      <div className="commentform">
         {userdb.picture ? (
           <ComentForm idParams={parseInt(id)} />
         ) : (
@@ -231,8 +231,8 @@ console.log(input)
           </div>
         )}
       </div>
-      <div>
-        <Allcomments idParams={parseInt(id)} />
+      <div >
+        <Allcomments idParams={parseInt(id)} className="allComments" />
       </div>
 
       <div className="conteiner-carruzel-home">
