@@ -49,7 +49,6 @@ function handleSubmitGold() {
 }
 
 // function scrollButton(){
-//   console.log('se mando scroll!')
 //   let elementScroll = document.getElementById('cardScroll')
 //   elementScroll.scrollIntoView({
 //     behaviour: "smooth",

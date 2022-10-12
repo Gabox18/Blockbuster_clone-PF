@@ -55,7 +55,6 @@ export default function FormUpdateUser() {
 
   const handleOnsubmit = (e) => {
     e.preventDefault(e);
-    console.log(input, "sutmit");
     if (invalidAdd(input)) {
       Swal.fire({
         icon: 'error',
