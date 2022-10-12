@@ -18,7 +18,7 @@ export default function GoldPayZone() {
   let tokenredirec = url.split('').slice(45,62).join('')
   console.log(tokenredirec);
 
-  return tokenredirec !== userDB.token || userDB.category !== "admin"? (
+  return tokenredirec === userDB.token || userDB.category -== "admin"? (
     <div>
       <div>
         <Navbar />

@@ -17,7 +17,7 @@ export default function SilverPayZone() {
   let url = window.location.href;
   let tokenredirec = url.split("").slice(47, 64).join("");
   console.log(tokenredirec);
-  return tokenredirec !== userDB.token || userDB.category !== "admin" ? (
+  return tokenredirec === userDB.token || userDB.category === "admin" ? (
     <div>
       <div>
         <Navbar />
