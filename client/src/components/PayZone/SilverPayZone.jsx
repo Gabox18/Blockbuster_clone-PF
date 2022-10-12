@@ -13,10 +13,8 @@ export default function SilverPayZone() {
     let idSwich = { id: userDB.id };
     dispatch(asyncCategorySwich(idSwich));
   }
-  console.log(window.location.href);
   let url = window.location.href;
   let tokenredirec = url.split("").slice(47, 64).join("");
-  console.log(tokenredirec);
   return tokenredirec === userDB.token || userDB.category === "admin" ? (
     <div>
       <div>

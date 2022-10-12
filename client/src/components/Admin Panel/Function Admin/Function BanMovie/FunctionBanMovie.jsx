@@ -16,7 +16,6 @@ export default function FunctionBanMovie() {
 //  const handeOnBan = (e) => {
 //     e.preventDefault();
 //     let objetito = { id: e.target.value };
-//     console.log(objetito);
 //     dispatch(asynbanUsers(objetito));
 //     dispatch(asyncallUsers());
 //   };

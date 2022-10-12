@@ -16,14 +16,16 @@ export default function Searchbar({setCurrentPage}) {
 
   function handleInputChange(e) {
     setName(e.target.value);
-    console.log(name)
   }
   function handleSubmit(e){
     e.preventDefault();
-    dispatch(asyncGetName(name.toLowerCase()));
-    history.push('/Home/result');
-    setName('')
-    setCurrentPage(1);
+    if(name.length!==0){
+      dispatch(asyncGetName(name.toLowerCase()));
+      history.push('/Home/result');
+      setName('')
+      setCurrentPage(1);
+    }
+    
   }
   
   return (
