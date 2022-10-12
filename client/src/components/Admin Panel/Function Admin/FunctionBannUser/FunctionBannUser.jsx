@@ -36,7 +36,7 @@ function FunctionBannUser() {
     let email = infoUserBan.map((e)=> e.email)
     let emailS = email.pop()
     
-    console.log(obj)
+  
     dispatch(asynbanUsers(objetito));
     dispatch(asyncallUsers());
     dispatch(asyncSpamBan(emailS));
@@ -54,7 +54,7 @@ function FunctionBannUser() {
     let infoUserBan = allUsers.filter((x) => x.id == objetito.id);  
     let email = infoUserBan.map((e)=> e.email)
     let emailS = email.pop()
-    console.log(objetito);
+    
     dispatch(asynDesBanUsers(objetito));
     dispatch(asyncallUsers());
     dispatch(asyncSpamUnban(emailS))
@@ -63,7 +63,6 @@ function FunctionBannUser() {
   const handeOnNewAdmin = (e) => {
     e.preventDefault();
     let objetito = { id: e.target.value };
-    console.log(objetito);
     dispatch(asynNewAdmin(objetito));
     dispatch(asyncallUsers());
   };

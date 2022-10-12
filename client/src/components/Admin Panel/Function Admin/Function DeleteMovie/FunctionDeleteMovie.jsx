@@ -29,7 +29,6 @@ function handleDelete(){
 function handleChange(e){
     e.preventDefault();
     setMovieDelete(e.target.value)
-    console.log(e.target.value)
 }
  
 

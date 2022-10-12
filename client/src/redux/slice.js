@@ -57,7 +57,6 @@ export const dataSlice = createSlice({
     },
 
     DetailsMovies: (state, action) => {
-      console.log(action.payload, "actionpayload");
       state.details = action.payload;
     },
 
@@ -177,7 +176,6 @@ export const asyncGetName = (name) => {
 //------------------------------------------------------------------------------------------------------------
 export const asynSetUser = (input) => {
   return async function (dispatch) {
-    console.log(input, "el asyn del slices");
     try {
       let response = await axios.post(
         `/newU`,
@@ -197,7 +195,6 @@ export const asyncFormComment = (input, idMovie) => {
         `/detail/${idMovie}`,
         input
       );
-      console.log(input, "en asyncform");
     } catch (error) {
       console.log(error, "from Details");
     }
@@ -212,14 +209,13 @@ export const asyncCommentById = (id) => {
       let filtrados = response.data.filter((e) => e.movieId === id);
       return dispatch(commentByid(filtrados));
     } catch (error) {
-      console.log(error, "comment in detail");
+      console.log(error);
     }
   };
 };
 export const asyncEditComment = (input) => {
   return async function (dispatch) {
     try {
-      console.log(input, "input");
       let response = await axios.put(
         `/editComment`,
         input
@@ -257,7 +253,6 @@ export const asyncGetUser = (userMail) => {
 export const asynUpdateUser = (objUpdate) => {
   return async function (dispatch) {
     try {
-      console.log(objUpdate, "--------------->");
       let response = await axios.put(
         `/editU`,
         objUpdate
@@ -301,7 +296,6 @@ export const asyncFavoriteMovie = (input) => {
         `https://purring-turkey-production.up.railway.app/addfav`,
         input
       );
-      console.log(response.data,'asdjkoasnduasmdisamdkmasik')
       return dispatch(favoriteArray(response.data));
     } catch (error) {
       console.log(error);
@@ -352,7 +346,6 @@ export const asyncFavList = () => {
 //-----------------------------------------------------------------------------------------------------------------
 export const asyncInfoAdmin = (payload) => {
   return async function (dispatch) {
-    console.log("soy la nueva movie", payload);
     try {
       const response = await axios.post(
         `/addM`,
@@ -373,7 +366,6 @@ export const asyncallUsers = () => {
       );
       return dispatch(allUserAdmin(response.data));
     } catch (error) {
-      console.log(error, "from allUSERS");
     }
   };
 };
@@ -453,7 +445,6 @@ export const asyncSpamBan = (email) => {
   return async function (dispatch) {
     
     let objetito = {email}
-    console.log(objetito,'acaaaaaaaaaaaaaaaaaa')
     let response = axios(`/nodemailerb`,objetito
     );
     return dispatch(sendSpam(response));
@@ -464,7 +455,6 @@ export const asyncSpamUnban = (email) => {
   return async function (dispatch) {
     
     let objetito = {email}
-    console.log(objetito,'acaaaaaaaaaaaaaaaaaa')
     let response = axios(
       `/nodemailerun`,objetito
     );

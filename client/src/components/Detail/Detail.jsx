@@ -34,8 +34,6 @@ export default function Detail() {
   const filterTrue = copyAllMovies?.filter( (e) => e.status === true && e.name !== details.name);
   const arrId = mapFav.map((e)=> e.idMovie)
   const moviesCarrusel = filterTrue?.filter((e)=> arrId.includes(e.id))
-  console.log(mapFav)
-  //recuerdo de agustin mollo ,espero que les sirva . saludos!!
   const input = {
     idMovie: id,
     idUser: userdb.id,
@@ -149,7 +147,7 @@ console.log(input)
 
         {arrId.includes(details.id) ? 
           <div className="butoncitofav">
-            {console.log("si cora",details.id)}
+            {console.log(details.id)}
             <button onClick={handleAddFav} className="buttonFav">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +166,7 @@ console.log(input)
           </div>
          : 
           <div className="butoncitofav1">
-            {console.log("no cora",id)}
+            {console.log(id)}
             <button onClick={handleAddFav} className="buttonNoFav">
             <svg
                 xmlns="http://www.w3.org/2000/svg"

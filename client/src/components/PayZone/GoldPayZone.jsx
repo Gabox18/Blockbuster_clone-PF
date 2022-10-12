@@ -13,10 +13,8 @@ export default function GoldPayZone() {
     let idSwich = { id: userDB.id };
     dispatch(asyncCategorySwichGold(idSwich));
   }
-  console.log(window.location.href);
   let url = window.location.href;
   let tokenredirec = url.split('').slice(45,62).join('')
-  console.log(tokenredirec);
 
   return tokenredirec === userDB.token || userDB.category !== "admin"? (
     <div>

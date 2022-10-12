@@ -16,7 +16,6 @@ export default function Searchbar({setCurrentPage}) {
 
   function handleInputChange(e) {
     setName(e.target.value);
-    console.log(name)
   }
   function handleSubmit(e){
     e.preventDefault();
