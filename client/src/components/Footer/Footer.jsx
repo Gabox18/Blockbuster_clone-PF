@@ -19,7 +19,7 @@ function Footer() {
             </div>
 
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h5 className="text-upercase mb-4 font-weight-bold text-warning">Tecnologies</h5>
+              <h5 className="text-upercase mb-4 font-weight-bold text-warning">TECNOLOGIES</h5>
               <p>
                 <a href={"https://reactjs.org/"} target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>React.js</a>
               </p>
@@ -38,7 +38,7 @@ function Footer() {
             </div>
 
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Usefull links</h5>
+              <h5 className="text-uppercase mb-4 font-weight-bold text-warning">LINKS</h5>
               <Link to='/terms'>
               <p>
                 <a href="#" className="text-white" style={{"text-decoration":"none"}}>Terms and conditions</a>
