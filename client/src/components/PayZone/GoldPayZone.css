@@ -1,16 +1,6 @@
 
 
 /* ----------------------------------- */
-.sectionPayg {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    gap: 5rem;
-}
-
 .containerPayg {
     display: flex;
     align-items: center;

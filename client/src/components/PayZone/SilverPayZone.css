@@ -19,7 +19,7 @@
     justify-content: center;
   }
   
-  .card_boxg {
+  .card_box1 {
     width: 20rem;
     height: 30rem;
     border-radius: 20px;
@@ -28,7 +28,7 @@
     box-shadow: 0 25px 50px rgba(0,0,0,0.55);
     cursor: pointer;
     transition: all .3s;
-    outline: #F09819 groove .5rem;
+    outline: silver groove .5rem;
   }
   
   .card_box1:hover {
@@ -76,7 +76,7 @@
     background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
   }
 
-  .contentPay {
+  .contentPays {
     position: relative;
     top: 5rem;
     justify-content: center;
@@ -92,8 +92,15 @@
 
 /*--------------------------------------------------------------------------------*/
 /* From uiverse.io by @mrhyddenn */
-.button {
-  display: flex;
+.button1 {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: rgb(153, 58, 51);
+  border: solid 4px silver;
+  font-family: inherit;
 
 }
 
@@ -118,7 +125,7 @@
   content: "U";
   position: absolute;
   top: 0;
-  background: #F09819;
+  background: silver;
   width: 100%;
   height: 100%;
   display: flex;
@@ -160,6 +167,17 @@ transform: translateY(-100%);
   content: 'E';
   color: black;
 }
-.button:hover .box:before {
+.button1:hover .box:before {
   transform: translateY(0);
 }
+
+.titleSilver{
+  color: silver;
+  margin-top: 1rem;
+ }
+ 
+ .p-style-silver{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  color: silver;
+ }

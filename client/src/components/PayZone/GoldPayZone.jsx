@@ -18,7 +18,7 @@ export default function GoldPayZone() {
   let tokenredirec = url.split('').slice(45,62).join('')
   console.log(tokenredirec);
 
-  return tokenredirec === userDB.token || userDB.category === "admin"? (
+  return tokenredirec !== userDB.token || userDB.category !== "admin"? (
     <div>
       <div>
         <Navbar />
@@ -26,7 +26,6 @@ export default function GoldPayZone() {
       <section className="sectionPay">
           <div className="card_boxg">
             <span>Gold</span>
-            <div className="containerPay">
               <div className="contentPayg">
                 <h2 className="titleGold">Gold Subscription</h2>
                 <h3 className="subtitle">This Plan Includes:</h3>
@@ -40,8 +39,6 @@ export default function GoldPayZone() {
                   alt="loguito"
                 />
               </div>
-          
-          </div>
         </div>
         <Link to={"/home"}>
           <div className="button" onClick={handleSubmitGold}>
