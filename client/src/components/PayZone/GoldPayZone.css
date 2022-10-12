@@ -1,16 +1,6 @@
 
 
 /* ----------------------------------- */
-.sectionPayg {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    gap: 5rem;
-}
-
 .containerPayg {
     display: flex;
     align-items: center;
@@ -26,6 +16,7 @@
     box-shadow: 0 25px 50px rgba(0,0,0,0.55);
     cursor: pointer;
     transition: all .3s;
+    outline: #F09819 groove .5rem;
   }
   
   .card_boxg:hover {
@@ -42,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
   
   .card_boxg span::before {
@@ -59,6 +51,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     box-shadow: 0 5px 10px rgba(0,0,0,0.23);
+ 
   }
   
   .card_boxg span::after {
@@ -71,6 +64,7 @@
     z-index: -1;
     box-shadow: 140px -140px #cc3f47;
     background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+   
   }
 
   .contentPayg {
@@ -79,7 +73,6 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-
 }
 
   .p-style-silverg{
@@ -139,6 +132,20 @@
     transform: translate(0%,-100%);
    }
    
+   .box:before {
+    content: "U";
+    position: absolute;
+    top: 0;
+    background: silver;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform .4s;
+    color: black;
+  }
    .button:hover .hover-btn {
     transform: translate(0%,0%);
    }
