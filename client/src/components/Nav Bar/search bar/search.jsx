@@ -19,10 +19,13 @@ export default function Searchbar({setCurrentPage}) {
   }
   function handleSubmit(e){
     e.preventDefault();
-    dispatch(asyncGetName(name.toLowerCase()));
-    history.push('/Home/result');
-    setName('')
-    setCurrentPage(1);
+    if(name.length!==0){
+      dispatch(asyncGetName(name.toLowerCase()));
+      history.push('/Home/result');
+      setName('')
+      setCurrentPage(1);
+    }
+    
   }
   
   return (
