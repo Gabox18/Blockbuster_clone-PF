@@ -65,7 +65,7 @@
 }
 
 #hero h1 {
-  color: rgb(205, 150, 0);
+  color: #fcc139;
   font-family: "Raleway", sans-serif;
   font-size: 56px;
   font-weight: 600;
@@ -73,7 +73,7 @@
 }
 
 #hero h1 span {
-  color: blue;
+  color: #1f4489;
 }
 
 @media (max-width: 991px) {
@@ -83,7 +83,7 @@
 }
 
 #hero p {
-  color: rgb(205, 150, 0);
+  color: #fcc139;
   font-weight: 700;
   font-size: 20px;
 }
@@ -97,7 +97,7 @@
 #hero .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(rgb(205, 150, 0) 50%, rgba(101, 111, 150, 0.15) 52%);
+  background: radial-gradient(#fcc139 50%, rgba(101, 111, 150, 0.15) 52%);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -143,7 +143,7 @@
 }
 
 #hero .play-btn:hover::after {
-  border-left: 15px solid blue;
+  border-left: 15px solid #1f4489;
   transform: scale(20);
 }
 
@@ -179,12 +179,12 @@
   color: #fff;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid rgb(205, 150, 0);
+  border: 2px solid #fcc139;
  
 }
 
 #hero .about-btn:hover {
-  background: blue;
+  background:#1f4489;
   color: #fff;
 }
 
@@ -215,6 +215,17 @@
 /*--------------------------------------------------------------
 # About PanelHero
 --------------------------------------------------------------*/
+/*------------------- Lucas-----------*/
+.LogoBlockbusterOficial{
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
  
  /* ----------------- francoo ------- */
  .container-plan{
@@ -374,7 +385,7 @@
   width: 6.5em;
   height: 2.3em;
   margin: 0.5em;
-  background:#09043F;
+  background:#1f4489;
   color: white;
   border: none;
   border-radius: 0.625em;
@@ -389,7 +400,7 @@
   width: 6.5em;
   height: 2.3em;
   margin: 0.5em;
-  background:#09043F;
+  background:#1f4489;
   color: white;
   border: none;
   border-radius: 0.625em;
@@ -421,7 +432,7 @@
  
  .btn1:after {
   content: "";
-  background: #F7A600;
+  background: #fcc139;
   position: absolute;
   z-index: -1;
   left: -20%;
@@ -436,36 +447,14 @@
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  outline: 2px solid #F7A600;
-  box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
+  outline: 2px solid #fcc139;
+  box-shadow: 8px 8px 16px #fcc139, -8px -8px 16px #fcc139;
  }
 
  /* From uiverse.io by @mrhyddenn */
-.loader {
-  position: relative;
-}
-
-.loader span {
-  position: absolute;
-  color: #fff;
-  transform: translate(-50%, -50%);
-  font-size: 7rem;
-  min-width: none;
-  letter-spacing: 5px;
-}
-
-.loader span:nth-child(1) {
-  color: transparent;
-  -webkit-text-stroke: 2px  #F7A600;
-  
-}
 
 
-.loader span:nth-child(2) {
-  color: #09043F;
-  -webkit-text-stroke: 1px #0e0762;
-  animation: uiverse723 3s ease-in-out infinite;
-}
+
 
 @keyframes uiverse723 {
   0%, 100% {
@@ -479,7 +468,7 @@
   }
 }
 .scrollArrow{
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .flechita{
   max-width: 5rem;
@@ -492,21 +481,16 @@
 .pMmembership{
   font-family: besan;
   font-size: 1.5rem;
-  color: #bd9725;
+  color: #fcc139;
 }
 .LogosM{
   margin: 0rem 1rem 1rem 1rem;
 }
-.loader{
-  margin-bottom: 5rem;
-  max-width: 10rem;
-}
+
 
 
 @media screen and (max-width: 725px) {
-  .loader span {
-    font-size: 3rem;
-  }
+  
   .cardP {
     padding: 1rem;
     outline: groove silver 6px;

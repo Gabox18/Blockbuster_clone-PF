@@ -48,16 +48,6 @@ function handleSubmitGold() {
   :history.push('/profile')
 }
 
-// function scrollButton(){
-//   console.log('se mando scroll!')
-//   let elementScroll = document.getElementById('cardScroll')
-//   elementScroll.scrollIntoView({
-//     behaviour: "smooth",
-//     block: "start",
-//     inline: "nearest"
-//   })
-// }
-
 const scrollButton = (elementRef) => {
   window.scrollTo({
     top: elementRef.current.offsetTop,
@@ -80,11 +70,9 @@ const scrollButton = (elementRef) => {
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            <div className="loader">
-              <span className="landingName">BlockBuster</span>
-              <span>BlockBuster</span>
+            <div>
+              <img className="LogoBlockbusterOficial" src="https://bendblockbuster.com/wp-content/themes/blockbuster/assets/images/blockbuster-logo.svg"></img>
             </div>
-
             <a
               onClick={() => scrollButton(scrollCard)}
               className="glightbox play-btn mb-4"
@@ -133,7 +121,7 @@ const scrollButton = (elementRef) => {
             <p className="pMmembership">MADE ESPECIALLY FOR YOU</p>
           </div>
 
-          <div className="contMembership" ref={scrollCard} >
+          <div className="contMembership" ref={scrollCard}>
 
             <div className="cardP">
               <p className="titleP">Silver</p>
