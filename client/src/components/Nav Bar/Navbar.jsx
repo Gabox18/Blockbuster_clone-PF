@@ -9,7 +9,7 @@ import { Link, Route } from "react-router-dom";
 import { asyncGetUser } from "../../redux/slice.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 
 function Navbar(prop) {
   const { user, isAuthenticated, loginWithRedirect } = useAuth0();
@@ -17,8 +17,9 @@ function Navbar(prop) {
   let userDB = useSelector((state) => state.alldata.user);
   let dispatch = useDispatch();
   const cookies = new Cookies();
-  if(isAuthenticated !== cookies.get('isAuthenticated')) cookies.set('isAuthenticated', isAuthenticated,{ path: '/' })
-  let cookiesLogin = cookies.get('isAuthenticated')==="true"? true:false
+  if (isAuthenticated !== cookies.get("isAuthenticated"))
+    cookies.set("isAuthenticated", isAuthenticated, { path: "/" });
+  let cookiesLogin = cookies.get("isAuthenticated") === "true" ? true : false;
   let categoryGold = "GoldCategory-style";
   let categorySilver = "SilverCatery-style";
   let categoryUser = "UserCategory-style";
@@ -52,32 +53,33 @@ function Navbar(prop) {
                 <img className="logoNav" src={img} width="60px" alt="logo" />
               </Link>
               <Route path="/home">
-                {
-                  userDB.category === 'user' ?
+                {userDB.category === "user" ? (
                   <Link to={"/"}>
                     <button
                       type="buttonNavbar"
                       className="btn btn-outline-primary text-light btn-xs btnLogin"
                     >
                       Payment
-                    </button>                
-                  </Link> :
+                    </button>
+                  </Link>
+                ) : (
                   <></>
-                }
+                )}
               </Route>
-               
+              <Link to={"/home"}>
+                <img className="logoNav" src={img} width="60px" alt="logo" />
+              </Link>
+
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Route path="/home">
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
-
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <Route path="Home/result">
                   <FilteringSorting setCurrentPage={prop.setCurrentPage} />
                 </Route>
               </ul>
-              
             </Route>
             <Route path="/home">
               <Searchbar setCurrentPage={prop.setCurrentPage} />
@@ -166,7 +168,6 @@ function Navbar(prop) {
                 </button>
               )}
             </Route>
-            {/**?8888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
             <Route path="/terms">
               <Link to={"/home"}>
                 <img

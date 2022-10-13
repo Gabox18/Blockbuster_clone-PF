@@ -20,9 +20,6 @@
   width: 6rem;
   height: 2.3rem;
 }
-.navbarFix {
-  height: 4rem;
-}
 
 .Unregistered-style {
   border-radius: 50%;
@@ -96,4 +93,27 @@
 .searchDetailNav {
   position: relative;
   left: 50%;
+}
+.container-fluid {
+  height: 3%;
+}
+@media only screen and (max-width: 1000px) {
+  .navbar-expand-lg {
+    padding-top: .5rem;
+    height: 8%;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: inline;
+    justify-content: start;
+  }
+  .logoLanding1 {
+    left: 2rem;
+    height: 40px;
+    width: 40px;
+    margin-top: 0;
+  }
+  .btnLogin{
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+  }
 }
