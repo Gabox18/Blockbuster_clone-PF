@@ -1,3 +1,5 @@
+
+
 .button-prev, .button-next {
     font-weight: bold;
 }
@@ -8,8 +10,6 @@
     background-color:#0166da8d;
     box-shadow: 0 5px 5px rgba(67, 65, 204, 0.663);
     color: white;
-    border-top: 0;
-    border-left: 0;
     padding: 6px;
     border-radius: 5px;
     position: relative;
@@ -33,5 +33,17 @@
 .ContainerPaginado {
     width: 100rem;
     height: 5rem;
-
+    
+}
+.button-prev{
+    position: relative;
+    bottom: 35rem;
+    right: 40rem;
+}
+.button-next{
+    position: relative;
+    bottom: 35rem;
+    left: 40rem;
+    padding-bottom: .5rem;
+    margin-left: 1rem;
 }

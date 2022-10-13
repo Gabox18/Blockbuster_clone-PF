@@ -128,7 +128,6 @@ export default function FunctionAddMovie() {
       ...input,
         poster: ""
     })
-    console.log(input)
 }
 
   function handleChange(e) {                      
@@ -140,7 +139,6 @@ export default function FunctionAddMovie() {
         ...input,
         [e.target.name]: e.target.value
     }));
-    console.log(input);
 }           
 
   function handleSubmit(e) {
@@ -148,7 +146,6 @@ export default function FunctionAddMovie() {
     e.preventDefault();
     setErrors(validate(input))
     const errorCompletarFormu = validate(input)
-    console.log(input)
     if(input.name === "" || input.year === "" || input.recommendation === "" || input.description === "" || input.rated ==="" || input.year === ""|| input.runtime === ""|| input.director ===""|| input.actors === "" || input.language === ""|| input.plot ==="" ||input.genre === []|| input.country ==="" || input.imdbVote ==="" || input.imdbRating ===""|| input.poster ===""){
     alert ("Todos los campos deben ser requeridos")
   } else {

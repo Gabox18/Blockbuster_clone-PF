@@ -33,18 +33,10 @@ export default function Comment({
   });
   let { user } = useSelector((state) => state.alldata);
 
-
-
-
-  
-  // console.log(response,'invento')
-  //  console.log(cantidad,'cantidad')
   
 
   async function handleDelete(id) {
     dispatch(asyncDeleteComment(id, movieId));
-    console.log(id, "movie id");
-    console.log(movieId, "movieId");
     setTimeout(() => {
       dispatch(asyncCommentById(movieId));
     }, 1000);
@@ -61,7 +53,7 @@ export default function Comment({
       ...newComm,
       coment: e.target.value,
     });
-    console.log(newComm);
+  
   }
   async function handleSubmit(e) {
     e.preventDefault();

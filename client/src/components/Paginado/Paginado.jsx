@@ -10,7 +10,7 @@ export default function Paginado ({moviesPerPage, allMovies, paginado, setCurren
     }
     return (
         <div className="ContainerPaginado">
-          <ul>
+          <ul className="buttons-paginated">
             <button
               disabled={currentPage === 1}
               className='button-prev'

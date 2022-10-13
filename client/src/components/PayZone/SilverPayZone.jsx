@@ -13,21 +13,17 @@ export default function SilverPayZone() {
     let idSwich = { id: userDB.id };
     dispatch(asyncCategorySwich(idSwich));
   }
-  console.log(window.location.href);
   let url = window.location.href;
   let tokenredirec = url.split("").slice(47, 64).join("");
-  console.log(tokenredirec);
   return tokenredirec === userDB.token || userDB.category === "admin" ? (
     <div>
       <div>
         <Navbar />
       </div>
       <section className="sectionPay">
-        <div className="containerPay">
           <div className="card_box1">
-            <span>Silver</span>
-            <div className="containerPay">
-              <div className="contentPay">
+            <span>Silver</span>      
+              <div className="contentPays">
                 <h2 className="titleSilver">Silver Subscription</h2>
                 <h3 className="subtitle">This Plan Includes:</h3>
                 <p className="p-style-silver">Full HD 1080pi</p>
@@ -39,14 +35,11 @@ export default function SilverPayZone() {
                   width="90px"
                   alt="loguito"
                 />
-              </div>
-            </div>
           </div>
         </div>
         <Link to={"/home"}>
           {/*onClick={handleSubmitSilver}*/}
-
-          <div className="button" onClick={handleSubmitSilver}>
+          <div className="button1" onClick={handleSubmitSilver}>
             <div className="box">⬆️</div>
             <div className="box">H</div>
             <div className="box">O</div>

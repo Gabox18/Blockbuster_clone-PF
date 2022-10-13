@@ -28,8 +28,6 @@ function Home() {
   let arrPopularMovies = arrMovieFiltrado?.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
-
-  console.log(ReactPlayer);
   
   return (
     <>
