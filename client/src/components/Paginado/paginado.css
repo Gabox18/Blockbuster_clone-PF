@@ -38,12 +38,12 @@
 .button-prev{
     position: relative;
     bottom: 35rem;
-    right: 45rem;
+    right: 40rem;
 }
 .button-next{
     position: relative;
     bottom: 35rem;
-    left: 45rem;
+    left: 40rem;
     padding-bottom: .5rem;
     margin-left: 1rem;
 }
