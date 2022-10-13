@@ -48,17 +48,9 @@ function Navbar(prop) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Route path="/home">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <Route path="/home">
-                  <FilteringSorting setCurrentPage={prop.setCurrentPage} />
-                </Route>
-              </ul>
-
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <Route path="Home/result">
-                  <FilteringSorting setCurrentPage={prop.setCurrentPage} />
-                </Route>
-              </ul>
+              <Link to={"/home"}>
+                <img className="logoNav" src={img} width="60px" alt="logo" />
+              </Link>
               <Route path="/home">
                 {
                   userDB.category === 'user' ?
@@ -74,9 +66,18 @@ function Navbar(prop) {
                 }
               </Route>
                
-              <Link to={"/home"}>
-                <img className="logoNav" src={img} width="60px" alt="logo" />
-              </Link>
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <Route path="/home">
+                  <FilteringSorting setCurrentPage={prop.setCurrentPage} />
+                </Route>
+              </ul>
+
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <Route path="Home/result">
+                  <FilteringSorting setCurrentPage={prop.setCurrentPage} />
+                </Route>
+              </ul>
+              
             </Route>
             <Route path="/home">
               <Searchbar setCurrentPage={prop.setCurrentPage} />
