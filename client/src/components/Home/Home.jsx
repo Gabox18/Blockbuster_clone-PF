@@ -24,11 +24,10 @@ function Home() {
   let arrRecentMovies = arrMovieFiltrado?.filter((e) => e.year >= 2019);
   let arrActionMovies = arrMovieFiltrado?.filter((e) => e.genre >= "Action");
 
-
   let arrPopularMovies = arrMovieFiltrado?.filter(
     (e) => parseInt(e.imdbVotes.split(",").join("")) >= 700000
   );
-  
+
   return (
     <>
       <div className="homeContainer">
@@ -37,27 +36,16 @@ function Home() {
         </div>
 
         <section className="cabecera">
-          <img className="" src={img} alt={"poster"} />
           <div className="contenido">
-
-            <div className="loader1">
-              <span className="landingName">BlockBuster</span>
-              <span>BlockBuster</span>
+            <div>
+              <img
+                className="logoHomeOficial"
+                src="https://bendblockbuster.com/wp-content/themes/blockbuster/assets/images/blockbuster-logo.svg"
+              ></img>
             </div>
             <h3 className="subBlockTittle">
-              Life is unpredictable and control is just an illusion that makes
-              us feel small and helpless.
+              Welcome where your dreams come true
             </h3>
-            <div className="videoCabecera">
-              <ReactPlayer
-                className="react-player"
-                url="https://res.cloudinary.com/dapicfoap/video/upload/v1664469154/BlockBuster/Avengers_Endgame_Tr%C3%A1iler_oficial_1_Espa%C3%B1ol_Latino_HD_mtov89.mp4"
-                playing={true}
-                onReady
-                muted
-              />
-            </div>
-            
           </div>
         </section>
         <div className="conteiner-carruzel-home1">
@@ -76,7 +64,6 @@ function Home() {
           <h2 className="textCarruzel2">Action movies</h2>
           <Carrusel1 array={arrActionMovies} />
         </div>
-
         <div className="footerContainer">
           <Footer />
         </div>
