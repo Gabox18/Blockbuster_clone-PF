@@ -1,62 +1,59 @@
-.cardContainerViewResult{
-    display: grid;
-    grid-template-columns: 15% 15% 15% 15%;
-    gap: 1rem;
-    margin: auto;
+.cardContainerViewResult {
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15%;
+  gap: 1rem;
+  margin: auto;
 }
-.conteinerViewResult{
-    background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg") ;
-    background-position: center;
-     background-repeat:repeat-y; 
-    background-size: cover;  
-  
+.conteinerViewResult {
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
 /* conteinerViewResult */
- .conteinerViewResult{
-    min-height:100%;
-    transform:translatex(0px) translatey(0px);
-   }
-   
-   /* Text */
-.conteiner-shop-plan .fancy .text{
-    transform:translatex(0px) translatey(0px);
-    color:#f7a600;
-   }
-   
-   /* conteinerViewResult */
+.conteinerViewResult {
+  min-height: 100%;
+  transform: translatex(0px) translatey(0px);
+}
+
+/* Text */
+.conteiner-shop-plan .fancy .text {
+  transform: translatex(0px) translatey(0px);
+  color: #f7a600;
+}
+
 /* conteinerViewResult */
- .conteinerViewResult{
-    min-height:972px;
-   }
-   
-   /* Card info */
-.conteinerViewResult a .card-info{
-    transform:translatex(4px) translatey(69px) !important;
-   }
-   
-.not-result{
-    font-size: 3rem;
-    color: #fff;
-    margin-left: 55rem;
-}
-   
-   
-.containerPaginado{
-    margin-top: 6rem;
+.conteinerViewResult {
+  min-height: 972px;
 }
 
-.cartitasS{
-    border-radius: 15%;
+/* Card info */
+.conteinerViewResult a .card-info {
+  transform: translatex(4px) translatey(69px) !important;
 }
 
-.cartitass{
-    border-radius: 7%;
+.not-result {
+  font-size: 3rem;
+  color: #fff;
+  margin-left: 55rem;
 }
-.containterRes{
-   display: flex;
-   gap:10rem;
+
+.containerPaginado {
+  margin-top: 6rem;
 }
-.containerC{
-    height: 100vh;
-    width: 100%;
+
+.cartitasS {
+  border-radius: 15%;
+}
+
+.cartitass {
+  border-radius: 7%;
+}
+.containterRes {
+  display: flex;
+  gap: 10rem;
+}
+.containerC {
+  height: 100vh;
+  width: 100%;
 }
