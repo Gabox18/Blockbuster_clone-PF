@@ -155,7 +155,21 @@
   max-width: 100%;
   height: auto;
   max-height: 100px;
+  animation: blur 10s linear infinite;
 }
+
+@keyframes blur {
+  0%, 90% {
+   filter: blur(0);
+  }
+ 
+  50% {
+   filter: blur(10px);
+  }
+ }
+
+
+
 
 @media (max-width: 991px) {
   .subBlockTittle {

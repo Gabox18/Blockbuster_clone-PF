@@ -48,7 +48,7 @@ function Navbar(prop) {
     <nav className="nav">
       <a href="#" className="nav__brand">
       <Link to={"/home"}>
-        BlockBuster
+      <img className="LogoBlockbusterOficialNav" src="https://bendblockbuster.com/wp-content/themes/blockbuster/assets/images/blockbuster-logo.svg"/>
       </Link> 
       </a>
       <ul className={active}>
