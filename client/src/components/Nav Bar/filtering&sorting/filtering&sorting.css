@@ -2,3 +2,11 @@
     display: flex;
     width: 20rem;
 }
+
+
+@media screen and (max-width: 768px) {
+    .containerFiltering {
+        width: 10rem;
+        flex-direction: column;
+    }
+  }

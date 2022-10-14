@@ -171,7 +171,7 @@ export default function Aboutus() {
 
             <img src={'https://res.cloudinary.com/dapicfoap/image/upload/v1664947593/BlockBuster%20Nuestro/MolloPic_bm9q4c.jpg'} alt="img" className="img-coder" />
             <div className="boton-coder">
-              <a href="https://github.com/silversurferbeats" target="_blank" rel="noreferrer">
+              <a href="https://github.com/agusmollo1" target="_blank" rel="noreferrer">
                 <button type="button" className="btn-git">
                   {" "}
                   <svg
