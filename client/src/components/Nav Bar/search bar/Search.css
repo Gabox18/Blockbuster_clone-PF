@@ -2,11 +2,12 @@
 .inputSearch {
        border: rgb(55, 116, 248) solid;
        border-width: 0.4px;
-       margin: 20px;
+       margin: 5px;
        padding: 1rem;
        border-radius: 0.5rem;
        transition: 0.3s;
-       height: 40px;
+       width: 10rem;
+       height: 1rem;
 }
    
 .inputSearch:focus {
@@ -19,7 +20,14 @@
        color: black;
 }
 .btnSearch{
-       width: 6rem;
-       height: 2.3rem;
-       margin-top: 1.3rem;
+       width: 3rem;
+       height: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+       .inputSearch {
+              width: 5rem;
+              height: 1rem;
+       }
+       
 }
