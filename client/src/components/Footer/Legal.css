@@ -1,30 +1,42 @@
 .all-legal {
   background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
   background-size: cover;
-}
-.legal-information {
-  height: 1500px;
-  border: #f7a600 double 10px;
-  border-radius: 10px;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-align: justify;
   color: wheat;
-  font-size: 18px;
-  padding-top: 8rem;
-  font-size: 1.3rem;
-}
-.legal-title {
-  color: #f7a600;
-  font-size: 90px;
-  padding: 180px;
+  text-align: start;
+  padding-top: 6rem;
 }
 
-.App .all-legal .legal-information {
-  height: 636px;
-}
-.p-legal {
+.legal-information {
   margin: auto;
-  margin-left: 11%;
-  line-height: 2.1em;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 7%;
+  border: double #f7a600 10px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.legal-title {
+  color: #f7a600;
+  margin: auto;
+  text-align: center
+}
+
+body {
+  font-size: 80%;
+}
+
+@media screen and (min-width:800px) {
+  body {
+    font-size: 100%;
+    /* ampliamos los textos si mide más de 800px */
+  }
+}
+
+/* fin de la zona para más de 800px de ancho de pantalla */
+@media screen and (min-width:1200px) {
+  body {
+    font-size: 120%;
+    /* ampliamos más aún los textos si mide más de 1200px */
+  }
 }

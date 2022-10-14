@@ -1,70 +1,87 @@
 .container-about {
-    background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
-    background-size: cover;
-    color: wheat;
-    
-  }
-  .img-coder {
-    border-radius: 50%;
-    border: 16px double #f7a600;
-    width: 240px;
-  }
-  .title-about {
-    font-size: 20px;
-    border: #f7a600 6px;
-    border-bottom-style: solid;
-    background-color: black;
-    padding-top: 6rem;
-  }
-  
-  .container-coder {
-    background-color: black;
-    border: #f7a600 double 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 400px;
-    border-radius: 10%;
-    
-  }
-  .container-coder:hover {
-    box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
-  }
-  .coder-name {
-    color: #f7a600;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .btn-git {
-    background-color: #f7a600;
-    border: black double 10px;
-    border-radius: 10px;
-    margin: 30px;
-  }
-  .img-abi {
-    border-radius: 100%;
-    border: 16px double #f7a600;
-    width: 240px;
-  }
-  .allcoders {
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px;
-    padding: 40px 0 ;
-  }
-  .aboutus {
-    color: #f7a600;
-    padding: 750px;
-    font-size: 80px;
-  }
-  .parrafito {
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+  background-size: cover;
+  color: wheat;
+  text-align: start;
+  padding-top: 6rem;
+}
+
+.container-information {
+  margin: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 7%;
+  border: double #f7a600 10px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.img-coder {
+  border-radius: 50%;
+  border: 16px double #f7a600;
+  width: 240px;
+}
+
+.title-about {
+  color: #f7a600;
+  margin: auto;
+  text-align: center
+}
+
+.container-coder {
+  background-color: black;
+  border: #f7a600 double 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  border-radius: 10%;
+}
+
+.container-coder:hover {
+  box-shadow: 8px 8px 16px #F7A600, -8px -8px 16px #F7A600;
+}
+
+.coder-name {
+  color: #f7a600;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-git {
+  background-color: #f7a600;
+  border: black double 10px;
+  border-radius: 10px;
+  margin: 30px;
+}
+
+.img-abi {
+  border-radius: 100%;
+  border: 16px double #f7a600;
+  width: 240px;
+}
+
+.allcoders {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  padding: 40px 0;
+}
+
+.aboutus {
+  color: #f7a600;
+  margin: auto;
+  text-align: center
+}
+
+.parrafito {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
   
