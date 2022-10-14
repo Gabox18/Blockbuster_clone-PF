@@ -45,7 +45,7 @@ export default function Paginado ({moviesPerPage, allMovies, paginado, setCurren
                   )
               }
             >
-              Next
+             <p className="textButton">Next</p> 
             </button>
           </ul>
         </div>
