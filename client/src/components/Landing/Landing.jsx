@@ -71,7 +71,7 @@ const scrollButton = (elementRef) => {
             data-aos-delay="100"
           >
             <div>
-              <img className="LogoBlockbusterOficial" src="https://bendblockbuster.com/wp-content/themes/blockbuster/assets/images/blockbuster-logo.svg"></img>
+              <img className="LogoBlockbusterOficial" src="https://bendblockbuster.com/wp-content/themes/blockbuster/assets/images/blockbuster-logo.svg"/>
             </div>
             <a
               onClick={() => scrollButton(scrollCard)}

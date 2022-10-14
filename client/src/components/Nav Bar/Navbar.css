@@ -199,6 +199,10 @@ a {
   flex-direction: row;
   gap: 1rem;
 }
+.LogoBlockbusterOficialNav{
+  width: 180px;
+}
+
 
 @media screen and (max-width: 768px) {
   .conteinerProfile {
@@ -207,5 +211,56 @@ a {
     gap: 1rem;
   }
   
+}
+
+.Unregistered-style {
+  border-radius: 50%;
+  outline: 3px groove #ff0000;
+
+}
+
+.Unregistered-style:hover {
+  border-radius: 50%;
+  outline: 6px groove #ff0000;
+
+}
+
+.UserCategory-style {
+  border-radius: 50%;
+  outline: 3px groove #ffffff;
+
+}
+
+.UserCategory-style:hover {
+  border-radius: 50%;
+  outline: 2px groove #ffffff;
+  box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #ffffff;
+
+}
+
+.SilverCatery-style {
+  border-radius: 50%;
+  outline: 3px groove #c0c0c0;
+
+}
+
+.SilverCatery-style:hover {
+  border-radius: 50%;
+  outline: 2px groove #c0c0c0;
+  box-shadow: 6px 6px 12px #c0c0c0, -6px -6px 12px #c0c0c0;
+
+}
+
+.GoldCategory-style {
+  border-radius: 50%;
+  outline: 3px groove #ff930f;
+
+}
+
+.GoldCategory-style:hover {
+  border-radius: 50%;
+  outline: 2px groove #ff930f;
+  box-shadow: 6px 6px 12px #ff930f, -6px -6px 12px #ff930f;
+
 }
 

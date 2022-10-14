@@ -1,59 +1,79 @@
 
-.footercito{
+.footercito {
     background-color: #1D0FBD;
 }
-.container-info{
+
+.container-info {
     background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
     background-size: cover;
+    background-size: cover;
+    color: wheat;
+    text-align: start;
+    padding-top: 6rem;
 }
-.container-info2{
 
-    text-align:start;
+.container-information {
     margin: auto;
     margin-left: 20%;
-    margin-right:20%;
-    border: #f7a600 double 10px;
-    padding: 30px;
+    margin-right: 20%;
+    margin-bottom: 7%;
+    border: double #f7a600 10px;
     border-radius: 10px;
-    margin-bottom: 40px;
-    padding-top: 6rem;
+    padding: 30px;
+}
 
+.li {
+    list-style-type: disc;
+    list-style-position: inside;
+    list-style-image: none;
 }
-.li{
- list-style-type:disc;
- list-style-position:inside;
- list-style-image:none;
-}
-.title-privacy{
+
+.title-privacy {
     color: #f7a600;
-    font-size: 90px;
-    padding:230px;
-    
+    margin: auto;
+    text-align: center
 }
-.subtitle{
-    color: #f7a600;
-}
-.introduction{
-    color:  wheat;
-}
-.personal-information{
-color:  wheat;
-}
-.minititle{
+
+.subtitle {
     color: #f7a600;
 }
-.use-information{
+
+.introduction {
     color: wheat;
 }
-.disclosure-information{
+
+.personal-information {
     color: wheat;
 }
-.third-party{
+
+.minititle {
+    color: #f7a600;
+}
+
+.use-information {
     color: wheat;
 }
-.security{
+
+.disclosure-information {
     color: wheat;
 }
-.options{
+
+.third-party {
     color: wheat;
+}
+
+.security {
+    color: wheat;
+}
+
+.options {
+    color: wheat;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
 }
