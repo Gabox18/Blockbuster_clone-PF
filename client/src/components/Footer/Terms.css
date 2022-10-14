@@ -1,23 +1,42 @@
-.container-terms{
+.container-terms {
     background-image: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg');
     background-size: cover;
     color: wheat;
     text-align: start;
     padding-top: 6rem;
-    
 }
-.container-infoterms{
+
+.container-infoterms {
     margin: auto;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 7%;
-    border: double  #f7a600 10px;
+    border: double #f7a600 10px;
     border-radius: 10px;
     padding: 30px;
-    
 }
-.title-terms{
-    color: #f7a600 ;
-    padding: 180px;
-    
+
+.title-terms {
+    color: #f7a600;
+    margin: auto;
+    text-align: center
+}
+
+body {
+    font-size: 80%;
+}
+
+@media screen and (min-width:800px) {
+    body {
+        font-size: 100%;
+        /* ampliamos los textos si mide más de 800px */
+    }
+}
+
+/* fin de la zona para más de 800px de ancho de pantalla */
+@media screen and (min-width:1200px) {
+    body {
+        font-size: 120%;
+        /* ampliamos más aún los textos si mide más de 1200px */
+    }
 }

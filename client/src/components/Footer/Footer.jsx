@@ -21,43 +21,43 @@ function Footer() {
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 className="text-upercase mb-4 font-weight-bold text-warning">TECNOLOGIES</h5>
               <p>
-                <a href={"https://reactjs.org/"} target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>React.js</a>
+                <a href={"https://reactjs.org/"} target={"_blank"} rel="noreferrer" className="text-white" style={{ "text-decoration": "none" }}>React.js</a>
               </p>
               <p>
-                <a href="https://www.typescriptlang.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>TypeScript</a>
+                <a href="https://www.typescriptlang.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{ "text-decoration": "none" }}>TypeScript</a>
               </p>
               <p>
-                <a href="https://redux-toolkit.js.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>Redux Toolkits</a>
+                <a href="https://redux-toolkit.js.org/" target={"_blank"} rel="noreferrer" className="text-white" style={{ "text-decoration": "none" }}>Redux Toolkits</a>
               </p>
               <p>
-                <a href="https://nodejs.org/es/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>Node.js</a>
+                <a href="https://nodejs.org/es/" target={"_blank"} rel="noreferrer" className="text-white" style={{ "text-decoration": "none" }}>Node.js</a>
               </p>
               <p>
-                <a href="https://www.mysql.com/" target={"_blank"} rel="noreferrer" className="text-white" style={{"text-decoration":"none"}}>MySql</a>
+                <a href="https://www.mysql.com/" target={"_blank"} rel="noreferrer" className="text-white" style={{ "text-decoration": "none" }}>MySql</a>
               </p>
             </div>
 
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 className="text-uppercase mb-4 font-weight-bold text-warning">LINKS</h5>
               <Link to='/terms'>
-              <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Terms and conditions</a>
-              </p>
+                <p>
+                  <a href="#" className="text-white">Terms and conditions</a>
+                </p>
               </Link>
               <Link to='/privacy'>
-              <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Privacy Policy</a>
-              </p>
+                <p>
+                  <a href="#" className="text-white">Privacy Policy</a>
+                </p>
               </Link>
               <Link to='/legal'>
-              <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>Legal Information</a>
-              </p>
+                <p>
+                  <a href="#" className="text-white">Legal Information</a>
+                </p>
               </Link>
-             <Link to='/about'>
-              <p>
-                <a href="#" className="text-white" style={{"text-decoration":"none"}}>About us</a>
-              </p>
+              <Link to='/about'>
+                <p>
+                  <a href="#" className="text-white">About us</a>
+                </p>
               </Link>
             </div>
 
@@ -80,12 +80,12 @@ function Footer() {
           <div className="row aling-items-center">
             <div className="col-md-7 col-lg-8">
               <p>
-                Copyright @2022 All rights reserved by: 
-                <a href="#" style={{"text-decoration": "none"}}>
+                Copyright @2022 All rights reserved by:
+                <a href="#" style={{ "text-decoration": "none" }}>
                   <strong className="text-warning"> Blockbuster</strong>
                 </a>
               </p>
-              
+
             </div>
 
           </div>

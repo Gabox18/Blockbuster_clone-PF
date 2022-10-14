@@ -6,9 +6,8 @@ import "./Terms.css";
 export default function Terms() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="container-terms">
-        
         <div className="container-infoterms">
           <div className="card-terms">
             <h1>
@@ -158,7 +157,7 @@ export default function Terms() {
               In no event shall Blockbuster, nor any of its officers, directors
               and employees, shall be held liable for anything arising out of or
               in any way connected with your use of this Website whether such
-              liability is under contract.  Blockbuster, including its officers,
+              liability is under contract.  Blockbuster, including its officers,
               directors and employees shall not be held liable for any indirect,
               consequential or special liability arising out of or in any way
               related to your use of this Website.
