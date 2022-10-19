@@ -28,7 +28,3 @@ function Carrusel({array}){
 export default Carrusel;
 
 
-{/* 
-    https://www.youtube.com/watch?v=ZDGE6CZP_tg&ab_channel=CodersBlock 
-    https://www.youtube.com/watch?v=uhP6OL0bwpY&ab_channel=midudev
-*/}
