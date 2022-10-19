@@ -28,7 +28,7 @@ import GoldPayZone from "./components/PayZone/GoldPayZone";
 import  Privacy  from "./components/Footer/Privacy";
 import Legal from "./components/Footer/Legal";
 import Terms from "./components/Footer/Terms";
-import Aboutus from "./components/Footer/Aboutus";
+import Aboutus from "./components/About Us/Aboutus";
 // Profile
 // import prfofile from "./components/Profile/Profile"
 

@@ -5,7 +5,7 @@ import Navbar from "../Nav Bar/Navbar";
 
 export default function Aboutus() {
   return (
-    <>
+    <div className="aboutUsRender">
       <Navbar />
       <div className="container-about">
         <div className="container-information">
@@ -33,8 +33,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                      width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -44,11 +44,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/gabriel-suarez-7357931b3/" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="https://www.linkedin.com/in/gabriel-suarez-7357931b3/"
-                      width="50"
-                      height="50"
+                      width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -69,8 +69,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                      width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -80,11 +80,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/francoselvarolo/" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="https://www.linkedin.com/in/francoselvarolo/"
-                      width="50"
-                      height="50"
+                      width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -105,8 +105,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -116,11 +116,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/gabriel-ferrer-villasmil/" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -141,8 +141,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -152,11 +152,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/lucas-pedreira-66a15123a/" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="https://www.linkedin.com/in/lucas-pedreira-66a15123a/"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -177,8 +177,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -188,11 +188,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/agustin-mollo" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -213,8 +213,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -224,11 +224,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://linkedin.com/in/santiago-hubert" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -249,8 +249,8 @@ export default function Aboutus() {
                     {" "}
                     <svg
                       xmlns="https://github.com/AbimaelRueda"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="black"
                       className="bi bi-github"
                       viewBox="0 0 16 16"
@@ -260,11 +260,11 @@ export default function Aboutus() {
                   </button>
                 </a>
                 <a href="https://www.linkedin.com/in/abimael-rueda-galindo-4b131b244/" target="_blank" rel="noreferrer">
-                  <button className="btn-git">
+                  <button className="btn-linkdin">
                     <svg
                       xmlns="https://www.linkedin.com/in/abimael-rueda-galindo-4b131b244/"
-                      width="50"
-                      height="50"
+                       width="30"
+                      height="30"
                       fill="currentColor"
                       class="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -279,6 +279,6 @@ export default function Aboutus() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
