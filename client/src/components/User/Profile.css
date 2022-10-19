@@ -1,42 +1,110 @@
-.container-profile-details{
-  background: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664773994/BlockBuster%20Nuestro/backFormPefil_f5iadx.webp');
+@font-face {
+  font-family: besan;
+  src: url("../../assets/Besan.otf");
+}
+
+.profileBg-dark {
+  background: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+}
+
+.container-profile-details {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
+  min-height: 80vh;
   padding-top: 6rem;
+  display: flex;
+  justify-content: center;
+}
 
+.container-perfil {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.514);
+  border-radius: 0.75rem;
+  border: groove 2px goldenrod;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: right;
+  margin-bottom: 30px;
+  padding: 1em;
+  width: 350px;
+}
+
+.picPerfil {
+  border: 3px solid #d2d6de;
+  border-radius: 50%;
+  display: inline-block;
+  height: 130px;
+  margin: 20px 57px 0;
+  padding: 3px;
+  width: 130px;
+}
+
+.div-name-profile {
+  margin-top: 0.5%;
+}
+
+.label-date-profile{
+  color: #fff;
+  font-size: 1.2rem;
+  text-shadow: 0px 1px 0px #fcc139;;
+}
+
+.h4-profile{
+  font-family: besan;
+  color: #fcc139;
+  margin-top: 5%;
+}
+
+.ProfileDangerRequerement{
+  color: red;
+  font-size: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.container-opciones-profile{
+  grid-gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  margin-left: 35%;
+  margin-top: -2%;
+  padding: 30px 0 26px;
 }
 
 .notDecaration{
   list-style:none;
 }
 
-.ProfileDangerRequerement{
-  color: red;
-  font-size: 20px;
-}
 
 .notDecaration li {
   text-align: left;
   color: black;
 }
 
-/* From uiverse.io by @david-mohseni */
-.cardPerf {
-    width: 20%;
-    height: 45%;
-    margin-top: 5%;
-    background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
-    text-align: center;
-    border: 10px groove #f7a600;
-    border-radius: 20px;
-    box-shadow: inset 5px 5px 10px #f7a600, inset -5px -5px 10px #f7a600;
-    transition: 1s;
-    margin: auto;
-    padding-bottom: 1rem;
-  }
 
   .imgPencil{
     padding-bottom: 1rem;
@@ -52,22 +120,7 @@
     border-radius: 50%;
     box-shadow: 8px 8px 10px#f7a600(45, 0, 246), -8px -8px 10px rgb(255, 255, 255);
   }
-  
-  .contentPef {
-    color: #999;
-    background-color: #eee;
-    padding: 10px;
-    margin: 5px 20px;
-    border-radius: 8px;
-    box-shadow: 8px 8px 10px #f7a600, -8px -8px 10px #f7a600;
-  }
-  
-
-  
+    
   .contentPef h3 {
     text-shadow: 2px 2px 0px #fff;
-  }
-  .picPerfil{
-    width: 100px;
-    border-radius: 50%;
-  }
+  }*/

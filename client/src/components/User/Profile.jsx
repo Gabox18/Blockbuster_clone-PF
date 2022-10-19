@@ -72,21 +72,17 @@ const Profile = () => {
         <section className="profileBg-dark">
           <Navbar />
           <div className="container-profile-details">
-            <div className="cardPerf">
-              <div className="imgPerf">
-                <img className="picPerfil" src={userBD?.picture || user.picture} alt="fotito"></img>
-              </div>
+              <div className="container-perfil">
+                <img className="picPerfil" src={userBD?.picture || user.picture} alt="Img profile"></img>
               <div className="contentPef" >
-                {<h3>{userBD?.nickname || user.nickname}</h3>}
-                <ul className="notDecaration">
-                  <li>Name : {userBD?.name || user?.name}</li>
-                  <li>Lastname : {userBD?.lastname}</li>
-                  <li>Email : {userBD?.email || user?.email}</li>
-                  <li>Date :{` ${userBD?.date}` || user.date}</li>
+                {<h4 className="h4-profile">{userBD?.name || user?.nickname}</h4>}
+                <div className="div-name-profile">
+                  <label className="label-date-profile">{userBD?.lastname}</label>
+                </div>
                   {
                     !userBD.category ?
                       (<div>
-                        <p className="ProfileDangerRequerement"> Complete your Date</p>
+                        <p className="ProfileDangerRequerement"> When is your birthday?</p>
                         <input
                           
                           type="date"
@@ -101,29 +97,37 @@ const Profile = () => {
                           <img className="imgPencil" src={submit} alt="pencil" />
                         </button>
                       </div>)
-                      : (<div>
-                        <li>Category :{` ${userBD?.category}`}</li>
-                        <Link to={"/profile/Form"}>
-                          <button className="botonD" >
-                            <img className="imgPencil" src={pencil} alt="pencil" />
-                          </button>
-                        </Link>
-                      </div>)
+                      : (<>
+                        <div>
+                          <label className="label-date-profile">{` ${userBD?.date}`}</label>
+                        </div>
+                        <div>
+                          <label className="label-date-profile">Category :{` ${userBD?.category}`}</label>
+                        </div>
+                        <div>
+                          <Link to={"/profile/Form"}>
+                            <button className="botonD" >
+                              <img className="imgPencil" src={pencil} alt="pencil" />
+                            </button>
+                          </Link>
+                        </div>
+                      </>)
                   }
-                </ul>
               </div>
-            </div>
-            <Link to={"/home"}>
-              <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Home</div>
-            </Link>
-            {
-              userBD.category === 'admin' ?
-              <Link to={"/home/admin"}>
-                <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Admin</div>
-              </Link> :
-              <></>
-            }
+              </div>
           </div>
+            <div className="container-opciones-profile">
+              <Link to={"/home"}>
+                <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Home</div>
+              </Link>
+              {
+                userBD.category === 'admin' ?
+                <Link to={"/home/admin"}>
+                  <div className="btn btn-outline-warning btn-block mb-10 rounded shadow-lg">Admin</div>
+                </Link> :
+                <></>
+              }
+            </div>
           <Footer />
         </section>
       ) : (
