@@ -1,5 +1,5 @@
 .container-about {
-  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+  /* background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg"); */
   background-size: cover;
   color: wheat;
   text-align: start;
@@ -15,11 +15,18 @@
   border-radius: 10px;
   padding: 30px;
 }
+@media screen {
+  .container-information {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+}
 
 .img-coder {
   border-radius: 50%;
-  border: 16px double #f7a600;
-  width: 240px;
+  outline: 12px double #f7a600;
+  width: 60%;
 }
 
 .title-about {
@@ -51,10 +58,33 @@
 }
 
 .btn-git {
-  background-color: #f7a600;
+  background-color: #fdfdfd;
   border: black double 10px;
   border-radius: 10px;
   margin: 30px;
+  width: 50px;
+  height: 50px;
+}
+.btn-git:hover{
+  box-shadow: 4px 4px 8px #fdfdfd, -4px -4px 8px #ffffff;
+
+}
+.btn-linkdin {
+  background-color: #0A63BC;
+  border: black double 10px;
+  border-radius: 10px;
+  margin: 30px;
+  width: 50px;
+  height: 50px;
+}
+.btn-linkdin:hover{
+  box-shadow: 4px 4px 8px #0A63BC, -4px -4px 8px #0A63BC;
+
+}
+
+.aboutUsRender{
+  height: 100%;
+  background-image: url("../../assets/fondoBlue_a3nqyo.jpg");
 }
 
 .img-abi {
