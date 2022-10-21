@@ -226,6 +226,7 @@ a {
 }
 
 .UserCategory-style {
+  margin-top: 6px;
   border-radius: 50%;
   outline: 3px groove #ffffff;
 

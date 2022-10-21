@@ -3,6 +3,11 @@
     width: 20rem;
 }
 
+.selectButton{
+    margin-top: 8px;
+    height: 2rem;
+}
+
 
 @media screen and (max-width: 768px) {
     .containerFiltering {
