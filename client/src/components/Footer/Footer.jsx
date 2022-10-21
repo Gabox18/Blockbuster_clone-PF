@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <>
+    
       <footer className="bg-dark text-white pt-0 pb-4">
         <div className="container text-center text-md-left">
           <div className="row text-center text-md-left">
@@ -91,7 +91,7 @@ function Footer() {
           </div>
         </div>
       </footer>
-    </>
+    
   );
 }
 export default Footer;
