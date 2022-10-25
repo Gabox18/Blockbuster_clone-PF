@@ -1,59 +1,30 @@
 .cardContainerViewResult {
-  display: grid;
-  grid-template-columns: 15% 15% 15% 15%;
-  gap: 1rem;
-  margin: auto;
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
+
 .conteinerViewResult {
   background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
 }
-/* conteinerViewResult */
-.conteinerViewResult {
-  min-height: 100%;
-  transform: translatex(0px) translatey(0px);
-}
 
-/* Text */
-.conteiner-shop-plan .fancy .text {
-  transform: translatex(0px) translatey(0px);
-  color: #f7a600;
-}
-
-/* conteinerViewResult */
-.conteinerViewResult {
-  min-height: 972px;
-}
-
-/* Card info */
-.conteinerViewResult a .card-info {
-  transform: translatex(4px) translatey(69px) !important;
-}
-
-.not-result {
-  font-size: 3rem;
-  color: #fff;
-  margin-left: 55rem;
-}
-
-.containerPaginado {
-  margin-top: 6rem;
-}
-
-.cartitasS {
-  border-radius: 15%;
-}
-
-.cartitass {
-  border-radius: 7%;
-}
-.containterRes {
-  display: flex;
-  gap: 10rem;
-}
-.containerC {
-  height: 100vh;
-  width: 100%;
+@media (max-width: 600px) {
+  .cardContainerViewResult {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
 }
