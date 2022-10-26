@@ -62,11 +62,9 @@ export default function ComentForm({ idParams, handleDelete }) {
   }
 
   return (
+    <div>
     <div className="container-1">
       <div className="containerinfo">
-        <div>
-          <img src={userdb.picture} className="imgPefil" alt="fotito" />
-        </div>
         {info.length !== 3 ? (
           <form onSubmit={(e) => handleOnsubmit(e)}>
             <div className="textNComent">
@@ -79,6 +77,9 @@ export default function ComentForm({ idParams, handleDelete }) {
                 onChange={handleOnChange}
               />
             </div>
+            {/* <div>
+          <img src={userdb.picture} className="imgPefil" alt="fotito" />
+            </div> */}
 
             <button
               type="submit"
@@ -90,11 +91,12 @@ export default function ComentForm({ idParams, handleDelete }) {
             </button>
           </form>
         ) : (
-          <p className="textlimit">you can only comment 3 times per movie</p>
+          <p className="textlimit"> you can only comment 3 times per movie</p>
         )}
       </div>
-      <div className="borbo">
-        <h5>comments from other users about this movie.</h5>
+    </div>
+    <div className="comentOther">
+        <h5> Comments from other users about this movie: </h5>
       </div>
     </div>
   );
