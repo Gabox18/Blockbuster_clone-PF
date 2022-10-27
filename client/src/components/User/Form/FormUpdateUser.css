@@ -2,15 +2,16 @@
 .cards-form {
   border: solid 2px;
   margin: auto;
-  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773994/BlockBuster%20Nuestro/backFormPefil_f5iadx.webp");
-padding-top: 6rem;
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+  padding-top: 4rem;
 }
 
 /* From uiverse.io by @david-mohseni */
 .marcoForm {
-  width: 30%;
+  min-width: 300px;
+  width: 35%;
   height: 50%;
-  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/backForms_uytobd.jpg");
+  background-color: #090909af;
   text-align: center;
   border: 10px solid #f5a400;
   margin: auto;
@@ -20,7 +21,7 @@ padding-top: 6rem;
   padding-bottom: 1rem;
 }
 .marcoForm:hover {
-  box-shadow: inset 5px 5px 10px #f5a400, inset -5px -5px 10px #f5a400;
+  box-shadow: inset 2px 2px 5px #f5a400, inset -2px -2px 5px #f5a400;
 }
 
 
