@@ -11,7 +11,7 @@ function ViewResult(){
     let { allMovies } = useSelector((state) => state.alldata);
 
     const [currentPage, setCurrentPage] = useState(1); 
-    const moviesPerPage = 8;
+    const moviesPerPage = 12;
     //const [orden, setOrden] = useState("");
     const indexOfLastMovies = currentPage * moviesPerPage; 
     const indexOfFirstMovies = indexOfLastMovies - moviesPerPage; 
@@ -24,9 +24,7 @@ function ViewResult(){
         setCurrentPage(pageNumber);
     };
 
-    // useEffect(() => {
-    //     dispatch(asyncallMovies());
-    //   }, [dispatch]);
+
     
     return(
         <div className="conteinerViewResult">

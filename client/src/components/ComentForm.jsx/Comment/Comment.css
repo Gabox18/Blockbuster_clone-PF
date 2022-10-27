@@ -1,22 +1,23 @@
 .info-comment {
   background-color: black;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 2%;
-  border: solid #f7a600 4px;
+    width: 85%;
+    margin-left: 8%;
+    margin-right: 18%;
+    margin-top: 3%;
+  /* border: solid #f7a600 4px; */
   display: flex;
-  flex-direction: row;
-  border-radius: 10px;
-  padding: 1rem 1rem 1rem 1rem;
-  margin-bottom: 1rem;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 1rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
 }
 .comment {
-  margin: 3% 0 0 3%;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f7a600;
-  font-family: "Arial Narrow";
-  padding-left: 1rem;
+  margin: 3% 8px 1px -1%;
+    font-family: "Brawler", serif;
+    font-size: 20px;
+    color: white;
+    font-family: "Arial Narrow";
+    padding-left: 1rem;
 }
 .fotitox {
   border-radius: 50%;
@@ -31,11 +32,11 @@
 /* From uiverse.io by @hannahyockel */
 .botonD {
   border-radius: 40%;
-  margin: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #0e0808;
-  border: solid #f7a600 0.2px;
+  margin: 1px;
+  width: 2.5rem;     
+  height: 2.5rem;     
+  background-color: #0e0808;     
+  border: solid #f7a600 0.2px;     
   justify-content: end;
 }
 
@@ -50,10 +51,10 @@
 /*---------------------- HASTA ACA DELET COMENT -------------*/
 .textComent {
   float: right;
-  display: flex;
-  align-items: center;
-  word-break: break-all;
-  margin: 0 0 1em 1em;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+    margin: 0 0 1em 1em;
 }
 .buttonsComents{
     display: flex;
@@ -77,6 +78,7 @@
   transition: width 0.2s ease-in-out;
   font-weight: 500;
   font-family: inherit;
+  margin: 5px auto;
 }
 
 .add-btn:hover {
