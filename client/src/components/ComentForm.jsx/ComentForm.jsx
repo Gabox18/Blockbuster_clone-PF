@@ -4,8 +4,6 @@ import { asyncFormComment, asyncCommentById } from "../../redux/slice";
 import { useState } from "react";
 import "./ComentForm.css";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import avatar from "../../assets/avatar.png";
 
 export default function ComentForm({ idParams, handleDelete }) {
   let { id } = useParams();
@@ -96,7 +94,7 @@ export default function ComentForm({ idParams, handleDelete }) {
       </div>
     </div>
     <div className="comentOther">
-        <h5> Comments from other users about this movie: </h5>
+        <p className="textAditional"> Comments from other users about this movie: </p>
       </div>
     </div>
   );
