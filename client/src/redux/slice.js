@@ -149,9 +149,7 @@ export const asyncallMovies = () => {
 export const asyncgetDetails = (id) => {
   return async function (dispatch) {
     try {
-      let response = await axios.get(
-        `/detail/${id}`
-      );
+      let response = await axios.get(`/detail/${id}`);
       return dispatch(DetailsMovies(response.data[0]));
     } catch (error) {
       console.log(error, "from Details");
