@@ -34,7 +34,7 @@ function FilteringSorting(props) {
         <div className="containerFiltering text-center mx-auto gap-3">
             <div>
                 <select 
-                    className="form-select form-select-md" 
+                    className="form-select form-select-md selectButton" 
                     aria-label="Default select example" 
                     onChange={(e)=>handleSelectOrderBy(e)}
                 >
@@ -51,7 +51,10 @@ function FilteringSorting(props) {
             </div>
 
             <div>
-                <select className="form-select form-select-md" onChange={(e) => handleSelectFilter(e)}>
+                <select 
+                    className="form-select form-select-md selectButton" 
+                    onChange={(e) => handleSelectFilter(e)}
+                >
                     <option hidden disabled selected value={'all'}>Filter by</option>
                     <optgroup label="Genres">
                         {genres?.map((genre, index) => {

@@ -3,11 +3,11 @@
        border: rgb(55, 116, 248) solid;
        border-width: 0.4px;
        margin: 5px;
-       padding: 1rem;
+       margin-top: 8px;
        border-radius: 0.5rem;
        transition: 0.3s;
        width: 10rem;
-       height: 1rem;
+       height: 2rem;
 }
    
 .inputSearch:focus {
@@ -26,8 +26,8 @@
 
 @media screen and (max-width: 768px) {
        .inputSearch {
-              width: 5rem;
-              height: 1rem;
+              width: 9rem;
+              height: 2rem;
        }
        
 }

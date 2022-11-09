@@ -1,36 +1,117 @@
-
-
-@font-face {
-  font-family: besan;
-  src: url("../../assets/Besan.otf");
+.container-infoD {
+  background-image: url("https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg");
+  background-size: cover;
+  border-style: solid;
+  border-color: #000000;
+  border-bottom-width: 7px;
+  border-bottom-color: #e79908;
+  display: flexbox;
+  flex-direction: row;
+}
+.container-description {
+  background-color: #0000005f;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: justify;
+  padding-top: 120px;
+  margin: 30px;
+  color: white;
+  width:100%;
+  flex-wrap: wrap;
+  box-shadow:24px 27px 37px 23px #000000;
 }
 
+.title-movie {
+  color: #f7a500;
+  font-size: 40px;
+  text-align: justify;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  word-spacing: 2px;
+  column-count: 1;
+  direction: ltr;
+  font-family: "Brawler", serif;
+}
+.description-plot {
+  width: 750px;
+  font-size: 25px;
+  font-family: "Brawler", serif;
+  display: flexbox;
+  gap: 20px;
+}
+.director {
+  font-family: "Brawler", serif;
+  font-size: 20px;
+}
+.container-links {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.container-imagenc{
+  width: 30%;
+}
+.container-detalless{
+  width: 50%;
+}
+.imagen-poster{
+  border: double #f7a500 4px;
+}
+@media only screen and (max-width: 600px) {
+  /* .infodetail {
+    color: #f7a600;
+    display: flexbox;
+    flex-direction: row;
+  }
+  .cardStyle{
+    width: 30vh;
+    margin: auto;
+  } */
+  .container-infoD {
+    width: 400px;
+    display: flexbox;
+    flex-direction: column-reverse;
+  }
+  .description-plot {
+    width: 300px;
+    font-size: 20px;
+  }
+  .director {
+    width: 300px;
+  }
+  .title-movie {
+    width: 350px;
+    font-size: 35px;
+  }
+  .container-description{
+    flex-direction: column-reverse;
+    padding: 50px 0;
+  }
+}
 
-.videoBg video {
-  width: auto;
-  height: auto;
-  min-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  position: fixed;
-  z-index: -100;
+/* .detailRender{
+  background-image: url('https://res.cloudinary.com/dapicfoap/image/upload/v1664773993/BlockBuster%20Nuestro/fondoBlue_a3nqyo.jpg');
   background-size: cover;
-  right: 0;
+  background-repeat: no-repeat;
+  padding-top: 6rem;
+  height: 100%;
 }
 .App .detailRender .cardStyle {
   background-color: rgba(0, 0, 0, 0.83) !important;
+  
 }
 
+
 .card-img-top {
-  width: 18.75rem;
-  height: 28.125rem;
-  border: groove #f7a600 0.1875rem;
+  width: 100%;
+  height:30rem;
   display: flex;
-  border-radius: 10px;
-  margin-bottom: 100%;
-  margin-left: 5%;
-  margin-top: 35%;
+  border-radius: 4.25rem 4.25rem 0 0;
+  object-fit: unset;
+border-bottom:2px groove #f7a600;
+ 
 }
 
 .cardStyle {
@@ -39,6 +120,8 @@
   margin-left: 30%;
   margin-right:30%;
   border-radius: 10%;
+  width: 80vh;
+  overflow: hidden;
 
 }
 .infodetail {
@@ -46,7 +129,7 @@
   display: flexbox;
   flex-direction: row;
   margin-left: 2rem;
-  margin-top: 20%;
+  margin-bottom: 1.25rem;
   
 }
 .plot .titleInfo label{
@@ -58,15 +141,11 @@
  
 }
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: rgb(255, 248, 248);
-  margin-right: 5%;
-  margin-top: 8%;
-  border-radius: 40%;
   font-weight:600;
-
-
   
+  text-align: justify;
 }
 
 .language {
@@ -77,7 +156,6 @@
 
 .plot {
   font-size: 1.375rem;
-  margin-bottom: 80%;
   margin-right: 5%;
   gap: 7px;
   text-align: left;
@@ -85,13 +163,8 @@
 }
 .lessInfo {
   margin-top: 1.875rem;
-}
+} */
 
-.cardDetail {
-  display: flex;
-  align-items: center;
-  margin-bottom: -30%;
-}
 .alert {
   font-size: 1.875rem;
   color: #f7a600;
@@ -210,53 +283,74 @@ input:checked + .slider1:before {
 }
 
 /* ----------------------------- */
-  
-  .plot .titleInfo label{
-    background-color:#f7a600;
-   }
-   .btn-detail{
-    height: 5.625rem;
-    margin-bottom: 2.5rem;
-   }
 
+.plot .titleInfo label {
+  background-color: #f7a600;
+}
+.btn-detail {
+  height: 5.625rem;
+  margin-bottom: 2.5rem;
+}
 
- .buttonFav{
+.buttonFav {
   padding: 0.625rem;
   border: none;
-  background-color: black;
+  background-color: transparent;
   border-radius: 20%;
   margin-bottom: 4%;
   margin-top: 3%;
-  
- }
- 
- .buttonNoFav{
+}
+
+.buttonNoFav {
   padding: 0.625rem;
   border: none;
   background-color: transparent;
   border-radius: 0%;
   margin-bottom: 4%;
   margin-top: 3%;
- }
- @media only screen and (max-width: 600px) {
-  .cardStyle {
-    margin-left: 5%;
-  margin-right:5%;
-  }
-  .card-img-top{
-    width: 18.75rem;
-  height: 18.125rem;
-  margin-bottom:50rem;
-   
+}
+/*---------------------------------------------------------------------------------------------------*/
+/* From uiverse.io by @AqFox */
+.btnplay {
+  width: 50px;
+  height: 50px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #0b0b0b;
+  color: #f7a500;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #f7a600;
+  z-index: 100;
+  border: #004dff;
+  transition: 0.5s;
+}
 
-  }
-  .infodetail {
-    color: #f7a600;
-    display: flexbox;
-    flex-direction: row;
-    margin-left: -16.5rem;
-    margin-top: 120%;
-    
-  }
+.btnplay:hover {
+  transform: scale(1.1);
+  color: #f7a500;
+}
 
+.btnplay:active {
+  background-color: #020cd1;
+}
+
+.title-btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  align-items: center;
+}
+.image {
+  background-color: #f7a500;
+  box-shadow: 0 1rem 2rem #f7a600, 0 1rem 2rem #f7a600;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.twobtn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 2rem;
 }
