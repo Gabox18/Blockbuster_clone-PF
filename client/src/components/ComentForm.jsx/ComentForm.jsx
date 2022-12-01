@@ -4,18 +4,15 @@ import { asyncFormComment, asyncCommentById } from "../../redux/slice";
 import { useState } from "react";
 import "./ComentForm.css";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import avatar from "../../assets/avatar.png";
+
 
 export default function ComentForm({ idParams, handleDelete }) {
   let { id } = useParams();
   const dispatch = useDispatch();
   let userdb = useSelector((state) => state.alldata.user);
-  let { commentMovie } = useSelector((state) => state.alldata);
   const [input, setInput] = useState({
     coment: "",
   });
-  let [suma, setSuma] = useState(0);
   let { commentFromMovies } = useSelector((state) => state.alldata);
   let info = commentFromMovies.filter((e) => userdb.id == e.idUser);
 
@@ -96,7 +93,7 @@ export default function ComentForm({ idParams, handleDelete }) {
       </div>
     </div>
     <div className="comentOther">
-        <h5> Comments from other users about this movie: </h5>
+        <p className="alert2"> Comments from other users about this movie: </p>
       </div>
     </div>
   );

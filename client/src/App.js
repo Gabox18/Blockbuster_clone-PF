@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
-
 //components
 import LandingPage from './components/Landing/Landing';
 import Home from './components/Home/Home';
 import Profile from "./components/User/Profile";
-
 import Exile from "../src/components/Exile/Exile"
-
 import Play from './components/Detail/Play/Play';
-
-
 //boostrap
 // You can specify which plugins you need
 //import { Tooltip, Toast, Popover } from 'bootstrap';

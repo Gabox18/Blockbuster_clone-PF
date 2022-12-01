@@ -159,17 +159,15 @@
 }
 
 @keyframes blur {
-  0%, 90% {
-   filter: blur(0);
+  0%,
+  90% {
+    filter: blur(0);
   }
- 
+
   50% {
-   filter: blur(10px);
+    filter: blur(10px);
   }
- }
-
-
-
+}
 
 @media (max-width: 991px) {
   .subBlockTittle {
@@ -177,8 +175,9 @@
   }
 }
 
-@media (max-width: 991px){
-  .imgCarr, .imgCarr1{
+@media (max-width: 991px) {
+  .imgCarr,
+  .imgCarr1 {
     width: 8rem;
     height: 13rem;
     display: inline-block;
@@ -190,14 +189,14 @@
   }
 }
 
-  @media (max-width: 991px){
-    .containerCarruzel  {
-      height: 80%;
-    }
+@media (max-width: 991px) {
+  .containerCarruzel {
+    height: 80%;
+  }
 }
 
-@media (max-width: 991px){
-  .containerCarruzel1  {
+@media (max-width: 991px) {
+  .containerCarruzel1 {
     height: 80%;
   }
 }
