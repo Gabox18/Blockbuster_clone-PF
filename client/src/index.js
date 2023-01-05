@@ -11,7 +11,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import axios from "axios";
 
 // axios.defaults.baseURL = "http://localhost:3000"
-axios.defaults.baseURL = "https://blockbusterbk-production.up.railway.app/"
+axios.defaults.baseURL = "https://blockbusterbk-production-5df3.up.railway.app/"
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;//"agus-mollo.us.auth0.com"//
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;//"gE7IfTfHrYq0Wy3GeDGrrEPEI9DUiIax"//
 ReactDOM.render(
