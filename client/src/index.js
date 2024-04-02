@@ -12,7 +12,7 @@ import axios from "axios";
 
 // axios.defaults.baseURL = "http://localhost:3000"
 axios.defaults.baseURL =
-  "https://blockbusterbk-production-96fd.up.railway.app/";
+  "https://blockbusterbk.onrender.com//";
 const domain = process.env.REACT_APP_AUTH0_DOMAIN; //"agus-mollo.us.auth0.com"//
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID; //"gE7IfTfHrYq0Wy3GeDGrrEPEI9DUiIax"//
 ReactDOM.render(
