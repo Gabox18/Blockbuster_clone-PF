@@ -291,7 +291,7 @@ export const asyncFavoriteMovie = (input) => {
   return async function (dispatch) {
     try {
       let response = await axios.post(
-        `https://purring-turkey-production.up.railway.app/addfav`,
+        `/addfav`,
         input
       );
       return dispatch(favoriteArray(response.data));
@@ -333,7 +333,7 @@ export const asyncFavList = () => {
   return async function (dispatch) {
     try {
       let response = await axios(
-        "https://purring-turkey-production.up.railway.app/allFavs"
+        `/allFavs`
       );
       return dispatch(favoriteAllMovies(response.data));
     } catch (error) {}
